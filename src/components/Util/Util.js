@@ -10,6 +10,10 @@ export function Textarea({ className, ...props }) {
      );
 };
 
+export function FormatD({ date, format='Do MMMM YYYY' }) {
+    return formatDate(date, format)
+}
+
 export function Input({ className, ...props }) {
      return (
           <input className={['Input', className].join(' ')} {...props} />
