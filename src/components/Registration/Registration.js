@@ -16,20 +16,20 @@ class Registration extends Component {
 
   handleSubmit = ev => {
     ev.preventDefault()
-    const { username, email, password, confirm_password } = ev.target
+    const { user_name, email, password, confirm_password } = ev.target
 
     if(confirm_password.value !== password.value){
         return 'Passwords did not match'
     }
 
     AuthApiService.postUser({
-      username: username.value,
+      user_name: user_name.value,
       email: email.value,
       password: password.value,
       confirm_password: confirm_password.value,
     })
       .then(user => {
-        username.value = ''
+        user_name.value = ''
         email.value = ''
         password.value = ''
         confirm_password.value = ''
@@ -54,13 +54,13 @@ class Registration extends Component {
           {error && <p>{error}</p>}
         </div>
         <div className='label-input'>
-          <Label htmlFor='registration-username-input'>
-            Choose a username<Required />
+          <Label htmlFor='registration-user_name-input'>
+            Choose a Username<Required />
           </Label>
           <Input
             ref={this.firstInput}
-            id='registration-username-input'
-            name='username'
+            id='registration-user_name-input'
+            name='user_name'
             required
           />
         </div>

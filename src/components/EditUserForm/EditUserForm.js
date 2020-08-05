@@ -71,7 +71,7 @@ export default class EditForm extends React.Component {
                     <fieldset>
                          <legend>Edit Profile</legend>
 
-                         <label htmlFor='user_name'>Username <Required /></label>
+                         <label htmlFor='user_name'>user_name <Required /></label>
                          <Input type='user_name' name='user_name' id='user_name' defaultValue={this.state.user_name} required />
 
                          <Link to='/changepassword'>Change Your Password</Link>

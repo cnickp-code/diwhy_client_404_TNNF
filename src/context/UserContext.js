@@ -27,7 +27,7 @@ export class UserProvider extends Component {
       state.user = {
         id: jwtPayload.user_id,
         name: jwtPayload.name,
-        username: jwtPayload.sub,
+        user_name: jwtPayload.sub,
       }
 
     this.state = state;
@@ -67,7 +67,7 @@ export class UserProvider extends Component {
     this.setUser({
       id: jwtPayload.user_id,
       name: jwtPayload.name,
-      username: jwtPayload.sub,
+      user_name: jwtPayload.sub,
     })
     IdleService.regiserIdleTimerResets()
     TokenService.queueCallbackBeforeExpiry(() => {
