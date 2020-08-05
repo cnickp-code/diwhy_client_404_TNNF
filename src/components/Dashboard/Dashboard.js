@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import FeedContext from '../../contexts/FeedContext'
+import Watch from '../Watch/Watch'
 import Util from '../Util/Util'
 import './Dashboard.css'
 
