@@ -6,8 +6,9 @@ import PublicRoute from '../src/routes/PublicRoute/PublicRoute'
 import RegistrationRoute from '../src/routes/RegistrationRoute/RegistrationRoute'
 import LoginRoute from '../src/routes/LoginRoute/LoginRoute'
 import DashboardRoute from '../src/routes/DashboardRoute/DashboardRoute'
-import LearningRoute from '../src/routes/LearningRoute/LearningRoute'
+import WantedRoute from '../src/routes/WantedRoute/WantedRoute'
 import NotFoundRoute from '../src/routes/NotFoundRoute/NotFoundRoute'
+import ProfileRoute from '../src/routes/ProfileRoute/ProfileRoute'
 import './App.css'
 
 export default class App extends Component {
@@ -34,8 +35,12 @@ export default class App extends Component {
               component={DashboardRoute}
             />
             <PrivateRoute
-              path={'/learn'}
-              component={LearningRoute}
+              path={'/wanted'}
+              component={WantedRoute}
+            />
+            <PrivateRoute
+              path={'/profile'}
+              component={ProfileRoute}
             />
             <PublicRoute
               path={'/register'}
