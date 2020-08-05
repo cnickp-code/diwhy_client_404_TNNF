@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Dashboard from '../../components/Dashboard/Dashboard'
-import { FeedProvider } from "../../contexts/FeedContext";
+// import Dashboard from '../../components/Dashboard/Dashboard'
+// import { FeedProvider } from "../../contexts/FeedContext";
 
 class DashboardRoute extends Component {
 
@@ -8,9 +8,9 @@ class DashboardRoute extends Component {
   render() {
     return (
       <section>
-        <FeedProvider>
+        {/* <FeedProvider>
           <Dashboard />
-        </FeedProvider>
+        </FeedProvider> */}
       </section>
     );
   }

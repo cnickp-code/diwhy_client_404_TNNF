@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Section } from '../Components/Utils/Utils';
-import UserContext from '../../context/UserContext';
+import { Section } from '../Util/Util';
+import UserContext from '../../contexts/UserContext';
 
 export default class Profile extends Component {
      state = {
@@ -13,21 +13,20 @@ export default class Profile extends Component {
      
      static contextType = UserContext;
 
-     componentDidMount() {
-          const user = this.props.userId
-          UserService.getUser(user)
-               .then(thisUser => {
-                    this.setState({
-                         user: thisUser
-                    })
-               .catch(this.context.setError)
-               });
-     };
+     // componentDidMount() {
+     //      const user = this.props.userId
+     //      UserService.getUser(user)
+     //           .then(thisUser => {
+     //                this.setState({
+     //                     user: thisUser
+     //                })
+     //           .catch(this.context.setError)
+     //           });
+     // };
 
      renderUser() {
           const { user } = this.state
-          return
-          <div className='User_Profile_Container'>
+          return <div className='User_Profile_Container'>
                <h2 className='User_Name'>{user.user_name}</h2>
           </div>
      };

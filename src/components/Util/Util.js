@@ -1,4 +1,6 @@
 import React from 'react';
+import cx from 'classnames';
+import { format as formatDate } from 'date-fns';
 
 export function Button({ className, ...props }) {
      return <button className={['Button', className].join(' ')} {...props} />
@@ -14,12 +16,18 @@ export function FormatD({ date, format='Do MMMM YYYY' }) {
     return formatDate(date, format)
 }
 
-export function Input({ className, ...props }) {
-     return (
-          <input className={['Input', className].join(' ')} {...props} />
-     );
-};
-
+export function Label({ className, ...props }) {
+    return (
+      <label className={cx('Label', className)} {...props} />
+    )
+  }
+  
+export const Input =  React.forwardRef(({ className, ...props }, ref) => {
+    return (
+      <input className={cx('Input', className)} type='text' ref={ref} {...props} />
+    )
+})
+  
 export function Required({ className, ...props }) {
      return (
           <span className={['Required', className].join(' ')} {...props}>
@@ -27,7 +35,7 @@ export function Required({ className, ...props }) {
           </span>
      );
 };
-
+  
 export function Section({ className, list, ...props }) {
      const classes = [
           'Section',

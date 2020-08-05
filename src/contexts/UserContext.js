@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import AuthApiService from '../services/auth-api-service'
-import TokenService from '../services/token-service'
-import IdleService from '../services/idle-service'
+import AuthApiService from '../Services/auth-api-service'
+import TokenService from '../Services/token-service'
+import IdleService from '../Services/idle-service'
 
 const UserContext = React.createContext({
   user: {},
@@ -26,7 +26,7 @@ export class UserProvider extends Component {
     if (jwtPayload)
       state.user = {
         id: jwtPayload.user_id,
-        name: jwtPayload.name,
+        email: jwtPayload.email,
         user_name: jwtPayload.sub,
       }
 
@@ -66,7 +66,7 @@ export class UserProvider extends Component {
     const jwtPayload = TokenService.parseAuthToken()
     this.setUser({
       id: jwtPayload.user_id,
-      name: jwtPayload.name,
+      email: jwtPayload.email,
       user_name: jwtPayload.sub,
     })
     IdleService.regiserIdleTimerResets()

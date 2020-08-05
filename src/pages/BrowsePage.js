@@ -1,5 +1,5 @@
 import {React, Component} from 'react';
-import { Section, Input } from '../Components/Utils/Utils';
+import { Label } from '../Components/Utils/Utils';
 import UserContext from '../../contexts/UserContext'
 
 export default class Browse extends Component {
@@ -26,7 +26,11 @@ export default class Browse extends Component {
 
      render() {
           return (
-
+               <>
+                    <form className='Browse_List_Filter'>
+                         <Label htmlFor='Browse_List_Filter' Filter By Category />
+                    </form>
+               </>
           )
      }
 }

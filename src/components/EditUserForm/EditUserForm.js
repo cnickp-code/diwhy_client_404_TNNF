@@ -4,7 +4,7 @@ import AuthApiService from '../../Services/auth-api-service';
 import TokenService from '../../Services/token-service';
 
 import config from '../../config';
-import UserContext from '../../context/UserContext';
+import UserContext from '../../contexts/UserContext';
 
 export default class EditForm extends React.Component {
      static defaultProps = {

@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Input, Required, Label } from '../Util/Util'
-import AuthApiService from '../../services/auth-api-service'
-import Button from '../Button/Button'
+import { Input, Required, Label, Button } from '../Util/Util'
+import AuthApiService from '../../Services/auth-api-service'
 import './Registration.css'
 
 class Registration extends Component {
@@ -47,9 +46,10 @@ class Registration extends Component {
   render() {
     const { error } = this.state
     return (
-      <Util className='reg-util'
+      <form className='reg-form'
         onSubmit={this.handleSubmit}
       >
+        <legend>Sign Up</legend>
         <div role='alert'>
           {error && <p>{error}</p>}
         </div>
@@ -103,9 +103,9 @@ class Registration extends Component {
           {' '}
           <Link to='/login'>Already have an account?</Link>
         </div>
-      </Util>
+      </form>
     )
   }
 }
 
-export default Registration
+export default Registration;

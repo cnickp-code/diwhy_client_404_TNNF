@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import TokenService from '../../Services/token-service';
 import AuthApiService from '../../Services/auth-api-service';
 import { Button, Input } from '../Util/Util';
@@ -50,6 +51,8 @@ export default class LoginForm extends React.Component {
                          <Input type='password' placeholder='Password' name='password' id='User_Password' required />
 
                          <Button type='submit'> Log In </Button>
+
+                         <Link to='forgotpassword'>Forgot Your Password?</Link>
                     </fieldset>
                </form>
           );

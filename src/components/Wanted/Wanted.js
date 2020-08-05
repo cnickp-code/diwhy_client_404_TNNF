@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import Wantedcontext from '../../context/WantedContext'
-import Util from '../Util/Util'
+// import { Link } from 'react-router-dom'
+// import Wantedcontext from '../../contexts/WantedContext'
+// import Util from '../Util/Util'
 
 class Wanted extends Component {
-    static contextType = Wantedcontext;
+    // static contextType = Wantedcontext;
 
     render() {
         return (
