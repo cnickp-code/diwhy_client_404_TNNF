@@ -28,6 +28,7 @@ export default class Profile extends Component {
           const { user } = this.state
           return <div className='User_Profile_Container'>
                <h2 className='User_Name'>{user.user_name}</h2>
+               <h2 className='User_Name'>{user.email}</h2>
           </div>
      };
 
