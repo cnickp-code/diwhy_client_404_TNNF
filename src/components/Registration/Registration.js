@@ -1,0 +1,111 @@
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { Input, Required, Label } from '../Util/Util'
+import AuthApiService from '../../services/auth-api-service'
+import Button from '../Button/Button'
+import './Registration.css'
+
+class Registration extends Component {
+  static defaultProps = {
+    onRegistrationSuccess: () => { }
+  }
+
+  state = { error: null }
+
+  firstInput = React.createRef()
+
+  handleSubmit = ev => {
+    ev.preventDefault()
+    const { username, email, password, confirm_password } = ev.target
+
+    if(confirm_password.value !== password.value){
+        return 'Passwords did not match'
+    }
+
+    AuthApiService.postUser({
+      username: username.value,
+      email: email.value,
+      password: password.value,
+      confirm_password: confirm_password.value,
+    })
+      .then(user => {
+        username.value = ''
+        email.value = ''
+        password.value = ''
+        confirm_password.value = ''
+        this.props.onRegistrationSuccess()
+      })
+      .catch(res => {
+        this.setState({ error: res.error })
+      })
+  }
+
+  componentDidMount() {
+    this.firstInput.current.focus()
+  }
+
+  render() {
+    const { error } = this.state
+    return (
+      <Util className='reg-util'
+        onSubmit={this.handleSubmit}
+      >
+        <div role='alert'>
+          {error && <p>{error}</p>}
+        </div>
+        <div className='label-input'>
+          <Label htmlFor='registration-username-input'>
+            Choose a username<Required />
+          </Label>
+          <Input
+            ref={this.firstInput}
+            id='registration-username-input'
+            name='username'
+            required
+          />
+        </div>
+        <div className='label-input'>
+          <Label htmlFor='registration-email-input'>
+            Enter Valid Email<Required />
+          </Label>
+          <Input
+            id='registration-email-input'
+            name='email'
+            required
+          />
+        </div>
+        <div className='label-input'>
+          <Label htmlFor='registration-password-input'>
+            Choose a password<Required />
+          </Label>
+          <Input
+            id='registration-password-input'
+            name='password'
+            type='password'
+            required
+          />
+        </div>
+        <div className='label-input'>
+          <Label htmlFor='registration-password-confirm'>
+            Confirm password<Required />
+          </Label>
+          <Input
+            id='registration-password-confirm'
+            name='confirm_password'
+            type='password'
+            required
+          />
+        </div>
+        <div className='reg-submit-div'>
+          <Button className='solo-button' type='submit'>
+            Sign up
+          </Button>
+          {' '}
+          <Link to='/login'>Already have an account?</Link>
+        </div>
+      </Util>
+    )
+  }
+}
+
+export default Registration
