@@ -3,7 +3,7 @@ import TokenService from '../Services/token-service';
 
 const DashApiService = {
     getUserInterests(user_id) {
-        return fetch(`${config.API_ENDPOINT}/api/interests`, {
+        return fetch(`${config.API_ENDPOINT}/interests`, {
             headers: {
                 'authorization': `Bearer ${TokenService.getAuthToken()}`,
             }
@@ -16,7 +16,13 @@ const DashApiService = {
     },
 
     getThreads() {
+        return fetch(`${config.API_ENDPOINT}/threads/`)
+    },
 
+    getThreadsWatch(user_id) {
+        return fetch(`${config.API_ENDPOINT}/threads/${user_id}`, {
+
+        })
     },
 
     postThread() {
