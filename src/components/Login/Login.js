@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import TokenService from '../../Services/token-service';
 import AuthApiService from '../../Services/auth-api-service';
-import { Button, Input } from '../Util/Util';
+import { Button, Input, Label } from '../Util/Util';
 
 export default class LoginForm extends React.Component {
 
@@ -42,11 +42,11 @@ export default class LoginForm extends React.Component {
 
                          <legend>Log In</legend>
 
-                         <label htmlFor='Login_Form_Email'> Email </label>
+                         <Label htmlFor='Login_Form_Email'> Email </Label>
 
                          <Input placeholder='Email' name='email' id='Login_Form_User_Email' required />
 
-                         <label htmlFor='Login_Form_User_Password'> Password </label>
+                         <Label htmlFor='Login_Form_User_Password'> Password </Label>
 
                          <Input type='password' placeholder='Password' name='password' id='User_Password' required />
 

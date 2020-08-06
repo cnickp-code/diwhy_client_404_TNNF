@@ -1,6 +1,7 @@
 import {React, Component} from 'react';
 import { Label } from '../Components/Utils/Utils';
 import UserContext from '../../contexts/UserContext'
+import CategoryService from '../Services/category-api-service'
 
 export default class Browse extends Component {
 
@@ -25,11 +26,30 @@ export default class Browse extends Component {
      };
 
      render() {
+          const { error } = this.context;
+          let { categories = [] } = this.context
+
+          if (this.state.searchTerm !== '') {
+               categories = categories.filter(category => categories.name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
+          } 
+
           return (
                <>
                     <form className='Browse_List_Filter'>
-                         <Label htmlFor='Browse_List_Filter' Filter By Category />
+                         <Label htmlFor='Browse_List_Filter'>Filter By Category</Label>
+                         <Input
+                              className='Browse_List_Filter_Input'
+                              type='text'
+                              placeholder='Search'
+                              id='Browse_List_Filter'
+                              value={this.state.searchTerm}
+                              onChange={e => this.setState({ searchTerm: e.target.value })}
+                         />
                     </form>
+
+                    <Section list className='Browse_List_Page'>
+                         { error ? <p className='Red_Alert'>There was an error, please try again</p> : categories.map(artist => <BrowseListItem key={categories.name} category={category}/>) }
+                    </Section>
                </>
           )
      }

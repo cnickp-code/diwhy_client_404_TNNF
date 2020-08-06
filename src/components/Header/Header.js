@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../Services/token-service'
 import UserContext from '../../contexts/UserContext'
+import NavBar from './NavBar'
 import './Header.css'
 
 class Header extends Component {
@@ -17,6 +18,7 @@ class Header extends Component {
         <span>
         </span>
         <nav>
+          <NavBar />
           <Link
             onClick={this.handleLogoutClick}
             to='/login'>
@@ -43,6 +45,7 @@ class Header extends Component {
         <Link to='/'>
           <h1 className='app-name'>D I W H Y</h1>
         </Link>
+        <homeSVG />
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}

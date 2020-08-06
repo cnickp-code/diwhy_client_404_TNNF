@@ -47,8 +47,8 @@ class Registration extends Component {
     const { error } = this.state
     return (
       <form className='reg-form'
-        onSubmit={this.handleSubmit}
-      >
+        onSubmit={this.handleSubmit}>
+        <fieldset> 
         <legend>Sign Up</legend>
         <div role='alert'>
           {error && <p>{error}</p>}
@@ -103,6 +103,7 @@ class Registration extends Component {
           {' '}
           <Link to='/login'>Already have an account?</Link>
         </div>
+        </fieldset> 
       </form>
     )
   }

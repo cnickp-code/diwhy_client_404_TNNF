@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Header from '../src/components/Header/Header'
+import NavBar from '../src/components/Header/NavBar'
 import PrivateRoute from '../src/routes/PrivateRoute/PrivateRoute'
 import PublicRoute from '../src/routes/PublicRoute/PublicRoute'
 import RegistrationRoute from '../src/routes/RegistrationRoute/RegistrationRoute'
