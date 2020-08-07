@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 // import DashContext from '../../contexts/DashContext'
 import Watch from '../Watch/Watch'
 // import {} from '../Util/Util'
-import NavBar from './Header/NavBar'
 import './Dashboard.css'
 
 class Dashboard extends Component {

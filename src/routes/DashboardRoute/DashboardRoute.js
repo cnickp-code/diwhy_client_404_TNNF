@@ -8,9 +8,9 @@ class DashboardRoute extends Component {
   render() {
     return (
       <section>
-        {/* <DashProvider> */}
+        <DashProvider>
           <Dashboard />
-        {/* </DashProvider> */}
+        </DashProvider>
       </section>
     );
   }

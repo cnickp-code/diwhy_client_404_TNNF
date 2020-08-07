@@ -13,10 +13,21 @@ export default class Watch extends Component {
     //onClick={} whatever/whatever/threads/${threadId}
     //elsewhere, on specific thread or wanted posting, add a watch/unwatch toggle
 
-
+    
 
     render() {
         const { threads } = this.context;
+        console.log(threads)
+        
+        const threadList = threads.map(thread => {
+            return (
+                    <li key={thread.id}>
+                        <h4> {thread.title} </h4>
+                        <p> {thread.content} </p>
+                        <p> {thread.date_created.toLocaleString()} </p>
+                    </li>
+            )
+        })
 
         if (!threads) {
             return (
@@ -29,12 +40,7 @@ export default class Watch extends Component {
             <ScrollArea>
                 <div className='watchList'>
                     <ul className='questions'>
-                        <Link to='/wanted/threads/${threadId}'>
-                            <li>
-                                <img src='' alt='' />
-                                <h4>{threads.title}</h4>
-                            </li>
-                        </Link>
+                        {threadList}
                     </ul>
                 </div>
             </ScrollArea>
