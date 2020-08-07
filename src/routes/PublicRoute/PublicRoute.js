@@ -10,7 +10,7 @@ export default function PublicOnlyRoute({ component, ...props }) {
       render={componentProps => (
         <UserContext.Consumer>
           {userContext =>
-            !!userContext.user.id
+            !!userContext.userId
               ? <Redirect to={'/'} />
               : <Component {...componentProps} />
           }

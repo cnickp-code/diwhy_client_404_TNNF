@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Input, Required, Textarea } from '../Utils/Utils';
+import { Button, Input, Required, Textarea, Link } from '../Utils/Utils';
 import AuthApiService from '../../Services/auth-api-service';
 import TokenService from '../../Services/token-service';
 
@@ -67,7 +67,7 @@ export default class EditForm extends React.Component {
 
      render() {
           return (
-               <form className='DIWHY_Edit_Form' onSubmit={this.handleSubmit} user={user}>
+               <form className='DIWHY_Edit_Form' onSubmit={this.handleSubmit} user={this.user}>
                     <fieldset>
                          <legend>Edit Profile</legend>
 

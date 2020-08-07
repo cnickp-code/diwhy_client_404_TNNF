@@ -1,16 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UserContext from '../../contexts/UserContext';
 import TokenService from '../../Services/token-service';
 import AuthApiService from '../../Services/auth-api-service';
 import { Button, Input, Label } from '../Util/Util';
 
-export default class LoginForm extends React.Component {
+export default class Login extends React.Component {
 
      static defaultProps = {
           onLoginSuccess: () => { }
      };
 
+     static contextType = UserContext
+
      state = { error: null };
+
+     firstInput = React.createRef()
 
      handleSubmitJWTAuth = ev => {
           ev.preventDefault();
@@ -32,6 +37,10 @@ export default class LoginForm extends React.Component {
                });
      };
 
+     componentDidMount() {
+          this.firstInput.current.focus()
+        }
+
      render() {
           const { error } = this.state;
           return (
@@ -44,7 +53,7 @@ export default class LoginForm extends React.Component {
 
                          <Label htmlFor='Login_Form_Email'> Email </Label>
 
-                         <Input placeholder='Email' name='email' id='Login_Form_User_Email' required />
+                         <Input placeholder='Email' name='email' id='Login_Form_User_Email' ref={this.firstInput} required />
 
                          <Label htmlFor='Login_Form_User_Password'> Password </Label>
 
