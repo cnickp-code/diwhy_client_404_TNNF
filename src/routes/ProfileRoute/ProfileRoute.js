@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Profile from '../../components/Profile/Profile'
-import { UserProvider } from "../../contexts/UserContext";
+// import { UserProvider } from "../../contexts/UserContext";
 
 class ProfileRoute extends Component {
 
@@ -8,9 +8,7 @@ class ProfileRoute extends Component {
   render() {
     return (
       <section>
-        <UserProvider>
           <Profile />
-        </UserProvider>
       </section>
     );
   }
