@@ -1,7 +1,8 @@
 import {React, Component} from 'react';
-import { Label } from '../Components/Utils/Utils';
+import { Label, Input, Section } from '../Components/Utils/Utils';
 import UserContext from '../../contexts/UserContext'
 import CategoryService from '../Services/category-api-service'
+import BrowseListItem from '../components/Browse/BrowseItem'
 
 export default class Browse extends Component {
 
@@ -48,7 +49,7 @@ export default class Browse extends Component {
                     </form>
 
                     <Section list className='Browse_List_Page'>
-                         { error ? <p className='Red_Alert'>There was an error, please try again</p> : categories.map(artist => <BrowseListItem key={categories.name} category={category}/>) }
+                         { error ? <p className='Red_Alert'>There was an error, please try again</p> : categories.map(artist => <BrowseListItem key={categories.name} category={categories.name}/>) }
                     </Section>
                </>
           )

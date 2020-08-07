@@ -10,7 +10,7 @@ export default function PrivateRoute({ component, ...props }) {
       render={componentProps => (
         <UserContext.Consumer>
           {userContext =>
-            !!userContext.user.id
+            !!userContext.userId
               ? <Component {...componentProps} />
               : (
                 <Redirect

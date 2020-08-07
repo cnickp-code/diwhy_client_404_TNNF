@@ -45,7 +45,7 @@ class Header extends Component {
         <Link to='/'>
           <h1 className='app-name'>D I W H Y</h1>
         </Link>
-        <homeSVG />
+        {/* <homeSVG /> */}
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
