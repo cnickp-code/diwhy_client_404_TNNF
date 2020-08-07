@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import TokenService from '../../Services/token-service';
-import AuthApiService from '../../Services/auth-api-service';
+import TokenService from '../../services/token-service';
+import AuthApiService from '../../services/auth-api-service';
 import { Button, Input, Label } from '../Util/Util';
 
 export default class LoginForm extends React.Component {
