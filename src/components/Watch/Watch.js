@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 
 
 export default class Watch extends Component {
+
+
     render() {
         return (
             <div className='watchList'>
-                <ul className='questions'>
+                <ul className='watchItems'>
                     <li>
-                        <img src=''/> 
+                        <img src='' />
                         <h4></h4>
                     </li>
                 </ul>
