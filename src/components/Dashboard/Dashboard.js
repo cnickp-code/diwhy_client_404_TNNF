@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import { Link } from 'react-router-dom'
 // import DashContext from '../../contexts/DashContext'
-// import Watch from '../Watch/Watch'
+import Watch from '../Watch/Watch'
 // import {} from '../Util/Util'
 import './Dashboard.css'
 
@@ -11,16 +11,16 @@ class Dashboard extends Component {
     render() {
         return (
             <div className='dash-wrapper'>
-                <section className='profile-sidebar'>
-                    <h2>Profile Sidebar</h2>
+                <section className='dash-item'>
+                    <h4>Profile Sidebar</h4>
                 </section>
-                <section className='feed'>
-                    <h2>Feed</h2>
+                <section className='dash-item'>
+                    <h3>Feed</h3>
                     
                 </section>
-                <section className='watch-list'>
-                    <h2>Watch List</h2>
-                    {/* <Watch /> */}
+                <section className='dash-item'>
+                    <h4>Watch List</h4>
+                    <Watch />
                 </section>
             </div>
         )

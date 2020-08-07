@@ -9,17 +9,6 @@ export default class Profile extends Component {
      
      static contextType = UserContext;
 
-     // componentDidMount() {
-     //      const user = this.props.userId
-     //      UserService.getUser(user)
-     //           .then(thisUser => {
-     //                this.setState({
-     //                     user: thisUser
-     //                })
-     //           .catch(this.context.setError)
-     //           });
-     // };
-
      renderUser() {
           const { user } = this.context
           return <div className='User_Profile_Container'>

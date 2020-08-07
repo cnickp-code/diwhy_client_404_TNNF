@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 
 export default class BrowseCategoryItem extends Component {
   render() {
-    const { category } = this.props;
+    const { categories } = this.props;
     return (
       <div className='Browse_List_Item_Container'>
-        <Link to={`/category/${category.id}`} className='Browse_Category_Item'>
+        <Link to={`/category/${categories.id}`} className='Browse_Category_Item'>
           <h3 className='Browse_Category_Item_Heading'>
-            {category.name}
+            {categories.name}
           </h3>
         </Link>
       </div>

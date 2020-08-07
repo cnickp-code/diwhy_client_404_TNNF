@@ -4,6 +4,7 @@ import UserContext from '../../contexts/UserContext';
 import TokenService from '../../Services/token-service';
 import AuthApiService from '../../Services/auth-api-service';
 import { Button, Input, Label } from '../Util/Util';
+import './Login.css'
 
 export default class Login extends React.Component {
 
@@ -48,20 +49,20 @@ export default class Login extends React.Component {
                     <div role='alert'> {error && <p className='Red_Alert'> {error.message} </p>} </div>
 
                     <fieldset className='Login_Form'>
-
-                         <legend>Log In</legend>
-
-                         <Label htmlFor='Login_Form_Email'> Email </Label>
-
-                         <Input placeholder='Email' name='email' id='Login_Form_User_Email' ref={this.firstInput} required />
-
-                         <Label htmlFor='Login_Form_User_Password'> Password </Label>
-
-                         <Input type='password' placeholder='Password' name='password' id='User_Password' required />
-
-                         <Button type='submit'> Log In </Button>
-
-                         <Link to='forgotpassword'>Forgot Your Password?</Link>
+                         <div className='label-input'>
+                              <Label htmlFor='Login_Form_Email'> Email </Label>
+                              <Input placeholder='Email' name='email' id='Login_Form_User_Email' ref={this.firstInput} required />
+                         </div>
+                         <div className='label-input'>
+                              <Label htmlFor='Login_Form_User_Password'> Password </Label>
+                              <Input type='password' placeholder='Password' name='password' id='User_Password' required />
+                         </div>
+                         <div className='log-submit-div'>
+                              <Button type='submit'> 
+                                   Log In 
+                              </Button>
+                              <Link to='forgotpassword'>Forgot Your Password?</Link>
+                         </div>
                     </fieldset>
                </form>
           );

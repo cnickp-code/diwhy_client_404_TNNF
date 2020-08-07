@@ -48,8 +48,7 @@ class Registration extends Component {
     return (
       <form className='reg-form'
         onSubmit={this.handleSubmit}>
-        <fieldset> 
-        <legend>Sign Up</legend>
+        <fieldset className='reg-field'> 
         <div role='alert'>
           {error && <p>{error}</p>}
         </div>
@@ -100,7 +99,6 @@ class Registration extends Component {
           <Button className='solo-button' type='submit'>
             Sign up
           </Button>
-          {' '}
           <Link to='/login'>Already have an account?</Link>
         </div>
         </fieldset> 

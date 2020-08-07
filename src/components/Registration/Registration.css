@@ -1,0 +1,11 @@
+.reg-route-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.reg-submit-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

@@ -4,12 +4,13 @@ import React, { Component } from 'react'
 // import Util from '../Util/Util'
 
 class Wanted extends Component {
-    // static contextType = Wantedcontext;
+    // static contextType = WantedContext;
 
     render() {
         return (
             <div className='want-wrapper'>
-
+                <h2>Help Wanted!</h2>
+                <p>This is a placeholder where others can teach how to placeholder</p>
             </div>
         )
     }
