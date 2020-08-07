@@ -1,4 +1,4 @@
-import jwtDecode from '../../node_modules/jwt-decode'
+import jwtDecode from '../../node_modules/jwt-decode/lib'
 import config from '../config'
 
 let _timeoutId

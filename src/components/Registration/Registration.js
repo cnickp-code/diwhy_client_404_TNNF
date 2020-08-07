@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Input, Required, Label, Button } from '../Util/Util'
-import AuthApiService from '../../services/auth-api-service'
+import AuthApiService from '../../Services/auth-api-service'
 import './Registration.css'
 
 class Registration extends Component {
