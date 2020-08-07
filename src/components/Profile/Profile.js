@@ -3,10 +3,6 @@ import { Section } from '../Util/Util';
 import UserContext from '../../contexts/UserContext';
 
 export default class Profile extends Component {
-     state = {
-          user: null
-     };
-
      static defaultProps = {
           match: { params: {} },
      };
@@ -25,7 +21,7 @@ export default class Profile extends Component {
      // };
 
      renderUser() {
-          const { user } = this.state
+          const { user } = this.context
           return <div className='User_Profile_Container'>
                <h2 className='User_Name'>{user.user_name}</h2>
                <h2 className='User_Name'>{user.email}</h2>
