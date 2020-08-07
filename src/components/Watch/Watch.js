@@ -7,8 +7,6 @@ import ScrollArea from 'react-scrollbar';
 export default class Watch extends Component {
     static contextType = DashContext
 
-    state = { threads: null };
-
     //conditional render for if the user has nothing interacted with at the time. y
     //build either a filter or a next button or a scroll
     //onClick link to thread or wanted. link to endpoint with specific thread id or wanted id
