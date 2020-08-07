@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 // import DashContext from '../../contexts/DashContext'
 // import Watch from '../Watch/Watch'
 // import {} from '../Util/Util'
+import NavBar from './Header/NavBar'
 import './Dashboard.css'
 
 class Dashboard extends Component {
@@ -11,6 +12,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div className='dash-wrapper'>
+                <NavBar />
                 <section className='profile-sidebar'>
                     <h2>Profile Sidebar</h2>
                 </section>

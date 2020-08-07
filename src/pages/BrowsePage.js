@@ -35,7 +35,7 @@ export default class Browse extends Component {
           } 
 
           return (
-               <>
+               <div className='Browse_List_Container'>
                     <form className='Browse_List_Filter'>
                          <Label htmlFor='Browse_List_Filter'>Filter By Category</Label>
                          <Input
@@ -49,9 +49,12 @@ export default class Browse extends Component {
                     </form>
 
                     <Section list className='Browse_List_Page'>
-                         { error ? <p className='Red_Alert'>There was an error, please try again</p> : categories.map(artist => <BrowseListItem key={categories.name} category={categories.name}/>) }
+                         {error
+                              ? <p className='Red_Alert'>There was an error, please try again</p>
+                              : categories.map(artist =>
+                                   <BrowseListItem key={categories.name} category={categories.name} />)}
                     </Section>
-               </>
+               </div>
           )
      }
 }
