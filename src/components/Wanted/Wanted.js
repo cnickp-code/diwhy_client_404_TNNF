@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 // import Util from '../Util/Util'
 
 class Wanted extends Component {
-    // static contextType = Wantedcontext;
+    // static contextType = WantedContext;
 
     render() {
         return (

@@ -12,7 +12,7 @@ class Header extends Component {
     this.context.processLogout()
   }
 
-  renderLogoutLink() {
+  renderLoggedInNav() {
     return (
       <div className='details'>
         <span>
