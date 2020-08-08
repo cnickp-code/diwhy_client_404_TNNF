@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import Watch from '../Watch/Watch'
 // import {} from '../Util/Util'
 import './Dashboard.css'
+import CreateNew from './CreateNew/CreateNew'
 
 class Dashboard extends Component {
     // static contextType = DashContext;
@@ -15,8 +16,10 @@ class Dashboard extends Component {
                     <h4>Profile Sidebar</h4>
                 </section>
                 <section className='dash-item'>
+                    <CreateNew />
+                </section>
+                <section className='dash-item'>
                     <h3>Feed</h3>
-                    
                 </section>
                 <section className='dash-item'>
                     <h4>Watch List</h4>

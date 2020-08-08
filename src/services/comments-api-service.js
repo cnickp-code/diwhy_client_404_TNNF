@@ -4,7 +4,7 @@ import TokenService from '../Services/token-service';
 const CommentsApiService = {
 
      getComments() {
-          console.log('get threads ran')
+     console.log('get comments ran')
         return [
             {
                 id: 1,
