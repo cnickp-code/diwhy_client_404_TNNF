@@ -4,8 +4,29 @@ header {
     align-items: center;
 }
 
+.app-name {
+    background-image: url('../../image-assets/header-full-small.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 20vh;
+    width: 100vw;
+    margin-top: 3vh;
+    margin-bottom: -8vh;
+}
+
+.app-sub {
+    background-image: url('../../image-assets/sub-header-small.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 2rem;
+    width: 100vw;
+    margin-top: -2vh;
+    margin-bottom: -2vh;
+}
+
 .head-nav {
     width: 90vw;
+    height: 6vh;
     display: flex;
     flex-direction: row;
     align-items: center;
