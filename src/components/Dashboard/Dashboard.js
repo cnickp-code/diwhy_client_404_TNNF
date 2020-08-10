@@ -20,7 +20,7 @@ class Dashboard extends Component {
         return (
             <div className='dash-wrapper'>
                 <section className='dash-item'>
-                    <h3>Profile Sidebar</h3>
+                    <h3 id='header'>Profile Sidebar</h3>
                     <Sidebar />
                 </section>
                 <section className='dash-item'>
@@ -30,7 +30,7 @@ class Dashboard extends Component {
                     <Feed />
                 </section>
                 <section className='dash-item'>
-                    <h3>Watch List</h3>
+                    <h3 id='header'>Watch List</h3>
                     <Watch />
                 </section>
             </div>

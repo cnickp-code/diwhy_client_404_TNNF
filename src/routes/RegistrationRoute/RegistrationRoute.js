@@ -16,7 +16,7 @@ class RegistrationRoute extends Component {
   render() {
     return (
       <section className='reg-route-section'>
-        <h2 className='reg-log-header'>Sign up</h2>
+        <h2 className='reg-log-header' id='header'>Sign up</h2>
         <Registration
           onRegistrationSuccess={this.handleRegistrationSuccess}
         />

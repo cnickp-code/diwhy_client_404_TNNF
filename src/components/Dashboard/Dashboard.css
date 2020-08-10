@@ -15,7 +15,3 @@
     margin: 8px;
     background-color: #846F51;
 }
-
-.dash-item > *, .scrollarea > *, .watchList > *, .questions > *, h4, form, p, .Help_Wanted_Posting_Form > * {
-    background-color: #846F51;
-}

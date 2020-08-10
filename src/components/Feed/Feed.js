@@ -2,9 +2,14 @@ import React, { Component } from 'react'
 // import { Link } from 'react-router-dom'
 // import DashContext from '../../contexts/DashContext'
 import { Label } from '../Util/Util'
-import './Dashboard.css'
 
 export default class Feed extends Component {
+     constructor(props) {
+          super(props);
+          this.state = { value: '' };
+
+          this.handleChange = this.handleChange.bind(this);
+     }
     // static contextType = DashContext;
 
     handleChange(e) {
@@ -16,7 +21,7 @@ export default class Feed extends Component {
     render() {
         return (
                 <section className='dash-item'>
-                    <h3>Feed</h3>
+                    <h3 id='header'>Feed</h3>
                     <Label htmlFor='Feed_Category_Select'>Filter By Category</Label>
                     <select className='Feed_Category_Select' value={this.state.value} onChange={this.handleChange}>
                               <option value='Woodworking'>Woodworking</option>

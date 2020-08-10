@@ -12,10 +12,10 @@ export default class ProfileSidebar extends Component {
      renderUser() {
           const { user } = this.context
           return <div className='User_Profile_Sidebar_Container'>
-               <h2 className='User_Name'>{user.user_name}</h2>
-               <h2 className='User_Email'>{user.email}</h2>
-               <h2 className='User_Email'>Questions Asked: </h2>
-               <h2 className='User_Email'>Questions Answered: </h2>
+               <h2 className='User_Name' id='header'>{user.user_name}</h2>
+               <h2 className='User_Email' id='header'>{user.email}</h2>
+               <h2 className='User_Email' id='header'>Questions Asked: </h2>
+               <h2 className='User_Email' id='header'>Questions Answered: </h2>
           </div>
      };
 

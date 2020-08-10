@@ -23,7 +23,7 @@ class LoginRoute extends Component {
   render() {
     return (
       <section className='log-route-section'>
-        <h2 className='reg-log-header'>Login</h2>
+        <h2 className='reg-log-header' id='header'>Login</h2>
         <Login
           onLoginSuccess={this.handleLoginSuccess}
         />

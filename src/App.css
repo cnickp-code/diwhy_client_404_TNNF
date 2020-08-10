@@ -1,12 +1,25 @@
+
+
 * {
      box-sizing: border-box;
-     background-color: #FFFBEB;
+}
+
+body {
+     background-color: #FFF7E0;
      color: #231F20;
+     font-family: 'garage-gothic', sans-serif;
+     font-style: normal;
+     font-weight: 700;
 }
 
 a {
      text-decoration: none;
      color: #231F20;
+     font-family: 'Impact', bold;
+}
+
+#header {
+     font-family: 'Impact', bold;
 }
 
 section {
