@@ -4,7 +4,7 @@ import TokenService from '../Services/token-service';
 const CategoryService = {
      
      getCategories() {
-          return fetch(`${config.API_ENDPOINT}/api/categories`, {
+          return fetch(`${config.API_ENDPOINT}/categories`, {
                headers: {
                     'authorization': `bearer ${TokenService.getAuthToken()}`,
                },
@@ -17,7 +17,7 @@ const CategoryService = {
      },
 
      getCategory(id) {
-          return fetch(`${config.API_ENDPOINT}/api/categories/${id}`, {
+          return fetch(`${config.API_ENDPOINT}/categories/${id}`, {
                headers: {
                     'authorization': `bearer ${TokenService.getAuthToken()}`,
                },
