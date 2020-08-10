@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Label, Input, Section } from '../components/Util/Util';
 import UserContext from '../contexts/UserContext'
 import CategoryService from '../Services/category-api-service'
-import BrowseListItem from '../components/Browse/BrowseItem'
+import BrowseItem from '../components/Browse/BrowseItem'
+import '../components/Browse/Browse.css'
 
 export default class BrowsePage extends Component {
 
@@ -16,9 +17,22 @@ export default class BrowsePage extends Component {
      componentDidMount() {
           this.context.clearError()
           CategoryService.getCategories()
-               .then(this.context.setCategories)
-          .catch(this.context.setError)
+               .then((data) => {
+                    this.context.setCatergories(data)
+               })
+               // .then(categories => {
+               //      this.setState({
+               //           name: categories.name,
+               //           id: categories.id
+               //      });
+               // })
+               .catch(this.context.setError)
      }
+
+     // CategoryService.getCategories()
+     // .then((data) => {
+     //   this.setCategories(data);
+     // })
 
      editSearchTerm = (e) => {
           this.setState({
@@ -50,9 +64,8 @@ export default class BrowsePage extends Component {
 
                     <Section list className='Browse_List_Page'>
                          {error
-                              ? <p className='Red_Alert'>There was an error, please try again</p>
-                              : categories.map(artist =>
-                                   <BrowseListItem key={categories.name} category={categories.name} />)}
+                         ? (<p className='Red_Alert'>There was an error, please try again</p>) 
+                         : (categories.map(category => <BrowseItem key={category.id} category={category.name} />))}
                     </Section>
                </div>
           )

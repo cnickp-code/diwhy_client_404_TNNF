@@ -2,11 +2,14 @@ import React, { Component } from 'react'
 import AuthApiService from '../Services/auth-api-service'
 import TokenService from '../Services/token-service'
 import IdleService from '../Services/idle-service'
+// import CategoryService from '../Services/category-api-service'
 
 const UserContext = React.createContext({
   user: {},
   error: null,
   searchTerm: '',
+  categories: [],
+  setCategories: () => {},
   setError: () => {},
   clearError: () => {},
   setUser: () => {},
@@ -61,6 +64,10 @@ export class UserProvider extends Component {
     this.setState({ user })
   }
 
+  setCategories = categories => {
+    this.setState({ categories })
+  }
+
   processLogin = authToken => {
     TokenService.saveAuthToken(authToken)
     const jwtPayload = TokenService.parseAuthToken()
@@ -111,6 +118,7 @@ export class UserProvider extends Component {
       setUser: this.setUser,
       processLogin: this.processLogin,
       processLogout: this.processLogout,
+      setCategories: this.setCategories
     }
     return (
       <UserContext.Provider value={value}>

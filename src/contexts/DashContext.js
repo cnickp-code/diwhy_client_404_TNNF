@@ -4,11 +4,14 @@ import DashApiService from '../Services/dash-api-service';
 const DashContext = React.createContext({
     user: {},
     thread: {},
+    catergories: [],
     threads: [],
     comments: [],
     error: null,
     setError: () => {},
     clearError: () => {},
+    setCategories: () => {},
+
 })
 
 export default DashContext
