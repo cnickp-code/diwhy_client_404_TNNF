@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from '../../contexts/UserContext';
-import TokenService from '../../Services/token-service';
 import AuthApiService from '../../Services/auth-api-service';
 import { Button, Input, Label } from '../Util/Util';
 import './Login.css'
@@ -30,10 +29,10 @@ export default class Login extends React.Component {
                .then(res => {
                     email.value = ''
                     password.value = ''
-                    TokenService.saveAuthToken(res.authToken)
+                    this.context.processLogin(res.authToken)
                     this.props.onLoginSuccess()
                })
-               .catch(res => {
+               .catch(res => {     
                     this.setState({ error: res.error })
                });
      };

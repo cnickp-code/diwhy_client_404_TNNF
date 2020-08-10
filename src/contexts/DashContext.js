@@ -46,8 +46,6 @@ export class DashProvider extends Component {
             <DashContext.Provider value={value}>
                 {this.props.children}
             </DashContext.Provider>
-
-
         )
     }
 }

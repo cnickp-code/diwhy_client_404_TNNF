@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Label, Input } from '../Util/Util'
-// import HelpWantedPostingForm from './HelpWantedPostingForm'
-// import ProjectSuccessStoryForm from './ProjectSuccessStoryForm'
-// import QuestionForm from './QuestionForm'
+import { Label } from '../Util/Util'
+import HelpWantedPostingForm from './HelpWantedPostingForm'
+import ProjectSuccessStoryForm from './ProjectSuccessStoryForm'
+import QuestionForm from './QuestionForm'
 
 
 export default class CreateNew extends Component {
@@ -11,7 +11,6 @@ export default class CreateNew extends Component {
           this.state = { value: '' };
 
           this.handleChange = this.handleChange.bind(this);
-          this.handleSubmit = this.handleSubmit.bind(this);
      }
 
      handleChange(e) {
@@ -20,9 +19,16 @@ export default class CreateNew extends Component {
           })
      }
 
-     handleSubmit(e) {
-          e.preventDefault()
-          //change the form that renders based on the value submitted
+     renderSwitch() {
+          switch (this.state.value) {
+               case 'helpwanted':
+                    return <HelpWantedPostingForm />;
+               case 'question':
+                    return <QuestionForm />;
+               case 'success':
+                    return <ProjectSuccessStoryForm />;
+               default: return `${this.state.value}`
+          }
      }
 
      render() {
@@ -33,12 +39,13 @@ export default class CreateNew extends Component {
                          Create New:
                     </Label> 
                     <select value={this.state.value} onChange={this.handleChange}>
+                         <option value=''>Create New</option>
                          <option value='helpwanted'>Help Wanted Listing</option>
                          <option value='question'>Question</option>
                          <option value='success'>Success Story</option>
                     </select>
-                     <Input type="submit" value="Submit" />
                     </form>
+                    {this.renderSwitch(this.state.value)}
                </div>
           )
      }
