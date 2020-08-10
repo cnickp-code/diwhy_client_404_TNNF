@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import Watch from '../Watch/Watch'
 // import {} from '../Util/Util'
 import './Dashboard.css'
-import CreateNew from './CreateNew/CreateNew'
+import CreateNew from '../CreateNew/CreateNew'
 
 class Dashboard extends Component {
     // static contextType = DashContext;
