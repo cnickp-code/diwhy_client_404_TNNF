@@ -2,27 +2,35 @@ import React, { Component } from 'react'
 // import { Link } from 'react-router-dom'
 // import DashContext from '../../contexts/DashContext'
 import Watch from '../Watch/Watch'
-// import {} from '../Util/Util'
+import Feed  from '../Feed/Feed'
+import ProfileSidebar from '../Profile/ProfileSidebar'
 import './Dashboard.css'
 import CreateNew from '../CreateNew/CreateNew'
 
 class Dashboard extends Component {
     // static contextType = DashContext;
 
+    handleChange(e) {
+        this.setState({
+            value: e.target.value,
+        })
+     }
+
     render() {
         return (
             <div className='dash-wrapper'>
                 <section className='dash-item'>
-                    <h4>Profile Sidebar</h4>
+                    <h3>Profile Sidebar</h3>
+                    <ProfileSidebar />
                 </section>
                 <section className='dash-item'>
                     <CreateNew />
                 </section>
                 <section className='dash-item'>
-                    <h3>Feed</h3>
+                    <Feed />
                 </section>
                 <section className='dash-item'>
-                    <h4>Watch List</h4>
+                    <h3>Watch List</h3>
                     <Watch />
                 </section>
             </div>
