@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-export default class BrowseCategoryItem extends Component {
+export default class BrowseItem extends Component {
   render() {
     const { categories } = this.props;
     return (
