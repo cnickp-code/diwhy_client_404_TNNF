@@ -34,10 +34,8 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <Link to='/'>
-          <h1 className='app-name'>D I W H Y</h1>
-        </Link>
-        {/* <homeSVG /> */}
+        <Link className='app-name' to='/' />
+        <div className='app-sub'></div>
         {TokenService.hasAuthToken()
           ? this.renderLoggedInNav()
           : this.renderLoginLink()}

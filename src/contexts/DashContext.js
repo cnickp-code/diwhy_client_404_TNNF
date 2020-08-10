@@ -24,10 +24,17 @@ export class DashProvider extends Component {
     componentDidMount() {
         const threads = DashApiService.getThreads();
         console.log(threads);
-
+        
         this.setState({
             threads
         })
+
+        // DashApiService.getThreads()
+        //     .then(threads => {
+        //         this.setState({
+        //             threads
+        //         })
+        //     })
         
     }
 

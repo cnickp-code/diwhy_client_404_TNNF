@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
-/* .dash-item {
+.dash-item {
     flex: 1 1 150px;
     flex: 0 1 150px;
     list-style-type: none;
     margin: 8px;
-} */
+}
