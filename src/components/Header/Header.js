@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../Services/token-service'
 import AppContext from '../../contexts/AppContext'
+import MobileNavInput from './MobileNavInput'
 import './Header.css'
 
 class Header extends Component {
@@ -18,6 +19,11 @@ class Header extends Component {
         <Link to='/wanted' className='Desktop_NavBar_Item'>Help Wanted</Link>
         <Link to='/profile' className='Desktop_NavBar_Item'>Profile</Link>
         <Link onClick={this.handleLogoutClick} to='/login'>Logout</Link>
+
+        <Link to='/profile' className='Mobile_NavBar_Item'>User</Link>
+        <MobileNavInput />
+        <Link to='/helpwanted' className='Mobile_NavBar_Item'>HW</Link>
+        {/*  ^ will be hidden by media query (display: none) */}
       </nav>
     )
   }

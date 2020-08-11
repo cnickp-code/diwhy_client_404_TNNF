@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Textarea, Label } from '../Util/Util';
+import { Button, Textarea, Label, Input } from '../Util/Util';
 
 export default class ProjectSuccessStoryForm extends Component {
      constructor(props) {
@@ -35,6 +35,8 @@ export default class ProjectSuccessStoryForm extends Component {
                               <option value='GeneralCrafts'>General Crafts</option>
                               <option value='Outdoorsmanship'>Outdoorsmanship</option>
                          </select>
+                         <Label htmlFor='Project_Success_Story_Title_Input'>Project Title</Label>
+                         <Input htmlFor='Project_Success_Story_Title_Input' placeholder='Project Title' name='Project_Success_Story_Title_Input' id='Project_Success_Story_Title_Input' />
                          <Label htmlFor='Project_Success_Story_Form_Textarea'>Project Description</Label>
                          <Textarea placeholder='Ask a question...' name='Project_Success_Story_Form_Textarea' id='Project_Success_Story_Form_Textarea' />
                          <Button type='submit'>Submit</Button>

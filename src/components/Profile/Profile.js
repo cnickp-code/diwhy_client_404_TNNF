@@ -37,6 +37,7 @@ export default class Profile extends Component {
           else {
                content = this.renderUser()
           }
+          //Add way to select expertise, and degree of expertise
           return (
                <Section className='Profile'>
                     {content}
@@ -51,6 +52,7 @@ export default class Profile extends Component {
                               <option value='GeneralCrafts'>General Crafts</option>
                               <option value='Outdoorsmanship'>Outdoorsmanship</option>
                          </select>
+                         
                     </div>
                     <div className='profile-projects'>
                          

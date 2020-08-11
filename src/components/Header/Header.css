@@ -4,6 +4,7 @@ header {
     align-items: center;
     background-color: #E2BE7E;
     border-bottom: #E0CAA9 5px solid;
+    width: 100vw;
 }
 
 .app-name {
