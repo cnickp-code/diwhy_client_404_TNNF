@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Header from '../src/components/Header/Header'
+import Footer from '../src/components/Footer/Footer'
 import PrivateRoute from '../src/routes/PrivateRoute/PrivateRoute'
 import PublicRoute from '../src/routes/PublicRoute/PublicRoute'
 import RegistrationRoute from '../src/routes/RegistrationRoute/RegistrationRoute'
@@ -95,6 +96,7 @@ export default class App extends Component {
             />
           </Switch>
         </main>
+        <Footer />
       </div>
     );
   }
