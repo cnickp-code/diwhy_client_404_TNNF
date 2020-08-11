@@ -3,11 +3,11 @@ import EditUserForm from '../Components/Forms/EditUserForm';
 import { Section } from '../Components/Utils/Utils';
 import { Redirect } from 'react-router-dom';
 import TokenService from '../Services/token-service';
-import UserContext from '../../context/UserContext';
+import AppContext from '../../context/AppContext';
 
 export default class EditProfilePage extends React.Component {
 
-     static contextType = UserContext;
+     static contextType = AppContext;
 
      static defaultProps = {
           history: {

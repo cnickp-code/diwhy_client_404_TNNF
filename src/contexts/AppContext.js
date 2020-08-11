@@ -4,11 +4,14 @@ import TokenService from '../Services/token-service'
 import IdleService from '../Services/idle-service'
 // import CategoryService from '../Services/category-api-service'
 
-const UserContext = React.createContext({
+const AppContext = React.createContext({
   user: {},
   error: null,
   searchTerm: '',
+  thread: {},
   categories: [],
+  threads: [],
+  comments: [],
   setCategories: () => {},
   setError: () => {},
   clearError: () => {},
@@ -17,9 +20,9 @@ const UserContext = React.createContext({
   processLogout: () => {},
 })
 
-export default UserContext
+export default AppContext
 
-export class UserProvider extends Component {
+export class AppProvider extends Component {
   constructor(props) {
     super(props)
     const state = { user: {}, error: null }
@@ -65,6 +68,7 @@ export class UserProvider extends Component {
   }
 
   setCategories = categories => {
+    console.log(this.state)
     this.setState({ categories })
   }
 
@@ -111,8 +115,7 @@ export class UserProvider extends Component {
 
   render() {
     const value = {
-      user: this.state.user,
-      error: this.state.error,
+      ...this.state,
       setError: this.setError,
       clearError: this.clearError,
       setUser: this.setUser,
@@ -121,9 +124,9 @@ export class UserProvider extends Component {
       setCategories: this.setCategories
     }
     return (
-      <UserContext.Provider value={value}>
+      <AppContext.Provider value={value}>
         {this.props.children}
-      </UserContext.Provider>
+      </AppContext.Provider>
     )
   }
 }

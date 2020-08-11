@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Section, Label } from '../Util/Util';
-import UserContext from '../../contexts/UserContext';
+import AppContext from '../../contexts/AppContext';
 
 export default class Profile extends Component {
      constructor(props) {
@@ -10,7 +10,7 @@ export default class Profile extends Component {
           this.handleChange = this.handleChange.bind(this);
      }
      
-     static contextType = UserContext;
+     static contextType = AppContext;
 
      handleChange(e) {
           this.setState({

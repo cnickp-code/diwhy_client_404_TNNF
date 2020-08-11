@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Label, Input, Section } from '../components/Util/Util';
-import UserContext from '../contexts/UserContext'
+import AppContext from '../contexts/AppContext'
 import CategoryService from '../Services/category-api-service'
 import BrowseItem from '../components/Browse/BrowseItem'
 import '../components/Browse/Browse.css'
@@ -12,20 +12,15 @@ export default class BrowsePage extends Component {
           categories: []
      };
 
-     static contextType = UserContext;
+     static contextType = AppContext;
 
      componentDidMount() {
           this.context.clearError()
           CategoryService.getCategories()
                .then((data) => {
-                    this.context.setCatergories(data)
+                    console.log(data)
+                    this.context.setCategories(data)
                })
-               // .then(categories => {
-               //      this.setState({
-               //           name: categories.name,
-               //           id: categories.id
-               //      });
-               // })
                .catch(this.context.setError)
      }
 
@@ -43,7 +38,7 @@ export default class BrowsePage extends Component {
      render() {
           const { error } = this.context;
           let { categories = [] } = this.context
-
+          console.log(categories)
           if (this.state.searchTerm !== '') {
                categories = categories.filter(category => category.name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
           } 
@@ -65,7 +60,7 @@ export default class BrowsePage extends Component {
                     <Section list className='Browse_List_Page'>
                          {error
                          ? (<p className='Red_Alert'>There was an error, please try again</p>) 
-                         : (categories.map(category => <BrowseItem key={category.id} category={category.name} />))}
+                         : (categories.map(category => <BrowseItem key={category.id} category={category} />))}
                     </Section>
                </div>
           )

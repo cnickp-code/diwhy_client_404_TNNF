@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Login from '../../components/Login/Login'
-import UserContext from '../../contexts/UserContext'
+import AppContext from '../../contexts/AppContext'
 
 class LoginRoute extends Component {
   static defaultProps = {
@@ -10,7 +10,7 @@ class LoginRoute extends Component {
     },
   }
 
-  static contextType = UserContext
+  static contextType = AppContext
 
   handleLoginSuccess = () => {
     const { location, history } = this.props

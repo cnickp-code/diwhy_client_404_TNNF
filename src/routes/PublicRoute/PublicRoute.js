@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
-import UserContext from '../../contexts/UserContext'
+import AppContext from '../../contexts/AppContext'
 
 export default function PublicOnlyRoute({ component, ...props }) {
   const Component = component
@@ -8,13 +8,13 @@ export default function PublicOnlyRoute({ component, ...props }) {
     <Route
       {...props}
       render={componentProps => (
-        <UserContext.Consumer>
-          {userContext =>
-            !!userContext.user.userId
+        <AppContext.Consumer>
+          {AppContext =>
+            !!AppContext.user.userId
               ? <Redirect to={'/'} />
               : <Component {...componentProps} />
           }
-        </UserContext.Consumer>
+        </AppContext.Consumer>
       )}
     />
   )

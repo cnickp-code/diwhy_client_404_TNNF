@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import UserContext from '../../contexts/UserContext';
+import AppContext from '../../contexts/AppContext';
 import AuthApiService from '../../Services/auth-api-service';
 import { Button, Input, Label } from '../Util/Util';
 import './Login.css'
@@ -11,7 +11,7 @@ export default class Login extends React.Component {
           onLoginSuccess: () => { }
      };
 
-     static contextType = UserContext
+     static contextType = AppContext
 
      state = { error: null };
 
