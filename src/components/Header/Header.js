@@ -22,7 +22,7 @@ class Header extends Component {
 
         <Link to='/profile' className='Mobile_NavBar_Item'>User</Link>
         <MobileNavInput />
-        <Link to='/helpwanted' className='Mobile_NavBar_Item'>HW</Link>
+        <Link to='/wanted' className='Mobile_NavBar_Item'>HW</Link>
         {/*  ^ will be hidden by media query (display: none) */}
       </nav>
     )
