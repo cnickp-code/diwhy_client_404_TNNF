@@ -14,6 +14,8 @@ const AppContext = React.createContext({
   comments: [],
   postings: [],
   setCategories: () => {},
+  setPostings: () => {},
+  setThreads: () => {},
   setError: () => {},
   clearError: () => {},
   setUser: () => {},
@@ -76,6 +78,11 @@ export class AppProvider extends Component {
   setThreads = threads => {
     console.log(this.state)
     this.setState({ threads })
+  }
+
+  setPostings = postings => {
+    console.log(this.state)
+    this.setState({ postings })
   }
 
   processLogin = authToken => {
