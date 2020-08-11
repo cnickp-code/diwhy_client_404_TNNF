@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import AppContext from '../../contexts/AppContext';
 import { Link } from 'react-router-dom'
 import ScrollArea from 'react-scrollbar';
+import ThreadsApiService from '../../Services/threads-api-service';
+
 
 
 export default class Watch extends Component {
+    state = {
+        threads: [],
+    };
+
     static contextType = AppContext
 
     //conditional render for if the user has nothing interacted with at the time. y
@@ -13,10 +19,18 @@ export default class Watch extends Component {
     //onClick={} whatever/whatever/threads/${threadId}
     //elsewhere, on specific thread or wanted posting, add a watch/unwatch toggle
 
-    
+    componentDidMount() {
+        this.context.clearError()
+        const threads = ThreadsApiService.getThreads()
+        this.setState({ threads })
+            // .then((data) => {
+            //     console.log(data)
+            //     this.context.setThreads(data)
+            // })
+    }
 
     render() {
-        const { threads } = this.context;
+        const { threads } = this.state; //change to context later when api works
         console.log(threads)
         
         const threadList = threads.map(thread => {

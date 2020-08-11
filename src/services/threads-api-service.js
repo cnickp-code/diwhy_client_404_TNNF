@@ -3,7 +3,6 @@ import TokenService from '../Services/token-service';
 
 const ThreadsApiService = {
      getThreads() {
-          console.log('get threads ran')
           return [
                {
                     id: 1,

@@ -12,6 +12,7 @@ const AppContext = React.createContext({
   categories: [],
   threads: [],
   comments: [],
+  postings: [],
   setCategories: () => {},
   setError: () => {},
   clearError: () => {},
@@ -25,7 +26,7 @@ export default AppContext
 export class AppProvider extends Component {
   constructor(props) {
     super(props)
-    const state = { user: {}, error: null }
+    const state = { user: {}, error: null, threads: [], postings: [], }
 
     const jwtPayload = TokenService.parseAuthToken()
 
@@ -70,6 +71,11 @@ export class AppProvider extends Component {
   setCategories = categories => {
     console.log(this.state)
     this.setState({ categories })
+  }
+
+  setThreads = threads => {
+    console.log(this.state)
+    this.setState({ threads })
   }
 
   processLogin = authToken => {
