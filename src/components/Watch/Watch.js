@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import DashContext from '../../contexts/DashContext';
+import AppContext from '../../contexts/AppContext';
 import { Link } from 'react-router-dom'
 import ScrollArea from 'react-scrollbar';
 
 
 export default class Watch extends Component {
-    static contextType = DashContext
+    static contextType = AppContext
 
     //conditional render for if the user has nothing interacted with at the time. y
     //build either a filter or a next button or a scroll

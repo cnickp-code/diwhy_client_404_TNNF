@@ -1,6 +1,6 @@
 import React from 'react';
 import Login from '../Components/Login/Login';
-import UserContext from '../../context/UserContext';
+import AppContext from '../../context/AppContext';
 import { Section } from '../Components/Util/Util';
 
 
@@ -12,7 +12,7 @@ export default class LoginPage extends React.Component {
           },
      };
 
-     static contextType = UserContext
+     static contextType = AppContext
 
      handleLoginSuccess = () => {
           const { location, history } = this.props;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Profile from '../../components/Profile/Profile'
-// import { UserProvider } from "../../contexts/UserContext";
+// import { AppProvider } from "../../contexts/AppContext";
 
 class ProfileRoute extends Component {
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import { Link } from 'react-router-dom'
-// import DashContext from '../../contexts/DashContext'
+// import AppContext from '../../contexts/AppContext'
 import { Label } from '../Util/Util'
 
 export default class Feed extends Component {
@@ -10,7 +10,7 @@ export default class Feed extends Component {
 
           this.handleChange = this.handleChange.bind(this);
      }
-    // static contextType = DashContext;
+    // static contextType = AppContext;
 
     handleChange(e) {
         this.setState({

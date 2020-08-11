@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import { Link } from 'react-router-dom'
-// import DashContext from '../../contexts/DashContext'
+// import AppContext from '../../contexts/AppContext'
 import Watch from '../Watch/Watch'
 import Feed  from '../Feed/Feed'
 import Sidebar from '../Profile/Sidebar'
@@ -8,7 +8,7 @@ import './Dashboard.css'
 import CreateNew from '../CreateNew/CreateNew'
 
 class Dashboard extends Component {
-    // static contextType = DashContext;
+    // static contextType = AppContext;
 
     handleChange(e) {
         this.setState({

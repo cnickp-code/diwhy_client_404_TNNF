@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Section } from '../Util/Util';
-import UserContext from '../../contexts/UserContext';
+import AppContext from '../../contexts/AppContext';
 
 export default class ProfileSidebar extends Component {
      static defaultProps = {
           match: { params: {} },
      };
      
-     static contextType = UserContext;
+     static contextType = AppContext;
 
      renderUser() {
           const { user } = this.context

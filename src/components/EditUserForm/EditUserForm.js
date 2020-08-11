@@ -4,7 +4,7 @@ import AuthApiService from '../../Services/auth-api-service';
 import TokenService from '../../Services/token-service';
 
 import config from '../../config';
-import UserContext from '../../contexts/UserContext';
+import AppContext from '../../contexts/AppContext';
 
 export default class EditForm extends React.Component {
      static defaultProps = {
@@ -12,7 +12,7 @@ export default class EditForm extends React.Component {
           handleClickCancel: () => { }
      };
 
-     static contextType = UserContext;
+     static contextType = AppContext;
 
      state = {
           error: null,
