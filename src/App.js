@@ -11,6 +11,7 @@ import WantedRoute from '../src/routes/WantedRoute/WantedRoute'
 import NotFoundRoute from '../src/routes/NotFoundRoute/NotFoundRoute'
 import ProfileRoute from '../src/routes/ProfileRoute/ProfileRoute'
 import BrowsePage from '../src/pages/BrowsePage'
+import HelpWantedItemPage from '../src/pages/HelpWantedItemPage'
 import './App.css'
 
 export default class App extends Component {
@@ -74,6 +75,10 @@ export default class App extends Component {
             <PrivateRoute
               path={'/wanted'}
               component={WantedRoute}
+            />
+            <PrivateRoute
+              path={'/wanted-item'}
+              component={HelpWantedItemPage}
             />
             <PrivateRoute
               path={'/browse'}

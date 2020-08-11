@@ -13,6 +13,7 @@ const AppContext = React.createContext({
   threads: [],
   comments: [],
   postings: [],
+  singlePosting: {},
   setCategories: () => {},
   setPostings: () => {},
   setThreads: () => {},
@@ -28,7 +29,7 @@ export default AppContext
 export class AppProvider extends Component {
   constructor(props) {
     super(props)
-    const state = { user: {}, error: null, threads: [], postings: [], }
+    const state = { user: {}, error: null, threads: [], postings: [], singlePosting: {} }
 
     const jwtPayload = TokenService.parseAuthToken()
 
@@ -55,6 +56,12 @@ export class AppProvider extends Component {
   componentWillUnmount() {
     IdleService.unRegisterIdleResets()
     TokenService.clearCallbackBeforeExpiry()
+  }
+
+  setSinglePosting = (item) => {
+    this.setState({
+      singlePosting: item
+    })
   }
 
   setError = error => {
@@ -134,7 +141,8 @@ export class AppProvider extends Component {
       setUser: this.setUser,
       processLogin: this.processLogin,
       processLogout: this.processLogout,
-      setCategories: this.setCategories
+      setCategories: this.setCategories,
+      setSinglePosting: this.setSinglePosting,
     }
     return (
       <AppContext.Provider value={value}>
