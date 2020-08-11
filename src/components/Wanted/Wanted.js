@@ -1,20 +1,31 @@
 import React, { Component } from 'react'
 import './Wanted.css'
 // import { Link } from 'react-router-dom'
-// import Wantedcontext from '../../contexts/WantedContext'
+import WantedContext from '../../contexts/WantedContext'
 // import Util from '../Util/Util'
 
 export default class Wanted extends Component {
-    // static contextType = WantedContext;
+    static contextType = WantedContext;
 
     render() {
+        const { postings } = this.context;
+
+        const postingList = postings.map(posting => {
+            return (
+                <div key={posting.id}>
+                        <p> {posting.content} </p>
+                   
+                </div>
+            )
+        })
         return (
             <div id='want-wrapper'>
                 <div className='note sticky'>
                     <div className='tack'></div>
-                    <p className='note-content'>Claw Hammer or Ball-Peen Hammer? Oh and I need help building a shelf.</p>
+                    {postingList}
+                    {/* <p className='note-content'>Claw Hammer or Ball-Peen Hammer? Oh and I need help building a shelf.</p> */}
                 </div>
-                <div className='note sticky'>
+                {/* <div className='note sticky'>
                     <div className='tack'></div>
                     <p className='note-content'>20 Bucks, 1 hour... you, me, and a room full of wood.</p>
                 </div>
@@ -33,7 +44,7 @@ export default class Wanted extends Component {
                 <div className='note sticky'>
                     <div className='tack'></div>
                     <p className='note-content'>Please help, I tried to fix my toilet and now my house is flooding!</p>
-                </div>
+                </div> */}
             </div>
         )
     }
