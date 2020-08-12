@@ -20,6 +20,7 @@ header {
 
 header a {
     background-color: #E2BE7E;
+    margin-right: 10px;
 }
 
 .app-sub {
@@ -37,6 +38,7 @@ header a {
     width: 90vw;
     height: 6vh;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
