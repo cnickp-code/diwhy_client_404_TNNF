@@ -10,11 +10,11 @@ import CreateNew from '../CreateNew/CreateNew'
 class Dashboard extends Component {
     static contextType = AppContext;
 
-    handleChange(e) {
+    handleChange = e => {
         this.setState({
             value: e.target.value,
         })
-     }
+    }
 
     render() {
         return (

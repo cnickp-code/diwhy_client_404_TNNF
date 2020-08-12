@@ -33,8 +33,9 @@ export default class ProjectSuccessStoryForm extends Component {
                               <option value='Metalworking'>Metalworking</option>
                               <option value='Needlecraft'>Needlecraft</option>
                               <option value='Automotive'>Automotive</option>
-                              <option value='HomeImprovement'>Home Improvement</option>
-                              <option value='GeneralCrafts'>General Crafts</option>
+                              <option value='Home Improvement'>Home Improvement</option>
+                              <option value='General Crafts'>General Crafts</option>
+                              <option value='Electronics'>Electronics</option>
                               <option value='Outdoorsmanship'>Outdoorsmanship</option>
                          </select>
                          <Label htmlFor='Project_Success_Story_Title_Input'>Project Title</Label>

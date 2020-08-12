@@ -11,9 +11,8 @@ export default class Feed extends Component {
         this.state = {
             value: '',
             threads: []
+            //checked: false 
         };
-
-        this.handleChange = this.handleChange.bind(this);
     }
 
     static contextType = AppContext
@@ -24,20 +23,48 @@ export default class Feed extends Component {
         this.setState({ threads })
     }
 
-    handleChange(e) {
+    handleChange = e => {
         this.setState({
             value: e.target.value,
         })
     }
 
-//handleFilterChange
-//receive value from state
-//filter feed posts by value in render?
-//    {postings.filter(posting => posting.category_id === value)).map(filteredPosting => (
-//     <li>
-//       {filteredPosting}
-//     </li>
-//    ))}
+    //handleFilterChange
+    //receive value from state
+    //filter feed posts by value in render?
+    //    {postings.filter(posting => posting.category_id === value)).map(filteredPosting => (
+    //     <li>
+    //       {filteredPosting}
+    //     </li>
+    //    ))}
+
+    //the user who asks the question is responsible for labelling the question answered or unanswered
+    //
+    //handleLikeCheckboxChange = event =>
+    //this.setState({ checked: event.target.checked })
+    //
+    //handleWatchCheckboxChange = event =>
+    //this.setState({ 
+    //  checked: event.target.checked
+    //  added: true
+    //})
+    //
+    // render() {
+    // return (
+    // <div>
+    //     <label>
+    //       <Checkbox checked={this.state.checked} onChange={this.handleLikeCheckboxChange} />
+    //       <span>Like</span>
+    //     </label>
+    // </div>
+    // <div>
+    //     <label>
+    //       <Checkbox checked={this.state.checked} onChange={this.handleWatchCheckboxChange} />
+    //       <span>Add To Watch List</span>
+    //     </label>
+    // </div>
+    // )
+    // }
 
     render() {
         const { threads } = this.state;
