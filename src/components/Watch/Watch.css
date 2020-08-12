@@ -1,0 +1,13 @@
+.wl-main-container {
+    width: 80%;
+    min-height: fit-content;
+    text-align: center;
+    border: 1px solid black;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+li {
+    list-style: none;
+    text-align: left;
+}

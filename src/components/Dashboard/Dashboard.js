@@ -30,7 +30,6 @@ class Dashboard extends Component {
                     <Feed />
                 </section>
                 <section className='dash-item'>
-                    <h3 id='header'>Watch List</h3>
                     <Watch />
                 </section>
             </div>
