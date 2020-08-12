@@ -34,8 +34,9 @@ export default class HelpWantedPostingForm extends Component {
                               <option value='Metalworking'>Metalworking</option>
                               <option value='Needlecraft'>Needlecraft</option>
                               <option value='Automotive'>Automotive</option>
-                              <option value='HomeImprovement'>Home Improvement</option>
-                              <option value='GeneralCrafts'>General Crafts</option>
+                              <option value='Home Improvement'>Home Improvement</option>
+                              <option value='General Crafts'>General Crafts</option>
+                              <option value='Electionics'>Electionics</option>
                               <option value='Outdoorsmanship'>Outdoorsmanship</option>
                          </select>
                          {/* Selection of category affects the handleSubmit */}

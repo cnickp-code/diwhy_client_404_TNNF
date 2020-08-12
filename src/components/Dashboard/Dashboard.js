@@ -20,7 +20,6 @@ class Dashboard extends Component {
         return (
             <div className='dash-wrapper'>
                 <section className='dash-item'>
-                    <h3 id='header'>Profile Sidebar</h3>
                     <Sidebar />
                 </section>
                 <section className='dash-item'>
