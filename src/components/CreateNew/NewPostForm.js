@@ -41,7 +41,6 @@ class NewPostForm extends React.Component {
             date_created: date,
             user_id: userId
         }
-        console.log(newThread)
 
         ThreadsApiService.postThread(newThread)
             .then(thread => {
@@ -49,7 +48,6 @@ class NewPostForm extends React.Component {
                 content.value = '';
                 category.value = '1';
 
-                console.log('posted', thread)
                 ThreadsApiService.getThreads()
                     .then(threads => {
                         this.context.setThreads(threads);
