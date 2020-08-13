@@ -6,6 +6,8 @@ import MobileNavInput from './MobileNavInput'
 import './Header.css'
 
 class Header extends Component {
+  
+  
   static contextType = AppContext
 
   handleLogoutClick = () => {
@@ -20,7 +22,7 @@ class Header extends Component {
         <Link to='/profile' className='Desktop_NavBar_Item'>Profile</Link>
         <Link onClick={this.handleLogoutClick} to='/login'>Logout</Link>
 
-        <Link to='/profile' className='Mobile_NavBar_Item'>User</Link>
+        <Link to='/profile' className='Mobile_NavBar_Item'>Profile</Link>
         <MobileNavInput />
         <Link to='/wanted' className='Mobile_NavBar_Item'>HW</Link>
         {/*  ^ will be hidden by media query (display: none) */}

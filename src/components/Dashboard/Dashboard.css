@@ -19,3 +19,21 @@
 section {
     width: 80vw;
 }
+
+.tab-list {
+    border-bottom: 1px solid #231F20;
+    padding-left: 0;
+}
+
+.tab-list-item {
+    display: inline-block;
+    list-style: none;
+    margin-bottom: -1px;
+    padding: 0.5rem 0.75rem;
+}
+
+.tab-list-active {
+    background-color: #FFF7E0;
+    border: solid #231F20;
+    border-width: 1px 1px 0 1px;
+}
