@@ -22,12 +22,14 @@ class Dashboard extends Component {
                 <section className='dash-item'>
                     <Sidebar />
                 </section>
-                <section className='dash-item'>
-                    <CreateNew />
-                </section>
-                <section className='dash-item'>
-                    <Feed />
-                </section>
+                <div className='dash-main'>
+                    <section className='dash-item'>
+                        <CreateNew />
+                    </section>
+                    <section className='dash-item'>
+                        <Feed />
+                    </section>
+                </div>
                 <section className='dash-item'>
                     <Watch />
                 </section>
