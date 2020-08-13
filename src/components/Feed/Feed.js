@@ -10,7 +10,6 @@ export default class Feed extends Component {
         super(props);
         this.state = {
             value: '',
-            threads: []
             //checked: false 
         };
     }
@@ -19,8 +18,10 @@ export default class Feed extends Component {
 
     componentDidMount() {
         this.context.clearError()
-        const threads = ThreadsApiService.getThreads()
-        this.setState({ threads })
+        ThreadsApiService.getThreads()
+            .then(threads => {
+                this.context.setThreads(threads)
+            })
     }
 
     handleChange = e => {
@@ -67,7 +68,7 @@ export default class Feed extends Component {
     // }
 
     render() {
-        const { threads } = this.state;
+        const { threads } = this.context;
         console.log(threads)
 
         const threadsList = threads.map(thread => {
@@ -77,7 +78,7 @@ export default class Feed extends Component {
                 </div>
                 <div className="tl-header-content">
                     <div className="tl-name-container">
-                        <h2 className="hw-name">{this.context.user.user_name}</h2>
+                        <h2 className="hw-name">{thread.user_name}</h2>
                     </div>
                     <div className="tl-title-container">
                         <h3 className="tl-title"><i>{thread.title}</i></h3>
@@ -108,24 +109,6 @@ export default class Feed extends Component {
                 </select>
                 <div className='tl-main-container'>
                     <div className="tl-item-container">
-                        <div className="tl-header">
-                            <div className="tl-pic-container">
-                                <img src="https://via.placeholder.com/100" alt='prop' className="tl-pic"></img>
-                            </div>
-                            <div className="tl-header-content">
-                                <div className="tl-name-container">
-                                    <h2 className="hw-name">user 1</h2>
-                                </div>
-                                <div className="tl-title-container">
-                                    <h3 className="tl-title"><i>title</i></h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='tl-options'>
-                            <div>Like</div>
-                            <div>Unanswered</div>
-                            <div>Add To Watch List</div>
-                        </div>
                         {threadsList}
                     </div>
                 </div>

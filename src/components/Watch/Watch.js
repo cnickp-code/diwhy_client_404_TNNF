@@ -21,8 +21,11 @@ export default class Watch extends Component {
 
     componentDidMount() {
         this.context.clearError()
-        const threads = ThreadsApiService.getThreads()
-        this.setState({ threads })
+        ThreadsApiService.getThreads()
+        .then(threads => {
+            this.context.setThreads(threads)
+        })
+        // this.setState({ threads })
             // .then((data) => {
             //     console.log(data)
             //     this.context.setThreads(data)
@@ -30,7 +33,7 @@ export default class Watch extends Component {
     }
 
     render() {
-        const { threads } = this.state; //change to context later when api works
+        const { threads } = this.context; //change to context later when api works
         console.log(threads)
         
         const threadList = threads.map(thread => {
