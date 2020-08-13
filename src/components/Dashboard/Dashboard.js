@@ -6,8 +6,8 @@ import Feed  from '../Feed/Feed'
 import Sidebar from '../Profile/Sidebar'
 import Tabs from './Tabs'
 import './Dashboard.css'
-import CreateNew from '../CreateNew/CreateNew'
-import NewPostForm from '../CreateNew/NewPostForm';
+// import CreateNew from '../CreateNew/CreateNew'
+import NewPostForm from '../CreateNew/NewPostForm'
 
 class Dashboard extends Component {
     // constructor(props) {
@@ -47,29 +47,35 @@ class Dashboard extends Component {
         //     : 
         // }
 
-        // return(
-            
-        // )
-
         return (
-            <div className='dash-wrapper'>
-                <section className='dash-item'>
-                    <Sidebar />
-                </section>
-                <div className='dash-main'>
-                    <section className='dash-item'>
-                        {/* <CreateNew /> */}
-                        <NewPostForm />
-                    </section>
-                    <section className='dash-item'>
-                        <Feed />
-                    </section>
-                </div>
-                <section className='dash-item'>
-                    <Watch />
-                </section>
+            <div>
+            <Tabs className='dash-wrapper'>
+                    <div label='Sidebar'><Sidebar /></div>
+                    <div label='New'><NewPostForm /></div>
+                    <div label='Feed'><Feed /></div>
+                    <div label='Watch'><Watch /></div>
+            </Tabs>
             </div>
         )
+
+        // return (
+        //     <div className='dash-wrapper'>
+        //         <section className='dash-item'>
+        //             <Sidebar />
+        //         </section>
+        //         <div className='dash-main'>
+        //             <section className='dash-item'>
+        //                 <NewPostForm />
+        //             </section>
+        //             <section className='dash-item'>
+        //                 <Feed />
+        //             </section>
+        //         </div>
+        //         <section className='dash-item'>
+        //             <Watch />
+        //         </section>
+        //     </div>
+        // )
     }
 }
 

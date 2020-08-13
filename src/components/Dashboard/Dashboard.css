@@ -1,24 +1,25 @@
-.dash-wrapper {
+/* .dash-wrapper {
     /* display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 70vw; */
-    background-color: #846F51;
-}
+    /* background-color: #846F51;
+    width: 80vw;
+} */
 
-.dash-item {
+/* .dash-item { */
     /* flex: 1 1 160px;
     flex: 0 1 160px;
     list-style-type: none; */
-    margin: 8px;
+    /* margin: 8px;
     background-color: #846F51;
-}
+} */ 
 
-section {
+/* section {
     width: 80vw;
-}
+} */
 
 .tab-list {
     border-bottom: 1px solid #231F20;
