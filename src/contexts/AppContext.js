@@ -87,6 +87,14 @@ export class AppProvider extends Component {
     this.setState({ threads })
   }
 
+  addThread = (thread) => {
+    const newThreads = [...this.state.threads, thread];
+
+    this.setState({
+      threads: newThreads
+    })
+  }
+
   setPostings = postings => {
     console.log(this.state)
     this.setState({ postings })
@@ -143,6 +151,8 @@ export class AppProvider extends Component {
       processLogout: this.processLogout,
       setCategories: this.setCategories,
       setSinglePosting: this.setSinglePosting,
+      setThreads: this.setThreads,
+      addThread: this.addThread
     }
     return (
       <AppContext.Provider value={value}>

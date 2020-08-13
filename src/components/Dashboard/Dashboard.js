@@ -7,6 +7,7 @@ import Sidebar from '../Profile/Sidebar'
 import Tabs from './Tabs'
 import './Dashboard.css'
 import CreateNew from '../CreateNew/CreateNew'
+import NewPostForm from '../CreateNew/NewPostForm';
 
 class Dashboard extends Component {
     // constructor(props) {
@@ -57,7 +58,8 @@ class Dashboard extends Component {
                 </section>
                 <div className='dash-main'>
                     <section className='dash-item'>
-                        <CreateNew />
+                        {/* <CreateNew /> */}
+                        <NewPostForm />
                     </section>
                     <section className='dash-item'>
                         <Feed />

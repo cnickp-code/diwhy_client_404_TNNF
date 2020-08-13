@@ -12,15 +12,19 @@ export default class Thread extends Component {
     static contextType = AppContext;
 
     componentDidMount() {
-        const threads = ThreadApiService.getThread();
+        // const threads = ThreadApiService.getThread();
+        ThreadsApiService.getThreads()
+        .then(threads => {
+            this.context.setThreads(threads)
+        })
         console.log(threads);
 
-        this.setState({
-            threads
-        })
+        // this.setState({
+        //     threads
+        // })
     }
     render() {
-        const { threads } = this.state;
+        const { threads } = this.context;
 
         const threadList = threads.map(thread => {
             return (
