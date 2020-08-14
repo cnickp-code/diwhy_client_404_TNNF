@@ -6,9 +6,7 @@ class DashboardRoute extends Component {
 
   render() {
     return (
-      <section>
-          <Dashboard />
-      </section>
+      <Dashboard />
     );
   }
 }

@@ -45,7 +45,7 @@ const AuthApiService = {
   },
   updateUser(user) {
     const userId = (TokenService.parseAuthToken().user_id)
-    return fetch(`${config.API_ENDPOINT}/user/${userId}`, {
+    return fetch(`${config.API_ENDPOINT}/auth`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',

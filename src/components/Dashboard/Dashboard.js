@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import { Link } from 'react-router-dom'
 import AppContext from '../../contexts/AppContext'
 import Watch from '../Watch/Watch'
-import Feed  from '../Feed/Feed'
+import Feed from '../Feed/Feed'
 import Sidebar from '../Profile/Sidebar'
 import Tabs from './Tabs'
 import './Dashboard.css'
@@ -43,19 +43,19 @@ class Dashboard extends Component {
         // const isMobile = width <= 500;
         // { isMobile 
         //     ?
-        
+
         //     : 
         // }
 
         // return(
-            
+
         // )
 
         return (
             <div className='dash-wrapper'>
-                <section className='dash-item'>
+                {/* <section className='dash-item'>
                     <Sidebar />
-                </section>
+                </section> */}
                 <div className='dash-main'>
                     <section className='dash-item'>
                         {/* <CreateNew /> */}
