@@ -31,6 +31,14 @@ class Tabs extends React.Component {
 
         return (
             <div className='tabs'>
+                
+                <div className='tab-content'>
+                    {children.map((child) => {
+                        if (child.props.label !== activeTab) return undefined;
+                        return child.props.children;
+                    })}
+                </div>
+
                 <ol className='tab-list'>
                     {children.map((child) => {
                         const { label } = child.props;
@@ -40,12 +48,6 @@ class Tabs extends React.Component {
                         );
                     })}
                 </ol>
-                <div className='tab-content'>
-                    {children.map((child) => {
-                        if (child.props.label !== activeTab) return undefined;
-                        return child.props.children;
-                    })}
-                </div>
             </div>
         );
     }
