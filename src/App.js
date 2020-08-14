@@ -13,6 +13,7 @@ import ProfileRoute from '../src/routes/ProfileRoute/ProfileRoute'
 import BrowsePage from '../src/pages/BrowsePage'
 import HelpWantedItemPage from '../src/pages/HelpWantedItemPage'
 import './App.css'
+import ThreadItemPage from './pages/ThreadItemPage'
 
 export default class App extends Component {
   state = { hasError: false }
@@ -79,6 +80,10 @@ export default class App extends Component {
             <PrivateRoute
               path={'/wanted-item'}
               component={HelpWantedItemPage}
+            />
+            <PrivateRoute
+              path={'/thread/:id'}
+              component={ThreadItemPage}
             />
             <PrivateRoute
               path={'/browse'}

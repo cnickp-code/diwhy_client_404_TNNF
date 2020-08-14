@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Thread.css'
 import AppContext from '../../contexts/AppContext'
-import ThreadApiService from '../../Services/want-api-service';
+import ThreadsApiService from '../../Services/want-api-service';
 // import { Link } from 'react-router-dom'
 // import Util from '../Util/Util'
 
