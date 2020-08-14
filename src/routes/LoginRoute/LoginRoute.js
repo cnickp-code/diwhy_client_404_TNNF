@@ -15,19 +15,12 @@ class LoginRoute extends Component {
   handleLoginSuccess = () => {
     const { location, history } = this.props
     const destination = (location.state || {}).from || '/'
-    // this.context.processLogin()
-    // console.log(this.context)
     history.push(destination)
   }
 
   render() {
     return (
-      <section className='log-route-section'>
-        <h2 className='reg-log-header' id='header'>Login</h2>
-        <Login
-          onLoginSuccess={this.handleLoginSuccess}
-        />
-      </section>
+      <Login onLoginSuccess={this.handleLoginSuccess} />
     );
   }
 }

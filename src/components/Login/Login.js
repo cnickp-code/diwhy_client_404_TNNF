@@ -32,14 +32,14 @@ export default class Login extends React.Component {
                     this.context.processLogin(res.authToken)
                     this.props.onLoginSuccess()
                })
-               .catch(res => {     
+               .catch(res => {
                     this.setState({ error: res.error })
                });
      };
 
      componentDidMount() {
           this.firstInput.current.focus()
-        }
+     }
 
      render() {
           const { error } = this.state;
@@ -48,6 +48,7 @@ export default class Login extends React.Component {
                     <div role='alert'> {error && <p className='Red_Alert'> {error.message} </p>} </div>
 
                     <fieldset className='Login_Form'>
+                         <h2 className='reg-log-header' id='header'>Login</h2>
                          <div className='label-input'>
                               <Label htmlFor='Login_Form_Email'> Email </Label>
                               <Input placeholder='Email' name='email' id='Login_Form_User_Email' ref={this.firstInput} required />
@@ -57,8 +58,8 @@ export default class Login extends React.Component {
                               <Input type='password' placeholder='Password' name='password' id='User_Password' required />
                          </div>
                          <div className='log-submit-div'>
-                              <Button type='submit'> 
-                                   Log In 
+                              <Button type='submit'>
+                                   Log In
                               </Button>
                               <Link to='forgotpassword'>Forgot Your Password?</Link>
                          </div>
