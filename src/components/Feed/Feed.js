@@ -69,35 +69,35 @@ export default class Feed extends Component {
 
     render() {
         const { threads } = this.context;
-        console.log(threads)
+        // console.log(threads)
 
         const threadsList = threads.map(thread => {
-            return <div className="tl-header" key={thread.id}>
+            return <li className="tl-header" key={thread.id}>
                 <Link className='threadId' to={'/thread/' + thread.id} key={thread.id}>
-                    <div className="tl-pic-container">
+                    {/* <div className="tl-pic-container">
                         <img src="https://via.placeholder.com/100" alt='prop' className="tl-pic"></img>
-                    </div>
-                    <div className="tl-header-content">
-                        <div className="tl-name-container">
-                            <h2 className="hw-name">{thread.user_name}</h2>
-                        </div>
-                        <div className="tl-title-container">
-                            <h3 className="tl-title"><i>{thread.title}</i></h3>
-                        </div>
-                        <div className='tl-options'>
+                    </div> */}
+                    {/* <div className="tl-header-content"> */}
+                    {/* <div className="tl-name-container"> */}
+                    <h2 className="hw-name">{thread.user_name}</h2>
+                    {/* </div> */}
+                    {/* <div className="tl-title-container"> */}
+                    <h3 className="tl-title"><i>{thread.title}</i></h3>
+                    {/* </div> */}
+                    {/* <div className='tl-options'>
                             <div>Like</div>
                             <div>Unanswered</div>
                             <div>Add To Watch List</div>
-                        </div>
-                    </div>
+                        </div> */}
+                    {/* </div> */}
                 </Link>
-            </div>
+            </li>
         })
 
         return (
             <section className='dash-item'>
                 <h3 id='header'>Feed</h3>
-                <Label htmlFor='Feed_Category_Select'>Filter By Category</Label>
+                <Label htmlFor='Feed_Category_Select' className='category-select-label'>Filter By Category</Label>
                 <select className='Feed_Category_Select' value={this.state.value} onChange={this.handleChange}>
                     <option value='1'>Woodworking</option>
                     <option value='2'>Metalworking</option>
@@ -108,11 +108,11 @@ export default class Feed extends Component {
                     <option value='7'>Electronics</option>
                     <option value='8'>Outdoorsmanship</option>
                 </select>
-                <div className='tl-main-container'>
-                    <div className="tl-item-container">
-                        {threadsList}
-                    </div>
-                </div>
+                <ul className='tl-main-container'>
+                    {/* <div className="tl-item-container"> */}
+                    {threadsList}
+                    {/* </div> */}
+                </ul>
             </section>
         )
     }

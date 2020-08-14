@@ -56,18 +56,19 @@ class Dashboard extends Component {
                 {/* <section className='dash-item'>
                     <Sidebar />
                 </section> */}
-                <div className='dash-main'>
+                {/* <div className='dash-main'> */}
                     <section className='dash-item'>
                         {/* <CreateNew /> */}
                         <NewPostForm />
-                    </section>
-                    <section className='dash-item'>
                         <Feed />
                     </section>
-                </div>
-                <section className='dash-item'>
+                    {/* <section className='dash-item'> */}
+                        
+                    {/* </section> */}
+                {/* </div> */}
+                {/* <section className='dash-item'>
                     <Watch />
-                </section>
+                </section> */}
             </div>
         )
     }

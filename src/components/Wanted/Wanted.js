@@ -24,18 +24,18 @@ export default class Wanted extends Component {
 
         const postingList = postings.map(posting => {
             return (
-                <div className='note sticky' key={posting.id}>
+                <li className='note sticky' key={posting.id}>
                     <div className='tack'></div>
-                    <div className='note-content'>
+                    <p className='note-content'>
                         {posting.content}
-                    </div>
-                </div>
+                    </p>
+                </li>
             )
         })
         return (
-            <div id='want-wrapper'>
+            <ul id='want-wrapper'>
                 {postingList}
-            </div>
+            </ul>
         )
     }
 }

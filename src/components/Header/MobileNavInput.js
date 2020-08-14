@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Input } from '../Util/Util'
         
-    // y
+    // Not currently using this
 export default class MobileNavInput extends Component {
      render() {
           return (

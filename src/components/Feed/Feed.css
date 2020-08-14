@@ -45,3 +45,12 @@
 .tl-options {
     display: flex;
 }
+
+#header {
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.category-select-label {
+    margin-bottom: 10px;
+}
