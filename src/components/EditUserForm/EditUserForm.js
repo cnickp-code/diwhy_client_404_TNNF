@@ -36,11 +36,11 @@ export default class EditUserForm extends React.Component {
                     return res.json()
                })
                .then(responseData => {
+                    console.log(responseData)
                     this.setState({
                          id: responseData.id,
                          user_name: responseData.user_name,
                          email: responseData.email,
-
                          // insert other params here
                     })
                })
@@ -52,18 +52,16 @@ export default class EditUserForm extends React.Component {
 
      handleSubmit = e => {
           e.preventDefault();
-          const { user_name, email } = e.target;
+          const { user_name } = e.target;
 
           this.setState({ error: null })
           AuthApiService.updateUser({
                //insert params
                user_name: user_name.value,
-               email: email.value
           })
                .then(user => {
                     //insert param.value = '' fields here
                     user_name.value = ''
-                    email.value = ''
                     this.props.onEditSuccess()
                })
                .then()

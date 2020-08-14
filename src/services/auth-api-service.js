@@ -42,10 +42,10 @@ const AuthApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
-     },
-    updateUser(user) {
+  },
+  updateUser(user) {
     const userId = (TokenService.readJwtToken().user_id)
-    return fetch(`${config.API_ENDPOINT}/api/users/${userId}`, {
+    return fetch(`${config.API_ENDPOINT}/api/user/${userId}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
