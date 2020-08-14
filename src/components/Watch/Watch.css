@@ -1,13 +1,19 @@
 .wl-main-container {
-    width: 70%;
-    min-height: fit-content;
-    text-align: center;
-    border: 1px solid black;
-    margin: 0 auto;
+    width: 100%;
+    border: 1px solid #231F20;
+    margin: 30px auto 10px;
     padding: 20px;
 }
 
-li {
+.wl-item-container {
+    min-height: fit-content;
+    text-align: center;
+    border: 1px solid #231F20;
+    margin: 0 auto;
+    background-color: #E2BE7E;
+}
+
+.watch-item {
     list-style: none;
     text-align: left;
 }

@@ -38,7 +38,7 @@ export default class Watch extends Component {
         
         const threadList = threads.map(thread => {
             return (
-                    <li key={thread.id}>
+                    <li className='watch-item' key={thread.id}>
                         <h4 id='header'> {thread.title} </h4>
                         <p> {thread.date_created.toLocaleString()} </p>
                     </li>
@@ -55,8 +55,8 @@ export default class Watch extends Component {
         return (
             <ScrollArea>
                 <div className='wl-main-container'>
-                <h3 id='header'>Watch List</h3>
-                    <ul className='questions'>
+                {/* <h3 id='header'>Watch List</h3> */}
+                    <ul className='wl-item-container'>
                         {threadList}
                     </ul>
                 </div>

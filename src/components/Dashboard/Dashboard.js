@@ -48,14 +48,11 @@ class Dashboard extends Component {
         // }
 
         return (
-            <div>
             <Tabs className='dash-wrapper'>
-                    <div label='Sidebar'><Sidebar /></div>
-                    <div label='New'><NewPostForm /></div>
+                    <div label='Create New'><NewPostForm /></div>
                     <div label='Feed'><Feed /></div>
-                    <div label='Watch'><Watch /></div>
+                    <div label='Watch List'><Watch /></div>
             </Tabs>
-            </div>
         )
 
         // return (

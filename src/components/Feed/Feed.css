@@ -1,13 +1,13 @@
 .tl-main-container {
     width: 100%;
-    border: 1px solid black;
-    margin: 40px auto 10px;
+    border: 1px solid #231F20;
+    margin: 30px auto 10px;
     padding: 20px;
 }
 
 .tl-item-container {
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid #231F20;
     min-height: fit-content;
 }
 
@@ -16,7 +16,7 @@
     flex-direction: row;
     justify-content: flex-start;
     padding: 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #231F20;
     background-color: #E2BE7E;
 }
 

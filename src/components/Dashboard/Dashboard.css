@@ -20,10 +20,14 @@
 /* section {
     width: 80vw;
 } */
+.tabs {
+    min-width: 410px;
+}
 
 .tab-list {
     border-bottom: 1px solid #231F20;
     padding-left: 0;
+    cursor: pointer;
 }
 
 .tab-list-item {
