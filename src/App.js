@@ -11,6 +11,7 @@ import WantedRoute from '../src/routes/WantedRoute/WantedRoute'
 import NotFoundRoute from '../src/routes/NotFoundRoute/NotFoundRoute'
 import ProfileRoute from '../src/routes/ProfileRoute/ProfileRoute'
 import BrowsePage from '../src/pages/BrowsePage'
+import EditProfilePage from '../src/pages/EditProfilePage'
 import HelpWantedItemPage from '../src/pages/HelpWantedItemPage'
 import './App.css'
 
@@ -87,6 +88,10 @@ export default class App extends Component {
             <PrivateRoute
               path={'/profile'}
               component={ProfileRoute}
+            />
+            <PrivateRoute
+              path={'/edit'}
+              component={EditProfilePage}
             />
             <PublicRoute
               path={'/register'}

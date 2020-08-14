@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Section, Label } from '../Util/Util';
 import AppContext from '../../contexts/AppContext';
+import { Link } from 'react-router-dom';
+import TokenService from '../../Services/token-service';
 
 export default class Profile extends Component {
      constructor(props) {
@@ -9,22 +11,29 @@ export default class Profile extends Component {
 
           this.handleChange = this.handleChange.bind(this);
      }
-     
+
      static contextType = AppContext;
 
      handleChange(e) {
           this.setState({
-              value: e.target.value,
+               value: e.target.value,
           })
-       }
+     }
 
      renderUser() {
           const { user } = this.context
           return <div className='profile-user'>
-               <h2 className='User_Name' id='header'>{user.user_name}</h2>
-               <h2 className='User_Name' id='header'>{user.email}</h2>
+               <h2 className='User_Name' id='header'>Username: {user.user_name}</h2>
+               <h2 className='User_Email' id='header'>Email: {user.email}</h2>
+               <h2 className='User_Endorsements' id='header'>Endorsements: {user.endorsements}</h2>
           </div>
      };
+
+     renderEditLink() {
+          return <div className='edit-link'>
+               <Link to='/edit'>Edit Profile</Link>
+          </div>
+     }
 
      render() {
           const { error } = this.context;
@@ -41,6 +50,7 @@ export default class Profile extends Component {
           return (
                <Section className='Profile'>
                     {content}
+                    {TokenService.hasAuthToken() ? this.renderEditLink() : ''}
                     <div className='profile-cat-div'>
                          <Label id='header'>Choose your Categories</Label>
                          <select className='profile-cat-select' value={this.state.value} onChange={this.handleChange}>
@@ -52,10 +62,9 @@ export default class Profile extends Component {
                               <option value='GeneralCrafts'>General Crafts</option>
                               <option value='Outdoorsmanship'>Outdoorsmanship</option>
                          </select>
-                         
                     </div>
                     <div className='profile-projects'>
-                         
+                         {/* the users respective project spotlights */}
                     </div>
                </Section>
           );

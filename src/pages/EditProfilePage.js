@@ -1,9 +1,9 @@
 import React from 'react';
-import EditUserForm from '../Components/Forms/EditUserForm';
-import { Section } from '../Components/Utils/Utils';
-import { Redirect } from 'react-router-dom';
+import EditUserForm from '../components/EditUserForm/EditUserForm';
+import { Section } from '../components/Util/Util';
+// import { Redirect } from 'react-router-dom';
 import TokenService from '../Services/token-service';
-import AppContext from '../../context/AppContext';
+import AppContext from '../contexts/AppContext';
 
 export default class EditProfilePage extends React.Component {
 
@@ -26,8 +26,8 @@ export default class EditProfilePage extends React.Component {
      };
 
      render() {
-          if (!this.context.loggedIn)
-               return <Redirect to='/' />;
+          // if (!this.context.loggedIn)
+          //      return <Redirect to='/' />;
           return (
                <Section className='Edit_Form_Container'>
                     <EditUserForm onEditSuccess={this.handleEditSuccess} handleClickCancel={this.handleClickCancel} />
