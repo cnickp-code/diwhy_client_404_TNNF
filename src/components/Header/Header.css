@@ -4,7 +4,6 @@ header {
     align-items: center;
     background-color: #E2BE7E;
     border-bottom: #E0CAA9 5px solid;
-    width: 100vw;
 }
 
 .app-name {
@@ -15,11 +14,9 @@ header {
     width: 100vw;
     margin-top: 3vh;
     margin-bottom: -8vh;
-    background-color: #E2BE7E;
 }
 
 header a {
-    background-color: #E2BE7E;
     margin-right: 10px;
 }
 
@@ -31,7 +28,6 @@ header a {
     width: 100vw;
     margin-top: -2vh;
     margin-bottom: -2vh;
-    background-color: #E2BE7E;
 }
 
 .head-nav {
@@ -42,7 +38,6 @@ header a {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    background-color: #E2BE7E;
 }
 
 @media only screen and (min-width: 768px) {

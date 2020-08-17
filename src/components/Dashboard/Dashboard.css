@@ -21,17 +21,16 @@
     width: 80vw;
 } */
 
-.tabs {
-    min-width: 410px;
-}
 
 .tab-list {
     border-bottom: 1px solid #231F20;
     padding-left: 0;
     cursor: pointer;
+    background-color: #E2BE7E;
 }
 
 .tab-list-item {
+    
     display: inline-block;
     list-style: none;
     margin-bottom: -1px;
@@ -39,7 +38,11 @@
 }
 
 .tab-list-active {
-    background-color: #FFF7E0;
+    background-color: #E2BE7E;
     border: solid #231F20;
     border-width: 1px 1px 0 1px;
+}
+
+.tab-content {
+    margin-top: 1rem;
 }

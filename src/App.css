@@ -2,12 +2,17 @@
      box-sizing: border-box;
 }
 
+html {
+     width: 100vw;
+}
+
 body {
      background-color: #FFF7E0;
      color: #231F20;
      font-family: 'garage-gothic', sans-serif;
      font-style: normal;
      font-weight: 700;
+     width: 100vw;
 }
 
 .App {
