@@ -79,3 +79,7 @@ div#want-wrapper div:hover.note {
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+.posting-title, .posting-category {
+    text-align: center;
+}

@@ -4,24 +4,24 @@ import TokenService from '../Services/token-service';
 const WantedApiService = {
     // Need to replace hard coded with fetch to the server
     getById(id) {
-        fetch(`${config.API_ENDPOINT}/postings/${id}`, {
+        return fetch(`${config.API_ENDPOINT}/postings/${id}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
                 'Authorization': `bearer ${TokenService.getAuthToken()}`
             }
         })
-        .then(res =>
-            (!res.ok)
-                ? res.json().then(e => Promise.reject(e))
-                : res.json()
-        )
-        .then(posting => 
-            console.log(posting)
-        )
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+            .then(posting =>
+                console.log(posting)
+            )
     },
     postPosting(posting) {
-        fetch(`${config.API_ENDPOINT}/postings`, {
+        return fetch(`${config.API_ENDPOINT}/postings`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -36,21 +36,22 @@ const WantedApiService = {
             )
     },
     getAllPostings() {
-        fetch(`${config.API_ENDPOINT}/postings`, {
+        return fetch(`${config.API_ENDPOINT}/postings`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
                 'Authorization': `bearer ${TokenService.getAuthToken()}`
             }
         })
-        .then(res =>
-            (!res.ok)
-                ? res.json().then(e => Promise.reject(e))
-                : res.json()
-        )
-        .then(posting => 
-            console.log(posting)
-        )
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+
+        // .then(posting => 
+        //     console.log(posting)
+        // )
     },
     getWanted() {
         console.log('get postings ran')
