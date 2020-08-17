@@ -16,10 +16,7 @@ class Tab extends React.Component {
     render() {
         const {
             onClick,
-            props: {
-                activeTab,
-                label,
-            },
+            props: {activeTab, label,},
         } = this;
 
     let className = 'tab-list-item';

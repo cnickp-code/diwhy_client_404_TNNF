@@ -20,7 +20,10 @@ class LoginRoute extends Component {
 
   render() {
     return (
-      <Login onLoginSuccess={this.handleLoginSuccess} />
+      <section className='log-route-section'>
+        <h2 className='reg-log-header' id='header'>Login</h2>
+        <Login onLoginSuccess={this.handleLoginSuccess} />
+      </section>
     );
   }
 }

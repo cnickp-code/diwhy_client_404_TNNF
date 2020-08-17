@@ -97,7 +97,6 @@ export default class Feed extends Component {
 
         return (
             <section className='dash-item'>
-                <h3 id='header'>Feed</h3>
                 <Label htmlFor='Feed_Category_Select' className='category-select-label'>Filter By Category</Label>
                 <select className='Feed_Category_Select' value={this.state.value} onChange={this.handleChange}>
                     <option value='1'>Woodworking</option>
