@@ -75,6 +75,14 @@ export class AppProvider extends Component {
     })
   }
 
+  deleteComment = (id) => {
+    let newComments = this.state.comments.filter(comment => comment.id !== id);
+
+    this.setState({
+      comments: newComments
+    })
+  }
+
   addComment = (comment) => {
     let newComments = [...this.state.comments, comment];
     console.log('addComment: ', newComments);
@@ -204,7 +212,8 @@ export class AppProvider extends Component {
       addThread: this.addThread,
       handleGetThreads: this.handleGetThreads,
       setComments: this.setComments,
-      addComment: this.addComment
+      addComment: this.addComment,
+      deleteComment: this.deleteComment
     }
     return (
       <AppContext.Provider value={value}>

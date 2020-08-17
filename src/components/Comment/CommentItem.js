@@ -1,11 +1,22 @@
 import React from 'react';
+import AppContext from '../../contexts/AppContext';
+import CommentsApiService from '../../Services/comments-api-service';
 
 class CommentItem extends React.Component {
+    static contextType = AppContext;
+
+    handleDelete = () => {
+        CommentsApiService.deleteComment(this.props.comment.id, this.context.deleteComment);
+    }
+
+
     render() {
-        let currentDate = this.props.comment.date_created.split('T')[0].split('-');
-        let year = currentDate.shift();
-        currentDate.push(year);
-        currentDate = currentDate.join('/');
+        // let currentDate = this.props.comment.date_created.split('T')[0].split('-');
+        // let year = currentDate.shift();
+        // currentDate.push(year);
+        // currentDate = currentDate.join('/');
+
+        let currentDate = new Date(this.props.comment.date_created).toLocaleString();
 
         console.log(currentDate);
 
@@ -19,10 +30,10 @@ class CommentItem extends React.Component {
                 <div className="comment-bottom-container">
                     <p className="comment-date"><i>{currentDate}</i></p>
                     <div className="comment-buttons">
-                        <button className="comment-btn">
+                        {/* <button className="comment-btn">
                             <i className="fas fa-edit"></i>
-                        </button>
-                        <button className="comment-btn">
+                        </button> */}
+                        <button className="comment-btn" onClick={this.handleDelete}>
                             <i className="fas fa-eraser"></i>
                         </button>
                     </div>

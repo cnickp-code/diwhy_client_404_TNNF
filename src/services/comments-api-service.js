@@ -30,6 +30,23 @@ const CommentsApiService = {
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
             )
+    },
+
+    deleteComment(id, callback) {
+        return fetch(`${config.API_ENDPOINT}/comments/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+        })
+        .then(res => {
+            if(!res.ok) {
+                throw new Error(res.status)
+            }
+            callback(id)
+        })
+
     }
 }
 
