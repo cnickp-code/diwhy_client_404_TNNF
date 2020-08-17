@@ -2,6 +2,7 @@ import React from 'react';
 import './HelpWantedItem.css';
 import PostingsApiService from '../../Services/postings-api-service';
 import AppContext from '../../contexts/AppContext';
+import WantApiService from '../../Services/want-api-service';
 
 class HelpWantedItem extends React.Component {
     static contextType = AppContext;
@@ -12,14 +13,14 @@ class HelpWantedItem extends React.Component {
 
 
     componentDidMount() {
-        const singlePosting = PostingsApiService.getPostingById(1)
+        // WantApiService.getById(1)
+        const singlePosting = PostingsApiService.getPostingById(this.props.id)
         this.setState({
             posting: singlePosting
         })
     }
 
     render() {
-
         return (
             <div className="hw-main-container">
                 {/* <div className="hw-item-container"> */}

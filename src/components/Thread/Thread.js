@@ -19,7 +19,7 @@ export default class Thread extends Component {
         // })
 
         this.context.handleGetThreads();
-        console.log(threads);
+        
 
         // this.setState({
         //     threads

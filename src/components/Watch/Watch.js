@@ -34,7 +34,6 @@ export default class Watch extends Component {
 
     render() {
         const { threads } = this.context; //change to context later when api works
-        console.log(threads)
         
         const threadList = threads.map(thread => {
             return (

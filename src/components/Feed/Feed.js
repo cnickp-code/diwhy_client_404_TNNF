@@ -70,7 +70,6 @@ export default class Feed extends Component {
 
     render() {
         const { threads } = this.context;
-        // console.log(threads)
 
         const threadsList = threads.map(thread => {
             return <li className="tl-header" key={thread.id}>

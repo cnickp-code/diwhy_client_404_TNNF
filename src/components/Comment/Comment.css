@@ -23,6 +23,7 @@
 
 .comment-list {
     padding: 0px;
+    list-style: none;
 }
 
 .comment-container {

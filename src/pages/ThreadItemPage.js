@@ -5,9 +5,7 @@ class ThreadItemPage extends React.Component {
     render() {
         let threadId = this.props.match.params.id
         return (
-            <div>
                 <ThreadItem  id={threadId}/>
-            </div>
         )
     }
 }

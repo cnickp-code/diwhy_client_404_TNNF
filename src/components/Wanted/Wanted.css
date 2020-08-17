@@ -43,3 +43,39 @@ div#want-wrapper div:hover.note {
     -moz-transform: scale(1.1);
     transform: scale(1.1);
 }
+
+.help-wanted-form {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+    height: 325px;
+    background-color: #846F51;
+    padding: 10px;
+}
+
+.help-wanted-button {
+    border-radius: 10px;
+    margin: 10px 20px;
+    padding: 5px 20px;
+    background-color: var(--color-6);
+    color: #f7f7f7;
+}
+
+#Help_Wanted_Posting_Textarea {
+    height: 50px;
+}
+
+#Help_Wanted_Posting_Textarea, #Help_Wanted_Posting_Title_Input, #Help_Wanted_Posting_Select {
+    width: 150px;
+}
+
+.posting-form-header {
+    font-size: 22px;
+    font-weight: 800;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

@@ -19,7 +19,6 @@ class CommentForm extends React.Component {
 
         CommentsServices.postComment(commentObj)
             .then(comment => {
-                console.log(comment);
                 this.context.addComment(comment)
             })
     }

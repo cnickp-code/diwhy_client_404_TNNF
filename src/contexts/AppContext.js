@@ -57,7 +57,6 @@ export class AppProvider extends Component {
   componentDidMount() {
     CategoryService.getCategories()
       .then(categories => {
-        console.log(categories)
         this.setState({
           categories
         })
@@ -85,7 +84,6 @@ export class AppProvider extends Component {
 
   addComment = (comment) => {
     let newComments = [...this.state.comments, comment];
-    console.log('addComment: ', newComments);
     this.setState({
       comments: newComments
     })
@@ -111,7 +109,6 @@ export class AppProvider extends Component {
   }
 
   setCategories = categories => {
-    console.log(this.state)
     this.setState({ categories })
   }
 
@@ -126,7 +123,6 @@ export class AppProvider extends Component {
 
       return newThread
     })
-    console.log(newThreads)
     this.setState({ threads: newThreads })
   }
 
@@ -153,7 +149,6 @@ export class AppProvider extends Component {
   }
 
   setPostings = postings => {
-    console.log(this.state)
     this.setState({ postings })
   }
 

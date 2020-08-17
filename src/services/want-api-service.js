@@ -1,7 +1,14 @@
-// import config from '../config';
+import config from '../config';
 // import TokenService from '../Services/token-service';
 
 const WantedApiService = {
+    // Need to replace hard coded with fetch to the server
+    getById(id) {
+        fetch(`${config.API_ENDPOINT}/postings/${id}`)
+            .then(posting => {
+                console.log(posting)
+            })
+    },
     getWanted() {
         console.log('get postings ran')
         return [

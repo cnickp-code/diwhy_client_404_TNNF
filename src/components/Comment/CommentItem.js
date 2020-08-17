@@ -18,9 +18,6 @@ class CommentItem extends React.Component {
 
         let currentDate = new Date(this.props.comment.date_created).toLocaleString();
 
-        console.log(currentDate);
-
-
         return (
             <li className="comment-container">
                 <h5 className="comment-header">{this.props.comment.user_name}</h5>

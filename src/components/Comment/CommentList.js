@@ -15,7 +15,6 @@ class CommentList extends React.Component {
     }
 
     render() {
-        console.log(this.context.comments);
         let commentList = this.context.comments.map(comment => {
             return <CommentItem key={comment.id} comment={comment} />
         })

@@ -18,7 +18,6 @@ export default class BrowsePage extends Component {
           this.context.clearError()
           CategoryService.getCategories()
                .then((data) => {
-                    console.log(data)
                     this.context.setCategories(data)
                })
                .catch(this.context.setError)
@@ -38,7 +37,6 @@ export default class BrowsePage extends Component {
      render() {
           const { error } = this.context;
           let { categories = [] } = this.context
-          console.log(categories)
           if (this.state.searchTerm !== '') {
                categories = categories.filter(category => category.name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
           } 
