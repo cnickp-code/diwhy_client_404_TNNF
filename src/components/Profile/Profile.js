@@ -3,6 +3,7 @@ import { Section, Label } from '../Util/Util';
 import AppContext from '../../contexts/AppContext';
 import { Link } from 'react-router-dom';
 import TokenService from '../../Services/token-service';
+import './Profile.css'
 
 export default class Profile extends Component {
      constructor(props) {
@@ -48,7 +49,7 @@ export default class Profile extends Component {
           }
           //Add way to select expertise, and degree of expertise
           return (
-               <Section className='Profile'>
+               <Section className='profile-wrapper'>
                     {content}
                     {TokenService.hasAuthToken() ? this.renderEditLink() : ''}
                     <div className='profile-cat-div'>

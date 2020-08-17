@@ -3,11 +3,16 @@
     min-height: fit-content;
     text-align: center;
     border: 1px solid black;
+    background-color: #846F51;
     margin: 0 auto;
     padding: 20px;
 }
 
-li {
+.thread-list {
     list-style: none;
-    text-align: left;
+    text-align: center;
+}
+
+.threads {
+    padding: 0;
 }

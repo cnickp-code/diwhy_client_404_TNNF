@@ -50,27 +50,34 @@ class Dashboard extends Component {
         // return(
 
         // )
-
         return (
-            <div className='dash-wrapper'>
-                {/* <section className='dash-item'>
-                    <Sidebar />
-                </section> */}
-                {/* <div className='dash-main'> */}
-                    <section className='dash-item'>
-                        {/* <CreateNew /> */}
-                        <NewPostForm />
-                        <Feed />
-                    </section>
-                    {/* <section className='dash-item'> */}
-                        
-                    {/* </section> */}
-                {/* </div> */}
-                {/* <section className='dash-item'>
-                    <Watch />
-                </section> */}
-            </div>
+            <Tabs className='dash-wrapper'>
+                <div label='Feed'><Feed /></div>
+                <div label='Create New'><NewPostForm /></div>
+                <div label='Watch List'><Watch /></div>
+            </Tabs>
         )
+
+        // return (
+        //     <div className='dash-wrapper'>
+        //         {/* <section className='dash-item'>
+        //             <Sidebar />
+        //         </section> */}
+        //         {/* <div className='dash-main'> */}
+        //             <section className='dash-item'>
+        //                 {/* <CreateNew /> */}
+        //                 <NewPostForm />
+        //                 <Feed />
+        //             </section>
+        //             {/* <section className='dash-item'> */}
+                        
+        //             {/* </section> */}
+        //         {/* </div> */}
+        //         {/* <section className='dash-item'>
+        //             <Watch />
+        //         </section> */}
+        //     </div>
+        // )
     }
 }
 

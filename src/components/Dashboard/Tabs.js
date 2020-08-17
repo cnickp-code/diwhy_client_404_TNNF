@@ -21,16 +21,18 @@ class Tabs extends React.Component {
     render() {
         const {
             tabClick,
-            props: {
-                children,
-            },
-            state: {
-                activeTab,
-            }
+            props: {children,},
+            state: {activeTab,}
         } = this;
 
         return (
             <div className='tabs'>
+                <div className='tab-content'>
+                    {children.map((child) => {
+                        if (child.props.label !== activeTab) return undefined;
+                        return child.props.children;
+                    })}
+                </div>
                 <ol className='tab-list'>
                     {children.map((child) => {
                         const { label } = child.props;
@@ -40,12 +42,6 @@ class Tabs extends React.Component {
                         );
                     })}
                 </ol>
-                <div className='tab-content'>
-                    {children.map((child) => {
-                        if (child.props.label !== activeTab) return undefined;
-                        return child.props.children;
-                    })}
-                </div>
             </div>
         )
     }

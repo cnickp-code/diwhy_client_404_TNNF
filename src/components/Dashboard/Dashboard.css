@@ -14,15 +14,23 @@
     list-style-type: none; */
     margin: 8px;
     background-color: #846F51;
+    border: 1px solid #231F20;
 }
 
-section {
-    width: 80vw;
+.category-select-label {    
+    padding-top: 1rem;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tab-list {
     border-bottom: 1px solid #231F20;
     padding-left: 0;
+    cursor: pointer;
 }
 
 .tab-list-item {
@@ -36,4 +44,9 @@ section {
     background-color: #FFF7E0;
     border: solid #231F20;
     border-width: 1px 1px 0 1px;
+}
+
+.tab-content {
+    margin-top: 1rem;
+    width: 60vw;
 }

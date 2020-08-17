@@ -1,0 +1,10 @@
+.profile-wrapper {
+    background-color: #846F51;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-cat-div {
+    padding: .5rem;
+}
