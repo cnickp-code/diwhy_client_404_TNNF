@@ -65,11 +65,11 @@ div#want-wrapper div:hover.note {
     color: #f7f7f7;
 }
 
-#Help_Wanted_Posting_Textarea {
+.Help_Wanted_Posting_Textarea {
     height: 50px;
 }
 
-#Help_Wanted_Posting_Textarea, #Help_Wanted_Posting_Title_Input, #Help_Wanted_Posting_Select {
+.Help_Wanted_Posting_Textarea, .Help_Wanted_Posting_Title_Input, .Help_Wanted_Posting_Select {
     width: 150px;
 }
 
