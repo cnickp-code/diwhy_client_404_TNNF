@@ -3,10 +3,8 @@ import React, { Component } from 'react'
 import AppContext from '../../contexts/AppContext'
 import Watch from '../Watch/Watch'
 import Feed from '../Feed/Feed'
-import Sidebar from '../Profile/Sidebar'
-import Tabs from './Tabs'
+import Tabs from '../Tabs/Tabs'
 import './Dashboard.css'
-import CreateNew from '../CreateNew/CreateNew'
 import NewPostForm from '../CreateNew/NewPostForm';
 
 class Dashboard extends Component {

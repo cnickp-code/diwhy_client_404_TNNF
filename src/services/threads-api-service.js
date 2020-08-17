@@ -29,6 +29,20 @@ const ThreadsApiService = {
                )
           },
 
+          getThreadByCategoryId(categoryId) {
+               return fetch(`${config.API_ENDPOINT}/category/${categoryId}`, {
+                    headers: {
+                         'content-type': 'application/json',
+                         'Authorization': `bearer ${TokenService.getAuthToken()}`
+                    }
+               })
+                    .then(res => 
+                         (!res.ok)
+                              ? res.json().then(e => Promise.reject(e))
+                              : res.json()
+                         )
+          },
+
           // return [
           //      {
           //           id: 1,

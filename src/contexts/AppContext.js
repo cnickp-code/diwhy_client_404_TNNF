@@ -39,6 +39,7 @@ export class AppProvider extends Component {
       singlePosting: {},
       categories: [],
       comments: [],
+      // activeTab: this.props.children[0].props.label,
     }
 
     const jwtPayload = TokenService.parseAuthToken()
