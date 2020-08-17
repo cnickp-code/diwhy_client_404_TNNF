@@ -13,15 +13,13 @@ export default class Wanted extends Component {
     static contextType = AppContext;
 
     componentDidMount() {
-        WantedApiService.getById(1)
         WantedApiService.getAllPostings()
-        // const postings = WantedApiService.getWanted();
-        // this.setState({
-        //     postings
-        // })
+            .then(postings => {
+                this.context.setPostings(postings)
+            })
     }
 
-    handleSubmit(ev) {
+    handleSubmit = (ev) => {
         ev.preventDefault()
         const { title, content, category } = ev.target
         const newPosting = {
@@ -30,19 +28,32 @@ export default class Wanted extends Component {
             category: category.value
         }
         WantedApiService.postPosting(newPosting)
+            .then(posting => {
+                WantedApiService.getAllPostings()
+                    .then(postings => {
+                        this.context.setPostings(postings)
+                    })
+            })
+    }
+
+    getCategoryName(id) {
+        const categoryById = this.context.categories.find(category => category.id === id)
+        if (categoryById) {
+            return categoryById.name
+        }
     }
 
     render() {
-        const { postings } = this.state;
+        const { postings, categories } = this.context;
 
         const postingList = postings.map(posting => {
+            const categoryName = this.getCategoryName(posting.category)
             return (
                 <li className='note sticky' key={posting.id}>
                     <Link className='postingId' to={'/wanted-item/' + posting.id} key={posting.id}>
                         <div className='tack'></div>
-                        <p className='note-content'>
-                            {posting.content}
-                        </p>
+                        <h2 className='posting-title'>{posting.title}</h2>
+                        <h3 className='posting-category' >{categoryName}</h3>
                     </Link>
                 </li>
             )
@@ -66,10 +77,10 @@ export default class Wanted extends Component {
                     {/* Selection of category affects the handleSubmit */}
 
                     <Label htmlFor='Help_Wanted_Posting_Title_Input'>Project Title</Label>
-                    <Input htmlFor='Help_Wanted_Posting_Title_Input' placeholder='Project Title' name='Help_Wanted_Posting_Title_Input' className='Help_Wanted_Posting_Title_Input' id='title' />
+                    <Input required htmlFor='Help_Wanted_Posting_Title_Input' placeholder='Project Title' name='Help_Wanted_Posting_Title_Input' className='Help_Wanted_Posting_Title_Input' id='title' maxLength='15' />
 
                     <Label htmlFor='Help_Wanted_Posting_Textarea'>Describe Your Project</Label>
-                    <Textarea placeholder='Project Description' name='Help_Wanted_Posting_Textarea' className='Help_Wanted_Posting_Textarea' id='content' />
+                    <Textarea required placeholder='Project Description' name='Help_Wanted_Posting_Textarea' className='Help_Wanted_Posting_Textarea' id='content' />
                     {/* I imagine whatever goes in this goes in the 'content' part of the database */}
 
                     {/* Upload form for relevant photos? (stretch goal I assume) */}

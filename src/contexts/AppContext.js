@@ -153,6 +153,11 @@ export class AppProvider extends Component {
     this.setState({ postings })
   }
 
+  addPosting = posting => {
+    const newPostings = [...this.state.postings, posting]
+    this.setState({ postings: newPostings })
+  }
+
   processLogin = authToken => {
     TokenService.saveAuthToken(authToken)
     const jwtPayload = TokenService.parseAuthToken()
@@ -209,7 +214,9 @@ export class AppProvider extends Component {
       handleGetThreads: this.handleGetThreads,
       setComments: this.setComments,
       addComment: this.addComment,
-      deleteComment: this.deleteComment
+      deleteComment: this.deleteComment,
+      addPosting: this.addPosting,
+      setPostings: this.setPostings
     }
     return (
       <AppContext.Provider value={value}>
