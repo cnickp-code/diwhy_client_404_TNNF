@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import AuthApiService from '../Services/auth-api-service'
 import TokenService from '../Services/token-service'
 import IdleService from '../Services/idle-service'
+import CategoryService from '../Services/category-api-service'
+import ThreadsApiService from '../Services/threads-api-service'
 // import CategoryService from '../Services/category-api-service'
 
 const AppContext = React.createContext({
@@ -14,14 +16,14 @@ const AppContext = React.createContext({
   comments: [],
   postings: [],
   singlePosting: {},
-  setCategories: () => {},
-  setPostings: () => {},
-  setThreads: () => {},
-  setError: () => {},
-  clearError: () => {},
-  setUser: () => {},
-  processLogin: () => {},
-  processLogout: () => {},
+  setCategories: () => { },
+  setPostings: () => { },
+  setThreads: () => { },
+  setError: () => { },
+  clearError: () => { },
+  setUser: () => { },
+  processLogin: () => { },
+  processLogout: () => { },
 })
 
 export default AppContext
@@ -29,7 +31,15 @@ export default AppContext
 export class AppProvider extends Component {
   constructor(props) {
     super(props)
-    const state = { user: {}, error: null, threads: [], postings: [], singlePosting: {} }
+    const state = {
+      user: {},
+      error: null,
+      threads: [],
+      postings: [],
+      singlePosting: {},
+      categories: [],
+      comments: [],
+    }
 
     const jwtPayload = TokenService.parseAuthToken()
 
@@ -45,17 +55,32 @@ export class AppProvider extends Component {
   }
 
   componentDidMount() {
-    if (TokenService.hasAuthToken()) {
-      IdleService.regiserIdleTimerResets()
-      TokenService.queueCallbackBeforeExpiry(() => {
-        this.fetchRefreshToken()
+    CategoryService.getCategories()
+      .then(categories => {
+        console.log(categories)
+        this.setState({
+          categories
+        })
       })
-    }
   }
 
   componentWillUnmount() {
     IdleService.unRegisterIdleResets()
     TokenService.clearCallbackBeforeExpiry()
+  }
+
+  setComments = (comments) => {
+    this.setState({
+      comments
+    })
+  }
+
+  addComment = (comment) => {
+    let newComments = [...this.state.comments, comment];
+    console.log('addComment: ', newComments);
+    this.setState({
+      comments: newComments
+    })
   }
 
   setSinglePosting = (item) => {
@@ -83,8 +108,32 @@ export class AppProvider extends Component {
   }
 
   setThreads = threads => {
-    console.log(this.state)
-    this.setState({ threads })
+    let newThreads = threads.map(thread => {
+      let threadCategory = this.state.categories.find(item => item.id === thread.category)
+
+      const newThread = {
+        ...thread,
+        category: threadCategory.name
+      }
+
+      return newThread
+    })
+    console.log(newThreads)
+    this.setState({ threads: newThreads })
+  }
+
+  handleGetThreads = () => {
+    CategoryService.getCategories()
+    .then(categories => {
+      this.setState({
+        categories
+      })
+
+      ThreadsApiService.getThreads()
+      .then(threads => {
+          this.setThreads(threads);
+      })
+    })
   }
 
   addThread = (thread) => {
@@ -152,7 +201,10 @@ export class AppProvider extends Component {
       setCategories: this.setCategories,
       setSinglePosting: this.setSinglePosting,
       setThreads: this.setThreads,
-      addThread: this.addThread
+      addThread: this.addThread,
+      handleGetThreads: this.handleGetThreads,
+      setComments: this.setComments,
+      addComment: this.addComment
     }
     return (
       <AppContext.Provider value={value}>

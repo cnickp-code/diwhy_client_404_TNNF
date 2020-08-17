@@ -18,10 +18,11 @@ export default class Feed extends Component {
 
     componentDidMount() {
         this.context.clearError()
-        ThreadsApiService.getThreads()
-            .then(threads => {
-                this.context.setThreads(threads)
-            })
+        // ThreadsApiService.getThreads()
+        //     .then(threads => {
+        //         this.context.setThreads(threads)
+        //     })
+        this.context.handleGetThreads();
     }
 
     handleChange = e => {

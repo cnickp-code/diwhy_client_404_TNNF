@@ -15,6 +15,8 @@ import EditProfilePage from '../src/pages/EditProfilePage'
 import HelpWantedItemPage from '../src/pages/HelpWantedItemPage'
 import './App.css'
 import ThreadItemPage from './pages/ThreadItemPage'
+import TokenService from './Services/token-service'
+import IdleService from './Services/idle-service'
 
 export default class App extends Component {
   state = { hasError: false }
@@ -22,6 +24,15 @@ export default class App extends Component {
   static getDerivedStateFromError(error) {
     console.error(error)
     return { hasError: true }
+  }
+
+  componentDidMount() {
+    if (TokenService.hasAuthToken()) {
+      IdleService.regiserIdleTimerResets()
+      TokenService.queueCallbackBeforeExpiry(() => {
+        this.fetchRefreshToken()
+      })
+    }
   }
 
   //   componentDidMount() {

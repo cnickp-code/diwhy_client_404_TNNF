@@ -13,10 +13,12 @@ export default class Thread extends Component {
 
     componentDidMount() {
         // const threads = ThreadApiService.getThread();
-        ThreadsApiService.getThreads()
-        .then(threads => {
-            this.context.setThreads(threads)
-        })
+        // ThreadsApiService.getThreads()
+        // .then(threads => {
+        //     this.context.setThreads(threads)
+        // })
+
+        this.context.handleGetThreads();
         console.log(threads);
 
         // this.setState({
