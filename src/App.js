@@ -13,6 +13,7 @@ import ProfileRoute from '../src/routes/ProfileRoute/ProfileRoute'
 import BrowsePage from '../src/pages/BrowsePage'
 import EditProfilePage from '../src/pages/EditProfilePage'
 import HelpWantedItemPage from '../src/pages/HelpWantedItemPage'
+import SplashPage from '../src/pages/SplashPage'
 import './App.css'
 import ThreadItemPage from './pages/ThreadItemPage'
 import TokenService from './Services/token-service'
@@ -108,6 +109,10 @@ export default class App extends Component {
             <PrivateRoute
               path={'/edit'}
               component={EditProfilePage}
+            />
+            <PublicRoute
+              path={'/welcome'}
+              component={SplashPage}
             />
             <PublicRoute
               path={'/register'}
