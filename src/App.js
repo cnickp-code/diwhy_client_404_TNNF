@@ -99,10 +99,6 @@ export default class App extends Component {
               component={ThreadItemPage}
             />
             <PrivateRoute
-              path={'/browse'}
-              component={BrowsePage}
-            />
-            <PrivateRoute
               path={'/profile'}
               component={ProfileRoute}
             />
@@ -127,7 +123,6 @@ export default class App extends Component {
             />
           </Switch>
         </main>
-        <Footer />
       </div>
     );
   }
