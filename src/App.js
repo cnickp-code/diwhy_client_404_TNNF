@@ -90,7 +90,7 @@ export default class App extends Component {
               component={WantedRoute}
             />
             <PrivateRoute
-              path={'/wanted-item'}
+              path={'/wanted-item/:id'}
               component={HelpWantedItemPage}
             />
             <PrivateRoute

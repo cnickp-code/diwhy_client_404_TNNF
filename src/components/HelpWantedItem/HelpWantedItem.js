@@ -13,11 +13,19 @@ class HelpWantedItem extends React.Component {
 
 
     componentDidMount() {
-        // WantApiService.getById(1)
-        const singlePosting = PostingsApiService.getPostingById(this.props.id)
-        this.setState({
-            posting: singlePosting
+        WantApiService.getById(this.props.id)
+        .then(posting => {
+            this.setState({
+                posting: posting
+            })
         })
+    }
+
+    getCategoryName(id) {
+        const categoryById = this.context.categories.find(category => category.id === id)
+        if (categoryById) {
+            return categoryById.name
+        }
     }
 
     render() {
@@ -45,7 +53,7 @@ class HelpWantedItem extends React.Component {
                 {/* </div> */}
                 <div className="hw-body-footer">
                     {/* <div className="hw-body-topic"> */}
-                    <p>Topic: {this.state.posting.category}</p>
+                    <p>Topic: {this.getCategoryName(this.state.posting.category)}</p>
                     {/* </div> */}
                     <div className="hw-body-buttons">
                         <button className="hw-btn">Apply</button>

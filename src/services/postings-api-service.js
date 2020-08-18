@@ -1,14 +1,7 @@
 import config from '../config';
-
+// removing this when we have the fetch working
 const PostingsApiService = {
     getPostingById(id) {
-        // fetch(`${config.API_ENDPOINT}/postings/${id}`)
-        //      .then(res => {
-        //           return (!res.ok)
-        //                     ? res.json().then(e => Promise.reject(e))
-        //                     : res.json()
-        //      })
-
         return (
             {
                 id: 1,
