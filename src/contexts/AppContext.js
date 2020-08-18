@@ -39,6 +39,7 @@ export class AppProvider extends Component {
       singlePosting: {},
       categories: [],
       comments: [],
+      loading: true,
       // activeTab: this.props.children[0].props.label,
     }
 
@@ -67,6 +68,12 @@ export class AppProvider extends Component {
   componentWillUnmount() {
     IdleService.unRegisterIdleResets()
     TokenService.clearCallbackBeforeExpiry()
+  }
+
+  setLoading = (loading) => {
+    this.setState({
+      loading
+    })
   }
 
   setComments = (comments) => {
@@ -216,7 +223,8 @@ export class AppProvider extends Component {
       addComment: this.addComment,
       deleteComment: this.deleteComment,
       addPosting: this.addPosting,
-      setPostings: this.setPostings
+      setPostings: this.setPostings,
+      setLoading: this.setLoading
     }
     return (
       <AppContext.Provider value={value}>
