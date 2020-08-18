@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Label, Input, Section } from '../components/Util/Util';
 import AppContext from '../contexts/AppContext'
 import CategoryService from '../Services/category-api-service'
-import BrowseItem from '../components/Browse/BrowseItem'
-import '../components/Browse/Browse.css'
 
 export default class BrowsePage extends Component {
 
@@ -15,11 +13,12 @@ export default class BrowsePage extends Component {
 
      static contextType = AppContext;
 
-     componentDidMount() { 
-          this.context.clearError() 
-          CategoryService.getCategories() 
-               .then((data) => { this.context.setCategories(data) }) 
-               .catch(this.context.setError) }
+     componentDidMount() {
+          this.context.clearError()
+          CategoryService.getCategories()
+               .then((data) => { this.context.setCategories(data) })
+               .catch(this.context.setError)
+     }
      // componentDidMount() {
      //      CategoryService.getCategories()
      //           .then(categories => {
@@ -27,7 +26,7 @@ export default class BrowsePage extends Component {
      //                ThreadsApiService.getThreadByCategoryId(this.context.categories.id)
      //                     .then(thread => {
      //                      let threadCategory = this.context.categories.find(item => item.id === thread.category)
-                         
+
      //                      const activeCategory = {
      //                          ...thread,
      //                          category: threadCategory.name
@@ -46,7 +45,7 @@ export default class BrowsePage extends Component {
           let { categories = [] } = this.context
           if (this.state.searchTerm !== '') {
                categories = categories.filter(category => category.name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
-          } 
+          }
           //map through categories and for each category create a div with a label={category.name}
           //with its contents being BrowseItem with props passed based on activeTab category
           return (
@@ -76,8 +75,8 @@ export default class BrowsePage extends Component {
 
                     <Section list className='Browse_List_Page'>
                          {error
-                         ? (<p className='Red_Alert'>There was an error, please try again</p>) 
-                         : (categories.map(category => <BrowseItem key={category.id} category={category} />))}
+                              ? (<p className='Red_Alert'>There was an error, please try again</p>)
+                              : (categories.map(category => <BrowseItem key={category.id} category={category} />))}
                     </Section>
                </div>
           )
