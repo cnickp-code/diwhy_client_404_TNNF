@@ -59,7 +59,7 @@ export default class Wanted extends Component {
             )
         })
         return (
-            <div>
+            <div className='want-wrapper'>
                 <form className='help-wanted-form' onSubmit={this.handleSubmit}>
                     <h3 className='posting-form-header'>Ask For Help</h3>
                     <Label htmlFor='Help_Wanted_Posting_Select'>Project Category</Label>
@@ -84,7 +84,7 @@ export default class Wanted extends Component {
                     {/* Upload form for relevant photos? (stretch goal I assume) */}
                     <Button type='submit' className='help-wanted-button'>Submit</Button>
                 </form>
-                <ul id='want-wrapper'>
+                <ul id='want-items'>
                     {postingList}
                 </ul>
             </div>

@@ -16,7 +16,6 @@ class Header extends Component {
   renderLoggedInNav() {
     return (
       <nav className='head-nav'>
-        <Link to='/browse' className='Desktop_NavBar_Item'>Browse</Link>
         <Link to='/wanted' className='Desktop_NavBar_Item'>Help Wanted</Link>
         <Link to='/profile' className='Desktop_NavBar_Item'>Profile</Link>
         <Link onClick={this.handleLogoutClick} to='/login'>Logout</Link>
@@ -41,8 +40,7 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <Link className='app-name' to='/' />
-        <div className='app-sub'></div>
+        <Link className='app-sub' to='/' />
         {TokenService.hasAuthToken()
           ? this.renderLoggedInNav()
           : this.renderLoginLink()}
