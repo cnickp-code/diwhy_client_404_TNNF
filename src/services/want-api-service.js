@@ -16,9 +16,6 @@ const WantedApiService = {
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
             )
-            .then(posting =>
-                console.log(posting)
-            )
     },
     postPosting(posting) {
         return fetch(`${config.API_ENDPOINT}/postings`, {
@@ -48,11 +45,8 @@ const WantedApiService = {
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
             )
-
-        // .then(posting => 
-        //     console.log(posting)
-        // )
     },
+    // This isnt needed anymore. delete soon
     getWanted() {
         console.log('get postings ran')
         return [
