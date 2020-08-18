@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Textarea, Label, Input } from '../Util/Util';
-
+// Not using this component
 export default class HelpWantedPostingForm extends Component {
      constructor(props) {
           super(props);

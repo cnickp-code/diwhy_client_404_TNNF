@@ -44,7 +44,7 @@ export default class Wanted extends Component {
     }
 
     render() {
-        const { postings, categories } = this.context;
+        const { postings } = this.context;
 
         const postingList = postings.map(posting => {
             const categoryName = this.getCategoryName(posting.category)
@@ -74,14 +74,12 @@ export default class Wanted extends Component {
                         <option value='7'>Electionics</option>
                         <option value='8'>Outdoorsmanship</option>
                     </select>
-                    {/* Selection of category affects the handleSubmit */}
 
                     <Label htmlFor='Help_Wanted_Posting_Title_Input'>Project Title</Label>
                     <Input required htmlFor='Help_Wanted_Posting_Title_Input' placeholder='Project Title' name='Help_Wanted_Posting_Title_Input' className='Help_Wanted_Posting_Title_Input' id='title' maxLength='15' />
 
                     <Label htmlFor='Help_Wanted_Posting_Textarea'>Describe Your Project</Label>
                     <Textarea required placeholder='Project Description' name='Help_Wanted_Posting_Textarea' className='Help_Wanted_Posting_Textarea' id='content' />
-                    {/* I imagine whatever goes in this goes in the 'content' part of the database */}
 
                     {/* Upload form for relevant photos? (stretch goal I assume) */}
                     <Button type='submit' className='help-wanted-button'>Submit</Button>

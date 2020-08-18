@@ -1,6 +1,5 @@
 import React from 'react';
 import './HelpWantedItem.css';
-import PostingsApiService from '../../Services/postings-api-service';
 import AppContext from '../../contexts/AppContext';
 import WantApiService from '../../Services/want-api-service';
 

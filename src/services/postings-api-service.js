@@ -1,6 +1,7 @@
 import config from '../config';
-// removing this when we have the fetch working
+
 const PostingsApiService = {
+    // not needed
     getPostingById(id) {
         return (
             {
@@ -13,6 +14,24 @@ const PostingsApiService = {
             }
         )
     },
+    postApplicant(posting_id, content) {
+        return fetch(`${config.API_ENDPOINT}/applicants`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+            body: {
+                content: content,
+                posting_id: posting_id
+            }
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    }
 }
 
 export default PostingsApiService;

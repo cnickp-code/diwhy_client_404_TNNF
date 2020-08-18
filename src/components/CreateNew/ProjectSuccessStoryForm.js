@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Textarea, Label, Input } from '../Util/Util';
 
-    //y
+// Not in use
 
 export default class ProjectSuccessStoryForm extends Component {
      constructor(props) {

@@ -9,7 +9,6 @@ export default class BrowseItem extends Component {
 
   render() {
     const { category } = this.props;
-    console.log(category)
     return (
       <div className='Browse_List_Item_Container'>
         <Link to={`/categories/${category.id}`} className='Browse_Category_Item'>

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../Services/token-service'
 import AppContext from '../../contexts/AppContext'
-import MobileNavInput from './MobileNavInput'
 import './Header.css'
 
 class Header extends Component {

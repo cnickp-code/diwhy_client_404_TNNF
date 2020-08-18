@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import AppContext from '../../contexts/AppContext'
 import { Label } from '../Util/Util'
-import ThreadsApiService from '../../Services/threads-api-service';
 import './Feed.css'
 
 export default class Feed extends Component {

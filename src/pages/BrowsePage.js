@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { Label, Input, Section } from '../components/Util/Util';
 import AppContext from '../contexts/AppContext'
 import CategoryService from '../Services/category-api-service'
-import ThreadsApiService from '../Services/threads-api-service'
 import BrowseItem from '../components/Browse/BrowseItem'
 import '../components/Browse/Browse.css'
-import Tabs from '../components/Tabs/Tabs'
 
 export default class BrowsePage extends Component {
 

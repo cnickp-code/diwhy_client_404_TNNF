@@ -1,9 +1,8 @@
 import React from 'react';
 import { Button, Input, Required } from '../Util/Util';
 import AuthApiService from '../../Services/auth-api-service';
-import TokenService from '../../Services/token-service';
+// import TokenService from '../../Services/token-service';
 
-import config from '../../config';
 import AppContext from '../../contexts/AppContext';
 import { Link } from 'react-router-dom';
 
