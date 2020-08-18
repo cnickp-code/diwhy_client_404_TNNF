@@ -1,4 +1,5 @@
 import config from '../config';
+import TokenService from '../Services/token-service';
 
 const PostingsApiService = {
     // not needed
@@ -15,15 +16,30 @@ const PostingsApiService = {
         )
     },
     postApplicant(posting_id, content) {
+        const postApplication = {
+            posting_id,
+            content
+        }
         return fetch(`${config.API_ENDPOINT}/applicants`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
                 'Authorization': `bearer ${TokenService.getAuthToken()}`
             },
-            body: {
-                content: content,
-                posting_id: posting_id
+            body: JSON.stringify(postApplication)
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
+    getApplicationsByPosting(posting_id) {
+        return fetch(`${config.API_ENDPOINT}/applicants/postings/${posting_id}`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
             }
         })
             .then(res =>
