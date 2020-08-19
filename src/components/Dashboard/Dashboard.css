@@ -16,27 +16,21 @@
   border-bottom: 1px solid #231f20;
   /* padding-left: 0; */
   cursor: pointer;
-<<<<<<< HEAD
   display: flex;
   flex-direction: row;
-=======
   flex-shrink: 0;
   position: fixed;
   bottom: 0;
   width: 100%;
   background-color: black;
->>>>>>> 1747814fa42ae70f59f562dd5b3e9746a159483e
 }
 
 .tab-list-item {
   list-style: none;
   /* margin-bottom: -1px; */
   padding: 0.5rem 0.75rem;
-<<<<<<< HEAD
 
-=======
   color: white;
->>>>>>> 1747814fa42ae70f59f562dd5b3e9746a159483e
 }
 
 .tab-list-active {
