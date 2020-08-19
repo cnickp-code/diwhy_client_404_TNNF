@@ -16,8 +16,6 @@
   border-bottom: 1px solid #231f20;
   /* padding-left: 0; */
   cursor: pointer;
-  display: flex;
-  flex-direction: row;
   flex-shrink: 0;
   position: fixed;
   bottom: 0;
@@ -29,7 +27,6 @@
   list-style: none;
   /* margin-bottom: -1px; */
   padding: 0.5rem 0.75rem;
-
   color: white;
 }
 

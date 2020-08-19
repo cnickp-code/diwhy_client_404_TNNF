@@ -5,6 +5,7 @@
   background-color: #e2be7e;
   /* border-bottom: #e0caa9 5px solid; */
   width: 100vw;
+  height: 50px;
 }
 
 .head-nav-logged-in {
@@ -22,14 +23,6 @@ header a {
   margin-right: 10px;
 }
 
-.app-sub {
-  padding: 2rem;
-  width: 100vw;
-  margin-top: -2vh;
-  margin-bottom: -2vh;
-  justify-content: right;
-}
-
 .header-out {
   display: flex;
   flex-direction: row;
@@ -45,21 +38,19 @@ header a {
   justify-content: space-evenly;
 }
 
+@media only screen and (min-width: 400) {
+  .app-sub {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .head-nav {
     width: 50vw;
   }
 
-  .app-sub {
-    background-image: url("../../image-assets/sub-header-small.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    padding: 2rem;
-    width: 100vw;
-    margin-top: -2vh;
-    margin-bottom: -2vh;
-    justify-content: right;
-  }
+  /* .app-sub {
+  } */
 
   /* .app-name {
         height: 15vh;
