@@ -32,7 +32,7 @@ class Header extends Component {
     return (
       <nav className='head-nav'>
         <Link to='/login'>Login</Link>
-        <Link to='/register'>Sign up</Link>
+        <Link to='/register'>Sign Up</Link>
       </nav>
     )
   }

@@ -21,8 +21,8 @@ class Tabs extends React.Component {
     render() {
         const {
             tabClick,
-            props: {children,},
-            state: {activeTab,}
+            props: { children, },
+            state: { activeTab, }
         } = this;
 
         return (

@@ -1,11 +1,24 @@
 .reg-route-section {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .reg-submit-div {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.reg-log-header {
+  align-items: center;
+}
+
+.reg-field {
+  background-color: #846f51;
+  border-radius: 25px;
+}
+
+.already-link {
+  margin: 10px;
 }

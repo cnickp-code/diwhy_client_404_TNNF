@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import AppContext from '../../contexts/AppContext'
 import { Label } from '../Util/Util'
 import './Feed.css'
+import Watch from '../Watch/Watch'
 
 export default class Feed extends Component {
     constructor(props) {
@@ -95,22 +96,25 @@ export default class Feed extends Component {
 
         return (
             <section className='dash-item'>
-                <Label htmlFor='Feed_Category_Select' className='category-select-label'>Filter By Category</Label>
-                <select className='Feed_Category_Select' value={this.state.value} onChange={this.handleChange}>
-                    <option value='1'>Woodworking</option>
-                    <option value='2'>Metalworking</option>
-                    <option value='3'>Needlecraft</option>
-                    <option value='4'>Automotive</option>
-                    <option value='5'>Home Improvement</option>
-                    <option value='6'>General Crafts</option>
-                    <option value='7'>Electronics</option>
-                    <option value='8'>Outdoorsmanship</option>
-                </select>
+                <div className='dash-select'>
+                    <Label htmlFor='Feed_Category_Select' className='category-select-label'>Filter By Category</Label>
+                    <select className='Feed_Category_Select' value={this.state.value} onChange={this.handleChange}>
+                        <option value='1'>Woodworking</option>
+                        <option value='2'>Metalworking</option>
+                        <option value='3'>Needlecraft</option>
+                        <option value='4'>Automotive</option>
+                        <option value='5'>Home Improvement</option>
+                        <option value='6'>General Crafts</option>
+                        <option value='7'>Electronics</option>
+                        <option value='8'>Outdoorsmanship</option>
+                    </select>
+                </div>
                 <ul className='tl-main-container'>
                     {/* <div className="tl-item-container"> */}
                     {threadsList}
                     {/* </div> */}
                 </ul>
+                <Watch className='dash-watchlist' />
             </section>
         )
     }
