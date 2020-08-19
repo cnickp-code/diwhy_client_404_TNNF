@@ -37,16 +37,20 @@ class NewPostForm extends React.Component {
         const newThread = {
             title: title.value,
             content: content.value,
-            category: category.value,
+            category: Number(category.value),
             date_created: date,
             user_id: userId
         }
+
+        
+
 
         ThreadsApiService.postThread(newThread)
             .then(thread => {
                 title.value = '';
                 content.value = '';
                 category.value = '1';
+                console.log('hello')
 
                 ThreadsApiService.getThreads()
                     .then(threads => {
@@ -56,6 +60,7 @@ class NewPostForm extends React.Component {
     }
 
     render() {
+        console.log(this.context.categories);
         return (
             <div className="form-container">
                 <form id="post-form" onSubmit={this.handleSubmit}>

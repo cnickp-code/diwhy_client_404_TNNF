@@ -35,6 +35,7 @@ export class AppProvider extends Component {
       user: {},
       error: null,
       threads: [],
+      fullThreads: [],
       postings: [],
       singlePosting: {},
       categories: [],
@@ -134,18 +135,37 @@ export class AppProvider extends Component {
     this.setState({ threads: newThreads })
   }
 
+  setSearchThreads = threads => {
+    this.setState({
+      threads
+    })
+  }
+
   handleGetThreads = () => {
     CategoryService.getCategories()
-    .then(categories => {
-      this.setState({
-        categories
-      })
+      .then(categories => {
+        this.setState({
+          categories
+        })
 
-      ThreadsApiService.getThreads()
-      .then(threads => {
-          this.setThreads(threads);
+        ThreadsApiService.getThreads()
+          .then(threads => {
+            let newThreads = threads.map(thread => {
+              let threadCategory = this.state.categories.find(item => item.id === thread.category)
+
+              const newThread = {
+                ...thread,
+                category: threadCategory.name
+              }
+
+              return newThread
+            })
+            this.setThreads(threads);
+            this.setState({
+              fullThreads: newThreads
+            })
+          })
       })
-    })
   }
 
   addThread = (thread) => {
@@ -224,7 +244,8 @@ export class AppProvider extends Component {
       deleteComment: this.deleteComment,
       addPosting: this.addPosting,
       setPostings: this.setPostings,
-      setLoading: this.setLoading
+      setLoading: this.setLoading,
+      setSearchThreads: this.setSearchThreads
     }
     return (
       <AppContext.Provider value={value}>
