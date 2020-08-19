@@ -1,4 +1,4 @@
-header {
+.header-in {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -7,22 +7,7 @@ header {
   width: 100vw;
 }
 
-/* .app-name {
-    background-image: url('../../image-assets/header-full-small.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 20vh;
-    width: 100vw;
-    margin-top: 3vh;
-    margin-bottom: -8vh;
-    background-color: #E2BE7E;
-} */
-
-header a {
-  margin-right: 10px;
-}
-
-.head-nav {
+.head-nav-logged-in {
   width: 90vw;
   height: 6vh;
   display: flex;
@@ -33,20 +18,35 @@ header a {
   background-color: #e2be7e;
 }
 
+header a {
+  margin-right: 10px;
+}
+
+.app-sub {
+
+}
+
+.header-out {
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  width: 100vw;
+}
+
+.head-nav-logged-out {
+  width: 100vw;
+  height: 6vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 @media only screen and (min-width: 768px) {
   .head-nav {
     width: 50vw;
   }
 
   .app-sub {
-    background-image: url("../../image-assets/sub-header-small.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    padding: 2rem;
-    width: 100vw;
-    margin-top: -2vh;
-    margin-bottom: -2vh;
-    justify-content: right;
   }
 
   /* .app-name {
