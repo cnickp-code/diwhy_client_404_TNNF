@@ -1,5 +1,6 @@
 .dash-item {
   background-color: #846f51;
+  height: 100%;
 }
 
 .category-select-label {
@@ -38,6 +39,7 @@
 
 .tab-content {
   width: 100vw;
+  height: 100vh;
 }
 
 .wl-main-container {
@@ -72,5 +74,6 @@
     float: left;
     width: 60%;
     margin-right: 0;
+    height: 100%;
   }
 }

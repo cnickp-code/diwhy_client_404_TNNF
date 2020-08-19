@@ -18,9 +18,9 @@ class Header extends Component {
     return (
       <header className='header-in'>
         <nav className='head-nav-logged-in'>
-          <Link className='app-sub' to='/'><img src={subheader} alt='logo'/></Link>
+          <Link className='app-sub' to='/'><img src={subheader} className='sub-header' alt='logo' /></Link>
           <Link to='/wanted' className='Desktop_NavBar_Item'>Help Wanted</Link>
-          <Link to='/profile' className='Desktop_NavBar_Item'>Profile</Link>
+          {/* <Link to='/profile' className='Desktop_NavBar_Item'>Profile</Link> */}
           <Link onClick={this.handleLogoutClick} to='/login'>Logout</Link>
 
           {/* <Link to='/profile' className='Mobile_NavBar_Item'>Profile</Link>

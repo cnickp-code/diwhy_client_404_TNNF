@@ -5,6 +5,7 @@
   background-color: #e2be7e;
   /* border-bottom: #e0caa9 5px solid; */
   width: 100vw;
+  height: 50px;
 }
 
 .head-nav-logged-in {
@@ -22,10 +23,6 @@ header a {
   margin-right: 10px;
 }
 
-.app-sub {
-
-}
-
 .header-out {
   display: flex;
   flex-direction: row;
@@ -41,13 +38,19 @@ header a {
   justify-content: space-evenly;
 }
 
+@media only screen and (min-width: 400) {
+  .app-sub {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .head-nav {
     width: 50vw;
   }
 
-  .app-sub {
-  }
+  /* .app-sub {
+  } */
 
   /* .app-name {
         height: 15vh;
