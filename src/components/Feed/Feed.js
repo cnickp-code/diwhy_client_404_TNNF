@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import AppContext from '../../contexts/AppContext'
 import { Label } from '../Util/Util'
 import './Feed.css'
+import Watch from '../Watch/Watch'
 
 export default class Feed extends Component {
     constructor(props) {
@@ -37,12 +38,12 @@ export default class Feed extends Component {
             return (thread.category === value)
         })
 
-        if(value === 'None') {
+        if (value === 'None') {
             this.context.handleGetThreads();
         } else {
             this.context.setSearchThreads(filteredThreads);
         }
-        
+
     }
 
     //handleFilterChange
@@ -121,13 +122,15 @@ export default class Feed extends Component {
                     <option value='General Crafts'>General Crafts</option>
                     <option value='Electronics'>Electronics</option>
                     <option value='Outdoorsmanship'>Outdoorsmanship</option>
-                    
+
                 </select>
+
                 <ul className='tl-main-container'>
                     {/* <div className="tl-item-container"> */}
                     {threadsList}
                     {/* </div> */}
                 </ul>
+                <Watch className='dash-watchlist' />
             </section>
         )
     }

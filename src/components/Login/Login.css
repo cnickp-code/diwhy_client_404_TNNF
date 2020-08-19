@@ -1,11 +1,24 @@
 .log-route-section {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
 }
 
 .log-submit-div {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.log-field {
+  background-color: #846f51;
+  border-radius: 25px;
+}
+
+.Button {
+  border-radius: 10px;
+  padding: 5px 20px;
+  background-color: var(--color-6);
+  color: #f7f7f7;
 }

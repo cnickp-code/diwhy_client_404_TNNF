@@ -38,8 +38,14 @@ class HelpWantedItem extends React.Component {
         }
     }
 
-    handleDelete = () => {
-
+    handleDelete = (applicant_id) => {
+        PostingsApiService.deleteApplicant(applicant_id)
+            .then(() => {
+                PostingsApiService.getApplicationsByPosting(this.props.id)
+                    .then(applicants => {
+                        this.context.setApplicants(applicants)
+                    })
+            })
     }
 
     render() {
@@ -76,7 +82,7 @@ class HelpWantedItem extends React.Component {
                     <PostApplicantForm id={this.state.posting.id} />
                 </div>
                 {/* This inline style is just temporary for testing display. */}
-                <ul  className='applicants-list' >
+                <ul className='applicants-list' >
                     {applicantsList}
                 </ul>
             </div>

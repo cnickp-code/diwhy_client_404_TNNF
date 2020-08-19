@@ -22,17 +22,6 @@ header a {
   margin-right: 10px;
 }
 
-.app-sub {
-  background-image: url("../../image-assets/sub-header-small.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  padding: 2rem;
-  width: 100vw;
-  margin-top: -2vh;
-  margin-bottom: -2vh;
-  justify-content: right;
-}
-
 .head-nav {
   width: 90vw;
   height: 6vh;
@@ -47,6 +36,17 @@ header a {
 @media only screen and (min-width: 768px) {
   .head-nav {
     width: 50vw;
+  }
+
+  .app-sub {
+    background-image: url("../../image-assets/sub-header-small.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 2rem;
+    width: 100vw;
+    margin-top: -2vh;
+    margin-bottom: -2vh;
+    justify-content: right;
   }
 
   /* .app-name {
