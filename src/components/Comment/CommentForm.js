@@ -18,12 +18,14 @@ class CommentForm extends React.Component {
         };
 
         CommentsServices.postComment(commentObj)
-            .then(comment => {
+            .then(res => {
                 CommentsServices.getCommentsByThreadId(this.props.threadId)
                 .then(comments => {
                     this.context.setComments(comments);
                     this.context.setLoading(false);
                 })
+
+                comment.value = '';
             })
     }
 

@@ -12,6 +12,8 @@ export default class Feed extends Component {
             value: '',
             //checked: false 
         };
+
+        this.category = React.createRef();
     }
 
     static contextType = AppContext
@@ -27,8 +29,22 @@ export default class Feed extends Component {
 
     handleChange = e => {
         this.setState({
-            value: e.target.value,
+            value: this.category.current.value,
         })
+
+        let value = this.category.current.value;
+
+        let filteredThreads = this.context.fullThreads.filter(thread => {
+            console.log()
+            return (thread.category === value)
+        })
+
+        if(value === 'None') {
+            this.context.handleGetThreads();
+        } else {
+            this.context.setSearchThreads(filteredThreads);
+        }
+        
     }
 
     //handleFilterChange
@@ -96,6 +112,7 @@ export default class Feed extends Component {
 
         return (
             <section className='dash-item'>
+<<<<<<< HEAD
                 <div className='dash-select'>
                     <Label htmlFor='Feed_Category_Select' className='category-select-label'>Filter By Category</Label>
                     <select className='Feed_Category_Select' value={this.state.value} onChange={this.handleChange}>
@@ -109,6 +126,21 @@ export default class Feed extends Component {
                         <option value='8'>Outdoorsmanship</option>
                     </select>
                 </div>
+=======
+                <Label htmlFor='Feed_Category_Select' className='category-select-label'>Filter By Category</Label>
+                <select id="category" className='Feed_Category_Select' value={this.state.value} onChange={this.handleChange} ref={this.category}>
+                    <option value='None'>No Filter</option>
+                    <option value='Woodworking'>Woodworking</option>
+                    <option value='Metalworking'>Metalworking</option>
+                    <option value='Needlecraft'>Needlecraft</option>
+                    <option value='Automotive'>Automotive</option>
+                    <option value='Home Improvement'>Home Improvement</option>
+                    <option value='General Crafts'>General Crafts</option>
+                    <option value='Electronics'>Electronics</option>
+                    <option value='Outdoorsmanship'>Outdoorsmanship</option>
+                    
+                </select>
+>>>>>>> 9f187929fcbef721c4b2a81054ebf4de20591775
                 <ul className='tl-main-container'>
                     {/* <div className="tl-item-container"> */}
                     {threadsList}
