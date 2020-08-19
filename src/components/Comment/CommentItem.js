@@ -30,9 +30,9 @@ class CommentItem extends React.Component {
                         {/* <button className="comment-btn">
                             <i className="fas fa-edit"></i>
                         </button> */}
-                        <button className="comment-btn" onClick={this.handleDelete}>
+                        {(this.props.comment.user_name === this.context.user.user_name) && <button className="comment-btn" onClick={this.handleDelete}>
                             <i className="fas fa-eraser"></i>
-                        </button>
+                        </button>}
                     </div>
                 </div>
 

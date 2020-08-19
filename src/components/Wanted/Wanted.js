@@ -6,10 +6,18 @@ import { Link } from 'react-router-dom'
 import { Input, Label, Textarea, Button } from '../Util/Util'
 
 export default class Wanted extends Component {
-    state = {
-        postings: [],
-        error: null
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: '',
+            postings: [],
+            error: null
+            
+        };
+
+        this.category = React.createRef();
     }
+
     static contextType = AppContext;
 
     componentDidMount() {
@@ -84,6 +92,20 @@ export default class Wanted extends Component {
                     {/* Upload form for relevant photos? (stretch goal I assume) */}
                     <Button type='submit' className='help-wanted-button'>Submit</Button>
                 </form>
+                <div className='filter-posts'>
+                <Label htmlFor='Wanted_Category_Select' className='category-select-label'>Filter By Category</Label>
+                <select id="category" className='Feed_Category_Select' value={this.state.value} onChange={this.handleChange} ref={this.category}>
+                    <option value='None'>No Filter</option>
+                    <option value='Woodworking'>Woodworking</option>
+                    <option value='Metalworking'>Metalworking</option>
+                    <option value='Needlecraft'>Needlecraft</option>
+                    <option value='Automotive'>Automotive</option>
+                    <option value='Home Improvement'>Home Improvement</option>
+                    <option value='General Crafts'>General Crafts</option>
+                    <option value='Electronics'>Electronics</option>
+                    <option value='Outdoorsmanship'>Outdoorsmanship</option>
+                </select>
+                </div>
                 <ul id='want-items'>
                     {postingList}
                 </ul>
