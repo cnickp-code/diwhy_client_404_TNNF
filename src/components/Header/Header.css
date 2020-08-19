@@ -23,11 +23,7 @@ header a {
 }
 
 .app-sub {
-  padding: 2rem;
-  width: 100vw;
-  margin-top: -2vh;
-  margin-bottom: -2vh;
-  justify-content: right;
+
 }
 
 .header-out {
@@ -51,14 +47,6 @@ header a {
   }
 
   .app-sub {
-    background-image: url("../../image-assets/sub-header-small.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    padding: 2rem;
-    width: 100vw;
-    margin-top: -2vh;
-    margin-bottom: -2vh;
-    justify-content: right;
   }
 
   /* .app-name {
