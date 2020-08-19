@@ -10,12 +10,14 @@ export default class Wanted extends Component {
         super(props);
         this.state = {
             value: '',
+            postValue: '',
             postings: [],
             error: null,
             formValue: ''
         };
 
         this.categoryPostings = React.createRef();
+        this.formCategory = React.createRef();
     }
 
     static contextType = AppContext;
@@ -25,6 +27,12 @@ export default class Wanted extends Component {
             .then(postings => {
                 this.context.setPostings(postings)
             })
+    }
+
+    handlePostChange = (e) => {
+        this.setState({
+            postValue: this.formCategory.current.value
+        })
     }
 
     handleChange = (e) => {
@@ -50,16 +58,21 @@ export default class Wanted extends Component {
 
     handleSubmit = (ev) => {
         ev.preventDefault()
-        const { title, content, category } = ev.target
+        const { title, content, category_posting } = ev.target
         const newPosting = {
             title: title.value,
             content: content.value,
-            category: category.value
+            category: category_posting.value
         }
         WantedApiService.postPosting(newPosting)
             .then(posting => {
                 WantedApiService.getAllPostings()
                     .then(postings => {
+                        title.value = '';
+                        content.value = '';
+                        this.setState({
+                            postValue: '1'
+                        })
                         this.context.setPostings(postings)
                     })
             })
