@@ -15,10 +15,11 @@ const PostingsApiService = {
             }
         )
     },
-    postApplicant(posting_id, content) {
+    postApplicant(posting_id, content, applicant_id) {
         const postApplication = {
             posting_id,
-            content
+            content,
+            applicant_id
         }
         return fetch(`${config.API_ENDPOINT}/applicants`, {
             method: 'POST',

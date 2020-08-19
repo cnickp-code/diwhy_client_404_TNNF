@@ -41,6 +41,7 @@ export class AppProvider extends Component {
       singlePosting: {},
       categories: [],
       comments: [],
+      applicants: [],
       loading: true,
       // activeTab: this.props.children[0].props.label,
     }
@@ -96,6 +97,19 @@ export class AppProvider extends Component {
     let newComments = [...this.state.comments, comment];
     this.setState({
       comments: newComments
+    })
+  }
+
+  addApplicant = (applicant) => {
+    let newApplicants = [...this.state.applicants, applicant]
+    this.setState({
+      applicants: newApplicants
+    })
+  }
+
+  setApplicants = (applicants) => {
+    this.setState({
+      applicants
     })
   }
 
@@ -256,7 +270,10 @@ export class AppProvider extends Component {
       setPostings: this.setPostings,
       setLoading: this.setLoading,
       setSearchThreads: this.setSearchThreads,
-      setSearchPostings: this.setSearchPostings
+      setSearchPostings: this.setSearchPostings,
+      addApplicant: this.addApplicant,
+      setApplicants: this.setApplicants,
+      setSearchThreads: this.setSearchThreads
     }
     return (
       <AppContext.Provider value={value}>
