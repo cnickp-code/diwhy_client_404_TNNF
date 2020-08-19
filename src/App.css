@@ -1,47 +1,50 @@
 * {
-     box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-     background-color: #FFF7E0;
-     color: #231F20;
-     font-family: 'garage-gothic', sans-serif;
-     font-style: normal;
-     font-weight: 700;
+  background-color: #fff7e0;
+  color: #231f20;
+  font-family: "garage-gothic", sans-serif;
+  font-style: normal;
+  font-weight: 700;
 }
 
 .App {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 a {
-     text-decoration: none;
-     color: #231F20;
-     font-family: 'Impact', bold;
+  text-decoration: none;
+  color: #231f20;
+  font-family: "Impact", bold;
 }
 
 #header {
-     font-family: 'Impact', bold;
+  font-family: "Impact", bold;
 }
 
 section {
-     display: flex;
-     align-items: center;
-     flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .label-input {
-     display: flex;
-     align-items: center;
-     flex-direction: column;
-     justify-content: center;
-     padding: 1rem;
-     
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.75rem;
 }
 
 main {
-     width: 100vw;
+  width: 100vw;
 }
+
+/* @media only screen and (min-width: 768px) {
+
+} */

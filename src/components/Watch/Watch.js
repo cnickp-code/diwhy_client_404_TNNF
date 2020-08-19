@@ -21,26 +21,23 @@ export default class Watch extends Component {
 
     componentDidMount() {
         this.context.clearError()
-        ThreadsApiService.getThreads()
-        .then(threads => {
-            this.context.setThreads(threads)
-        })
+        this.context.handleGetThreads()
         // this.setState({ threads })
-            // .then((data) => {
-            //     console.log(data)
-            //     this.context.setThreads(data)
-            // })
+        // .then((data) => {
+        //     console.log(data)
+        //     this.context.setThreads(data)
+        // })
     }
 
     render() {
         const { threads } = this.context; //change to context later when api works
-        
+
         const threadList = threads.map(thread => {
             return (
-                    <li key={thread.id} className='thread-list'>
-                        <h4 id='header'> {thread.title} </h4>
-                        <p> {thread.date_created.toLocaleString()} </p>
-                    </li>
+                <li key={thread.id} className='thread-list'>
+                    <h4 id='header'> {thread.title} </h4>
+                    <p> {thread.date_created.toLocaleString()} </p>
+                </li>
             )
         })
 
@@ -54,7 +51,7 @@ export default class Watch extends Component {
         return (
             <ScrollArea>
                 <div className='wl-main-container'>
-                <h3 id='header'>Watch List</h3>
+                    <h3 id='header'>Watch List</h3>
                     <ul className='threads'>
                         {threadList}
                     </ul>

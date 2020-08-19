@@ -1,39 +1,41 @@
 :root {
-    --color-1: #231F20;
-    --color-2: #846F51;
-    --color-3: #FFF7E0;
-    --color-4: #E0CAA9;
-    --color-5: #E2BE7E;
-    --color-6: #E92B25;
+  --color-1: #231f20;
+  --color-2: #846f51;
+  --color-3: #fff7e0;
+  --color-4: #e0caa9;
+  --color-5: #e2be7e;
+  --color-6: #e92b25;
 }
 
 .ti-main-container {
-    width: 100%;
-    min-height: fit-content;
-    border: 1px solid black;
-    margin: 0 auto;
-    padding: 30px;
+  width: 100%;
+  min-height: fit-content;
+  border: 1px solid black;
+  margin: 0 auto;
+  padding: 30px;
 }
 
 .ti-item-container {
-    width: 100%;
-    border: 1px solid black;
-    min-height: fit-content;
+  width: 100%;
+  border: 1px solid black;
+  min-height: fit-content;
+  background-color: #846f51;
+  border-radius: 25px;
 }
 
 .ti-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 10px;
-    border-bottom: 1px solid black;
-    padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  padding-left: 25px;
 }
 
 .ti-pic {
-    border-radius: 50%;
-    height: 80px;
-    width: 80px;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
 }
 
 /* .ti-header-content {
@@ -42,41 +44,40 @@
 } */
 
 .ti-name {
-    margin: 0;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .ti-title {
-    margin: 0;
-    font-weight: 300;
+  margin: 0;
+  font-weight: 300;
 }
 
 .ti-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .ti-body-content {
-    padding: 30px;
-    text-align: justify;
+  padding: 30px;
+  text-align: justify;
 }
 
 .ti-body-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 60px;
-    border-top: 1px solid black;
-    align-items: flex-start;
-    padding-left: 25px;
-    margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60px;
+  border-top: 1px solid black;
+  align-items: flex-start;
+  padding-left: 25px;
+  margin: 0;
 }
 
 .ti-body-topic {
-    width: 200px;
-    margin-left: 30px;
+  width: 200px;
+  margin-left: 30px;
 }
-

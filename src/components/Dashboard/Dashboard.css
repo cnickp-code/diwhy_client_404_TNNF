@@ -14,17 +14,29 @@
 
 .tab-list {
   border-bottom: 1px solid #231f20;
-  padding-left: 0;
+  /* padding-left: 0; */
   cursor: pointer;
+<<<<<<< HEAD
   display: flex;
   flex-direction: row;
+=======
+  flex-shrink: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+>>>>>>> 1747814fa42ae70f59f562dd5b3e9746a159483e
 }
 
 .tab-list-item {
   list-style: none;
-  margin-bottom: -1px;
+  /* margin-bottom: -1px; */
   padding: 0.5rem 0.75rem;
+<<<<<<< HEAD
 
+=======
+  color: white;
+>>>>>>> 1747814fa42ae70f59f562dd5b3e9746a159483e
 }
 
 .tab-list-active {
@@ -35,4 +47,39 @@
 
 .tab-content {
   width: 100vw;
+}
+
+.wl-main-container {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .tab-list {
+    display: none;
+  }
+
+  .dash-item {
+    display: inline-block;
+    background-color: #846f51;
+    width: 100%;
+  }
+
+  .wl-main-container {
+    display: block;
+    float: right;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin: 20px;
+  }
+
+  .scrollarea {
+    width: 40%;
+  }
+
+  .tl-main-container {
+    float: left;
+    width: 60%;
+    margin-right: 0;
+  }
 }

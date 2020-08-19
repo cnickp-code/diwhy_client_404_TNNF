@@ -6,10 +6,18 @@ import { Link } from 'react-router-dom'
 import { Input, Label, Textarea, Button } from '../Util/Util'
 
 export default class Wanted extends Component {
-    state = {
-        postings: [],
-        error: null
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: '',
+            postings: [],
+            error: null
+
+        };
+
+        this.categoryPostings = React.createRef();
     }
+
     static contextType = AppContext;
 
     componentDidMount() {
@@ -17,6 +25,21 @@ export default class Wanted extends Component {
             .then(postings => {
                 this.context.setPostings(postings)
             })
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            value: this.categoryPostings.current.value
+        })
+
+        let value = this.categoryPostings.current.value;
+        let filteredPostings = this.context.fullPostings.filter(postings => postings.category === Number(value))
+
+        if (value === '0') {
+            this.context.setPostings(this.context.fullPostings);
+        } else {
+            this.context.setSearchPostings(filteredPostings);
+        }
     }
 
     handleSubmit = (ev) => {
@@ -45,6 +68,8 @@ export default class Wanted extends Component {
 
     render() {
         const { postings } = this.context;
+
+        console.log(this.state.value)
 
         const postingList = postings.map(posting => {
             const categoryName = this.getCategoryName(posting.category)
@@ -84,6 +109,20 @@ export default class Wanted extends Component {
                     {/* Upload form for relevant photos? (stretch goal I assume) */}
                     <Button type='submit' className='help-wanted-button'>Submit</Button>
                 </form>
+                <div className='filter-posts'>
+                    <Label htmlFor='Wanted_Category_Select' className='category-select-label'>Filter By Category</Label>
+                    <select id="categoryPostings" className='Feed_Category_Select' defaultValue='0' value={this.state.value} onChange={this.handleChange} ref={this.categoryPostings}>
+                        <option value='0'>No Filter</option>
+                        <option value='1'>Woodworking</option>
+                        <option value='2'>Metalworking</option>
+                        <option value='3'>Needlecraft</option>
+                        <option value='4'>Automotive</option>
+                        <option value='5'>Home Improvement</option>
+                        <option value='6'>General Crafts</option>
+                        <option value='7'>Electronics</option>
+                        <option value='8'>Outdoorsmanship</option>
+                    </select>
+                </div>
                 <ul id='want-items'>
                     {postingList}
                 </ul>

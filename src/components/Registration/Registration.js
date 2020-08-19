@@ -17,8 +17,8 @@ class Registration extends Component {
     ev.preventDefault()
     const { user_name, email, password, confirm_password } = ev.target
 
-    if(confirm_password.value !== password.value){
-        return 'Passwords did not match'
+    if (confirm_password.value !== password.value) {
+      return 'Passwords did not match'
     }
 
     AuthApiService.postUser({
@@ -48,60 +48,64 @@ class Registration extends Component {
     return (
       <form className='reg-form'
         onSubmit={this.handleSubmit}>
-        <fieldset className='reg-field'> 
-        <div role='alert'>
-          {error && <p>{error}</p>}
-        </div>
-        <div className='label-input'>
-          <Label htmlFor='registration-user_name-input'>
-            Choose a Username<Required />
-          </Label>
-          <Input
-            ref={this.firstInput}
-            id='registration-user_name-input'
-            name='user_name'
-            required
-          />
-        </div>
-        <div className='label-input'>
-          <Label htmlFor='registration-email-input'>
-            Enter Valid Email<Required />
-          </Label>
-          <Input
-            id='registration-email-input'
-            name='email'
-            required
-          />
-        </div>
-        <div className='label-input'>
-          <Label htmlFor='registration-password-input'>
-            Choose a password<Required />
-          </Label>
-          <Input
-            id='registration-password-input'
-            name='password'
-            type='password'
-            required
-          />
-        </div>
-        <div className='label-input'>
-          <Label htmlFor='registration-password-confirm'>
-            Confirm password<Required />
-          </Label>
-          <Input
-            id='registration-password-confirm'
-            name='confirm_password'
-            type='password'
-            required
-          />
-        </div>
-        <div className='reg-submit-div'>
-          <Button className='solo-button' type='submit'>
-            Sign up
+        <fieldset className='reg-field'>
+          <div role='alert'>
+            {error && <p>{error}</p>}
+          </div>
+          <div className='label-input'>
+            <Label htmlFor='registration-user_name-input'>
+              Username<Required />
+            </Label>
+            <Input
+              ref={this.firstInput}
+              id='registration-user_name-input'
+              name='user_name'
+              placeholder='Username'
+              required
+            />
+          </div>
+          <div className='label-input'>
+            <Label htmlFor='registration-email-input'>
+              Email<Required />
+            </Label>
+            <Input
+              id='registration-email-input'
+              name='email'
+              placeholder='Email'
+              required
+            />
+          </div>
+          <div className='label-input'>
+            <Label htmlFor='registration-password-input'>
+              Password<Required />
+            </Label>
+            <Input
+              id='registration-password-input'
+              name='password'
+              type='password'
+              placeholder='Password'
+              required
+            />
+          </div>
+          <div className='label-input'>
+            <Label htmlFor='registration-password-confirm'>
+              Confirm Password<Required />
+            </Label>
+            <Input
+              id='registration-password-confirm'
+              name='confirm_password'
+              type='password'
+              placeholder='Confirm password'
+              required
+            />
+          </div>
+          <div className='reg-submit-div'>
+            <Button className='solo-button' type='submit'>
+              Sign up
           </Button>
-          <Link to='/login'>Already have an account?</Link>
-        </div>
-        </fieldset> 
+            <Link className='already-link' to='/login'>Already have an account?</Link>
+          </div>
+        </fieldset>
       </form>
     )
   }

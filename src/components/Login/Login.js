@@ -57,10 +57,10 @@ export default class Login extends React.Component {
                               <Input type='password' placeholder='Password' name='password' id='User_Password' required />
                          </div>
                          <div className='log-submit-div'>
-                              <Button type='submit'>
+                              <Button classname='log-btn' type='submit'>
                                    Log In
                               </Button>
-                              <Link to='forgotpassword'>Forgot Your Password?</Link>
+                              {/* <Link to='forgotpassword'>Forgot Your Password?</Link> */}
                          </div>
                     </fieldset>
                </form>

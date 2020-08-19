@@ -50,6 +50,17 @@ header a {
     width: 50vw;
   }
 
+  .app-sub {
+    background-image: url("../../image-assets/sub-header-small.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 2rem;
+    width: 100vw;
+    margin-top: -2vh;
+    margin-bottom: -2vh;
+    justify-content: right;
+  }
+
   /* .app-name {
         height: 15vh;
 

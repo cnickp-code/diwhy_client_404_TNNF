@@ -35,10 +35,13 @@ export class AppProvider extends Component {
       user: {},
       error: null,
       threads: [],
+      fullThreads: [],
       postings: [],
+      fullPostings: [],
       singlePosting: {},
       categories: [],
       comments: [],
+      applicants: [],
       loading: true,
       // activeTab: this.props.children[0].props.label,
     }
@@ -97,6 +100,19 @@ export class AppProvider extends Component {
     })
   }
 
+  addApplicant = (applicant) => {
+    let newApplicants = [...this.state.applicants, applicant]
+    this.setState({
+      applicants: newApplicants
+    })
+  }
+
+  setApplicants = (applicants) => {
+    this.setState({
+      applicants
+    })
+  }
+
   setSinglePosting = (item) => {
     this.setState({
       singlePosting: item
@@ -134,18 +150,37 @@ export class AppProvider extends Component {
     this.setState({ threads: newThreads })
   }
 
+  setSearchThreads = threads => {
+    this.setState({
+      threads
+    })
+  }
+
   handleGetThreads = () => {
     CategoryService.getCategories()
-    .then(categories => {
-      this.setState({
-        categories
-      })
+      .then(categories => {
+        this.setState({
+          categories
+        })
 
-      ThreadsApiService.getThreads()
-      .then(threads => {
-          this.setThreads(threads);
+        ThreadsApiService.getThreads()
+          .then(threads => {
+            let newThreads = threads.map(thread => {
+              let threadCategory = this.state.categories.find(item => item.id === thread.category)
+
+              const newThread = {
+                ...thread,
+                category: threadCategory.name
+              }
+
+              return newThread
+            })
+            this.setThreads(threads);
+            this.setState({
+              fullThreads: newThreads
+            })
+          })
       })
-    })
   }
 
   addThread = (thread) => {
@@ -157,7 +192,16 @@ export class AppProvider extends Component {
   }
 
   setPostings = postings => {
-    this.setState({ postings })
+    this.setState({ 
+      postings,
+      fullPostings: postings 
+    })
+  }
+
+  setSearchPostings = postings => {
+    this.setState({
+      postings
+    })
   }
 
   addPosting = posting => {
@@ -224,7 +268,11 @@ export class AppProvider extends Component {
       deleteComment: this.deleteComment,
       addPosting: this.addPosting,
       setPostings: this.setPostings,
-      setLoading: this.setLoading
+      setLoading: this.setLoading,
+      setSearchThreads: this.setSearchThreads,
+      setSearchPostings: this.setSearchPostings,
+      addApplicant: this.addApplicant,
+      setApplicants: this.setApplicants,
     }
     return (
       <AppContext.Provider value={value}>

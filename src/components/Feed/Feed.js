@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import AppContext from '../../contexts/AppContext'
 import { Label } from '../Util/Util'
 import './Feed.css'
+import Watch from '../Watch/Watch'
 
 export default class Feed extends Component {
     constructor(props) {
@@ -11,6 +12,8 @@ export default class Feed extends Component {
             value: '',
             //checked: false 
         };
+
+        this.category = React.createRef();
     }
 
     static contextType = AppContext
@@ -26,8 +29,21 @@ export default class Feed extends Component {
 
     handleChange = e => {
         this.setState({
-            value: e.target.value,
+            value: this.category.current.value,
         })
+
+        let value = this.category.current.value;
+
+        let filteredThreads = this.context.fullThreads.filter(thread => {
+            return (thread.category === value)
+        })
+
+        if (value === 'None') {
+            this.context.handleGetThreads();
+        } else {
+            this.context.setSearchThreads(filteredThreads);
+        }
+
     }
 
     //handleFilterChange
@@ -96,21 +112,25 @@ export default class Feed extends Component {
         return (
             <section className='dash-item'>
                 <Label htmlFor='Feed_Category_Select' className='category-select-label'>Filter By Category</Label>
-                <select className='Feed_Category_Select' value={this.state.value} onChange={this.handleChange}>
-                    <option value='1'>Woodworking</option>
-                    <option value='2'>Metalworking</option>
-                    <option value='3'>Needlecraft</option>
-                    <option value='4'>Automotive</option>
-                    <option value='5'>Home Improvement</option>
-                    <option value='6'>General Crafts</option>
-                    <option value='7'>Electronics</option>
-                    <option value='8'>Outdoorsmanship</option>
+                <select id="category" className='Feed_Category_Select' defaultValue='None' value={this.state.value} onChange={this.handleChange} ref={this.category}>
+                    <option value='None'>No Filter</option>
+                    <option value='Woodworking'>Woodworking</option>
+                    <option value='Metalworking'>Metalworking</option>
+                    <option value='Needlecraft'>Needlecraft</option>
+                    <option value='Automotive'>Automotive</option>
+                    <option value='Home Improvement'>Home Improvement</option>
+                    <option value='General Crafts'>General Crafts</option>
+                    <option value='Electronics'>Electronics</option>
+                    <option value='Outdoorsmanship'>Outdoorsmanship</option>
+
                 </select>
+
                 <ul className='tl-main-container'>
                     {/* <div className="tl-item-container"> */}
                     {threadsList}
                     {/* </div> */}
                 </ul>
+                <Watch className='dash-watchlist' />
             </section>
         )
     }

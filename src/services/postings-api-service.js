@@ -15,10 +15,11 @@ const PostingsApiService = {
             }
         )
     },
-    postApplicant(posting_id, content) {
+    postApplicant(posting_id, content, applicant_id) {
         const postApplication = {
             posting_id,
-            content
+            content,
+            applicant_id
         }
         return fetch(`${config.API_ENDPOINT}/applicants`, {
             method: 'POST',
@@ -33,6 +34,15 @@ const PostingsApiService = {
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
             )
+    },
+    deleteApplicant(applicant_id) {
+        return fetch(`${config.API_ENDPOINT}/applicants/${applicant_id}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+        })
     },
     getApplicationsByPosting(posting_id) {
         return fetch(`${config.API_ENDPOINT}/applicants/postings/${posting_id}`, {
