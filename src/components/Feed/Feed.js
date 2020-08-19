@@ -126,7 +126,7 @@ export default class Feed extends Component {
                         <option value='Outdoorsmanship'>Outdoorsmanship</option>
                     </select>
                 </div>
-                <NewPostForm />
+                {/* <NewPostForm /> */}
                 <ul className='tl-main-container'>
                     {/* <div className="tl-item-container"> */}
                     {threadsList}

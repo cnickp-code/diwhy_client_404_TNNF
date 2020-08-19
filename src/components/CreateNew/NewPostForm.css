@@ -1,12 +1,14 @@
 .form-container {
-  /* display: flex;
-    flex-direction: column;
-    align-items: flex-start; */
+  display: flex;
+  flex-direction: column;
   background-color: #846f51;
   padding: 20px;
-  padding-bottom: 5px;
-  /* width: fit-content; */
-  height: fit-content;
+  margin: 0;
+  width: 70%;
+  /* height: fit-content; */
+  height: 250px;
+  /* justify-content: space-evenly; */
+
   border: 1px solid #231f20;
 }
 
@@ -59,9 +61,8 @@
 }
 
 #post-form {
-  width: 50%;
+  width: 70%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 250px;
+  justify-content: space-evenly;
 }
