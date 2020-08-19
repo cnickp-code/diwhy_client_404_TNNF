@@ -4,12 +4,11 @@
   background-color: #846f51;
   padding: 20px;
   margin: 0;
-  width: 70%;
+  width: 100%;
   /* height: fit-content; */
   height: 250px;
-  /* justify-content: space-evenly; */
-
-  border: 1px solid #231f20;
+  justify-content: space-evenly;
+  /* border: 1px solid #231f20; */
 }
 
 .post-header {
