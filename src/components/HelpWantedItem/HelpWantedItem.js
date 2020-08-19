@@ -41,6 +41,7 @@ class HelpWantedItem extends React.Component {
     }
 
     render() {
+        console.log(this.state.posting)
         const applicantsList = this.state.applicants.map(applicant => {
             return (
                 <li key={applicant.id}>
@@ -55,7 +56,7 @@ class HelpWantedItem extends React.Component {
                             <img src="https://via.placeholder.com/100" className="hw-pic"></img>
                         </div> */}
                 <div className="hw-header-content">
-                    <h2 className="hw-name"> {this.context.user.user_name}</h2>
+                    <h2 className="hw-name"> {this.state.posting.user_name}</h2>
                     <h3 className="hw-title"><i>{this.state.posting.title}</i></h3>
                 </div>
                 <p>{this.state.posting.content}</p>
