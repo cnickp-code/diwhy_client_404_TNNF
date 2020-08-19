@@ -15,7 +15,7 @@ export default class Wanted extends Component {
 
         };
 
-        this.category = React.createRef();
+        this.categoryPostings = React.createRef();
     }
 
     static contextType = AppContext;
@@ -29,10 +29,10 @@ export default class Wanted extends Component {
 
     handleChange = (e) => {
         this.setState({
-            value: this.category.current.value
+            value: this.categoryPostings.current.value
         })
 
-        let value = this.category.current.value;
+        let value = this.categoryPostings.current.value;
         let filteredPostings = this.context.fullPostings.filter(postings => postings.category === Number(value))
 
         if (value === '0') {
@@ -68,6 +68,8 @@ export default class Wanted extends Component {
 
     render() {
         const { postings } = this.context;
+
+        console.log(this.state.value)
 
         const postingList = postings.map(posting => {
             const categoryName = this.getCategoryName(posting.category)
@@ -109,7 +111,7 @@ export default class Wanted extends Component {
                 </form>
                 <div className='filter-posts'>
                     <Label htmlFor='Wanted_Category_Select' className='category-select-label'>Filter By Category</Label>
-                    <select id="category" className='Feed_Category_Select' value={this.state.value} onChange={this.handleChange} ref={this.category}>
+                    <select id="categoryPostings" className='Feed_Category_Select' defaultValue='0' value={this.state.value} onChange={this.handleChange} ref={this.categoryPostings}>
                         <option value='0'>No Filter</option>
                         <option value='1'>Woodworking</option>
                         <option value='2'>Metalworking</option>

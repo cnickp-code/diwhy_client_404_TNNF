@@ -34,7 +34,6 @@ export default class Feed extends Component {
         let value = this.category.current.value;
 
         let filteredThreads = this.context.fullThreads.filter(thread => {
-            console.log()
             return (thread.category === value)
         })
 
@@ -112,7 +111,7 @@ export default class Feed extends Component {
         return (
             <section className='dash-item'>
                 <Label htmlFor='Feed_Category_Select' className='category-select-label'>Filter By Category</Label>
-                <select id="category" className='Feed_Category_Select' value={this.state.value} onChange={this.handleChange} ref={this.category}>
+                <select id="category" className='Feed_Category_Select' defaultValue='None' value={this.state.value} onChange={this.handleChange} ref={this.category}>
                     <option value='None'>No Filter</option>
                     <option value='Woodworking'>Woodworking</option>
                     <option value='Metalworking'>Metalworking</option>
