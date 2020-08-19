@@ -12,7 +12,7 @@ export default class Wanted extends Component {
             value: '',
             postings: [],
             error: null
-            
+
         };
 
         this.category = React.createRef();
@@ -25,6 +25,21 @@ export default class Wanted extends Component {
             .then(postings => {
                 this.context.setPostings(postings)
             })
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            value: this.category.current.value
+        })
+
+        let value = this.category.current.value;
+        let filteredPostings = this.context.fullPostings.filter(postings => postings.category === Number(value))
+
+        if (value === '0') {
+            this.context.setPostings(this.context.fullPostings);
+        } else {
+            this.context.setSearchPostings(filteredPostings);
+        }
     }
 
     handleSubmit = (ev) => {
@@ -93,18 +108,18 @@ export default class Wanted extends Component {
                     <Button type='submit' className='help-wanted-button'>Submit</Button>
                 </form>
                 <div className='filter-posts'>
-                <Label htmlFor='Wanted_Category_Select' className='category-select-label'>Filter By Category</Label>
-                <select id="category" className='Feed_Category_Select' value={this.state.value} onChange={this.handleChange} ref={this.category}>
-                    <option value='None'>No Filter</option>
-                    <option value='Woodworking'>Woodworking</option>
-                    <option value='Metalworking'>Metalworking</option>
-                    <option value='Needlecraft'>Needlecraft</option>
-                    <option value='Automotive'>Automotive</option>
-                    <option value='Home Improvement'>Home Improvement</option>
-                    <option value='General Crafts'>General Crafts</option>
-                    <option value='Electronics'>Electronics</option>
-                    <option value='Outdoorsmanship'>Outdoorsmanship</option>
-                </select>
+                    <Label htmlFor='Wanted_Category_Select' className='category-select-label'>Filter By Category</Label>
+                    <select id="category" className='Feed_Category_Select' value={this.state.value} onChange={this.handleChange} ref={this.category}>
+                        <option value='0'>No Filter</option>
+                        <option value='1'>Woodworking</option>
+                        <option value='2'>Metalworking</option>
+                        <option value='3'>Needlecraft</option>
+                        <option value='4'>Automotive</option>
+                        <option value='5'>Home Improvement</option>
+                        <option value='6'>General Crafts</option>
+                        <option value='7'>Electronics</option>
+                        <option value='8'>Outdoorsmanship</option>
+                    </select>
                 </div>
                 <ul id='want-items'>
                     {postingList}
