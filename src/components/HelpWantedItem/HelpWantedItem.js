@@ -8,6 +8,12 @@ import PostingsApiService from '../../Services/postings-api-service';
 class HelpWantedItem extends React.Component {
     static contextType = AppContext;
 
+    static defaultProps = {
+        history: {
+            push: () => { },
+        },
+    };
+
     state = {
         posting: {},
         applicants: []
@@ -26,9 +32,6 @@ class HelpWantedItem extends React.Component {
             .then(applicants => {
                 this.context.setApplicants(applicants)
             })
-            .then(() => {
-                console.log(this.state.applicants)
-            })
     }
 
     getCategoryName(id) {
@@ -38,13 +41,24 @@ class HelpWantedItem extends React.Component {
         }
     }
 
-    handleDelete = (applicant_id) => {
+    handleDeleteApplicant = (applicant_id) => {
         PostingsApiService.deleteApplicant(applicant_id)
             .then(() => {
                 PostingsApiService.getApplicationsByPosting(this.props.id)
                     .then(applicants => {
                         this.context.setApplicants(applicants)
                     })
+            })
+    }
+
+    handleDeletePosting = (posting_id) => {
+        PostingsApiService.deletePosting(posting_id)
+            .then(() => {
+                PostingsApiService.getApplicationsByPosting(this.props.id)
+                    .then(applicants => {
+                        this.context.setApplicants(applicants)
+                    })
+                
             })
     }
 
@@ -76,6 +90,8 @@ class HelpWantedItem extends React.Component {
                     <div className="hw-body-buttons">
                         {/* <button className="hw-btn">Apply</button> */}
                         <button className="hw-btn">Add To Watch List</button>
+                        {(this.context.user.user_name === this.state.posting.user_name) && 
+                        <button type='button' className="hw-btn" onClick={() => this.handleDeletePosting(this.state.posting.id)}>Delete</button>}
                     </div>
 
                     {/* This form doesnt go here. Should conditionally appear when apply button is clicked and disapper after submission */}
