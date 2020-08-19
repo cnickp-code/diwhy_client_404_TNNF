@@ -11,8 +11,8 @@ export default class Wanted extends Component {
         this.state = {
             value: '',
             postings: [],
-            error: null
-
+            error: null,
+            formValue: ''
         };
 
         this.categoryPostings = React.createRef();
@@ -41,6 +41,12 @@ export default class Wanted extends Component {
             this.context.setSearchPostings(filteredPostings);
         }
     }
+
+    // handleChangeForm = (e) => {
+    //     this.setState({
+
+    //     })
+    // }
 
     handleSubmit = (ev) => {
         ev.preventDefault()
@@ -89,7 +95,7 @@ export default class Wanted extends Component {
                     <h3 className='posting-form-header'>Ask For Help</h3>
                     <Label htmlFor='Help_Wanted_Posting_Select'>Project Category</Label>
                     {/* Dropdown featuring list of categories*/}
-                    <select value={this.state.value} onChange={this.handleChange} name='Help_Wanted_Posting_Select' className='Help_Wanted_Posting_Select' id='category'>
+                    <select  name='Help_Wanted_Posting_Select'  className='Help_Wanted_Posting_Select' id='category'>
                         <option value='1'>Woodworking</option>
                         <option value='2'>Metalworking</option>
                         <option value='3'>Needlecraft</option>
