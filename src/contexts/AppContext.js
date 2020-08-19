@@ -37,6 +37,7 @@ export class AppProvider extends Component {
       threads: [],
       fullThreads: [],
       postings: [],
+      fullPostings: [],
       singlePosting: {},
       categories: [],
       comments: [],
@@ -177,7 +178,16 @@ export class AppProvider extends Component {
   }
 
   setPostings = postings => {
-    this.setState({ postings })
+    this.setState({ 
+      postings,
+      fullPostings: postings 
+    })
+  }
+
+  setSearchPostings = postings => {
+    this.setState({
+      postings
+    })
   }
 
   addPosting = posting => {
@@ -245,7 +255,8 @@ export class AppProvider extends Component {
       addPosting: this.addPosting,
       setPostings: this.setPostings,
       setLoading: this.setLoading,
-      setSearchThreads: this.setSearchThreads
+      setSearchThreads: this.setSearchThreads,
+      setSearchPostings: this.setSearchPostings
     }
     return (
       <AppContext.Provider value={value}>
