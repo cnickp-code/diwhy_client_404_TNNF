@@ -1,0 +1,22 @@
+.apply-form {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+}
+
+.application-text {
+    height: 60%;
+    width: 100%;
+}
+
+.apply-form-button {
+    width: 50%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--color-6);
+    color: #f7f7f7;
+}
