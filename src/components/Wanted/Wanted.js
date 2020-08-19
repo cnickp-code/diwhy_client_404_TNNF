@@ -10,12 +10,14 @@ export default class Wanted extends Component {
         super(props);
         this.state = {
             value: '',
+            postValue: '',
             postings: [],
-            error: null
-
+            error: null,
+            formValue: ''
         };
 
         this.categoryPostings = React.createRef();
+        this.formCategory = React.createRef();
     }
 
     static contextType = AppContext;
@@ -25,6 +27,12 @@ export default class Wanted extends Component {
             .then(postings => {
                 this.context.setPostings(postings)
             })
+    }
+
+    handlePostChange = (e) => {
+        this.setState({
+            postValue: this.formCategory.current.value
+        })
     }
 
     handleChange = (e) => {
@@ -42,18 +50,29 @@ export default class Wanted extends Component {
         }
     }
 
+    // handleChangeForm = (e) => {
+    //     this.setState({
+
+    //     })
+    // }
+
     handleSubmit = (ev) => {
         ev.preventDefault()
-        const { title, content, category } = ev.target
+        const { title, content, category_posting } = ev.target
         const newPosting = {
             title: title.value,
             content: content.value,
-            category: category.value
+            category: category_posting.value
         }
         WantedApiService.postPosting(newPosting)
             .then(posting => {
                 WantedApiService.getAllPostings()
                     .then(postings => {
+                        title.value = '';
+                        content.value = '';
+                        this.setState({
+                            postValue: '1'
+                        })
                         this.context.setPostings(postings)
                     })
             })
@@ -89,7 +108,7 @@ export default class Wanted extends Component {
                     <h3 className='posting-form-header'>Ask For Help</h3>
                     <Label htmlFor='Help_Wanted_Posting_Select'>Project Category</Label>
                     {/* Dropdown featuring list of categories*/}
-                    <select value={this.state.value} onChange={this.handleChange} name='Help_Wanted_Posting_Select' className='Help_Wanted_Posting_Select' id='category'>
+                    <select  name='Help_Wanted_Posting_Select'  className='Help_Wanted_Posting_Select' id='category'>
                         <option value='1'>Woodworking</option>
                         <option value='2'>Metalworking</option>
                         <option value='3'>Needlecraft</option>
