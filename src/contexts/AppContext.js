@@ -273,7 +273,6 @@ export class AppProvider extends Component {
       setSearchPostings: this.setSearchPostings,
       addApplicant: this.addApplicant,
       setApplicants: this.setApplicants,
-      setSearchThreads: this.setSearchThreads
     }
     return (
       <AppContext.Provider value={value}>
