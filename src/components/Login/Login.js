@@ -60,7 +60,7 @@ export default class Login extends React.Component {
                               <Button className='log-btn' type='submit'>
                                    Log In
                               </Button>
-                              {/* <Link to='forgotpassword'>Forgot Your Password?</Link> */}
+                              <Link className='already-link' to='/register'>No Account? Register Here</Link>
                          </div>
                     </fieldset>
                </form>
