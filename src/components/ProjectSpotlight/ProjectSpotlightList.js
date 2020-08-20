@@ -10,6 +10,9 @@ export default class ProjectSpotlightList extends React.Component {
                 <ProjectSpotlightItem />
                 <ProjectSpotlightItem />
                 <ProjectSpotlightItem />
+                <ProjectSpotlightItem />
+                <ProjectSpotlightItem />
+                <ProjectSpotlightItem />
             </div>
         )
     }

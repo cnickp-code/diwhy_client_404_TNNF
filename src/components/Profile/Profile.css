@@ -17,6 +17,8 @@
     background-image: url('https://i.pinimg.com/originals/f9/4f/37/f94f37eb1fbdfb5d49dc97e711a35289.jpg');
     width: 100%;
     height: 30vh;
+    background-size: 100% 150%;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
