@@ -6,6 +6,7 @@ import Feed from '../Feed/Feed'
 import Tabs from '../Tabs/Tabs'
 import './Dashboard.css'
 import NewPostForm from '../CreateNew/NewPostForm';
+import FormOverlay from '../CreateNew/FormOverlay';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -41,26 +42,27 @@ class Dashboard extends Component {
         const isMobile = width <= 500;
         return (
             <>
-            {isMobile 
-                ? (
-                    (
-                    <Tabs className='dash-wrapper'>
-                        <div label='Feed'><Feed /></div>
-                        <div label='Create New'><NewPostForm /></div>
-                        <div label='Watch List'><Watch /></div>
-                    </Tabs>
+                {isMobile
+                    ? (
+                        (
+                            <Tabs className='dash-wrapper'>
+                                <div label='Feed'><Feed /></div>
+                                <div label='Create New'><NewPostForm /></div>
+                                <div label='Watch List'><Watch /></div>
+                            </Tabs>
+                        )
                     )
-                )
-                : (
-                    <div className='dash-wrapper'>
-                        <NewPostForm />
-                        <div className='dash-content'>
-                            <Feed />
-                            <Watch />
+                    : (
+                        <div className='dash-wrapper'>
+                            {this.context.showPostOverlay && <FormOverlay />}
+                            <div className='dash-content'>
+
+                                <Feed />
+                                <Watch />
+                            </div>
                         </div>
-                    </div>
-                )
-            }
+                    )
+                }
             </>
         )
     }
