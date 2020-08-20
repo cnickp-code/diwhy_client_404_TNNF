@@ -52,12 +52,10 @@ export default class Watch extends Component {
         }
         return (
             <ScrollArea>
-                <div className='wl-main-container'>
                     <h3 id='header'>Watch List</h3>
                     <ul className='threads'>
                         {threadList}
                     </ul>
-                </div>
             </ScrollArea>
         )
     }

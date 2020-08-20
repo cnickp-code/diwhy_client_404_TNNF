@@ -27,10 +27,9 @@
 }
 
 
-/* .log-field {
-  background-color: #8D1814;
-  border-radius: 25px;
-} */
+.log-field {
+  border: none;
+}
 
 .Button {
   border-radius: 10px;
