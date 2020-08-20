@@ -2,7 +2,7 @@
   width: 100%;
   margin: 40px auto 10px;
   padding: 20px;
-  background-color: #E2BE7E;
+  background-color: #e2be7e;
 }
 
 .tl-item-container {
@@ -12,7 +12,7 @@
 
 .tl-header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   padding: 10px;
   background-color: #fff7e0;
@@ -55,7 +55,8 @@
 
 .tl-options {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .category-select-label {
@@ -63,7 +64,7 @@
 }
 
 .cat-select {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .dash-select {
@@ -72,6 +73,15 @@
 
 .Watch {
   display: none;
+}
+
+.feed-btn {
+  margin: 5px;
+  height: 50%;
+}
+
+.tl-likes {
+  border: black 1px;
 }
 
 @media only screen and (min-width: 768px) {

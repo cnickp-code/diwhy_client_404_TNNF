@@ -101,12 +101,14 @@ export default class Feed extends Component {
                         <h3 className="tl-title"><i>{thread.title}</i></h3>
                     </div>
                     <p className='tl-content'>{thread.content}</p>
-                    <div className='tl-options'>
-                        <Button className='feed-btn'>Like</Button>
-                        <Button className='feed-btn'>Add To Watch List</Button>
-                    </div>
                     {/* </div> */}
                 </Link>
+                <div className='tl-options'>
+                    <Button className='feed-btn'>Like</Button>
+                    <div className='tl-likes'>10</div>
+                    {/* {thread likes variable} */}
+                    <Button className='feed-btn'>Add To Watch List</Button>
+                </div>
             </li>
         })
 
