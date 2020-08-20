@@ -68,7 +68,7 @@ class HelpWantedItem extends React.Component {
                         </div> */}
                 <div className="hw-main-container">
                     <div className="hw-header-content">
-                        <h2 className="hw-name"> {this.state.posting.user_name}</h2>
+                        <a href={`/profile/${this.state.posting.user_name}`}><h2 className="hw-name"> {this.state.posting.user_name}</h2></a>
                         <h3 className="hw-title"><i>{this.state.posting.title}</i></h3>
                     </div>
                     <p className='hw-content'>{this.state.posting.content}</p>

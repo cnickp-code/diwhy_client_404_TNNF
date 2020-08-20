@@ -22,6 +22,7 @@ class ApplicantItem extends React.Component {
             .then(posting => {
                 WantedApiService.getAllPostings()
                     .then(postings => {
+                        console.log('GOT NEW POSTS');
                         this.context.setPostings(postings)
                     })
             })
@@ -40,6 +41,7 @@ class ApplicantItem extends React.Component {
             .then(posting => {
                 WantedApiService.getAllPostings()
                     .then(postings => {
+                        console.log('GOT NEW POSTS');
                         this.context.setPostings(postings)
 
                     })
@@ -49,29 +51,40 @@ class ApplicantItem extends React.Component {
         })
     }
 
-    handleDeleteApplicant = (applicant_id) => {
-        PostingsApiService.deleteApplicant(applicant_id)
+    handleDeleteApplicant = () => {
+        PostingsApiService.deleteApplicant(this.props.applicant.id)
             .then(() => {
                 PostingsApiService.getApplicationsByPosting(this.props.posting.id)
                     .then(applicants => {
+                        
                         this.context.setApplicants(applicants)
                     })
             })
     }
 
     render() {
-        console.log(this.props.posting)
-        console.log(this.props.applicant)
+
         console.log('CONTEXT POSTINGS ', this.context.postings);
-        let accepted = <button className='application-button' onClick={this.handleCancelApplicant}>Cancel</button>;
+        
 
-        console.log('-----------------')
-        console.log(this.props.posting.accepted_app)
-        console.log(this.props.applicant.user.user_name)
+        let accepted = <button className='application-button' onClick={this.handleAcceptApplicant}>Accept</button>;
+        let postingId = this.props.posting.id;
+        console.log(postingId)
+        let focusPosting 
 
-        if (this.props.posting.accepted_app === this.props.applicant.user.user_name) {
-            accepted = <button className='application-button' onClick={this.handleAcceptApplicant}>Accept</button>;
+        
+        if(this.context.postings.length > 0) {
+            focusPosting = this.context.postings.find(posting => posting.id === postingId);
+            console.log(focusPosting);
+            if (focusPosting.accepted_app === this.props.applicant.user.user_name) {
+                accepted = <button className='application-button' onClick={this.handleCancelApplicant}>Cancel</button>;
+                
+            }
         }
+        
+        
+
+
 
         return (
             <li className='applicant-list-item' >
