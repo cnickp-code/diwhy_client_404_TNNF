@@ -2,7 +2,12 @@
   display: flex;
   align-items: left;
   flex-direction: column;
+  background-image: url('../../image-assets/Metal-Working-Cart.jpg');
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 
 .log-submit-div {
   display: flex;
