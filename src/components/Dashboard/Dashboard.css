@@ -1,6 +1,6 @@
 .dash-item {
   background-color: #846f51;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .category-select-label {
@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
 .tab-list {
@@ -27,7 +28,7 @@
 }
 
 .tab-list-item {
-    text-align: center;
+  text-align: center;
   list-style: none;
   /* margin-bottom: -1px; */
   padding: 0.5rem 0.75rem;
@@ -51,15 +52,15 @@
   height: 100vh;
 }
 
-.wl-main-container {
+/* .wl-main-container {
   display: none;
 }
 
-/* .form-container {
+.form-container {
   display: none;
 } */
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 450px) {
   .tab-list {
     display: none;
   }
