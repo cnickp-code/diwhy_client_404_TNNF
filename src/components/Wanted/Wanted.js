@@ -90,12 +90,18 @@ export default class Wanted extends Component {
 
         const postingList = postings.map(posting => {
             const categoryName = this.getCategoryName(posting.category)
+            let acceptBool = false;
+            if(posting.accepted_app) {
+                acceptBool = true;
+            }
             return (
                 <li className='note sticky' key={posting.id}>
                     <Link className='postingId' to={'/wanted-item/' + posting.id} key={posting.id}>
                         <div className='tack'></div>
                         <h2 className='posting-title'>{posting.title}</h2>
                         <h3 className='posting-category' >{categoryName}</h3>
+                        {!acceptBool && <h4 className="posting-apply">Apply Now!</h4>}
+                        {acceptBool && <h4 className="posting-closed">Closed</h4>}
                     </Link>
                 </li>
             )

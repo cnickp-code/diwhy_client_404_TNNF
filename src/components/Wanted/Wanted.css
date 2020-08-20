@@ -108,3 +108,13 @@ div#want-wrapper div:hover.note {
   padding-top: 10px;
   background-color: #846f51;
 }
+
+.posting-apply {
+  text-align: center;
+  color: green;
+}
+
+.posting-closed {
+  text-align: center;
+  color: red;
+}
