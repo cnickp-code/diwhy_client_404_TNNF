@@ -24,14 +24,14 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: black;
+  background-color: #231f20;
 }
 
 .tab-list-item {
   list-style: none;
   /* margin-bottom: -1px; */
   padding: 0.5rem 0.75rem;
-  color: white;
+  color: #fff7e0;
   width: 30%;
   margin: 0;
 }

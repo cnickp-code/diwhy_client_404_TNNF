@@ -50,6 +50,7 @@
     align-items: center;
     margin-top: 3rem;
     color: #231F20;
+    background-color: #FFF7E0;
 }
 
 .block {
@@ -106,6 +107,10 @@
         padding-bottom: 5rem;
         color: #FFF7E0;
         text-shadow: 2px 2px #231F20;
+    }
+
+    .started-info {
+        padding-right: 2rem;
     }
 
     .logo-wrapper {

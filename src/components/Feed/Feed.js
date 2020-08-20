@@ -114,7 +114,7 @@ export default class Feed extends Component {
             <section className='dash-item'>
                 <div className='dash-select'>
                     <Label htmlFor='Feed_Category_Select' className='category-select-label'>Filter By Category</Label>
-                    <select id="category" className='Feed_Category_Select' defaultValue='None' value={this.state.value} onChange={this.handleChange} ref={this.category}>
+                    <select id="category" className='Feed_Category_Select' value={this.state.value} onChange={this.handleChange} ref={this.category}>
                         <option value='None'>No Filter</option>
                         <option value='Woodworking'>Woodworking</option>
                         <option value='Metalworking'>Metalworking</option>

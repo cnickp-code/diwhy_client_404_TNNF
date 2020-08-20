@@ -8,6 +8,10 @@ class SplashPage extends React.Component {
     render() {
         return (
             <div className='splash-wrapper'>
+                <nav className='head-nav-logged-out'>
+                    <Link id='left-log' className='out-link' to='/login'>Login</Link>
+                    <Link className='out-link' to='/register'>Sign up</Link>
+                </nav>
                 <div id='splash' className='splash-head'>
                     <div className='block'></div>
                     <div className='logo-wrapper'>

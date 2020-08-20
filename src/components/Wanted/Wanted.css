@@ -7,7 +7,7 @@
   /* padding-left: 50px;
   padding-right: 50px; */
   border-radius: 25px;
-  border: 1px solid black;
+  border: 1px solid #231f20;
   padding: 20px 50px;
   background-color: #846f51;
   min-width: 280px;
@@ -70,7 +70,7 @@ div#want-wrapper div:hover.note {
   margin: 10px 20px;
   padding: 5px 20px;
   background-color: var(--color-6);
-  color: #f7f7f7;
+  color: #fff7e0;
 }
 
 .Help_Wanted_Posting_Textarea {
@@ -103,7 +103,7 @@ div#want-wrapper div:hover.note {
   margin: 0 auto;
   width: 20%;
   border-radius: 25px;
-  border: 1px solid black;
+  border: 1px solid #231f20;
   padding: 30px;
   padding-top: 10px;
   background-color: #846f51;

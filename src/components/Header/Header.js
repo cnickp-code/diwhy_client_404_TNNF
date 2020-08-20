@@ -7,7 +7,6 @@ import './Header.css'
 
 class Header extends Component {
 
-
   static contextType = AppContext
 
   handleLogoutClick = () => {
@@ -22,11 +21,6 @@ class Header extends Component {
           <Link to='/wanted' className='Desktop_NavBar_Item'>Help Wanted</Link>
           {/* <Link to='/profile' className='Desktop_NavBar_Item'>Profile</Link> */}
           <Link onClick={this.handleLogoutClick} to='/login'>Logout</Link>
-
-          {/* <Link to='/profile' className='Mobile_NavBar_Item'>Profile</Link>
-          <MobileNavInput />
-          <Link to='/wanted' className='Mobile_NavBar_Item'>HW</Link> */}
-          {/*  ^ will be hidden by media query (display: none) */}
         </nav>
       </header>
     )
@@ -35,10 +29,6 @@ class Header extends Component {
   renderLoginLink() {
     return (
       <header className='header-out'>
-        <nav className='head-nav-logged-out'>
-          <Link id='left-log' className='out-link' to='/login'>Login</Link>
-          <Link className='out-link' to='/register'>Sign up</Link>
-        </nav>
       </header>
     )
   }

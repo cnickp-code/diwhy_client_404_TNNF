@@ -75,7 +75,7 @@
     text-shadow: none; */
   }
 
-  .out-link {
+  .head-nav-logged-out {
     display: none;
   }
 }

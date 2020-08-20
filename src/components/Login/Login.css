@@ -12,7 +12,7 @@
 }
 
 .log-field {
-  background-color: #846f51;
+  background-color: #8D1814;
   border-radius: 25px;
 }
 
@@ -20,6 +20,6 @@
   border-radius: 10px;
   padding: 5px 20px;
   background-color: var(--color-6);
-  color: #f7f7f7;
+  color: #FFF7E0;
   cursor: pointer;
 }

@@ -10,14 +10,14 @@
 .ti-main-container {
   width: 100%;
   min-height: fit-content;
-  border: 1px solid black;
+  border: 1px solid #231f20;
   margin: 0 auto;
   padding: 30px;
 }
 
 .ti-item-container {
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid #231f20;
   min-height: fit-content;
   background-color: #846f51;
   border-radius: 25px;
@@ -28,7 +28,7 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: 10px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #231f20;
   padding-left: 25px;
 }
 
@@ -71,7 +71,7 @@
   flex-direction: column;
   justify-content: center;
   height: 60px;
-  border-top: 1px solid black;
+  border-top: 1px solid #231f20;
   align-items: flex-start;
   padding-left: 25px;
   margin: 0;
