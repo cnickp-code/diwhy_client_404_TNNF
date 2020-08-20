@@ -10,6 +10,8 @@
 }
 
 .log-route-section {
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px darkgray;
   display: flex;
   align-items: left;
   flex-direction: column;
@@ -26,11 +28,9 @@
   margin: 10px;
 }
 
-
-/* .log-field {
-  background-color: #8D1814;
-  border-radius: 25px;
-} */
+.log-field {
+  border: none;
+}
 
 .Button {
   border-radius: 10px;
@@ -39,3 +39,14 @@
   color: #FFF7E0;
   cursor: pointer;
 }
+
+.log-btn:hover {
+  background-color: rgb(236, 236, 88);
+  color: black;
+}
+
+.already-link {
+  text-shadow: none;
+}
+
+
