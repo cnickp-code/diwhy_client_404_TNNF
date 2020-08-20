@@ -38,7 +38,7 @@ export default class Watch extends Component {
             return (
                 <li key={thread.id} className='thread-list'>
                     <a href={`/thread/${thread.id}`} id='header'><p>{thread.title}</p></a>
-                    <p> {formatDate(thread.date_created, 'Do MMMM YYYY')} </p>
+                    {/* <p> {formatDate(thread.date_created, 'Do MMMM YYYY')} </p> */}
                 </li>
             )
         })
@@ -52,10 +52,10 @@ export default class Watch extends Component {
         }
         return (
             <ScrollArea>
-                    <h3 id='header'>Watch List</h3>
-                    <ul className='threads'>
-                        {threadList}
-                    </ul>
+                <h3 id='header'>Watch List</h3>
+                <ul className='threads'>
+                    {threadList}
+                </ul>
             </ScrollArea>
         )
     }

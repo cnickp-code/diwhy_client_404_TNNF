@@ -58,19 +58,8 @@
 
   .dash-content {
     display: flex;
-<<<<<<< HEAD
-    flex-direction: column;
-    background-color: #846f51;
-    padding: 20px;
-    margin: 0;
-    width: 100%;
-    height: 250px;
-    justify-content: space-evenly;
-=======
     flex-direction: row;
     min-height: 100vh;
-    background-color: #E2BE7E;
->>>>>>> 997451f24fc4208f462084e099a69e0791a7990e
+    background-color: #e2be7e;
   }
-
 }
