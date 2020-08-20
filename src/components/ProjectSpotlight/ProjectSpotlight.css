@@ -12,6 +12,12 @@
     height: 400px;
     background-color: #E2BE7E;
     box-shadow: 1px 3px 5px 2px rgba(0,0,0,0.26);
+    cursor: pointer;
+    position: relative;
+}
+
+.ps-main-container:hover {
+    top: -10px;
 }
 
 .ps-img {
