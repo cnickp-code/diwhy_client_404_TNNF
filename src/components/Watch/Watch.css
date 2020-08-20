@@ -1,11 +1,15 @@
-.wl-main-container {
-    width: 70%;
+.scrollarea {
     min-height: fit-content;
     text-align: center;
-    border: 1px solid black;
-    background-color: #846F51;
+    border: 1px solid #231F20;
     margin: 0 auto;
     padding: 20px;
+    width: 30vw;
+}
+
+.scrollarea-content {
+    background-color: #fff7e0;
+    border-radius: 10px;
 }
 
 .thread-list {
@@ -15,4 +19,12 @@
 
 .threads {
     padding: 0;
+}
+
+@media only screen and (min-width: 450px) {
+
+    .scrollarea {
+        border: none;
+        border-left: 1px solid #231F20;
+    }
 }
