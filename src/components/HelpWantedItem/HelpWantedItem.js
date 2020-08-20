@@ -80,10 +80,7 @@ class HelpWantedItem extends React.Component {
 
         return (
             <div >
-                {/* <div className="hw-pic-container">
-                            <img src="https://via.placeholder.com/100" className="hw-pic"></img>
-                        </div> */}
-                <div className="hw-main-container">
+                <div className="hw-internal-container">
                     <div className="hw-header-content">
                         <a href={`/profile/${this.state.posting.user_name}`}><h2 className="hw-name"> {this.state.posting.user_name}</h2></a>
                         <h3 className="hw-title"><i>{this.state.posting.title}</i></h3>
@@ -91,16 +88,17 @@ class HelpWantedItem extends React.Component {
                     <p className='hw-content'>{this.state.posting.content}</p>
                     <p>Topic: {this.getCategoryName(this.state.posting.category)}</p>
                     <div className="hw-body-buttons">
-                        {/* <button className="hw-btn">Apply</button> */}
-                        {/* <button className="hw-btn">Add To Watch List</button> */}
                         {(this.context.user.user_name === this.state.posting.user_name) && 
                         <button type='button' className="hw-btn" onClick={() => this.handleDeletePosting(this.state.posting.id)}>Delete</button>}
                     </div>
+<<<<<<< HEAD
+                    {!(this.state.posting.user_name === this.context.user.user_name) && <PostApplicantForm id={this.state.posting.id} />}
+=======
 
                     {/* This form doesnt go here. Should conditionally appear when apply button is clicked and disapper after submission */}
                     {!(this.state.posting.user_name === this.context.user.user_name) && !appBool && <PostApplicantForm id={this.state.posting.id} />}
+>>>>>>> 3a32217209bb824a47702e81dba01416127e6c67
                 </div>
-                {/* This inline style is just temporary for testing display. */}
                 <ul className='applicants-list' >
                     {applicantsList}
                 </ul>

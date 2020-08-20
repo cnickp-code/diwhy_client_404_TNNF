@@ -2,6 +2,7 @@ import React from 'react';
 import AppContext from '../../contexts/AppContext';
 import './NewPostForm.css';
 import ThreadsApiService from '../../Services/threads-api-service';
+import { Label, Textarea, Input, Button } from '../Util/Util'
 
 class NewPostForm extends React.Component {
     static contextType = AppContext;
@@ -9,15 +10,8 @@ class NewPostForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            postType: null,
             category: null,
         }
-    }
-
-    handleChange = (e) => {
-        this.setState({
-            postType: e.target.value
-        })
     }
 
     handleSetCategory = (e) => {
@@ -62,13 +56,8 @@ class NewPostForm extends React.Component {
     render() {
         return (
                 <form id="post-form" onSubmit={this.handleSubmit}>
-                    <input id="title" type="text" placeholder="Title"></input>
-                    <select id="type" value={this.state.value} onChange={this.handleChange}>
-                        <option value='question'>Question</option>
-                        <option value='project'>Project Spotlight</option>
-                    </select>
-                    <textarea id="content" className="post-info" placeholder="Ask a question!"></textarea>
-                            Topic:
+                    <h3 className='form-header'>Create New</h3>
+                        <Label htmlFor='cn-select'>Thread Category</Label>
                             <select id="category" value={this.state.value} onChange={this.handleSetCategory} className="post-select">
                         <option value='1'>Woodworking</option>
                         <option value='2'>Metalworking</option>
@@ -79,7 +68,11 @@ class NewPostForm extends React.Component {
                         <option value='7'>Electronics</option>
                         <option value='8'>Outdoorsmanship</option>
                     </select>
-                    <button type="submit" className="hw-btn">Submit</button>
+                    <Label htmlFor='cn-title-input'>Thread Title</Label>
+                    <Input id="title" type="text" placeholder="Thread Title"></Input>
+                    <Label htmlFor='cn-textarea'>Thread Content</Label>
+                    <Textarea id="content" className="post-info" placeholder="Ask a question!"></Textarea>
+                    <Button type="submit" className="hw-btn">Submit</Button>
                 </form>
         )
     }

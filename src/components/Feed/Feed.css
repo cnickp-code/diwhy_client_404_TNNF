@@ -2,6 +2,7 @@
   width: 100%;
   margin: 40px auto 10px;
   padding: 20px;
+  background-color: #E2BE7E;
 }
 
 .tl-item-container {
@@ -49,6 +50,7 @@
 
 .tl-options {
   display: flex;
+  justify-content: space-around;
 }
 
 /* #header {
@@ -60,7 +62,7 @@
   margin-bottom: 10px;
 }
 
-.Feed_Category_Select {
+.cat-select {
     margin-left: 1rem;
 }
 
@@ -71,10 +73,6 @@
 .Watch {
   display: none;
 }
-
-/* Button.feed-btn {
-  padding-left: 20px;
-} */
 
 @media only screen and (min-width: 768px) {
   .tl-main-container {

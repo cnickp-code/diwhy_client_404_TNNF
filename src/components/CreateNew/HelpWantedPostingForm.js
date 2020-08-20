@@ -27,7 +27,7 @@ export default class HelpWantedPostingForm extends Component {
                <form className='Help_Wanted_Posting_Form' onSubmit={this.handleSubmit}>
                     <fieldset className='Help_Wanted_Posting_Form'>
                          <legend>Ask For Help</legend>
-                         <Label htmlFor='Help_Wanted_Posting_Select'>Project Category</Label>
+                         <Label htmlFor='hw-select'>Project Category</Label>
                          {/* Dropdown featuring list of categories*/}
                          <select value={this.state.value} onChange={this.handleChange}>
                               <option value='Woodworking'>Woodworking</option>
@@ -41,11 +41,11 @@ export default class HelpWantedPostingForm extends Component {
                          </select>
                          {/* Selection of category affects the handleSubmit */}
 
-                         <Label htmlFor='Help_Wanted_Posting_Title_Input'>Project Title</Label>
-                         <Input htmlFor='Help_Wanted_Posting_Title_Input' placeholder='Project Title' name='Help_Wanted_Posting_Title_Input' id='Help_Wanted_Posting_Title_Input' />
+                         <Label htmlFor='hw-title-input'>Project Title</Label>
+                         <Input htmlFor='hw-title-input' placeholder='Project Title' name='hw-title-input' id='hw-title-input' />
 
-                         <Label htmlFor='Help_Wanted_Posting_Textarea'>Describe Your Project</Label>
-                         <Textarea placeholder='Project Description' name='Help_Wanted_Posting_Textarea' id='Help_Wanted_Posting_Textarea' />
+                         <Label htmlFor='hw-textarea'>Describe Your Project</Label>
+                         <Textarea placeholder='Project Description' name='hw-textarea' id='hw-textarea' />
                          {/* I imagine whatever goes in this goes in the 'content' part of the database */}
 
                          {/* Upload form for relevant photos? (stretch goal I assume) */}
