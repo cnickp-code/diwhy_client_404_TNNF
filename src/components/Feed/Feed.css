@@ -17,6 +17,11 @@
   padding: 10px;
   background-color: #fff7e0;
   border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.threadId {
+  width: 100%;
 }
 
 .tl-pic {
@@ -52,11 +57,6 @@
   display: flex;
   justify-content: space-around;
 }
-
-/* #header {
-    font-size: 40px;
-    font-weight: 400;
-} */
 
 .category-select-label {
   margin-bottom: 10px;
