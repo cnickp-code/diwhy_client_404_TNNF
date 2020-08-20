@@ -56,7 +56,7 @@ class HelpWantedItem extends React.Component {
                     .then(applicants => {
                         this.context.setApplicants(applicants)
                     })
-                
+
             })
     }
 
@@ -69,12 +69,12 @@ class HelpWantedItem extends React.Component {
 
         let appBool = false;
         this.context.applicants.forEach(app => {
-            if(app.user.user_name === this.context.user.user_name) {
+            if (app.user.user_name === this.context.user.user_name) {
                 appBool = true;
             }
         })
 
-        if(this.state.forward) {
+        if (this.state.forward) {
             return <Redirect to='/wanted' />
         }
 
@@ -88,16 +88,10 @@ class HelpWantedItem extends React.Component {
                     <p className='hw-content'>{this.state.posting.content}</p>
                     <p>Topic: {this.getCategoryName(this.state.posting.category)}</p>
                     <div className="hw-body-buttons">
-                        {(this.context.user.user_name === this.state.posting.user_name) && 
-                        <button type='button' className="hw-btn" onClick={() => this.handleDeletePosting(this.state.posting.id)}>Delete</button>}
+                        {(this.context.user.user_name === this.state.posting.user_name) &&
+                            <button type='button' className="hw-btn" onClick={() => this.handleDeletePosting(this.state.posting.id)}>Delete</button>}
                     </div>
-<<<<<<< HEAD
                     {!(this.state.posting.user_name === this.context.user.user_name) && <PostApplicantForm id={this.state.posting.id} />}
-=======
-
-                    {/* This form doesnt go here. Should conditionally appear when apply button is clicked and disapper after submission */}
-                    {!(this.state.posting.user_name === this.context.user.user_name) && !appBool && <PostApplicantForm id={this.state.posting.id} />}
->>>>>>> 3a32217209bb824a47702e81dba01416127e6c67
                 </div>
                 <ul className='applicants-list' >
                     {applicantsList}
