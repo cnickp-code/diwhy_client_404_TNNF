@@ -1,7 +1,7 @@
 .Login_Form {
   background-color: rgba(255, 255, 255, .7);
   display: flex;
-  border-radius: 3px;
+  border-radius: 10px;
   max-width: 500px;
   flex-direction: column;
   align-items: center;
@@ -19,7 +19,6 @@
   height: 100%;
   background-size: cover;
 }
-
 
 .log-submit-div {
   display: flex;
@@ -47,6 +46,12 @@
 
 .already-link {
   text-shadow: none;
+}
+
+@media screen and (min-width: 600px) {
+ .Login_Form {
+   width: 50%;
+ }
 }
 
 
