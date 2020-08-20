@@ -4,6 +4,7 @@ import AppContext from '../../contexts/AppContext';
 import WantApiService from '../../Services/want-api-service';
 import PostApplicantForm from '../CreateNew/PostApplicantForm';
 import PostingsApiService from '../../Services/postings-api-service';
+import ApplicantItem from './ApplicantItem';
 
 class HelpWantedItem extends React.Component {
     static contextType = AppContext;
@@ -41,15 +42,7 @@ class HelpWantedItem extends React.Component {
         }
     }
 
-    handleDeleteApplicant = (applicant_id) => {
-        PostingsApiService.deleteApplicant(applicant_id)
-            .then(() => {
-                PostingsApiService.getApplicationsByPosting(this.props.id)
-                    .then(applicants => {
-                        this.context.setApplicants(applicants)
-                    })
-            })
-    }
+
 
     handleDeletePosting = (posting_id) => {
         PostingsApiService.deletePosting(posting_id)
@@ -65,14 +58,7 @@ class HelpWantedItem extends React.Component {
     render() {
         const applicantsList = this.context.applicants.map(applicant => {
             return (
-                <li className='applicant-list-item' key={applicant.id}>
-                    <h2 className='application-header'>{applicant.user.user_name}</h2>
-                    <p>{applicant.content}</p>
-                    {(this.context.user.user_name === this.state.posting.user_name) && <div className='application-button-container'>
-                        <button className='application-button'>Delete</button>
-                        <button className='application-button'>Accept</button>
-                    </div>}
-                </li>
+                <ApplicantItem key={applicant.id} applicant={applicant} posting={this.state.posting} />
             )
         })
         return (

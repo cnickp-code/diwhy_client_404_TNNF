@@ -53,6 +53,21 @@ const PostingsApiService = {
             },
         })
     },
+    updatePosting(posting_id, updatedPosting) {
+        return fetch(`${config.API_ENDPOINT}/applicants/postings/${posting_id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+            body: JSON.stringify(updatedPosting)
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
     getApplicationsByPosting(posting_id) {
         return fetch(`${config.API_ENDPOINT}/applicants/postings/${posting_id}`, {
             method: 'GET',
