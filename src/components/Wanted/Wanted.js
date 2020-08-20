@@ -12,8 +12,8 @@ export default class Wanted extends Component {
             value: '',
             postValue: '',
             postings: [],
-            error: null
-
+            error: null,
+            formValue: ''
         };
 
         this.categoryPostings = React.createRef();
@@ -50,13 +50,19 @@ export default class Wanted extends Component {
         }
     }
 
+    // handleChangeForm = (e) => {
+    //     this.setState({
+
+    //     })
+    // }
+
     handleSubmit = (ev) => {
         ev.preventDefault()
-        const { title, content, category_posting } = ev.target
+        const { title, content, category } = ev.target
         const newPosting = {
             title: title.value,
             content: content.value,
-            category: category_posting.value
+            category: category.value
         }
         WantedApiService.postPosting(newPosting)
             .then(posting => {
@@ -82,8 +88,6 @@ export default class Wanted extends Component {
     render() {
         const { postings } = this.context;
 
-        console.log(this.state.value)
-
         const postingList = postings.map(posting => {
             const categoryName = this.getCategoryName(posting.category)
             return (
@@ -102,7 +106,7 @@ export default class Wanted extends Component {
                     <h3 className='posting-form-header'>Ask For Help</h3>
                     <Label htmlFor='Help_Wanted_Posting_Select'>Project Category</Label>
                     {/* Dropdown featuring list of categories*/}
-                    <select value={this.state.postValue} defaultValue='1' onChange={this.handlePostChange} name='Help_Wanted_Posting_Select' className='Help_Wanted_Posting_Select' id='category_posting' ref={this.formCategory}>
+                    <select  name='Help_Wanted_Posting_Select'  className='Help_Wanted_Posting_Select' id='category'>
                         <option value='1'>Woodworking</option>
                         <option value='2'>Metalworking</option>
                         <option value='3'>Needlecraft</option>
