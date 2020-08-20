@@ -60,7 +60,6 @@ class NewPostForm extends React.Component {
     }
 
     render() {
-        console.log(this.context.categories);
         return (
             <div className="form-container">
                 <form id="post-form" onSubmit={this.handleSubmit}>

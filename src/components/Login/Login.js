@@ -57,7 +57,7 @@ export default class Login extends React.Component {
                               <Input type='password' placeholder='Password' name='password' id='User_Password' required />
                          </div>
                          <div className='log-submit-div'>
-                              <Button classname='log-btn' type='submit'>
+                              <Button className='log-btn' type='submit'>
                                    Log In
                               </Button>
                               {/* <Link to='forgotpassword'>Forgot Your Password?</Link> */}

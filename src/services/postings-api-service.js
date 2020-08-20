@@ -44,6 +44,15 @@ const PostingsApiService = {
             },
         })
     },
+    deletePosting(posting_id) {
+        return fetch(`${config.API_ENDPOINT}/postings/${posting_id}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+        })
+    },
     getApplicationsByPosting(posting_id) {
         return fetch(`${config.API_ENDPOINT}/applicants/postings/${posting_id}`, {
             method: 'GET',

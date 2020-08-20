@@ -5,6 +5,7 @@
   background-color: #e2be7e;
   /* border-bottom: #e0caa9 5px solid; */
   width: 100vw;
+  height: 50px;
 }
 
 .head-nav-logged-in {
@@ -41,13 +42,19 @@
   text-shadow: 2px 2px #231F20;
 }
 
+@media only screen and (min-width: 400) {
+  .app-sub {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .head-nav {
     width: 50vw;
   }
 
-  .app-sub {
-  }
+  /* .app-sub {
+  } */
 
   /* .app-name {
         height: 15vh;

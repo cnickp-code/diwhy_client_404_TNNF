@@ -8,6 +8,12 @@ import PostingsApiService from '../../Services/postings-api-service';
 class HelpWantedItem extends React.Component {
     static contextType = AppContext;
 
+    static defaultProps = {
+        history: {
+            push: () => { },
+        },
+    };
+
     state = {
         posting: {},
         applicants: []
@@ -26,9 +32,6 @@ class HelpWantedItem extends React.Component {
             .then(applicants => {
                 this.context.setApplicants(applicants)
             })
-            .then(() => {
-                console.log(this.state.applicants)
-            })
     }
 
     getCategoryName(id) {
@@ -38,7 +41,7 @@ class HelpWantedItem extends React.Component {
         }
     }
 
-    handleDelete = (applicant_id) => {
+    handleDeleteApplicant = (applicant_id) => {
         PostingsApiService.deleteApplicant(applicant_id)
             .then(() => {
                 PostingsApiService.getApplicationsByPosting(this.props.id)
@@ -48,16 +51,27 @@ class HelpWantedItem extends React.Component {
             })
     }
 
+    handleDeletePosting = (posting_id) => {
+        PostingsApiService.deletePosting(posting_id)
+            .then(() => {
+                PostingsApiService.getApplicationsByPosting(this.props.id)
+                    .then(applicants => {
+                        this.context.setApplicants(applicants)
+                    })
+                
+            })
+    }
+
     render() {
         const applicantsList = this.context.applicants.map(applicant => {
             return (
                 <li className='applicant-list-item' key={applicant.id}>
                     <h2 className='application-header'>{applicant.user.user_name}</h2>
                     <p>{applicant.content}</p>
-                    <div className='application-button-container'>
+                    {(this.context.user.user_name === this.state.posting.user_name) && <div className='application-button-container'>
                         <button className='application-button'>Delete</button>
                         <button className='application-button'>Accept</button>
-                    </div>
+                    </div>}
                 </li>
             )
         })
@@ -68,7 +82,7 @@ class HelpWantedItem extends React.Component {
                         </div> */}
                 <div className="hw-main-container">
                     <div className="hw-header-content">
-                        <h2 className="hw-name"> {this.context.user.user_name}</h2>
+                        <h2 className="hw-name"> {this.state.posting.user_name}</h2>
                         <h3 className="hw-title"><i>{this.state.posting.title}</i></h3>
                     </div>
                     <p className='hw-content'>{this.state.posting.content}</p>
@@ -76,6 +90,8 @@ class HelpWantedItem extends React.Component {
                     <div className="hw-body-buttons">
                         {/* <button className="hw-btn">Apply</button> */}
                         <button className="hw-btn">Add To Watch List</button>
+                        {(this.context.user.user_name === this.state.posting.user_name) && 
+                        <button type='button' className="hw-btn" onClick={() => this.handleDeletePosting(this.state.posting.id)}>Delete</button>}
                     </div>
 
                     {/* This form doesnt go here. Should conditionally appear when apply button is clicked and disapper after submission */}
