@@ -3,17 +3,32 @@ import { Section, Label } from '../Util/Util';
 import AppContext from '../../contexts/AppContext';
 import { Link } from 'react-router-dom';
 import TokenService from '../../Services/token-service';
+import AuthApiService from '../../Services/auth-api-service';
 import './Profile.css'
 
 export default class Profile extends Component {
      constructor(props) {
           super(props);
-          this.state = { value: '' };
+          this.state = {
+               value: '',
+               user: null,
+               loading: true,
+          };
 
           this.handleChange = this.handleChange.bind(this);
      }
 
      static contextType = AppContext;
+
+     componentDidMount() {
+          AuthApiService.getUserInfo(this.props.user_name)
+               .then(user => {
+                    this.setState({
+                         loading: false,
+                         user
+                    })
+               })
+     }
 
      handleChange(e) {
           this.setState({
@@ -22,11 +37,11 @@ export default class Profile extends Component {
      }
 
      renderUser() {
-          const { user } = this.context
+          const { user } = this.state
           return <div className='profile-user'>
                <h2 className='User_Name' id='header'>Username: {user.user_name}</h2>
                <h2 className='User_Email' id='header'>Email: {user.email}</h2>
-               <h2 className='User_Endorsements' id='header'>Endorsements: {user.endorsements}</h2>
+               {/* <h2 className='User_Endorsements' id='header'>Endorsements: {user.endorsements}</h2> */}
           </div>
      };
 
@@ -37,37 +52,55 @@ export default class Profile extends Component {
      }
 
      render() {
-          const { error } = this.context;
-          let content;
-          if (error) {
-               content = (error.error === 'User does not exist')
-                    ? <p className='Red_Alert'>User not found.</p>
-                    : <p className='Red_Alert'>There was an error.</p>
-          }
-          else {
-               content = this.renderUser()
-          }
-          //Add way to select expertise, and degree of expertise
+          console.log(this.props.user_name);
+          const { user } = this.state
           return (
-               <Section className='profile-wrapper'>
-                    {content}
-                    {TokenService.hasAuthToken() ? this.renderEditLink() : ''}
-                    <div className='profile-cat-div'>
-                         <Label id='header'>Choose your Categories</Label>
-                         <select className='profile-cat-select' value={this.state.value} onChange={this.handleChange}>
-                              <option value='Woodworking'>Woodworking</option>
-                              <option value='Metalworking'>Metalworking</option>
-                              <option value='Needlecraft'>Needlecraft</option>
-                              <option value='Automotive'>Automotive</option>
-                              <option value='HomeImprovement'>Home Improvement</option>
-                              <option value='GeneralCrafts'>General Crafts</option>
-                              <option value='Outdoorsmanship'>Outdoorsmanship</option>
-                         </select>
-                    </div>
-                    <div className='profile-projects'>
-                         {/* the users respective project spotlights */}
-                    </div>
-               </Section>
-          );
-     };
+               <>
+                    {!this.state.loading &&
+                         <div className='profile-user'>
+                              <h2 className='User_Name' id='header'>Username: {user.user_name}</h2>
+                              <h2 className='User_Email' id='header'>Email: {user.email}</h2>
+                              {/* <h2 className='User_Endorsements' id='header'>Endorsements: {user.endorsements}</h2> */}
+                         </div>
+                    }
+               </>
+          )
+     }
+
+     // render() {
+     //      const { error } = this.context;
+     //      let content;
+     //      if (error) {
+     //           content = (error.error === 'User does not exist')
+     //                ? <p className='Red_Alert'>User not found.</p>
+     //                : <p className='Red_Alert'>There was an error.</p>
+     //      }
+     //      else {
+     //           content = this.renderUser()
+     //      }
+
+     //      console.log(this.props.user_name);
+     //      //Add way to select expertise, and degree of expertise
+     //      return (
+     //           <Section className='profile-wrapper'>
+     //                {content}
+     //                {TokenService.hasAuthToken() ? this.renderEditLink() : ''}
+     //                <div className='profile-cat-div'>
+     //                     <Label id='header'>Choose your Categories</Label>
+     //                     <select className='profile-cat-select' value={this.state.value} onChange={this.handleChange}>
+     //                          <option value='Woodworking'>Woodworking</option>
+     //                          <option value='Metalworking'>Metalworking</option>
+     //                          <option value='Needlecraft'>Needlecraft</option>
+     //                          <option value='Automotive'>Automotive</option>
+     //                          <option value='HomeImprovement'>Home Improvement</option>
+     //                          <option value='GeneralCrafts'>General Crafts</option>
+     //                          <option value='Outdoorsmanship'>Outdoorsmanship</option>
+     //                     </select>
+     //                </div>
+     //                <div className='profile-projects'>
+     //                     the users respective project spotlights
+     //                </div>
+     //           </Section>
+     //      );
+     // };
 };
