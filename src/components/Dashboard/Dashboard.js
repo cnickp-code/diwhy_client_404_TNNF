@@ -8,12 +8,12 @@ import './Dashboard.css'
 import NewPostForm from '../CreateNew/NewPostForm';
 
 class Dashboard extends Component {
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         width: window.innerWidth
-    //     };
-    // }
+    constructor(props) {
+        super(props)
+        this.state = {
+            width: window.innerWidth
+        };
+    }
 
     static contextType = AppContext;
 
@@ -24,58 +24,45 @@ class Dashboard extends Component {
         })
     }
 
-    // componentDidMount() {
-    //     window.addEventListener('resize', this.handleWindowSizeChange);
-    // }
+    componentDidMount() {
+        window.addEventListener('resize', this.handleWindowSizeChange);
+    }
 
-    // componentWillUnmount() {
-    //     window.addEventListener('resize', this.handleWindowSizeChange);
-    // }
+    componentWillUnmount() {
+        window.addEventListener('resize', this.handleWindowSizeChange);
+    }
 
-    // handleWindowSizeChange = () => {
-    //     this.setState({ width: window.innerWidth })
-    // }
+    handleWindowSizeChange = () => {
+        this.setState({ width: window.innerWidth })
+    }
 
     render() {
-        // const { width } = this.state;
-        // const isMobile = width <= 500;
-        // { isMobile 
-        //     ?
-
-        //     : 
-        // }
-
-        // return(
-
-        // )
+        const { width } = this.state;
+        const isMobile = width <= 500;
         return (
-            <Tabs className='dash-wrapper'>
-                <div label='Feed'><Feed /></div>
-                <div label='Create New'><NewPostForm /></div>
-                <div label='Watch List'><Watch /></div>
-            </Tabs>
+            <>
+            {isMobile 
+                ? (
+                    (
+                    <Tabs className='dash-wrapper'>
+                        <div label='Feed'><Feed /></div>
+                        <div label='Create New'><NewPostForm /></div>
+                        <div label='Watch List'><Watch /></div>
+                    </Tabs>
+                    )
+                )
+                : (
+                    <div className='dash-wrapper'>
+                        <NewPostForm />
+                        <div className='dash-content'>
+                            <Feed />
+                            <Watch />
+                        </div>
+                    </div>
+                )
+            }
+            </>
         )
-
-        // return (
-        //     <div className='dash-wrapper'>
-        //         {/* <section className='dash-item'>
-        //             <Sidebar />
-        //         </section> */}
-        //         {/* <div className='dash-main'> */}
-        //             <section className='dash-item'>
-        //                 {/* <CreateNew /> */}
-        //                 <NewPostForm />
-        //                 <Feed />
-        //             </section>
-        //             {/* <section className='dash-item'> */}
-                        
-        //             {/* </section> */}
-        //         {/* </div> */}
-        //         {/* <section className='dash-item'>
-        //             <Watch />
-        //         </section> */}
-        //     </div>
-        // )
     }
 }
 
