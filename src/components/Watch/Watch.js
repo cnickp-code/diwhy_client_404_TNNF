@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AppContext from '../../contexts/AppContext';
-//import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import ScrollArea from 'react-scrollbar';
 import ThreadsApiService from '../../Services/threads-api-service';
 import './Watch.css'
@@ -35,7 +35,7 @@ export default class Watch extends Component {
         const threadList = threads.map(thread => {
             return (
                 <li key={thread.id} className='thread-list'>
-                    <h4 id='header'> {thread.title} </h4>
+                    <Link to='/thread/:id' id='header'> {thread.title} </Link>
                     <p> {thread.date_created.toLocaleString()} </p>
                 </li>
             )

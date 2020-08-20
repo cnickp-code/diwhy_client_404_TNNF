@@ -56,9 +56,9 @@
   display: none;
 }
 
-.form-container {
+/* .form-container {
   display: none;
-}
+} */
 
 @media only screen and (min-width: 768px) {
   .tab-list {
