@@ -2,12 +2,21 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  height: auto;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
+}
+
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
+  background-color: #fff7e0;
+  color: #231f20;
+  font-family: "garage-gothic", sans-serif;
+  font-style: normal;
+  font-weight: 700;
 }
 
 :root {

@@ -18,14 +18,6 @@
   background-color: #e2be7e;
 }
 
-header a {
-  margin-right: 10px;
-}
-
-.app-sub {
-
-}
-
 .header-out {
   display: flex;
   flex-direction: row;
@@ -36,9 +28,17 @@ header a {
 .head-nav-logged-out {
   width: 100vw;
   height: 6vh;
+  padding-top: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  z-index: 10;
+}
+
+.out-link {
+  color: #FFF7E0;
+  font-size: 28px;
+  text-shadow: 2px 2px #231F20;
 }
 
 @media only screen and (min-width: 768px) {
@@ -58,4 +58,17 @@ header a {
         display: flex;
         flex-direction: row;
     } */
+}
+
+@media only screen and (min-width: 950px) {
+
+  #left-log {
+    /* color: #231F20;
+    font-size: 28px;
+    text-shadow: none; */
+  }
+
+  .out-link {
+    display: none;
+  }
 }

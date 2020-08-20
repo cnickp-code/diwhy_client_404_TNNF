@@ -36,8 +36,8 @@ class Header extends Component {
     return (
       <header className='header-out'>
         <nav className='head-nav-logged-out'>
-          <Link to='/login'>Login</Link>
-          <Link to='/register'>Sign up</Link>
+          <Link id='left-log' className='out-link' to='/login'>Login</Link>
+          <Link className='out-link' to='/register'>Sign up</Link>
         </nav>
       </header>
     )
