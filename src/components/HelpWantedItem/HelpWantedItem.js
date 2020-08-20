@@ -75,13 +75,13 @@ class HelpWantedItem extends React.Component {
                     <p>Topic: {this.getCategoryName(this.state.posting.category)}</p>
                     <div className="hw-body-buttons">
                         {/* <button className="hw-btn">Apply</button> */}
-                        <button className="hw-btn">Add To Watch List</button>
+                        {/* <button className="hw-btn">Add To Watch List</button> */}
                         {(this.context.user.user_name === this.state.posting.user_name) && 
                         <button type='button' className="hw-btn" onClick={() => this.handleDeletePosting(this.state.posting.id)}>Delete</button>}
                     </div>
 
                     {/* This form doesnt go here. Should conditionally appear when apply button is clicked and disapper after submission */}
-                    <PostApplicantForm id={this.state.posting.id} />
+                    {!(this.state.posting.user_name === this.context.user.user_name) && <PostApplicantForm id={this.state.posting.id} />}
                 </div>
                 {/* This inline style is just temporary for testing display. */}
                 <ul className='applicants-list' >

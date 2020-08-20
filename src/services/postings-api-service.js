@@ -54,7 +54,7 @@ const PostingsApiService = {
         })
     },
     updatePosting(posting_id, updatedPosting) {
-        return fetch(`${config.API_ENDPOINT}/applicants/postings/${posting_id}`, {
+        return fetch(`${config.API_ENDPOINT}/postings/${posting_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
