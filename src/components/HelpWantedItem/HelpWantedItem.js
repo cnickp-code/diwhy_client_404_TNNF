@@ -1,6 +1,7 @@
 import React from 'react';
 import './HelpWantedItem.css';
 import AppContext from '../../contexts/AppContext';
+import { Redirect } from 'react-router-dom'
 import WantApiService from '../../Services/want-api-service';
 import PostApplicantForm from '../CreateNew/PostApplicantForm';
 import PostingsApiService from '../../Services/postings-api-service';
@@ -17,7 +18,8 @@ class HelpWantedItem extends React.Component {
 
     state = {
         posting: {},
-        applicants: []
+        applicants: [],
+        forward: false
     }
 
 
@@ -45,6 +47,9 @@ class HelpWantedItem extends React.Component {
 
 
     handleDeletePosting = (posting_id) => {
+        this.setState({
+            forward: true
+        })
         PostingsApiService.deletePosting(posting_id)
             .then(() => {
                 PostingsApiService.getApplicationsByPosting(this.props.id)
@@ -61,6 +66,18 @@ class HelpWantedItem extends React.Component {
                 <ApplicantItem key={applicant.id} applicant={applicant} posting={this.state.posting} />
             )
         })
+
+        let appBool = false;
+        this.context.applicants.forEach(app => {
+            if(app.user.user_name === this.context.user.user_name) {
+                appBool = true;
+            }
+        })
+
+        if(this.state.forward) {
+            return <Redirect to='/wanted' />
+        }
+
         return (
             <div >
                 {/* <div className="hw-pic-container">
@@ -81,7 +98,7 @@ class HelpWantedItem extends React.Component {
                     </div>
 
                     {/* This form doesnt go here. Should conditionally appear when apply button is clicked and disapper after submission */}
-                    {!(this.state.posting.user_name === this.context.user.user_name) && <PostApplicantForm id={this.state.posting.id} />}
+                    {!(this.state.posting.user_name === this.context.user.user_name) && !appBool && <PostApplicantForm id={this.state.posting.id} />}
                 </div>
                 {/* This inline style is just temporary for testing display. */}
                 <ul className='applicants-list' >

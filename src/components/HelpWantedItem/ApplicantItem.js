@@ -76,7 +76,7 @@ class ApplicantItem extends React.Component {
         if(this.context.postings.length > 0) {
             focusPosting = this.context.postings.find(posting => posting.id === postingId);
             console.log(focusPosting);
-            if (focusPosting.accepted_app === this.props.applicant.user.user_name) {
+            if (focusPosting !== undefined && focusPosting.accepted_app === this.props.applicant.user.user_name) {
                 accepted = <button className='application-button' onClick={this.handleCancelApplicant}>Cancel</button>;
                 
             }
