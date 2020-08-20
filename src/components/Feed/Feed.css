@@ -1,13 +1,12 @@
 .tl-main-container {
   width: 100%;
-  border-top: 1px solid #231f20;
   margin: 40px auto 10px;
   padding: 20px;
+  background-color: #E2BE7E;
 }
 
 .tl-item-container {
   width: 100%;
-  border: 1px solid #231f20;
   min-height: fit-content;
 }
 
@@ -16,8 +15,8 @@
   flex-direction: row;
   justify-content: flex-start;
   padding: 10px;
-  border-bottom: 1px solid #231f20;
-  background-color: #e2be7e;
+  background-color: #fff7e0;
+  border-radius: 10px;
 }
 
 .tl-pic {
@@ -51,6 +50,7 @@
 
 .tl-options {
   display: flex;
+  justify-content: space-around;
 }
 
 /* #header {
@@ -62,6 +62,10 @@
   margin-bottom: 10px;
 }
 
+.cat-select {
+    margin-left: 1rem;
+}
+
 .dash-select {
   margin: 10px;
 }
@@ -70,17 +74,12 @@
   display: none;
 }
 
-/* Button.feed-btn {
-  padding-left: 20px;
-} */
-
 @media only screen and (min-width: 768px) {
   .tl-main-container {
     width: 80%;
-    border-top: 1px solid #231f20;
-    border-right: 1px solid #231f20;
     margin: 20px 0px 0px;
     padding: 20px 20px 0px 20px;
+    height: 100%;
   }
 
   .post-form {

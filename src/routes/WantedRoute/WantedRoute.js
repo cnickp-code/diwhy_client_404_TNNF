@@ -4,7 +4,7 @@ import Wanted from '../../components/Wanted/Wanted'
 class WantedRoute extends Component {
   render() {
     return (
-      <Wanted />
+      <Wanted history={this.props.history}/>
     );
   }
 }

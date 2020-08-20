@@ -1,16 +1,13 @@
-#want-items {
+.hw-main-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 10px;
-  /* padding-left: 50px;
-  padding-right: 50px; */
-  border-radius: 25px;
-  border: 1px solid #231f20;
-  padding: 20px 50px;
-  background-color: #846f51;
-  min-width: 280px;
+  width: 80%;
+  margin: 20px 0px 0px;
+  padding: 20px 20px 0px 20px;
+  min-height: 100vh;
+  background-color: #E2BE7E;
 }
 
 .note {
@@ -52,17 +49,20 @@ div#want-wrapper div:hover.note {
 }
 
 .help-wanted-form {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 70vw;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: space-around;
-  margin: 20px auto;
-  height: 325px;
-  background-color: #846f51;
-  padding: 10px;
-  border-radius: 25px;
-  min-width: 280px;
+  background-color: #231F20;
+  padding: .5rem;
+  color: #FFF7E0;
+}
+
+.hw-textarea {
+  width: 80%;
+  height: 70px;
+  resize: none;
 }
 
 .help-wanted-button {
@@ -73,17 +73,14 @@ div#want-wrapper div:hover.note {
   color: #fff7e0;
 }
 
-.Help_Wanted_Posting_Textarea {
-  height: 50px;
+.want-item {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-.Help_Wanted_Posting_Textarea,
-.Help_Wanted_Posting_Title_Input,
-.Help_Wanted_Posting_Select {
-  width: 150px;
-}
-
-.posting-form-header {
+.form-header {
   font-size: 22px;
   font-weight: 800;
   margin-top: 15px;
@@ -96,15 +93,15 @@ div#want-wrapper div:hover.note {
 }
 
 .filter-posts {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  min-width: 280px;
-  margin: 0 auto;
-  width: 20%;
-  border-radius: 25px;
-  border: 1px solid #231f20;
-  padding: 30px;
-  padding-top: 10px;
-  background-color: #846f51;
+  margin: 10px;
+}
+
+.posting-apply {
+  text-align: center;
+  color: green;
+}
+
+.posting-closed {
+  text-align: center;
+  color: red;
 }
