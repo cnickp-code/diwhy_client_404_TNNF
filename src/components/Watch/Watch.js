@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import ScrollArea from 'react-scrollbar';
 import ThreadsApiService from '../../Services/threads-api-service';
 import './Watch.css'
+import { FormatD } from '../Util/Util'
+import { format as formatDate } from 'date-fns';
 
 
 export default class Watch extends Component {
@@ -35,8 +37,8 @@ export default class Watch extends Component {
         const threadList = threads.map(thread => {
             return (
                 <li key={thread.id} className='thread-list'>
-                    <Link to='/thread/:id' id='header'> {thread.title} </Link>
-                    <p> {thread.date_created.toLocaleString()} </p>
+                    <a href={`/thread/${thread.id}`} id='header'><p>{thread.title}</p></a>
+                    {/* <p> {formatDate(thread.date_created, 'Do MMMM YYYY')} </p> */}
                 </li>
             )
         })
@@ -50,10 +52,10 @@ export default class Watch extends Component {
         }
         return (
             <ScrollArea>
-                    <h3 id='header'>Watch List</h3>
-                    <ul className='threads'>
-                        {threadList}
-                    </ul>
+                <h3 id='header'>Watch List</h3>
+                <ul className='threads'>
+                    {threadList}
+                </ul>
             </ScrollArea>
         )
     }
