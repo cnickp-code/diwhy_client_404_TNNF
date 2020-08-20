@@ -4,6 +4,7 @@ import AppContext from '../../contexts/AppContext';
 import { Link } from 'react-router-dom';
 import TokenService from '../../Services/token-service';
 import AuthApiService from '../../Services/auth-api-service';
+import ProjectSpotlightList from '../ProjectSpotlight/ProjectSpotlightList';
 import './Profile.css'
 
 export default class Profile extends Component {
@@ -21,8 +22,10 @@ export default class Profile extends Component {
      static contextType = AppContext;
 
      componentDidMount() {
+          console.log('mounted')
           AuthApiService.getUserInfo(this.props.user_name)
                .then(user => {
+                    console.log(user)
                     this.setState({
                          loading: false,
                          user
@@ -53,14 +56,39 @@ export default class Profile extends Component {
 
      render() {
           console.log(this.props.user_name);
+          console.log(this.state.loading);
           const { user } = this.state
           return (
                <>
                     {!this.state.loading &&
-                         <div className='profile-user'>
-                              <h2 className='User_Name' id='header'>Username: {user.user_name}</h2>
-                              <h2 className='User_Email' id='header'>Email: {user.email}</h2>
-                              {/* <h2 className='User_Endorsements' id='header'>Endorsements: {user.endorsements}</h2> */}
+                         <div className="profile-main-container">
+                              <div className="profile-top-splash">
+                                   <div className="profile-bottom-splash">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" className="profile-pic" />
+                                        <div className='profile-user'>
+                                             <h2 className='User_Name text-right' id='header'>Username: {user.user_name}</h2>
+                                             <h2 className='User_Email text-right' id='header'>Email: {user.email}</h2>
+                                             {/* <h2 className='User_Endorsements' id='header'>Endorsements: {user.endorsements}</h2> */}
+                                        </div>
+                                   </div>
+                              </div>
+                              <div className="profile-info-container">
+                                   <div className="profile-info-left">
+                                        Specialties:
+                                   </div>
+                                   <div className="profile-info-right">
+                                        <div className="endorsement"><i class="fas fa-thumbtack"></i>{' '} 21</div>
+                                        <div><i class="fas fa-users"></i>{' '}Add Friend</div>
+                                   </div>
+                              </div>
+
+                              <div className="profile-section">
+                                   <h1 className="profile-header">Project Spotlight</h1>
+                                   <ProjectSpotlightList />
+                              </div>
+                              <div className="profile-section">
+                                   <h1 className="profile-header">Recent Activity</h1>
+                              </div>
                          </div>
                     }
                </>

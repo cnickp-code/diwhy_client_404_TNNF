@@ -55,10 +55,11 @@ const AuthApiService = {
     });
   },
   getUserInfo(user_name) {
+    console.log('reached')
     return fetch(`${config.API_ENDPOINT}/user/${user_name}`, {
-      header: {
-        'Authorization': `bearer ${TokenService.getAuthToken()}`
-      }
+      // header: {
+      //   'Authorization': `bearer ${TokenService.getAuthToken()}`
+      // }
     })
       .then(res =>
         (!res.ok)
