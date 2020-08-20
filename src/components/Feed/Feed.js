@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import AppContext from '../../contexts/AppContext'
-import { Label } from '../Util/Util'
+import { Label, Button } from '../Util/Util'
 import './Feed.css'
 import Watch from '../Watch/Watch'
 import NewPostForm from '../CreateNew/NewPostForm'
@@ -90,21 +90,21 @@ export default class Feed extends Component {
         const threadsList = threads.map(thread => {
             return <li className="tl-header" key={thread.id}>
                 <Link className='threadId' to={'/thread/' + thread.id} key={thread.id}>
-                    {/* <div className="tl-pic-container">
-                        <img src="https://via.placeholder.com/100" alt='prop' className="tl-pic"></img>
-                    </div> */}
-                    {/* <div className="tl-header-content"> */}
-                    {/* <div className="tl-name-container"> */}
-                    <h2 className="hw-name">{thread.user_name}</h2>
-                    {/* </div> */}
-                    {/* <div className="tl-title-container"> */}
-                    <h3 className="tl-title"><i>{thread.title}</i></h3>
-                    {/* </div> */}
-                    {/* <div className='tl-options'>
-                            <div>Like</div>
-                            <div>Unanswered</div>
-                            <div>Add To Watch List</div>
-                        </div> */}
+                    <div className="tl-header-content">
+                        <div className="tl-pic-container">
+                            <img src="https://via.placeholder.com/100" alt='prop' className="tl-pic"></img>
+                        </div>
+                        {/* <div className="tl-name-container"> */}
+                        <h2 className="hw-name">{thread.user_name}</h2>
+                        {/* </div> */}
+                        {/* <div className="tl-title-container"> */}
+                        <h3 className="tl-title"><i>{thread.title}</i></h3>
+                    </div>
+                    <p className='tl-content'>{thread.content}</p>
+                    <div className='tl-options'>
+                        <Button className='feed-btn'>Like</Button>
+                        <Button className='feed-btn'>Add To Watch List</Button>
+                    </div>
                     {/* </div> */}
                 </Link>
             </li>
