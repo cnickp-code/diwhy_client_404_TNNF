@@ -84,6 +84,10 @@ export default class Feed extends Component {
     // )
     // }
 
+    showInputOverlay = () => {
+        this.context.toggleOverlay();
+    }
+
     render() {
         const { threads } = this.context;
 
@@ -114,6 +118,14 @@ export default class Feed extends Component {
 
         return (
             <section className='dash-item'>
+                <div className="np-main-container">
+                    <div className="np-container">
+                        <h2 className="np-header">Need help?</h2>
+                        <div className="np-input" onClick={this.showInputOverlay}>
+                            <i>Ask a question!</i>
+                        </div>
+                    </div>
+                </div>
                 <div className='dash-select'>
                     <Label htmlFor='cat-select' className='category-select-label'>Filter By Category</Label>
                     <select id="category" className='cat-select' value={this.state.value} onChange={this.handleChange} ref={this.category}>

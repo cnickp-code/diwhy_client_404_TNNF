@@ -54,6 +54,45 @@
   width: 100vw;
 }
 
+.np-main-container {
+  width: 100%;
+  height: auto;
+  margin: 20px auto;
+}
+
+.np-container {
+  width: 60%;
+  height: auto;
+  background-color: #e2be7e;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.np-header {
+  font-family: 'Impact';
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.np-input {
+  height: 2rem;
+  background-color: #ebebeb;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  padding: 8px;
+  color: #444444;
+  font-weight: 300;
+  transition: all 0.3s;
+}
+
+.np-input:hover {
+  cursor: pointer;
+  background-color: #d1d1d1;
+}
+
 @media only screen and (min-width: 450px) {
   /* .tab-list {
     display: none;

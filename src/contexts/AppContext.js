@@ -43,6 +43,7 @@ export class AppProvider extends Component {
       comments: [],
       applicants: [],
       loading: true,
+      showPostOverlay: false,
       // activeTab: this.props.children[0].props.label,
     }
 
@@ -71,6 +72,12 @@ export class AppProvider extends Component {
   componentWillUnmount() {
     IdleService.unRegisterIdleResets()
     TokenService.clearCallbackBeforeExpiry()
+  }
+
+  toggleOverlay = () => {
+    this.setState({
+      showPostOverlay: !this.state.showPostOverlay
+    })
   }
 
   setLoading = (loading) => {
@@ -273,6 +280,7 @@ export class AppProvider extends Component {
       setSearchPostings: this.setSearchPostings,
       addApplicant: this.addApplicant,
       setApplicants: this.setApplicants,
+      toggleOverlay: this.toggleOverlay,
     }
     return (
       <AppContext.Provider value={value}>
