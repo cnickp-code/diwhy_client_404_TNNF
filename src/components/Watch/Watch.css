@@ -1,10 +1,8 @@
 .scrollarea {
     min-height: fit-content;
     text-align: center;
-    border: 1px solid #231F20;
-    margin: 0 auto;
     padding: 20px;
-    width: 30vw;
+    width: 100vw;
 }
 
 .scrollarea-content {
@@ -26,5 +24,7 @@
     .scrollarea {
         border: none;
         border-left: 1px solid #231F20;
+        margin: 0 auto;
+        width: 30vw;
     }
 }

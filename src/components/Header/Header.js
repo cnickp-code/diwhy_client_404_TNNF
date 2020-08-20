@@ -18,9 +18,8 @@ class Header extends Component {
       <header className='header-in'>
         <nav className='head-nav-logged-in'>
           <Link className='app-sub' to='/'><img src={subheader} className='sub-header' alt='logo' /></Link>
-          <Link to='/wanted' className='Desktop_NavBar_Item'>Help Wanted</Link>
-          {/* <Link to='/profile' className='Desktop_NavBar_Item'>Profile</Link> */}
-          <Link onClick={this.handleLogoutClick} to='/login'>Logout</Link>
+          <Link className='hw-head-link' to='/wanted'>Help Wanted</Link>
+          <Link className='logout-head' onClick={this.handleLogoutClick} to='/login'>Logout</Link>
         </nav>
       </header>
     )
