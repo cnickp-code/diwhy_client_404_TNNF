@@ -54,6 +54,19 @@ const AuthApiService = {
       body: JSON.stringify(user),
     });
   },
+  getUserInfo(user_name) {
+    console.log('reached')
+    return fetch(`${config.API_ENDPOINT}/user/${user_name}`, {
+      // header: {
+      //   'Authorization': `bearer ${TokenService.getAuthToken()}`
+      // }
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+  }
 }
 
 export default AuthApiService

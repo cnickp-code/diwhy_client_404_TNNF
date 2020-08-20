@@ -8,7 +8,7 @@ class ProfileRoute extends Component {
   render() {
     return (
       <section>
-          <Profile />
+          <Profile user_name={this.props.match.params.user_name} />
       </section>
     );
   }

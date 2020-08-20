@@ -64,7 +64,7 @@ export default class App extends Component {
               component={ThreadItemPage}
             />
             <PrivateRoute
-              path={'/profile'}
+              path={'/profile/:user_name'}
               component={ProfileRoute}
             />
             <PrivateRoute
