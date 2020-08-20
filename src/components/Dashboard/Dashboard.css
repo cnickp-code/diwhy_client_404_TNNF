@@ -16,18 +16,18 @@
 .tab-list {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
   border-bottom: 1px solid #231f20;
   padding: 10px;
   margin: 0;
   cursor: pointer;
-  /* flex-shrink: 0; */
-  position: fixed;
   bottom: 0;
   width: 100%;
   background-color: #231f20;
 }
 
 .tab-list-item {
+    text-align: center;
   list-style: none;
   /* margin-bottom: -1px; */
   padding: 0.5rem 0.75rem;
@@ -37,11 +37,10 @@
 }
 
 .tab-list.active {
-  display: flex;
-  /* background-color: #fff7e0; */
+  text-align: center;
+  background-color: #fff7e0;
   list-style: none;
-  border: solid #520015;
-  /* border-width: 1px 1px 0 1px; */
+  color: #231f20;
   width: 30%;
   margin: 0;
   padding: 0.5rem 0.75rem;
