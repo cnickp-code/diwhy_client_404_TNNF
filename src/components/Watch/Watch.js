@@ -38,7 +38,7 @@ export default class Watch extends Component {
             return (
                 <li key={thread.id} className='thread-list'>
                     <a href={`/thread/${thread.id}`} id='header'><p>{thread.title}</p></a>
-                    {/* <p> {formatDate(thread.date_created, 'Do MMMM YYYY')} </p> */}
+                    <p> {FormatD(thread.date_created, 'Do MMM, yyyy HH:mm:ss')} </p>
                 </li>
             )
         })
