@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import TokenService from '../../Services/token-service'
 import AppContext from '../../contexts/AppContext'
 import subheader from '../../image-assets/sub-header-small.png'
+import header from '../../image-assets/header-full-small.png'
 import './Header.css'
 
 class Header extends Component {
@@ -19,6 +20,7 @@ class Header extends Component {
       <header className='header-in'>
         <nav className='head-nav-logged-in'>
           <Link className='app-sub' to='/'><img src={subheader} className='sub-header' alt='logo' /></Link>
+          <Link className='app-head-logo' to='/'><img src={header} className='app-head-logo' alt='logo' /></Link>
           <Link className='hw-head-link' to='/wanted'>Help Wanted</Link>
           <a className='hw-head-link' href={`/profile/${user.user_name}`}>Profile</a>
           <Link className='logout-head' onClick={this.handleLogoutClick} to='/login'>Logout</Link>
