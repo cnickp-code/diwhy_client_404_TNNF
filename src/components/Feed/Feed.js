@@ -5,6 +5,7 @@ import { Label, Button } from '../Util/Util'
 import './Feed.css'
 import Watch from '../Watch/Watch'
 import NewPostForm from '../CreateNew/NewPostForm'
+import FeedThreadItem from './FeedThreadItem';
 
 export default class Feed extends Component {
     constructor(props) {
@@ -92,28 +93,7 @@ export default class Feed extends Component {
         const { threads } = this.context;
 
         const threadsList = threads.map(thread => {
-            return <li className="tl-header" key={thread.id}>
-                <Link className='threadId' to={'/thread/' + thread.id} key={thread.id}>
-                    <div className="tl-header-content">
-                        <div className="tl-pic-container">
-                            <img src="https://via.placeholder.com/100" alt='prop' className="tl-pic"></img>
-                        </div>
-                        {/* <div className="tl-name-container"> */}
-                        <h2 className="hw-name">{thread.user_name}</h2>
-                        {/* </div> */}
-                        {/* <div className="tl-title-container"> */}
-                        <h3 className="tl-title"><i>{thread.title}</i></h3>
-                    </div>
-                    <p className='tl-content'>{thread.content}</p>
-                    {/* </div> */}
-                </Link>
-                <div className='tl-options'>
-                    <Button className='feed-btn'>Like</Button>
-                    <div className='tl-likes'>10</div>
-                    {/* {thread likes variable} */}
-                    <Button className='feed-btn'>Add To Watch List</Button>
-                </div>
-            </li>
+            return <FeedThreadItem key={thread.id} thread={thread} />
         })
 
         return (

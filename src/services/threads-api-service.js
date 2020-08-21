@@ -133,7 +133,7 @@ const ThreadsApiService = {
                          : res.json()
                )
      },
-     deleteLikeByThreadId(threadId, callback) {
+     deleteLikeByThreadId(threadId) {
           return fetch(`${config.API_ENDPOINT}/likes/thread/${threadId}`, {
                method: 'DELETE',
                headers: {
@@ -145,7 +145,7 @@ const ThreadsApiService = {
                     if (!res.ok) {
                          throw new Error(res.status)
                     }
-                    callback(threadId)
+                    // callback(threadId)
                })
      },
 }
