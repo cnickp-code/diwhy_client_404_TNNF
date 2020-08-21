@@ -25,12 +25,11 @@ class Intro extends React.Component {
     componentDidMount() {
         AuthApiService.getUserInfo(this.context.user.user_name) 
             .then(user => {
-                // if(user.intro) {
-                //     this.setState({
-                //         forward: true
-                //     })
-                // }
-                this.context.setUserInfo(user);
+                let newUser = {
+                    ...user,
+                    userId: user.id
+                }
+                this.context.setUserInfo(newUser);
             })
     }
 
@@ -67,7 +66,7 @@ class Intro extends React.Component {
         }
 
         setTimeout(() => {
-            AuthApiService.updateUserInfo(this.context.user.userId, updatedInfo)
+            AuthApiService.updateUserInfo(this.context.user.id, updatedInfo)
                 .then(res => {
                     this.context.modifyUserIntro(true);
                     this.setState({

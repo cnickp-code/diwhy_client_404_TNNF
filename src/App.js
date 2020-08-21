@@ -42,13 +42,12 @@ export default class App extends Component {
 
   render() {
     const { hasError } = this.state
-    console.log(this.context.user);
-    console.log(this.context.user.intro);
-    console.log(TokenService.hasAuthToken());
+
     return (
       <div className='App'>
         {this.context.user.intro && <Header />}
         {!this.context.user.intro && TokenService.hasAuthToken() &&
+        
           <main>
             <Intro />
           </main>
