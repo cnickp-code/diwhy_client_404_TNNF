@@ -75,7 +75,7 @@ class FeedThreadItem extends React.Component {
 
                         <h2 className="hw-name">{this.props.thread.user_name}</h2>
 
-                        <h3 className="tl-title"><i>{this.props.thread.title}</i></h3>
+                        <h3 className="tl-title">{this.props.thread.title}</h3>
                     </div>
                     <p className='tl-content'>{this.props.thread.content}</p>
 

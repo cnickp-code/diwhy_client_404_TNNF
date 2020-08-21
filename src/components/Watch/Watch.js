@@ -5,7 +5,6 @@ import ScrollArea from 'react-scrollbar';
 import ThreadsApiService from '../../Services/threads-api-service';
 import './Watch.css'
 import { FormatD } from '../Util/Util'
-import { format as formatDate } from 'date-fns';
 
 
 export default class Watch extends Component {
