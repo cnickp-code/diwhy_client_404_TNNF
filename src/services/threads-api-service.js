@@ -8,11 +8,11 @@ const ThreadsApiService = {
                     'Authorization': `bearer ${TokenService.getAuthToken()}`
                },
           })
-          .then(res => 
-               (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json()
-          )
+               .then(res =>
+                    (!res.ok)
+                         ? res.json().then(e => Promise.reject(e))
+                         : res.json()
+               )
      },
 
      getThreadById(id) {
@@ -22,57 +22,57 @@ const ThreadsApiService = {
                     'Authorization': `bearer ${TokenService.getAuthToken()}`
                },
           })
-               .then(res => 
-                     (!res.ok)
-                              ? res.json().then(e => Promise.reject(e))
-                              : res.json()
+               .then(res =>
+                    (!res.ok)
+                         ? res.json().then(e => Promise.reject(e))
+                         : res.json()
                )
-          },
+     },
 
-          getThreadByCategoryId(categoryId) {
-               return fetch(`${config.API_ENDPOINT}/category/${categoryId}`, {
-                    headers: {
-                         'content-type': 'application/json',
-                         'Authorization': `bearer ${TokenService.getAuthToken()}`
-                    }
-               })
-                    .then(res => 
-                         (!res.ok)
-                              ? res.json().then(e => Promise.reject(e))
-                              : res.json()
-                         )
-          },
+     getThreadByCategoryId(categoryId) {
+          return fetch(`${config.API_ENDPOINT}/category/${categoryId}`, {
+               headers: {
+                    'content-type': 'application/json',
+                    'Authorization': `bearer ${TokenService.getAuthToken()}`
+               }
+          })
+               .then(res =>
+                    (!res.ok)
+                         ? res.json().then(e => Promise.reject(e))
+                         : res.json()
+               )
+     },
 
-          // return [
-          //      {
-          //           id: 1,
-          //           title: 'title 1',
-          //           user_id: 1,
-          //           user_name: 'BigLarge',
-          //           category: 'Woodworking',
-          //           date_created: new Date(),
-          //           content: 'Hello World 1'
-          //      },
-          //      {
-          //           id: 2,
-          //           title: 'title 2',
-          //           user_id: 2,
-          //           user_name: 'Pop',
-          //           category: 'Metalworking',
-          //           date_created: new Date(),
-          //           content: 'Hello World 2'
-          //      },
-          //      {
-          //           id: 3,
-          //           title: 'title 3',
-          //           user_id: 3,
-          //           user_name: 'Mam',
-          //           category: 'Sewing',
-          //           date_created: new Date(),
-          //           content: 'Hello World 3'
-          //      },
-          // ]
-    
+     // return [
+     //      {
+     //           id: 1,
+     //           title: 'title 1',
+     //           user_id: 1,
+     //           user_name: 'BigLarge',
+     //           category: 'Woodworking',
+     //           date_created: new Date(),
+     //           content: 'Hello World 1'
+     //      },
+     //      {
+     //           id: 2,
+     //           title: 'title 2',
+     //           user_id: 2,
+     //           user_name: 'Pop',
+     //           category: 'Metalworking',
+     //           date_created: new Date(),
+     //           content: 'Hello World 2'
+     //      },
+     //      {
+     //           id: 3,
+     //           title: 'title 3',
+     //           user_id: 3,
+     //           user_name: 'Mam',
+     //           category: 'Sewing',
+     //           date_created: new Date(),
+     //           content: 'Hello World 3'
+     //      },
+     // ]
+
 
      postThread(thread) {
           return fetch(`${config.API_ENDPOINT}/threads`, {
@@ -83,11 +83,11 @@ const ThreadsApiService = {
                },
                body: JSON.stringify(thread)
           })
-          .then(res => 
-               (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json()
-          )
+               .then(res =>
+                    (!res.ok)
+                         ? res.json().then(e => Promise.reject(e))
+                         : res.json()
+               )
      },
 
      deleteThread(threadId, callback) {
@@ -98,12 +98,55 @@ const ThreadsApiService = {
                     'Authorization': `bearer ${TokenService.getAuthToken()}`
                },
           })
-          .then(res => {
-               if(!res.ok) {
-                    throw new Error(res.status)
-               }
-               callback(threadId)
+               .then(res => {
+                    if (!res.ok) {
+                         throw new Error(res.status)
+                    }
+                    callback(threadId)
+               })
+     },
+     getLikesByThreadId(threadId) {
+          return fetch(`${config.API_ENDPOINT}/likes/thread/${threadId}`, {
+               headers: {
+                    'content-type': 'application/json',
+                    'Authorization': `bearer ${TokenService.getAuthToken()}`
+               },
           })
+               .then(res =>
+                    (!res.ok)
+                         ? res.json().then(e => Promise.reject(e))
+                         : res.json()
+               )
+     },
+     postLikeByThreadId(newLike) {
+          return fetch(`${config.API_ENDPOINT}/likes`, {
+               method: 'POST',
+               headers: {
+                    'content-type': 'application/json',
+                    'Authorization': `bearer ${TokenService.getAuthToken()}`
+               },
+               body: JSON.stringify(newLike)
+          })
+               .then(res =>
+                    (!res.ok)
+                         ? res.json().then(e => Promise.reject(e))
+                         : res.json()
+               )
+     },
+     deleteLikeByThreadId(threadId, callback) {
+          return fetch(`${config.API_ENDPOINT}/likes/thread/${threadId}`, {
+               method: 'DELETE',
+               headers: {
+                    'content-type': 'application/json',
+                    'Authorization': `bearer ${TokenService.getAuthToken()}`
+               },
+          })
+               .then(res =>{
+                    if (!res.ok) {
+                         throw new Error(res.status)
+                    }
+                    callback(threadId)
+               })
      },
 }
 

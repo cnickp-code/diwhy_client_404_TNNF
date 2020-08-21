@@ -3,10 +3,20 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  width: 80%;
+  width: 100%;
   margin: 20px 0px 0px;
   padding: 20px 20px 0px 20px;
   background-color: #E2BE7E;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.hw-outer-container {
+  background-color: #E2BE7E;
+  border-radius: 5px;
+  border: 1px solid rgb(187, 187, 187);
+  width: 80%;
 }
 
 .note {
@@ -20,6 +30,7 @@
   list-style-type: none;
   margin: 8px;
   border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 5px;
 }
 
 .sticky {
@@ -89,10 +100,12 @@ div#want-wrapper div:hover.note {
 .posting-title,
 .posting-category {
   text-align: center;
+  margin-top: 2px;
 }
 
 .filter-posts {
   margin: 10px;
+  position: relative;
 }
 
 .posting-apply {

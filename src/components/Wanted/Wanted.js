@@ -4,6 +4,7 @@ import AppContext from '../../contexts/AppContext'
 import WantedApiService from '../../Services/want-api-service';
 import { Link } from 'react-router-dom'
 import { Input, Label, Textarea, Button } from '../Util/Util'
+import FormOverlay from '../CreateNew/FormOverlay';
 
 export default class Wanted extends Component {
     constructor(props) {
@@ -85,13 +86,18 @@ export default class Wanted extends Component {
         }
     }
 
+    showInputOverlay = () => {
+        this.context.toggleOverlay();
+    }
+
+
     render() {
         const { postings } = this.context;
 
         const postingList = postings.map(posting => {
             const categoryName = this.getCategoryName(posting.category)
             let acceptBool = false;
-            if(posting.accepted_app) {
+            if (posting.accepted_app) {
                 acceptBool = true;
             }
             return (
@@ -108,7 +114,8 @@ export default class Wanted extends Component {
         })
         return (
             <div className='want-wrapper'>
-                <form className='help-wanted-form' onSubmit={this.handleSubmit}>
+                {this.context.showPostOverlay && <FormOverlay />}
+                {/* <form className='help-wanted-form' onSubmit={this.handleSubmit}>
                     <h3 className='form-header'>Ask For Help</h3>
                     <Label htmlFor='hw-select'>Project Category</Label>
                     <select  name='hw-select'  className='hw-select' id='category'>
@@ -126,25 +133,36 @@ export default class Wanted extends Component {
                     <Label htmlFor='hw-textarea'>Describe Your Project</Label>
                     <Textarea required placeholder='Project Description' name='hw-textarea' className='hw-textarea' id='content' />
                     <Button type='submit' className='hw-btn'>Submit</Button>
-                </form>
-                <div className='want-item'>
-                    <div className='filter-posts'>
-                        <Label htmlFor='hw-cat-select' className='category-select-label'>Filter By Category</Label>
-                        <select id="categoryPostings" className='cat-select' defaultValue='0' value={this.state.value} onChange={this.handleChange} ref={this.categoryPostings}>
-                            <option value='0'>No Filter</option>
-                            <option value='1'>Woodworking</option>
-                            <option value='2'>Metalworking</option>
-                            <option value='3'>Needlecraft</option>
-                            <option value='4'>Automotive</option>
-                            <option value='5'>Home Improvement</option>
-                            <option value='6'>General Crafts</option>
-                            <option value='7'>Electronics</option>
-                            <option value='8'>Outdoorsmanship</option>
-                        </select>
+                </form> */}
+                <div className="np-main-container">
+                    <div className="np-container">
+                        <h2 className="np-header">Have a project?</h2>
+                        <div className="np-input" onClick={this.showInputOverlay}>
+                            <i>Ask for help!!</i>
+                        </div>
                     </div>
-                    <ul className='hw-main-container'>
-                        {postingList}
-                    </ul>
+                </div>
+                <div className='want-item'>
+                    <div className="hw-outer-container">
+                        <div className='filter-posts'>
+                            <Label htmlFor='hw-cat-select' className='category-select-label'>Filter By Category</Label>
+                            <select id="categoryPostings" className='cat-select' defaultValue='0' value={this.state.value} onChange={this.handleChange} ref={this.categoryPostings}>
+                                <option value='0'>No Filter</option>
+                                <option value='1'>Woodworking</option>
+                                <option value='2'>Metalworking</option>
+                                <option value='3'>Needlecraft</option>
+                                <option value='4'>Automotive</option>
+                                <option value='5'>Home Improvement</option>
+                                <option value='6'>General Crafts</option>
+                                <option value='7'>Electronics</option>
+                                <option value='8'>Outdoorsmanship</option>
+                            </select>
+                        </div>
+                        <ul className='hw-main-container'>
+                            {postingList}
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         )

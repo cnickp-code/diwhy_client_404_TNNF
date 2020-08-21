@@ -22,7 +22,7 @@ class NewPostForm extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-
+        this.context.toggleOverlay();
         let date = new Date();
         date = date.toISOString();
 
@@ -36,7 +36,7 @@ class NewPostForm extends React.Component {
             user_id: userId
         }
 
-        
+
 
 
         ThreadsApiService.postThread(newThread)
@@ -53,27 +53,34 @@ class NewPostForm extends React.Component {
             })
     }
 
+    closeOverlay = () => {
+        this.context.toggleOverlay();
+    }
+
     render() {
         return (
-                <form id="post-form" onSubmit={this.handleSubmit}>
-                    <h3 className='form-header'>Create New</h3>
-                        <Label htmlFor='cn-select'>Thread Category</Label>
-                            <select id="category" value={this.state.value} onChange={this.handleSetCategory} className="post-select">
-                        <option value='1'>Woodworking</option>
-                        <option value='2'>Metalworking</option>
-                        <option value='3'>Needlecraft</option>
-                        <option value='4'>Automotive</option>
-                        <option value='5'>Home Improvement</option>
-                        <option value='6'>General Crafts</option>
-                        <option value='7'>Electronics</option>
-                        <option value='8'>Outdoorsmanship</option>
-                    </select>
-                    <Label htmlFor='cn-title-input'>Thread Title</Label>
-                    <Input id="title" type="text" placeholder="Thread Title"></Input>
-                    <Label htmlFor='cn-textarea'>Thread Content</Label>
-                    <Textarea id="content" className="post-info" placeholder="Ask a question!"></Textarea>
-                    <Button type="submit" className="hw-btn">Submit</Button>
-                </form>
+            <form id="post-form" onSubmit={this.handleSubmit}>
+                <div className="exit" onClick={this.closeOverlay}>
+                    <i class="far fa-times-circle"></i>
+                </div>
+                <h3 className='form-header'>Create New</h3>
+                <Label htmlFor='cn-select'>Thread Category</Label>
+                <select id="category" value={this.state.value} onChange={this.handleSetCategory} className="post-select">
+                    <option value='1'>Woodworking</option>
+                    <option value='2'>Metalworking</option>
+                    <option value='3'>Needlecraft</option>
+                    <option value='4'>Automotive</option>
+                    <option value='5'>Home Improvement</option>
+                    <option value='6'>General Crafts</option>
+                    <option value='7'>Electronics</option>
+                    <option value='8'>Outdoorsmanship</option>
+                </select>
+                <Label htmlFor='cn-title-input'>Thread Title</Label>
+                <Input id="title" type="text" placeholder="Thread Title"></Input>
+                <Label htmlFor='cn-textarea'>Thread Content</Label>
+                <Textarea id="content" className="post-info" placeholder="Ask a question!"></Textarea>
+                <Button type="submit" className="hw-btn">Submit</Button>
+            </form>
         )
     }
 }
