@@ -16,11 +16,16 @@
   list-style: none;
   text-align: center;
   min-width: 10vw;
+  font-size: 20px;
 }
 
 .threads {
   padding: 0;
   min-width: 10vw;
+}
+
+h2#header {
+  font-size: 35px;
 }
 
 @media only screen and (min-width: 450px) {
