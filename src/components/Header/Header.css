@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #e2be7e;
+  background-color: #fafafa;
   /* border-bottom: #e0caa9 5px solid; */
   width: 100vw;
   height: 7vh;
@@ -16,7 +16,6 @@
   /* flex-direction: column; */
   align-items: center;
   justify-content: space-evenly;
-  background-color: #e2be7e;
 }
 
 .header-out {

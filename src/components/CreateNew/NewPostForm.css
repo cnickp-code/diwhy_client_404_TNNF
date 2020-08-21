@@ -98,7 +98,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 20%;
-    background-color: #e2be7e;
+    background-color: #dad4cd;
     padding: .5rem;
     color: #231F20;
     z-index: 11;
@@ -123,5 +123,6 @@
 
   .fa-times-circle {
     display: flex;
+    cursor: pointer;
   }
 }

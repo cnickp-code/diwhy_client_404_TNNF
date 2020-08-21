@@ -5,6 +5,10 @@
     flex-direction: column;
 }
 
+.profile-wrapper {
+    background-color: #dad4cd;
+}
+
 .profile-main-container {
     width: 100vw;
 }

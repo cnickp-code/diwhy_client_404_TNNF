@@ -4,10 +4,10 @@
   padding: 20px;
   width: 100vw;
   min-width: 110px;
+  background-color: #fafafa;
 }
 
 .scrollarea-content {
-  background-color: #fff7e0;
   border-radius: 10px;
   min-width: 110px;
 }
