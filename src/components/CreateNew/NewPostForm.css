@@ -120,4 +120,8 @@
     justify-items: center;
     align-items: center; */
   }
+
+  .fa-times-circle {
+    display: flex;
+  }
 }
