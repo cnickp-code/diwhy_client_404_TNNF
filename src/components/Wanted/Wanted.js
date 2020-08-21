@@ -5,6 +5,7 @@ import WantedApiService from '../../Services/want-api-service';
 import { Link } from 'react-router-dom'
 import { Input, Label, Textarea, Button } from '../Util/Util'
 import FormOverlay from '../CreateNew/FormOverlay';
+import HelpWantedOverlay from '../CreateNew/HelpWantedOverlay';
 
 export default class Wanted extends Component {
     constructor(props) {
@@ -114,8 +115,14 @@ export default class Wanted extends Component {
         })
         return (
             <div className='want-wrapper'>
+<<<<<<< HEAD
                 {this.context.showPostOverlay && <FormOverlay />}
                 <form className='help-wanted-form' onSubmit={this.handleSubmit}>
+=======
+                {this.context.showPostOverlay && <HelpWantedOverlay />}
+                {/* {this.context.showPostOverlay && <FormOverlay />} */}
+                {/* <form className='help-wanted-form' onSubmit={this.handleSubmit}>
+>>>>>>> b9a06475e83914f0ef225da81e1b7d871eb98901
                     <h3 className='form-header'>Ask For Help</h3>
                     <Label htmlFor='hw-select'>Project Category</Label>
                     <select  name='hw-select'  className='hw-select' id='category'>
