@@ -27,7 +27,7 @@ class PostApplicantForm extends React.Component {
     render() {
         return (
             <form className='apply-form' onSubmit={this.handleSubmit}>
-                <textarea className='application-text' placeholder='Comments' type='text' id='application' required/>
+                <textarea className='application-text' placeholder='Why are you the best fit?' type='text' id='application' required/>
                 <button className='apply-form-button' type='submit'>Apply Now</button>
             </form>
         )

@@ -15,6 +15,7 @@
 
 .apply-form-button {
     width: 50%;
+    max-width: 200px;
     height: 40px;
     border-radius: 10px;
     background-color: var(--color-6);
