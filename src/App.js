@@ -17,8 +17,12 @@ import './App.css'
 import ThreadItemPage from './pages/ThreadItemPage'
 import TokenService from './Services/token-service'
 import IdleService from './Services/idle-service'
+import Intro from './components/Intro/Intro'
+import AppContext from './contexts/AppContext'
 
 export default class App extends Component {
+  static contextType = AppContext;
+
   state = { hasError: false }
 
   static getDerivedStateFromError(error) {
@@ -38,10 +42,39 @@ export default class App extends Component {
 
   render() {
     const { hasError } = this.state
+    console.log(this.context.user);
+    console.log(this.context.user.intro);
+    console.log(TokenService.hasAuthToken());
     return (
       <div className='App'>
-        <Header />
-        <main>
+        {this.context.user.intro && <Header />}
+        {!this.context.user.intro && TokenService.hasAuthToken() &&
+          <main>
+            <Intro />
+          </main>
+        }
+        {!TokenService.hasAuthToken() && 
+          <main>
+            <Switch>
+              {/* <Route
+                path={'/'}
+                component={SplashPage}
+              /> */}
+              <Route
+                path={'/register'}
+                component={RegistrationRoute}
+              />
+              <Route
+                path={'/login'}
+                component={LoginRoute}
+              />
+              <Route
+                component={NotFoundRoute}
+              />
+            </Switch>
+          </main>
+        }
+        {this.context.user.intro && <main>
           {hasError && (
             <p>There was an error! Oh no!</p>
           )}
@@ -71,10 +104,10 @@ export default class App extends Component {
               path={'/edit'}
               component={EditProfilePage}
             />
-            <PublicRoute
+            {/* <PublicRoute
               path={'/welcome'}
               component={SplashPage}
-            />
+            /> */}
             <PublicRoute
               path={'/register'}
               component={RegistrationRoute}
@@ -87,7 +120,7 @@ export default class App extends Component {
               component={NotFoundRoute}
             />
           </Switch>
-        </main>
+        </main>}
       </div>
     );
   }

@@ -54,6 +54,9 @@ export class AppProvider extends Component {
         userId: jwtPayload.userId,
         email: jwtPayload.email,
         user_name: jwtPayload.sub,
+        intro: jwtPayload.intro,
+        profile_pic: jwtPayload.profile_pic,
+        endorsements: jwtPayload.endorsements
       }
 
     this.state = state;
@@ -72,6 +75,22 @@ export class AppProvider extends Component {
   componentWillUnmount() {
     IdleService.unRegisterIdleResets()
     TokenService.clearCallbackBeforeExpiry()
+  }
+
+  setUserInfo = (user) => {
+    this.setState({
+      user
+    })
+  }
+
+  modifyUserIntro = (bool) => {
+    let newUser = {
+      ...this.state.user,
+      intro: bool,
+    }
+    this.setState({
+      user: newUser
+    })
   }
 
   toggleOverlay = () => {
@@ -281,6 +300,8 @@ export class AppProvider extends Component {
       addApplicant: this.addApplicant,
       setApplicants: this.setApplicants,
       toggleOverlay: this.toggleOverlay,
+      modifyUserIntro: this.modifyUserIntro,
+      setUserInfo: this.setUserInfo,
     }
     return (
       <AppContext.Provider value={value}>
