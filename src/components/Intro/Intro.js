@@ -53,6 +53,24 @@ class Intro extends React.Component {
         }
         console.log(interests);
 
+        let newInterests = interests.map(interest => {
+            let interestObj = this.context.categories.find(cat => cat.name === interest)
+            let interestId = interestObj.id;
+
+            let newObj = {
+                category_id: interestId,
+                user_id: this.context.user.userId
+            }
+
+            return newObj;
+        })
+
+        console.log(newInterests);
+
+        newInterests.forEach(int => {
+            // Function to post interests
+        })
+
         let newStep = this.state.step + 1;
         this.setState({
             step: newStep

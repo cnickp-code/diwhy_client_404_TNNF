@@ -42,23 +42,24 @@ export default class App extends Component {
 
   render() {
     const { hasError } = this.state
-
+    
     return (
       <div className='App'>
         {this.context.user.intro && <Header />}
         {!this.context.user.intro && TokenService.hasAuthToken() &&
-        
+
           <main>
             <Intro />
           </main>
         }
-        {!TokenService.hasAuthToken() && 
+        {!TokenService.hasAuthToken() &&
           <main>
             <Switch>
-              {/* <Route
+              <PrivateRoute
+                exact
                 path={'/'}
-                component={SplashPage}
-              /> */}
+                component={DashboardRoute}
+              />
               <Route
                 path={'/register'}
                 component={RegistrationRoute}
@@ -103,10 +104,6 @@ export default class App extends Component {
               path={'/edit'}
               component={EditProfilePage}
             />
-            {/* <PublicRoute
-              path={'/welcome'}
-              component={SplashPage}
-            /> */}
             <PublicRoute
               path={'/register'}
               component={RegistrationRoute}

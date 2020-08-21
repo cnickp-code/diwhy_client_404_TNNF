@@ -94,6 +94,7 @@ class ApplicantItem extends React.Component {
                     {accepted}
                     <button className='application-button' onClick={this.handleDeleteApplicant}>Delete</button>
                 </div>}
+                {(this.context.user.user_name === this.props.applicant.user.user_name) && <button className='application-button' onClick={this.handleDeleteApplicant}>Cancel Application</button>}
             </li>
         )
     }

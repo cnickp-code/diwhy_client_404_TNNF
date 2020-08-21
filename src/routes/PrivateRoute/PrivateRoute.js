@@ -18,7 +18,7 @@ export default function PrivateRoute({ component, ...props }) {
               : (
                 <Redirect
                   to={{
-                    pathname: AppContext.user.idle ? '/login' : `/welcome`,
+                    pathname: AppContext.user.idle ? '/login' : `/register`,
                     state: { from: componentProps.location },
                   }}
                 />
