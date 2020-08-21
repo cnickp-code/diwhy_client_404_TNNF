@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // import TokenService from '../../Services/token-service';
 import AuthApiService from '../../Services/auth-api-service';
 import ProjectSpotlightList from '../ProjectSpotlight/ProjectSpotlightList';
+import InterestsApiService from '../../Services/interests-api-service'
 import './Profile.css'
 
 export default class Profile extends Component {
@@ -14,6 +15,7 @@ export default class Profile extends Component {
                value: '',
                user: null,
                loading: true,
+               interests: [],
           };
 
           this.handleChange = this.handleChange.bind(this);
@@ -28,6 +30,14 @@ export default class Profile extends Component {
                     this.setState({
                          loading: false,
                          user
+                    })
+               })
+          
+          InterestsApiService.getInterestsByUserName(this.props.user_name)
+               .then(interests => {
+                    console.log(interests);
+                    this.setState({
+                         interests
                     })
                })
      }
@@ -54,9 +64,13 @@ export default class Profile extends Component {
      }
 
      render() {
-          console.log(this.props.user_name);
-          console.log(this.state.loading);
           const { user } = this.state
+
+          let specs = this.state.interests.map(int => {
+               return int.category;
+          }).join(', ');
+
+          console.log(specs);
           return (
                <>
                     {!this.state.loading &&
@@ -73,7 +87,7 @@ export default class Profile extends Component {
                               </div>
                               <div className="profile-info-container">
                                    <div className="profile-info-left">
-                                        Specialties:
+                                        Specialties: {specs}
                                    </div>
                                    <div className="profile-info-right">
                                         <div className="endorsement"><i class="fas fa-thumbtack"></i>{' '} 21</div>
