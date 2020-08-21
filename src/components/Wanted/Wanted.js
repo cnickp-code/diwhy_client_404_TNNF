@@ -4,7 +4,7 @@ import AppContext from '../../contexts/AppContext'
 import WantedApiService from '../../Services/want-api-service';
 import { Link } from 'react-router-dom'
 import { Input, Label, Textarea, Button } from '../Util/Util'
-// import FormOverlay from '../CreateNew/FormOverlay';
+import FormOverlay from '../CreateNew/FormOverlay';
 import HelpWantedOverlay from '../CreateNew/HelpWantedOverlay';
 
 export default class Wanted extends Component {
@@ -117,18 +117,10 @@ export default class Wanted extends Component {
             <div className='want-wrapper'>
                 {this.context.showPostOverlay && <HelpWantedOverlay />}
                 {/* {this.context.showPostOverlay && <FormOverlay />} */}
-<<<<<<< HEAD
-<<<<<<< HEAD
                 <form className='help-wanted-form' onSubmit={this.handleSubmit}>
-=======
-                    <form className='help-wanted-form' onSubmit={this.handleSubmit}>
->>>>>>> d6977eeefc047babb0c951b4203e1b2741d72fa0
-=======
-                <form className='help-wanted-form' onSubmit={this.handleSubmit}>
->>>>>>> 1da7f0f01b17721e2d0249a69ccf32cd342533cc
                     <h3 className='form-header'>Ask For Help</h3>
                     <Label htmlFor='hw-select'>Project Category</Label>
-                    <select name='hw-select' className='hw-select' id='category'>
+                    <select  name='hw-select'  className='hw-select' id='category'>
                         <option value='1'>Woodworking</option>
                         <option value='2'>Metalworking</option>
                         <option value='3'>Needlecraft</option>
@@ -174,7 +166,7 @@ export default class Wanted extends Component {
                     </div>
 
                 </div>
-            </div >
+            </div>
         )
     }
 }
