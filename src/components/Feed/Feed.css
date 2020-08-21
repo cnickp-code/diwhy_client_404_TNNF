@@ -60,12 +60,11 @@
   margin-bottom: 10px;
 }
 
-.cat-select {
-  margin-left: 1rem;
-}
-
 .dash-select {
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Watch {
