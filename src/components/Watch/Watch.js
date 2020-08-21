@@ -52,7 +52,7 @@ export default class Watch extends Component {
         }
         return (
             <ScrollArea>
-                <h3 id='header'>Watch List</h3>
+                <h2 id='header'><u>Watch List</u></h2>
                 <ul className='threads'>
                     {threadList}
                 </ul>

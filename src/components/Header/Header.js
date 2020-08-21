@@ -14,11 +14,13 @@ class Header extends Component {
   }
 
   renderLoggedInNav() {
+    const { user } = this.context;
     return (
       <header className='header-in'>
         <nav className='head-nav-logged-in'>
           <Link className='app-sub' to='/'><img src={subheader} className='sub-header' alt='logo' /></Link>
           <Link className='hw-head-link' to='/wanted'>Help Wanted</Link>
+          <a className='hw-head-link' href={`/profile/${user.user_name}`}>Profile</a>
           <Link className='logout-head' onClick={this.handleLogoutClick} to='/login'>Logout</Link>
         </nav>
       </header>
