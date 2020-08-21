@@ -2,7 +2,7 @@ import React from 'react';
 import AppContext from '../../contexts/AppContext';
 import ThreadsApiService from '../../Services/threads-api-service';
 import { Link } from 'react-router-dom'
-import { Label, Button } from '../Util/Util'
+import { Button } from '../Util/Util'
 
 class FeedThreadItem extends React.Component {
     static contextType = AppContext;
@@ -31,11 +31,11 @@ class FeedThreadItem extends React.Component {
         ThreadsApiService.postLikeByThreadId(newLike)
             .then(like => {
                 ThreadsApiService.getLikesByThreadId(this.props.thread.id)
-                .then(likes => {
-                    this.setState({
-                        likes
+                    .then(likes => {
+                        this.setState({
+                            likes
+                        })
                     })
-                })
             })
     }
 
@@ -45,14 +45,14 @@ class FeedThreadItem extends React.Component {
 
     handleUnlikeThread = () => {
         ThreadsApiService.deleteLikeByThreadId(this.props.thread.id)
-        .then(like => {
-            ThreadsApiService.getLikesByThreadId(this.props.thread.id)
-            .then(likes => {
-                this.setState({
-                    likes
-                })
+            .then(like => {
+                ThreadsApiService.getLikesByThreadId(this.props.thread.id)
+                    .then(likes => {
+                        this.setState({
+                            likes
+                        })
+                    })
             })
-        })
     }
 
     render() {

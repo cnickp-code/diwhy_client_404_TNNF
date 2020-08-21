@@ -45,7 +45,7 @@ export default class Login extends React.Component {
           const { error } = this.state;
           return (
                <form className='Login_Form' onSubmit={this.handleSubmitJWTAuth}>
-                    <div role='alert'> {error && <p className='Red_Alert'> {error.message} </p>} </div>
+                    <div className='Red_Alert' role='alert'> {error && <p className='Red_Alert'> {error} </p>} </div>
                     <fieldset className='log-field'>
                          <div className='label-input'>
                               <Label htmlFor='Login_Form_Email'> Email </Label>

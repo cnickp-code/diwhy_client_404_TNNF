@@ -49,8 +49,8 @@ class Registration extends Component {
       <form className='reg-form'
         onSubmit={this.handleSubmit}>
         <fieldset className='reg-field'>
-          <div role='alert'>
-            {error && <p>{error}</p>}
+          <div className='Red_Alert' role='alert'>
+            {error && <p className='Red_Alert'>{error}</p>}
           </div>
           <div className='label-input'>
             <Label htmlFor='registration-user_name-input'>

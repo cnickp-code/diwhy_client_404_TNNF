@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Section, Label } from '../Util/Util';
+// import { Section, Label } from '../Util/Util';
 import AppContext from '../../contexts/AppContext';
 import { Link } from 'react-router-dom';
-import TokenService from '../../Services/token-service';
+// import TokenService from '../../Services/token-service';
 import AuthApiService from '../../Services/auth-api-service';
 import ProjectSpotlightList from '../ProjectSpotlight/ProjectSpotlightList';
 import './Profile.css'

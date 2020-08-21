@@ -1,7 +1,7 @@
 import React from 'react';
 import AppContext from '../../contexts/AppContext';
 import { Input, Label, Textarea, Button } from '../Util/Util'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import WantedApiService from '../../Services/want-api-service'
 import './NewPostForm.css'
 
