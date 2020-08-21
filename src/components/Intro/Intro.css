@@ -1,0 +1,165 @@
+.intro-main-container {
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff7e0;
+    z-index: 20;
+}
+
+.intro-inner-container {
+    position: relative;
+    top: calc(50% - 200px);
+}
+
+.white-overlay {
+    background-color: rgba(255, 255, 255, 0.75);
+    height: 100vh;
+    width: 100vw;
+}
+
+.intro-header {
+    text-align: center;
+    font-family: "Impact";
+    font-size: 3.2rem;
+    letter-spacing: 3px;
+    color: #231F20;
+    margin: 10px;
+}
+
+.intro-logo {
+    background-image: url('/src/image-assets/header-full-medium.png');
+    width: 250px;
+    height: auto;
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 21;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.intro-step-one {
+    position: relative;
+    height: 320px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+    top: calc(50% - 200px);
+}
+
+.intro-step2-header {
+    text-align: center;
+    font-family: "Impact";
+    font-size: 2.2rem;
+}
+
+.intro-step2-body {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.intro-step4-header {
+    font-size: 1.5rem;
+}
+
+.intro-step4-header-right {
+    text-align: right;
+    font-size: 1.5rem;
+}
+
+.step4-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 10px;
+}
+
+.step5-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.step5-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 40%;
+}
+
+.step5-inner input {
+    opacity: 0;
+    position: absolute;
+}
+
+.step5-inner label {
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.step5-header {
+    font-family: Impact;
+}
+
+.step6-header {
+    margin-top: 3.3rem;
+    font-size: 3.2rem;
+    text-align: center;
+    font-family: Impact;
+}
+
+
+#woodworking:checked + .wood-label {
+    background-color: #e92b25;
+    color: #f7f7f7;
+}
+
+#metalworking:checked + .metal-label {
+    background-color: #e92b25;
+    color: #f7f7f7;
+}
+
+#needlecraft:checked + .needle-label {
+    background-color: #e92b25;
+    color: #f7f7f7;
+}
+
+#automotive:checked + .auto-label {
+    background-color: #e92b25;
+    color: #f7f7f7;
+}
+
+#home-imp:checked + .home-label {
+    background-color: #e92b25;
+    color: #f7f7f7;
+}
+
+#gen-craft:checked + .craft-label {
+    background-color: #e92b25;
+    color: #f7f7f7;
+}
+
+#electronics:checked + .electronics-label {
+    background-color: #e92b25;
+    color: #f7f7f7;
+}
+
+#outdoorsmanship:checked + .outdoors-label {
+    background-color: #e92b25;
+    color: #f7f7f7;
+}
