@@ -76,7 +76,7 @@ class NewPostForm extends React.Component {
                     <option value='8'>Outdoorsmanship</option>
                 </select>
                 <Label htmlFor='cn-title-input'>Thread Title</Label>
-                <Input id="title" type="text" placeholder="Thread Title"></Input>
+                <Input id="title" type="text" className='cn-title-thread' placeholder="Thread Title"></Input>
                 <Label htmlFor='cn-textarea'>Thread Content</Label>
                 <Textarea id="content" className="post-info" placeholder="Ask a question!"></Textarea>
                 <Button type="submit" className="hw-btn">Submit</Button>
