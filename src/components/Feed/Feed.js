@@ -6,6 +6,7 @@ import './Feed.css'
 // import Watch from '../Watch/Watch'
 // import NewPostForm from '../CreateNew/NewPostForm'
 import FeedThreadItem from './FeedThreadItem';
+import { Transition } from 'react-spring/renderprops'
 
 export default class Feed extends Component {
     constructor(props) {
@@ -121,6 +122,7 @@ export default class Feed extends Component {
                             <option value='Outdoorsmanship'>Outdoorsmanship</option>
                         </select>
                     </div>
+
                     {threadsList}
                 </ul>
             </section>
