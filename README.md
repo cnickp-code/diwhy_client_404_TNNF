@@ -7,8 +7,8 @@ Programmed by **Carlo Paredes, Magdalena Painter, Jon Oliver, Agatha North, and 
 This program was created using HTML, CSS, Javascript, Node.js, Express, and PostgreSQL.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Live Project Link: 
-Corresponding Server-Side Repo Link:
+Live Project Link: <https://diwhy-client-404-tnnf.vercel.app/>
+Corresponding Server-Side Repo Link: <https://github.com/thinkful-ei-orka/diwhy_server_404_TNNF>
 
 ## Screenshots
 
@@ -21,7 +21,8 @@ Corresponding Server-Side Repo Link:
 ## Demo Info
 
 Credentials<br/>
-Username: <br/>
-Password:
+Email: demo@demo.com<br/>
+Username: DemoUser<br/>
+Password: Password1!
 
 ---

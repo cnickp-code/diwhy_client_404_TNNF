@@ -6,6 +6,7 @@ import IntroContainer from './IntroContainer';
 import AuthApiService from '../../Services/auth-api-service';
 import AppContext from '../../contexts/AppContext';
 import { Redirect } from 'react-router-dom';
+import InterestsApiService from '../../Services/interests-api-service';
 
 class Intro extends React.Component {
     static contextType = AppContext;
@@ -67,8 +68,11 @@ class Intro extends React.Component {
 
         console.log(newInterests);
 
+        
+
         newInterests.forEach(int => {
             // Function to post interests
+            InterestsApiService.postInterest(int)
         })
 
         let newStep = this.state.step + 1;

@@ -40,22 +40,33 @@ class ThreadItem extends React.Component {
         return (
             <div className="ti-main-container">
                 <div className="ti-item-container">
-                    <div className="ti-header">
-                        <a href={`/profile/${thread.user_name}`}><h2 className="ti-name"> {thread.user_name}</h2></a>
-                        <h3 className="ti-title">{thread.title}</h3>
+                    <div className="ti-item-inner">
+                        <div className="ti-header">
+                            
+                                <h3 className="ti-title">{thread.title}</h3>
+                                <div className="ti-flex">
+                                <div className="ti-user">
+                                    <img src={thread.user_pic} alt='prop' className="ti-pic"></img>
+                                    <a href={`/profile/${thread.user_name}`}><h2 className="ti-name"> {thread.user_name}</h2></a>
+                                </div>
+                                <p className="ti-body-footer">Topic: {thread.category}</p>
+                            </div>
+
+                                
+
+
+                        </div>
+
+                        <div className="ti-body-content">
+                            {thread.content}
+                        </div>
+
+
                     </div>
-
-                    <div className="ti-body-content">
-                        {thread.content}
-                    </div>
-
-                    <p className="ti-body-footer">Topic: {thread.category}</p>
-
                 </div>
 
                 {!this.state.loading && <CommentForm threadId={thread.id} />}
 
-                <h3 className='ti-comments-header'>Comments:</h3>
                 {!this.state.loading && <CommentList threadId={thread.id} />}
 
             </div>

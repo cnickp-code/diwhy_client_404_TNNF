@@ -19,7 +19,7 @@ class CommentList extends React.Component {
     render() {
         let commentList = [];
 
-        if(!this.context.loading) {
+        if (!this.context.loading) {
             commentList = this.context.comments.map(comment => {
                 return <CommentItem key={comment.id} comment={comment} />
             })
@@ -27,9 +27,13 @@ class CommentList extends React.Component {
 
 
         return (
-            <ul className="comment-list">
-                {commentList}
-            </ul>
+            <div className="main-comment-container">
+                <h3 className='ti-comments-header'>Comments:</h3>
+                <ul className="comment-list">
+                    {commentList}
+                </ul>
+            </div>
+
         )
     }
 }
