@@ -27,29 +27,34 @@ class HelpWantedForm extends React.Component {
                     })
             })
     }
+    closeOverlay = () => {
+        this.context.toggleOverlay();
+    }
 
-    
     render() {
         return (
             <form className='help-wanted-form' onSubmit={this.handleSubmit}>
-                    <h3 className='form-header'>Ask For Help</h3>
-                    <Label htmlFor='hw-select'>Project Category</Label>
-                    <select  name='hw-select'  className='hw-select' id='category'>
-                        <option value='1'>Woodworking</option>
-                        <option value='2'>Metalworking</option>
-                        <option value='3'>Needlecraft</option>
-                        <option value='4'>Automotive</option>
-                        <option value='5'>Home Improvement</option>
-                        <option value='6'>General Crafts</option>
-                        <option value='7'>Electionics</option>
-                        <option value='8'>Outdoorsmanship</option>
-                    </select>
-                    <Label htmlFor='hw-title-input'>Project Title</Label>
-                    <Input required htmlFor='hw-title-input' placeholder='Project Title' name='hw-title-input' className='hw-title-input' id='title' maxLength='15' />
-                    <Label htmlFor='hw-textarea'>Describe Your Project</Label>
-                    <Textarea required placeholder='Project Description' name='hw-textarea' className='hw-textarea' id='content' />
-                    <Button type='submit' className='hw-btn'>Submit</Button>
-                </form>
+                <div className="exit" onClick={this.closeOverlay}>
+                    <i class="far fa-times-circle"></i>
+                </div>
+                <h3 className='form-header'>Ask For Help</h3>
+                <Label htmlFor='hw-select'>Project Category</Label>
+                <select name='hw-select' className='hw-select' id='category'>
+                    <option value='1'>Woodworking</option>
+                    <option value='2'>Metalworking</option>
+                    <option value='3'>Needlecraft</option>
+                    <option value='4'>Automotive</option>
+                    <option value='5'>Home Improvement</option>
+                    <option value='6'>General Crafts</option>
+                    <option value='7'>Electionics</option>
+                    <option value='8'>Outdoorsmanship</option>
+                </select>
+                <Label htmlFor='hw-title-input'>Project Title</Label>
+                <Input required htmlFor='hw-title-input' placeholder='Project Title' name='hw-title-input' className='hw-title-input' id='title' maxLength='15' />
+                <Label htmlFor='hw-textarea'>Describe Your Project</Label>
+                <Textarea required placeholder='Project Description' name='hw-textarea' className='hw-textarea' id='content' />
+                <Button type='submit' className='hw-btn'>Submit</Button>
+            </form>
         )
     }
 }

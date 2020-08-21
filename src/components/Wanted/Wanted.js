@@ -114,7 +114,7 @@ export default class Wanted extends Component {
         })
         return (
             <div className='want-wrapper'>
-                {this.context.showPostOverlay && <FormOverlay />}
+                {/* {this.context.showPostOverlay && <FormOverlay />} */}
                 {/* <form className='help-wanted-form' onSubmit={this.handleSubmit}>
                     <h3 className='form-header'>Ask For Help</h3>
                     <Label htmlFor='hw-select'>Project Category</Label>
