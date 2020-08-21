@@ -68,15 +68,11 @@ class FeedThreadItem extends React.Component {
         return (
             <li className="tl-header" key={this.props.thread.id}>
                 <Link className='threadId' to={'/thread/' + this.props.thread.id} key={this.props.thread.id}>
-                    <div className="tl-header-content">
-                        <div className="tl-pic-container">
+                    <h2 className="hw-name">{this.props.thread.title}</h2>
+                        <div className="tl-header-content">
                             <img src={this.props.thread.user_pic} alt='prop' className="tl-pic"></img>
-                            <h2 className="hw-name">{this.props.thread.user_name}</h2>
+                            <h3 className="tl-title">{this.props.thread.user_name}</h3>
                         </div>
-                        <h3 className="tl-title">{this.props.thread.title}</h3>
-                    </div>
-                    <p className='tl-content'>{this.props.thread.content}</p>
-
                 </Link>
                 <div className='tl-options'>
                     {/* {thread likes variable} */}
