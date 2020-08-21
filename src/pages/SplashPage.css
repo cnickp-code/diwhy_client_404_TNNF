@@ -14,6 +14,11 @@
     text-align: center;
 }
 
+.splash-sub-header {
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
 .main-logo, .sub-logo {
     max-width: 90%;
     height: auto;

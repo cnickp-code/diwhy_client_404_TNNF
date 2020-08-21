@@ -63,7 +63,7 @@ export default class Profile extends Component {
                          <div className="profile-main-container">
                               <div className="profile-top-splash">
                                    <div className="profile-bottom-splash">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" className="profile-pic" />
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" className="profile-pic" alt='profile-pic' />
                                         <div className='profile-user'>
                                              <h2 className='User_Name text-right' id='header'>Username: {user.user_name}</h2>
                                              <h2 className='User_Email text-right' id='header'>Email: {user.email}</h2>
