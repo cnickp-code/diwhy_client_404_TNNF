@@ -66,6 +66,22 @@ const AuthApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
+  },
+  updateUserInfo(id, newInfo) {
+    console.log(JSON.stringify(newInfo));
+    return fetch(`${config.API_ENDPOINT}/user/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `bearer ${TokenService.getAuthToken()}`
+      },
+      body: JSON.stringify(newInfo)
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
   }
 }
 
