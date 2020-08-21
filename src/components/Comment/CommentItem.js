@@ -75,7 +75,11 @@ class CommentItem extends React.Component {
 
         return (
             <li className="comment-container">
-                <a href={`/profile/${this.props.comment.user_name}`}><h5 className="comment-header">{this.props.comment.user_name}</h5></a>
+                <div className="comment-user">
+                    <img src={this.props.comment.user_pic} alt='prop' className="ti-pic"></img>
+                    <a href={`/profile/${this.props.comment.user_name}`}><h5 className="comment-header">{this.props.comment.user_name}</h5></a>
+                </div>
+                
                 <p className="comment-body">
                     {this.props.comment.content}
                 </p>
