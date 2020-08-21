@@ -96,7 +96,7 @@ export default class Feed extends Component {
             return <FeedThreadItem key={thread.id} thread={thread} />
         })
 
-        console.log(this.context.showPostOverlay);
+        // console.log(this.context.showPostOverlay);
         return (
             <section className='dash-item'>
                 <div className="np-main-container">

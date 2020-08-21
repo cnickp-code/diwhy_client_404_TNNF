@@ -4,7 +4,7 @@ import AppContext from '../../contexts/AppContext'
 import WantedApiService from '../../Services/want-api-service';
 import { Link } from 'react-router-dom'
 import { Input, Label, Textarea, Button } from '../Util/Util'
-import FormOverlay from '../CreateNew/FormOverlay';
+// import FormOverlay from '../CreateNew/FormOverlay';
 import HelpWantedOverlay from '../CreateNew/HelpWantedOverlay';
 
 export default class Wanted extends Component {
@@ -116,7 +116,7 @@ export default class Wanted extends Component {
         return (
             <div className='want-wrapper'>
                 {this.context.showPostOverlay && <HelpWantedOverlay />}
-                {this.context.showPostOverlay && <FormOverlay />}
+                {/* {this.context.showPostOverlay && <FormOverlay />} */}
                 <form className='help-wanted-form' onSubmit={this.handleSubmit}>
                     <h3 className='form-header'>Ask For Help</h3>
                     <Label htmlFor='hw-select'>Project Category</Label>
@@ -148,7 +148,7 @@ export default class Wanted extends Component {
                     <div className="hw-outer-container">
                         <div className='filter-posts'>
                             <Label htmlFor='hw-cat-select' className='category-select-label'>Filter By Category</Label>
-                            <select id="categoryPostings" className='cat-select' defaultValue='0' value={this.state.value} onChange={this.handleChange} ref={this.categoryPostings}>
+                            <select id="categoryPostings" className='cat-select' value={this.state.value} onChange={this.handleChange} ref={this.categoryPostings}>
                                 <option value='0'>No Filter</option>
                                 <option value='1'>Woodworking</option>
                                 <option value='2'>Metalworking</option>
