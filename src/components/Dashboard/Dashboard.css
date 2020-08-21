@@ -52,12 +52,11 @@
 
 .tab-content {
   width: 100vw;
+  flex: 1;
 }
 
 .np-main-container {
-  width: 100%;
-  height: auto;
-  margin: 20px auto;
+    display: none;
 }
 
 .np-container {
@@ -99,6 +98,12 @@
   /* .tab-list {
     display: none;
   } */
+
+  .np-main-container {
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+  }
 
   .dash-item {
     width: 100%;

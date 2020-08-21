@@ -5,10 +5,9 @@
   flex-direction: column;
   padding: 1rem;
   padding-bottom: 0px;
-  margin-top: 1rem;
-  border: 1px solid #231f20;
+  border-top: 1px solid #231f20;
+  border-bottom: 1px solid #231f20;
   background-color: #e0caa9;
-  border-radius: 25px;
 }
 
 .comment-text {

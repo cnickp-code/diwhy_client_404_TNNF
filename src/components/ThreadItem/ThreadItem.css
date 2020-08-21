@@ -5,22 +5,20 @@
   --color-4: #e0caa9;
   --color-5: #e2be7e;
   --color-6: #e92b25;
+  --color-7: #8d1814;
+  --color-8: #fafafa;
 }
 
 .ti-main-container {
   width: 100%;
   min-height: fit-content;
-  border: 1px solid #231f20;
   margin: 0 auto;
-  padding: 30px;
 }
 
 .ti-item-container {
   width: 100%;
-  border: 1px solid #231f20;
   min-height: fit-content;
   background-color: #e0caa9;
-  border-radius: 25px;
 }
 
 .ti-header {

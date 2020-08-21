@@ -6,7 +6,7 @@
 }
 
 .profile-main-container {
-    width: 80vw;
+    width: 100vw;
 }
 
 .profile-cat-div {
@@ -21,20 +21,15 @@
     background-position: center;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    border-radius: 5px;
-    
 }
 
 .profile-bottom-splash {
     width: 100%;
-    height: 50%;
     padding: 1rem;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    
 }
 
 .profile-pic {
@@ -51,8 +46,6 @@
 .profile-section {
     padding: 1rem;
     background-color: #fafafa;
-    border-radius: 5px;
-    margin: 1rem 0;
     border: 1px solid rgb(187, 187, 187);
 }
 
@@ -61,18 +54,17 @@
     font-size: 2rem;
     color: #231F20;
     font-family: "Impact";
+    text-align: center;
 }
 
 .profile-info-container {
-    height: 40px;
+    height: 50px;
     background-color: #fafafa;
     border: 1px solid rgb(187, 187, 187);
     border-top: none;
-    border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px;
 }
 
 .profile-info-left {
@@ -94,5 +86,67 @@
 }
 
 
+@media only screen and (min-width: 450px) {
 
+    .profile-header {
+        margin-top: 0;
+        font-size: 2rem;
+        color: #231F20;
+        font-family: "Impact";
+        text-align: left;
+    }
 
+    .profile-main-container {
+        width: 80vw;
+    }
+    
+    .profile-info-container {
+        height: 40px;
+        background-color: #fafafa;
+        border: 1px solid rgb(187, 187, 187);
+        border-top: none;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .profile-section {
+        padding: 1rem;
+        background-color: #fafafa;
+        border-radius: 5px;
+        margin: 1rem 0;
+        border: 1px solid rgb(187, 187, 187);
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        box-shadow: 4px 0px 5px 2px rgba(0,0,0,0.75);
+    }
+
+    .profile-top-splash {
+        background-image: url('https://i.pinimg.com/originals/f9/4f/37/f94f37eb1fbdfb5d49dc97e711a35289.jpg');
+        width: 100%;
+        height: 30vh;
+        background-size: 100% 150%;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        border-radius: 5px;
+    }
+
+    .profile-bottom-splash {
+        width: 100%;
+        height: 50%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+}
