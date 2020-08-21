@@ -79,24 +79,43 @@ class HelpWantedItem extends React.Component {
         }
 
         return (
-            <div className="hw-internal-wrap">
-                <div className="hw-internal-container">
-                    <div className="hw-header-content">
+            <>
+                <div className="hw-internal-wrap">
+                    <div className="hw-internal-container">
+
+                        <div className="ti-header">
+                            <h3 className="ti-title">{this.state.posting.title}</h3>
+                            <div className="ti-flex">
+                                <div className="ti-user">
+                                    <img src={this.context.user.profile_pic} alt='prop' className="ti-pic"></img>
+                                    <a href={`/profile/${this.state.posting.user_name}`}><h2 className="ti-name"> {this.state.posting.user_name}</h2></a>
+                                </div>
+                                <p className="hw-content">Topic: {this.getCategoryName(this.state.posting.category)}</p>
+                            </div>
+
+                        </div>
+                        <p className='hw-content-body'>{this.state.posting.content}</p>
+                        {/* <div className="hw-header-content">
                         <a href={`/profile/${this.state.posting.user_name}`}><h2 className="hw-name"> {this.state.posting.user_name}</h2></a>
                         <h3 className="hw-title">{this.state.posting.title}</h3>
                     </div>
-                    <p className='hw-content'>{this.state.posting.content}</p>
-                    <p>Topic: {this.getCategoryName(this.state.posting.category)}</p>
-                    <div className="hw-body-buttons">
-                        {(this.context.user.user_name === this.state.posting.user_name) &&
-                            <button type='button' className="hw-btn" onClick={() => this.handleDeletePosting(this.state.posting.id)}>Delete</button>}
+                    
+                    <p>Topic: {this.getCategoryName(this.state.posting.category)}</p> */}
+
+                        <div className="hw-body-buttons">
+                            {(this.context.user.user_name === this.state.posting.user_name) &&
+                                <button type='button' className="hw-btn" onClick={() => this.handleDeletePosting(this.state.posting.id)}>Delete</button>}
+                        </div>
+                        {!(this.state.posting.user_name === this.context.user.user_name) && (!appBool) && <PostApplicantForm id={this.state.posting.id} />}
                     </div>
-                    {!(this.state.posting.user_name === this.context.user.user_name) && <PostApplicantForm id={this.state.posting.id} />}
                 </div>
-                <ul className='applicants-list' >
-                    {applicantsList}
-                </ul>
-            </div>
+                <div className="applicants-container">
+                    <ul className='applicants-list' >
+                        {applicantsList}
+                    </ul>
+                </div>
+
+            </>
         );
     }
 }

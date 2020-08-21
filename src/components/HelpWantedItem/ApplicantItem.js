@@ -56,7 +56,7 @@ class ApplicantItem extends React.Component {
             .then(() => {
                 PostingsApiService.getApplicationsByPosting(this.props.posting.id)
                     .then(applicants => {
-                        
+
                         this.context.setApplicants(applicants)
                     })
             })
@@ -65,36 +65,41 @@ class ApplicantItem extends React.Component {
     render() {
 
         console.log('CONTEXT POSTINGS ', this.context.postings);
-        
+
 
         let accepted = <button className='application-button' onClick={this.handleAcceptApplicant}>Accept</button>;
         let postingId = this.props.posting.id;
         console.log(postingId)
-        let focusPosting 
+        let focusPosting
 
-        
-        if(this.context.postings.length > 0) {
+
+        if (this.context.postings.length > 0) {
             focusPosting = this.context.postings.find(posting => posting.id === postingId);
             console.log(focusPosting);
             if (focusPosting !== undefined && focusPosting.accepted_app === this.props.applicant.user.user_name) {
                 accepted = <button className='application-button' onClick={this.handleCancelApplicant}>Cancel</button>;
-                
+
             }
         }
-        
-        
+
+
 
 
 
         return (
             <li className='applicant-list-item' >
-                <h2 className='application-header'>{this.props.applicant.user.user_name}</h2>
-                <p>{this.props.applicant.content}</p>
-                {(this.context.user.user_name === this.props.posting.user_name) && <div className='application-button-container'>
-                    {accepted}
-                    <button className='application-button' onClick={this.handleDeleteApplicant}>Delete</button>
-                </div>}
-                {(this.context.user.user_name === this.props.applicant.user.user_name) && <button className='application-button' onClick={this.handleDeleteApplicant}>Cancel Application</button>}
+                <div className="applicant-inner">
+                    <div className="app-user">
+                        <img src={this.context.user.profile_pic} alt='prop' className="ti-pic"></img>
+                        <a href={`/profile/${this.props.applicant.user.user_name}`}><h2 className="ti-name"> {this.props.applicant.user.user_name}</h2></a>
+                    </div>
+                    <p>{this.props.applicant.content}</p>
+                    {(this.context.user.user_name === this.props.posting.user_name) && <div className='application-button-container'>
+                        {accepted}
+                        <button className='application-button' onClick={this.handleDeleteApplicant}>Delete</button>
+                    </div>}
+                    {(this.context.user.user_name === this.props.applicant.user.user_name) && <button className='hw-btn' onClick={this.handleDeleteApplicant}>Rescind</button>}
+                </div>
             </li>
         )
     }

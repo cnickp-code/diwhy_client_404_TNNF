@@ -42,19 +42,14 @@ class ThreadItem extends React.Component {
                 <div className="ti-item-container">
                     <div className="ti-item-inner">
                         <div className="ti-header">
-                            
-                                <h3 className="ti-title">{thread.title}</h3>
-                                <div className="ti-flex">
+                            <h3 className="ti-title">{thread.title}</h3>
+                            <div className="ti-flex">
                                 <div className="ti-user">
                                     <img src={thread.user_pic} alt='prop' className="ti-pic"></img>
                                     <a href={`/profile/${thread.user_name}`}><h2 className="ti-name"> {thread.user_name}</h2></a>
                                 </div>
                                 <p className="ti-body-footer">Topic: {thread.category}</p>
                             </div>
-
-                                
-
-
                         </div>
 
                         <div className="ti-body-content">
