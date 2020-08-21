@@ -7,16 +7,7 @@ Programmed by **Carlo Paredes, Magdalena Painter, Jon Oliver, Agatha North, and 
 This program was created using HTML, CSS, Javascript, Node.js, Express, and PostgreSQL.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Live Client Project Link:
-
-'/api/user', userRouter
-'/api/auth', authRouter
-'/api/interests', interestsRouter
-'/api/categories', categoriesRouter
-'/api/threads', threadsRouter
-'/api/comments', commentsRouter
-'/api/postings', postingsRouter
-'/api/applicants', postingApplicantsRouter
+Live Client Project Link: <https://diwhy-client-404-tnnf.vercel.app/>
 
 ## API Documentation
 
