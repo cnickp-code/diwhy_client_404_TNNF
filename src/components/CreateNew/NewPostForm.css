@@ -36,7 +36,6 @@
 
 #post-form {
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,6 +45,10 @@
 .top-container h1 {
   margin: 0;
   margin-bottom: 1rem;
+}
+
+.cn-select, .post-select, .post-info, .cn-title-thread {
+  margin: 1rem;
 }
 
 .post-info {
