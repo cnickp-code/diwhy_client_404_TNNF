@@ -141,4 +141,8 @@ div#want-wrapper div:hover.note {
     margin: 20px 0px 0px;
     box-shadow: 1px 3px 5px 2px rgba(0,0,0,0.26);
   }
+
+  .help-wanted-form {
+    display: none;
+  }
 }
