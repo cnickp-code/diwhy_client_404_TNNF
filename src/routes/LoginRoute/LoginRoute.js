@@ -23,7 +23,7 @@ class LoginRoute extends Component {
       <section className='log-route-section'>
         <h2 className='reg-log-header' id='header'>Login</h2>
         <Login onLoginSuccess={this.handleLoginSuccess} />
-        {/* <p className='intro'>Info about the app here!</p> */}
+        <p className='intro'>You'll find the hammer to your nail here!</p>
       </section>
     );
   }
