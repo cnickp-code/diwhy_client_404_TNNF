@@ -27,8 +27,9 @@
 
 .tl-pic {
   border-radius: 50%;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
+  margin: 15px;
 }
 
 .tl-header-content {
@@ -47,7 +48,6 @@
 .tl-title {
   margin: 0;
   font-weight: 200;
-  padding-left: 20px;
 }
 
 .tl-options {
@@ -80,6 +80,11 @@
   border: black 1px;
 }
 
+.hw-name {
+  text-align: center;
+  font-size: 35px;
+}
+
 @media only screen and (min-width: 768px) {
   .tl-main-container {
     width: 80%;
@@ -93,7 +98,6 @@
     display: flex;
     margin: 0;
     align-items: center;
-    justify-content: space-between;
   }
 
   .tl-pic-container {

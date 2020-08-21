@@ -20,6 +20,7 @@ class RegistrationRoute extends Component {
         <Registration
           onRegistrationSuccess={this.handleRegistrationSuccess}
         />
+        {/* <p className='intro'>Info about the app here!</p> */}
       </section>
     );
   }

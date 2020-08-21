@@ -4,7 +4,7 @@ import AppContext from '../../contexts/AppContext'
 import WantedApiService from '../../Services/want-api-service';
 import { Link } from 'react-router-dom'
 import { Input, Label, Textarea, Button } from '../Util/Util'
-// import FormOverlay from '../CreateNew/FormOverlay';
+import FormOverlay from '../CreateNew/FormOverlay';
 import HelpWantedOverlay from '../CreateNew/HelpWantedOverlay';
 
 export default class Wanted extends Component {
@@ -120,7 +120,7 @@ export default class Wanted extends Component {
                 <form className='help-wanted-form' onSubmit={this.handleSubmit}>
                     <h3 className='form-header'>Ask For Help</h3>
                     <Label htmlFor='hw-select'>Project Category</Label>
-                    <select name='hw-select' className='hw-select' id='category'>
+                    <select  name='hw-select'  className='hw-select' id='category'>
                         <option value='1'>Woodworking</option>
                         <option value='2'>Metalworking</option>
                         <option value='3'>Needlecraft</option>
@@ -166,7 +166,7 @@ export default class Wanted extends Component {
                     </div>
 
                 </div>
-            </div >
+            </div>
         )
     }
 }
