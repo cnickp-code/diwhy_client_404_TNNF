@@ -1,7 +1,7 @@
 import React from 'react';
 import AppContext from '../../contexts/AppContext';
 import CommentsApiService from '../../Services/comments-api-service';
-import { Label, Button } from '../Util/Util'
+import { Button } from '../Util/Util'
 
 class CommentItem extends React.Component {
     static contextType = AppContext;
@@ -31,24 +31,24 @@ class CommentItem extends React.Component {
         CommentsApiService.postLikeByCommentId(newLike)
             .then(like => {
                 CommentsApiService.getLikesByCommentId(this.props.comment.id)
-                .then(likes => {
-                    this.setState({
-                        likes
+                    .then(likes => {
+                        this.setState({
+                            likes
+                        })
                     })
-                })
             })
     }
 
     handleUnlikeComment = () => {
         CommentsApiService.deleteLikeByCommentId(this.props.comment.id)
-        .then(like => {
-            CommentsApiService.getLikesByCommentId(this.props.comment.id)
-            .then(likes => {
-                this.setState({
-                    likes
-                })
+            .then(like => {
+                CommentsApiService.getLikesByCommentId(this.props.comment.id)
+                    .then(likes => {
+                        this.setState({
+                            likes
+                        })
+                    })
             })
-        })
     }
 
     handleDelete = () => {

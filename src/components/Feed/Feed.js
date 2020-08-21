@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import AppContext from '../../contexts/AppContext'
-import { Label, Button } from '../Util/Util'
+import { Label } from '../Util/Util'
 import './Feed.css'
-import Watch from '../Watch/Watch'
-import NewPostForm from '../CreateNew/NewPostForm'
+// import Watch from '../Watch/Watch'
+// import NewPostForm from '../CreateNew/NewPostForm'
 import FeedThreadItem from './FeedThreadItem';
 
 export default class Feed extends Component {

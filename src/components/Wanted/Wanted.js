@@ -115,17 +115,12 @@ export default class Wanted extends Component {
         })
         return (
             <div className='want-wrapper'>
-<<<<<<< HEAD
+                {this.context.showPostOverlay && <HelpWantedOverlay />}
                 {this.context.showPostOverlay && <FormOverlay />}
                 <form className='help-wanted-form' onSubmit={this.handleSubmit}>
-=======
-                {this.context.showPostOverlay && <HelpWantedOverlay />}
-                {/* {this.context.showPostOverlay && <FormOverlay />} */}
-                {/* <form className='help-wanted-form' onSubmit={this.handleSubmit}>
->>>>>>> b9a06475e83914f0ef225da81e1b7d871eb98901
                     <h3 className='form-header'>Ask For Help</h3>
                     <Label htmlFor='hw-select'>Project Category</Label>
-                    <select  name='hw-select'  className='hw-select' id='category'>
+                    <select name='hw-select' className='hw-select' id='category'>
                         <option value='1'>Woodworking</option>
                         <option value='2'>Metalworking</option>
                         <option value='3'>Needlecraft</option>
@@ -171,7 +166,7 @@ export default class Wanted extends Component {
                     </div>
 
                 </div>
-            </div>
+            </div >
         )
     }
 }
