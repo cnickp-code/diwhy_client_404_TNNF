@@ -81,8 +81,8 @@ class FeedThreadItem extends React.Component {
                 <div className='tl-options'>
                     {/* {thread likes variable} */}
                     <Button className='feed-btn'>Add To Watch List</Button>
-                    {!likeBool && <Button className="feed-btn" onClick={this.handleLikeThread}><i class="far fa-heart"></i>{' '}{likes}</Button>}
-                    {likeBool && <Button className="feed-btn" onClick={this.handleUnlikeThread}><i class="fas fa-heart"></i>{' '}{likes}</Button>}
+                    {!likeBool && <Button className="feed-btn" onClick={this.handleLikeThread}><i className="far fa-heart"></i>{' '}{likes}</Button>}
+                    {likeBool && <Button className="feed-btn" onClick={this.handleUnlikeThread}><i className="fas fa-heart"></i>{' '}{likes}</Button>}
                 </div>
             </li>
         )

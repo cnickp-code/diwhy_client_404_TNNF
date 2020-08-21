@@ -115,14 +115,9 @@ export default class Wanted extends Component {
         })
         return (
             <div className='want-wrapper'>
-<<<<<<< HEAD
-                {this.context.showPostOverlay && <FormOverlay />}
-                <form className='help-wanted-form' onSubmit={this.handleSubmit}>
-=======
                 {this.context.showPostOverlay && <HelpWantedOverlay />}
                 {/* {this.context.showPostOverlay && <FormOverlay />} */}
-                {/* <form className='help-wanted-form' onSubmit={this.handleSubmit}>
->>>>>>> b9a06475e83914f0ef225da81e1b7d871eb98901
+                <form className='help-wanted-form' onSubmit={this.handleSubmit}>
                     <h3 className='form-header'>Ask For Help</h3>
                     <Label htmlFor='hw-select'>Project Category</Label>
                     <select  name='hw-select'  className='hw-select' id='category'>
@@ -153,7 +148,7 @@ export default class Wanted extends Component {
                     <div className="hw-outer-container">
                         <div className='filter-posts'>
                             <Label htmlFor='hw-cat-select' className='category-select-label'>Filter By Category</Label>
-                            <select id="categoryPostings" className='cat-select' defaultValue='0' value={this.state.value} onChange={this.handleChange} ref={this.categoryPostings}>
+                            <select id="categoryPostings" className='cat-select' value={this.state.value} onChange={this.handleChange} ref={this.categoryPostings}>
                                 <option value='0'>No Filter</option>
                                 <option value='1'>Woodworking</option>
                                 <option value='2'>Metalworking</option>
