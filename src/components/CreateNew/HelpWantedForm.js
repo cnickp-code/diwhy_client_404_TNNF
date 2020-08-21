@@ -1,10 +1,13 @@
 import React from 'react';
 import AppContext from '../../contexts/AppContext';
 import { Input, Label, Textarea, Button } from '../Util/Util'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import WantedApiService from '../../Services/want-api-service'
+import './NewPostForm.css'
 
 
 class HelpWantedForm extends React.Component {
+    static contextType = AppContext;
 
     handleSubmit = (ev) => {
         ev.preventDefault()
@@ -24,6 +27,7 @@ class HelpWantedForm extends React.Component {
                             postValue: '1'
                         })
                         this.context.setPostings(postings)
+                        this.context.toggleOverlay();
                     })
             })
     }
@@ -33,12 +37,12 @@ class HelpWantedForm extends React.Component {
 
     render() {
         return (
-            <form className='help-wanted-form' onSubmit={this.handleSubmit}>
+            <form id='post-form' onSubmit={this.handleSubmit}>
                 <div className="exit" onClick={this.closeOverlay}>
                     <i class="far fa-times-circle"></i>
                 </div>
                 <h3 className='form-header'>Ask For Help</h3>
-                <Label htmlFor='hw-select'>Project Category</Label>
+                <Label htmlFor='cn-select'>Project Category</Label>
                 <select name='hw-select' className='hw-select' id='category'>
                     <option value='1'>Woodworking</option>
                     <option value='2'>Metalworking</option>
@@ -49,10 +53,10 @@ class HelpWantedForm extends React.Component {
                     <option value='7'>Electionics</option>
                     <option value='8'>Outdoorsmanship</option>
                 </select>
-                <Label htmlFor='hw-title-input'>Project Title</Label>
+                <Label htmlFor='cn-title-input'>Project Title</Label>
                 <Input required htmlFor='hw-title-input' placeholder='Project Title' name='hw-title-input' className='hw-title-input' id='title' maxLength='15' />
-                <Label htmlFor='hw-textarea'>Describe Your Project</Label>
-                <Textarea required placeholder='Project Description' name='hw-textarea' className='hw-textarea' id='content' />
+                <Label htmlFor='cn-textarea'>Describe Your Project</Label>
+                <Textarea required placeholder='Project Description' name='hw-textarea' className='post-info' id='content' />
                 <Button type='submit' className='hw-btn'>Submit</Button>
             </form>
         )

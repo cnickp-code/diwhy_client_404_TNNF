@@ -12,7 +12,7 @@ class HelpWantedOverlay extends React.Component {
 
                 <div className="overlay-container" >
 
-                    <HelpWantedOverlay />
+                    <HelpWantedForm />
                 </div>
             </>
         )
