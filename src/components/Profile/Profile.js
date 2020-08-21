@@ -22,7 +22,6 @@ export default class Profile extends Component {
      static contextType = AppContext;
 
      componentDidMount() {
-          console.log('mounted')
           AuthApiService.getUserInfo(this.props.user_name)
                .then(user => {
                     console.log(user)
