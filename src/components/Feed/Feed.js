@@ -106,21 +106,21 @@ export default class Feed extends Component {
                         </div>
                     </div>
                 </div>
-                <div className='dash-select'>
-                    <Label htmlFor='cat-select' className='category-select-label'>Filter By Category</Label>
-                    <select id="category" className='cat-select' value={this.state.value} onChange={this.handleChange} ref={this.category}>
-                        <option value='None'>No Filter</option>
-                        <option value='Woodworking'>Woodworking</option>
-                        <option value='Metalworking'>Metalworking</option>
-                        <option value='Needlecraft'>Needlecraft</option>
-                        <option value='Automotive'>Automotive</option>
-                        <option value='Home Improvement'>Home Improvement</option>
-                        <option value='General Crafts'>General Crafts</option>
-                        <option value='Electronics'>Electronics</option>
-                        <option value='Outdoorsmanship'>Outdoorsmanship</option>
-                    </select>
-                </div>
                 <ul className='tl-main-container'>
+                    <div className='dash-select'>
+                        <Label htmlFor='cat-select' className='category-select-label'>Filter By Category</Label>
+                        <select id="category" className='cat-select' value={this.state.value} onChange={this.handleChange} ref={this.category}>
+                            <option value='None'>No Filter</option>
+                            <option value='Woodworking'>Woodworking</option>
+                            <option value='Metalworking'>Metalworking</option>
+                            <option value='Needlecraft'>Needlecraft</option>
+                            <option value='Automotive'>Automotive</option>
+                            <option value='Home Improvement'>Home Improvement</option>
+                            <option value='General Crafts'>General Crafts</option>
+                            <option value='Electronics'>Electronics</option>
+                            <option value='Outdoorsmanship'>Outdoorsmanship</option>
+                        </select>
+                    </div>
                     {threadsList}
                 </ul>
             </section>

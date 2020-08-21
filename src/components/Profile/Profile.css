@@ -13,6 +13,10 @@
     padding: .5rem;
 }
 
+.profile-user {
+    font-size: 10px;
+}
+
 .profile-top-splash {
     background-image: url('https://i.pinimg.com/originals/f9/4f/37/f94f37eb1fbdfb5d49dc97e711a35289.jpg');
     width: 100%;
@@ -87,6 +91,10 @@
 
 
 @media only screen and (min-width: 450px) {
+
+    .profile-user {
+        font-size: 20px;
+    }
 
     .profile-header {
         margin-top: 0;

@@ -55,7 +55,7 @@ class ThreadItem extends React.Component {
 
                 {!this.state.loading && <CommentForm threadId={thread.id} />}
 
-                <h3>Comments:</h3>
+                <h3 className='ti-comments-header'>Comments:</h3>
                 {!this.state.loading && <CommentList threadId={thread.id} />}
 
             </div>

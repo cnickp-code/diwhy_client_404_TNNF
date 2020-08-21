@@ -14,9 +14,8 @@
 
 .hw-outer-container {
   background-color: #E2BE7E;
-  border-radius: 5px;
-  border: 1px solid rgb(187, 187, 187);
-  width: 80%;
+  width: 100%;
+  height: 100vh;
 }
 
 .note {
@@ -60,13 +59,14 @@ div#want-wrapper div:hover.note {
 
 .help-wanted-form {
   width: 100%;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #231F20;
+  background-color: #fff7e0;
   padding: .5rem;
-  color: #FFF7E0;
+  color: #231F20;
 }
 
 .hw-textarea {
@@ -116,4 +116,29 @@ div#want-wrapper div:hover.note {
 .posting-closed {
   text-align: center;
   color: red;
+}
+
+@media only screen and (min-width: 450px) {
+  .hw-main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 20px 0px 0px;
+    padding: 20px 20px 0px 20px;
+    background-color: #E2BE7E;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  
+  .hw-outer-container {
+    background-color: #E2BE7E;
+    border-radius: 5px;
+    border: 1px solid rgb(187, 187, 187);
+    width: 80%;
+    margin: 20px 0px 0px;
+    box-shadow: 1px 3px 5px 2px rgba(0,0,0,0.26);
+  }
 }

@@ -71,10 +71,8 @@ class FeedThreadItem extends React.Component {
                     <div className="tl-header-content">
                         <div className="tl-pic-container">
                             <img src={this.props.thread.user_pic} alt='prop' className="tl-pic"></img>
+                            <h2 className="hw-name">{this.props.thread.user_name}</h2>
                         </div>
-
-                        <h2 className="hw-name">{this.props.thread.user_name}</h2>
-
                         <h3 className="tl-title">{this.props.thread.title}</h3>
                     </div>
                     <p className='tl-content'>{this.props.thread.content}</p>

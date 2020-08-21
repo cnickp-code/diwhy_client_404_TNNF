@@ -18,7 +18,11 @@
 .ti-item-container {
   width: 100%;
   min-height: fit-content;
-  background-color: #e0caa9;
+  background-color: #e2be7e;
+}
+
+.ti-comments-header {
+  display: none;
 }
 
 .ti-header {
@@ -35,11 +39,6 @@
   height: 80px;
   width: 80px;
 }
-
-/* .ti-header-content {
-    margin: 0;
-    padding-left: 20px;
-} */
 
 .ti-name {
   margin: 0;
@@ -78,4 +77,11 @@
 .ti-body-topic {
   width: 200px;
   margin-left: 30px;
+}
+
+@media only screen and (min-width: 450px) {
+
+  .ti-comments-header {
+    display: block;
+  }
 }

@@ -7,7 +7,7 @@
   padding-bottom: 0px;
   border-top: 1px solid #231f20;
   border-bottom: 1px solid #231f20;
-  background-color: #e0caa9;
+  background-color: #e2be7e;
 }
 
 .comment-text {
@@ -30,10 +30,7 @@
 .comment-container {
   padding: 1rem;
   padding-bottom: 0px;
-  border: 1px solid #231f20;
-  margin-top: 1rem;
-  background-color: #e0caa9;
-  border-radius: 25px;
+  background-color: #e2be7e;
 }
 
 .comment-header {
@@ -73,4 +70,23 @@
 .comment-btn {
   font-size: 1rem;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 450px) {
+
+  .comment-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .comment-container {
+    padding: 1rem;
+    padding-bottom: 0px;
+    border: 1px solid #231f20;
+    margin-top: 1rem;
+    background-color: #e2be7e;
+    border-radius: 25px;
+    width: 80%;
+  }
 }

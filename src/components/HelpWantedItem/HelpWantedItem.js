@@ -79,7 +79,7 @@ class HelpWantedItem extends React.Component {
         }
 
         return (
-            <div >
+            <div className="hw-internal-wrap">
                 <div className="hw-internal-container">
                     <div className="hw-header-content">
                         <a href={`/profile/${this.state.posting.user_name}`}><h2 className="hw-name"> {this.state.posting.user_name}</h2></a>

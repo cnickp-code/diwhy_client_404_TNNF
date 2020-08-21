@@ -115,7 +115,7 @@ export default class Wanted extends Component {
         return (
             <div className='want-wrapper'>
                 {this.context.showPostOverlay && <FormOverlay />}
-                {/* <form className='help-wanted-form' onSubmit={this.handleSubmit}>
+                <form className='help-wanted-form' onSubmit={this.handleSubmit}>
                     <h3 className='form-header'>Ask For Help</h3>
                     <Label htmlFor='hw-select'>Project Category</Label>
                     <select  name='hw-select'  className='hw-select' id='category'>
@@ -133,7 +133,7 @@ export default class Wanted extends Component {
                     <Label htmlFor='hw-textarea'>Describe Your Project</Label>
                     <Textarea required placeholder='Project Description' name='hw-textarea' className='hw-textarea' id='content' />
                     <Button type='submit' className='hw-btn'>Submit</Button>
-                </form> */}
+                </form>
                 <div className="np-main-container">
                     <div className="np-container">
                         <h2 className="np-header">Have a project?</h2>
