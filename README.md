@@ -26,3 +26,5 @@ Username: DemoUser<br/>
 Password: Password1!
 
 ---
+
+DIWHY is a social media platform designed for DIY enthusiasts, hobbyists, and professionals alike to ask for and give advice on projects and other DIY needs.
