@@ -9,6 +9,7 @@ export default class CommentList extends React.Component {
     static contextType = AppContext;
 
     componentDidMount() {
+        console.log(this.context)
         this.context.setLoading(true);
         CommentsApiService.getCommentsByThreadId(this.props.threadId)
             .then(comments => {
@@ -27,9 +28,9 @@ export default class CommentList extends React.Component {
         };
 
         return (
-            <div className="main-comment-container">
+            <div className='main-comment-container'>
                 <h3 className='ti-comments-header'>Comments:</h3>
-                <ul className="comment-list">
+                <ul className='comment-list'>
                     {commentList}
                 </ul>
             </div>

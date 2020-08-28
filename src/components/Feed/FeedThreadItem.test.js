@@ -7,6 +7,6 @@ import App from '../../App';
 
 it('renders the FeedThreadItem', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<BrowserRouter><AppProvider><App><FeedThreadItem /></App></AppProvider></BrowserRouter>, div);
+  ReactDOM.render(<BrowserRouter><FeedThreadItem key={1} thread={{}} /></BrowserRouter>, div);
   ReactDOM.unmountComponentAtNode(div);
 });
