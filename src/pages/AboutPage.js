@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
-import { Section } from '../Components/Util/Util';
+import React, { Component } from 'react'
+import { Section } from '../Components/Util/Util'
+
+//Not used yet, but can be expanded on.
 
 export default class AboutPage extends Component {
      render() {

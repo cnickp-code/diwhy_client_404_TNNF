@@ -1,7 +1,8 @@
-import config from '../config';
-import TokenService from '../Services/token-service';
+import config from '../config'
+import TokenService from '../Services/token-service'
 
 const DashApiService = {
+
     getUserInterests(user_id) {
         return fetch(`${config.API_ENDPOINT}/interests`, {
             headers: {
@@ -16,7 +17,6 @@ const DashApiService = {
     },
 
     getThreads() {
-        console.log('get threads ran')
         return [
             {
                 id: 1,
@@ -47,16 +47,10 @@ const DashApiService = {
 
     getThreadsWatch(user_id) {
         return fetch(`${config.API_ENDPOINT}/threads/${user_id}`, {
-
         })
     },
 
-    postThread() {
-
-    },
-
     getComments() {
-    console.log('get comments ran')
         return [
             {
                 id: 1,
@@ -75,16 +69,12 @@ const DashApiService = {
             {
                 id: 3,
                 user_id: 3,
-                content: 'HTML Rulez D00d',              
+                content: 'HTML Rulez D00d',
                 date_created: new Date(),
                 thread_id: 2
             },
         ]
     },
-
-    postComment() {
-
-    }
 }
 
 export default DashApiService

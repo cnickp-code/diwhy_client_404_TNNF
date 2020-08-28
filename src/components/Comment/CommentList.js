@@ -4,17 +4,18 @@ import './Comment.css';
 import CommentsApiService from '../../Services/comments-api-service';
 import AppContext from '../../contexts/AppContext';
 
-class CommentList extends React.Component {
+export default class CommentList extends React.Component {
+
     static contextType = AppContext;
 
     componentDidMount() {
         this.context.setLoading(true);
         CommentsApiService.getCommentsByThreadId(this.props.threadId)
             .then(comments => {
-                this.context.setComments(comments);
-                this.context.setLoading(false);
-            })
-    }
+                this.context.setComments(comments)
+                this.context.setLoading(false)
+            });
+    };
 
     render() {
         let commentList = [];
@@ -22,9 +23,8 @@ class CommentList extends React.Component {
         if (!this.context.loading) {
             commentList = this.context.comments.map(comment => {
                 return <CommentItem key={comment.id} comment={comment} />
-            })
-        }
-
+            });
+        };
 
         return (
             <div className="main-comment-container">
@@ -33,9 +33,6 @@ class CommentList extends React.Component {
                     {commentList}
                 </ul>
             </div>
-
-        )
-    }
-}
-
-export default CommentList;
+        );
+    };
+};

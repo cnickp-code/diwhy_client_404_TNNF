@@ -59,16 +59,14 @@ export class AppProvider extends Component {
         endorsements: jwtPayload.endorsements
       }
 
-    this.state = state;
+    this.state = state
     IdleService.setIdleCallback(this.logoutBecauseIdle)
   }
 
   componentDidMount() {
     CategoryService.getCategories()
       .then(categories => {
-        this.setState({
-          categories
-        })
+        this.setState({ categories })
       })
   }
 
@@ -78,9 +76,7 @@ export class AppProvider extends Component {
   }
 
   setUserInfo = (user) => {
-    this.setState({
-      user
-    })
+    this.setState({ user })
   }
 
   modifyUserIntro = (bool) => {
@@ -88,61 +84,43 @@ export class AppProvider extends Component {
       ...this.state.user,
       intro: bool,
     }
-    this.setState({
-      user: newUser
-    })
+    this.setState({ user: newUser })
   }
 
   toggleOverlay = () => {
-    this.setState({
-      showPostOverlay: !this.state.showPostOverlay
-    })
+    this.setState({ showPostOverlay: !this.state.showPostOverlay })
   }
 
   setLoading = (loading) => {
-    this.setState({
-      loading
-    })
+    this.setState({ loading })
   }
 
   setComments = (comments) => {
-    this.setState({
-      comments
-    })
+    this.setState({ comments })
   }
 
   deleteComment = (id) => {
-    let newComments = this.state.comments.filter(comment => comment.id !== id);
+    let newComments = this.state.comments.filter(comment => comment.id !== id)
 
-    this.setState({
-      comments: newComments
-    })
+    this.setState({ comments: newComments })
   }
 
   addComment = (comment) => {
-    let newComments = [...this.state.comments, comment];
-    this.setState({
-      comments: newComments
-    })
+    let newComments = [...this.state.comments, comment]
+    this.setState({ comments: newComments })
   }
 
   addApplicant = (applicant) => {
     let newApplicants = [...this.state.applicants, applicant]
-    this.setState({
-      applicants: newApplicants
-    })
+    this.setState({ applicants: newApplicants })
   }
 
   setApplicants = (applicants) => {
-    this.setState({
-      applicants
-    })
+    this.setState({ applicants })
   }
 
   setSinglePosting = (item) => {
-    this.setState({
-      singlePosting: item
-    })
+    this.setState({ singlePosting: item })
   }
 
   setError = error => {
@@ -165,69 +143,51 @@ export class AppProvider extends Component {
   setThreads = threads => {
     let newThreads = threads.map(thread => {
       let threadCategory = this.state.categories.find(item => item.id === thread.category)
-
       const newThread = {
         ...thread,
         category: threadCategory.name
       }
-
       return newThread
     })
     this.setState({ threads: newThreads })
   }
 
   setSearchThreads = threads => {
-    this.setState({
-      threads
-    })
+    this.setState({ threads })
   }
 
   handleGetThreads = () => {
     CategoryService.getCategories()
       .then(categories => {
-        this.setState({
-          categories
-        })
+        this.setState({ categories })
 
         ThreadsApiService.getThreads()
           .then(threads => {
             let newThreads = threads.map(thread => {
               let threadCategory = this.state.categories.find(item => item.id === thread.category)
-
               const newThread = {
                 ...thread,
                 category: threadCategory.name
               }
-
               return newThread
             })
-            this.setThreads(threads);
-            this.setState({
-              fullThreads: newThreads
-            })
+            this.setThreads(threads)
+            this.setState({ fullThreads: newThreads })
           })
       })
   }
 
   addThread = (thread) => {
-    const newThreads = [...this.state.threads, thread];
-
-    this.setState({
-      threads: newThreads
-    })
+    const newThreads = [...this.state.threads, thread]
+    this.setState({ threads: newThreads })
   }
 
   setPostings = postings => {
-    this.setState({ 
-      postings,
-      fullPostings: postings 
-    })
+    this.setState({ postings, fullPostings: postings })
   }
 
   setSearchPostings = postings => {
-    this.setState({
-      postings
-    })
+    this.setState({ postings })
   }
 
   addPosting = posting => {

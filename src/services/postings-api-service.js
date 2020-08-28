@@ -1,8 +1,7 @@
-import config from '../config';
-import TokenService from '../Services/token-service';
+import config from '../config'
+import TokenService from '../Services/token-service'
 
 const PostingsApiService = {
-    // not needed
     getPostingById(id) {
         return (
             {
@@ -84,4 +83,4 @@ const PostingsApiService = {
     }
 }
 
-export default PostingsApiService;
+export default PostingsApiService

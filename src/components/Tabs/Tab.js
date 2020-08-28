@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Tab extends React.Component {
+export default class Tab extends React.Component {
     static propTypes = {
         activeTab: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
@@ -11,26 +11,21 @@ class Tab extends React.Component {
     onClick = () => {
         const { label, onClick } = this.props;
         onClick(label);
-    }
+    };
 
     render() {
-        const {
-            onClick,
-            props: {activeTab, label,},
-        } = this;
+        const { onClick, props: { activeTab, label, } } = this;
 
-    let className = 'tab-list-item';
+        let className = 'tab-list-item';
 
-    if (activeTab === label) {
-        className += ' tab-list active';
-    }
+        if (activeTab === label) {
+            className += ' tab-list active';
+        };
 
-    return (
-        <li className={className} onClick={onClick}>
-            {label}
-        </li>
-    );
-    }
-}
-
-export default Tab;
+        return (
+            <li className={className} onClick={onClick}>
+                {label}
+            </li>
+        );
+    };
+};

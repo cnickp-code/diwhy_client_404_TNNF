@@ -1,47 +1,44 @@
 import React from 'react';
 import AppContext from '../../contexts/AppContext';
 import ThreadsApiService from '../../Services/threads-api-service';
-import { Link } from 'react-router-dom'
-import { Button } from '../Util/Util'
+import { Link } from 'react-router-dom';
+import { Button } from '../Util/Util';
 
-class FeedThreadItem extends React.Component {
+export default class FeedThreadItem extends React.Component {
+
     static contextType = AppContext;
 
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             likes: []
-        }
-    }
+        };
+    };
 
     componentDidMount() {
         ThreadsApiService.getLikesByThreadId(this.props.thread.id)
             .then(likes => {
                 this.setState({
                     likes
-                })
-            })
-    }
+                });
+            });
+    };
 
     handleLikeThread = () => {
         let newLike = {
             user_id: this.context.user.userId,
             thread_id: this.props.thread.id
-        }
+        };
         ThreadsApiService.postLikeByThreadId(newLike)
             .then(like => {
                 ThreadsApiService.getLikesByThreadId(this.props.thread.id)
                     .then(likes => {
                         this.setState({
                             likes
-                        })
-                    })
-            })
-    }
-
-    // handleSetLikes = () => {
-
-    // }
+                        });
+                    });
+            });
+    };
 
     handleUnlikeThread = () => {
         ThreadsApiService.deleteLikeByThreadId(this.props.thread.id)
@@ -50,10 +47,10 @@ class FeedThreadItem extends React.Component {
                     .then(likes => {
                         this.setState({
                             likes
-                        })
-                    })
-            })
-    }
+                        });
+                    });
+            });
+    };
 
     render() {
         let likes = this.state.likes.length;
@@ -62,17 +59,17 @@ class FeedThreadItem extends React.Component {
         this.state.likes.forEach(like => {
             if (this.context.user.userId === like.user_id) {
                 likeBool = true;
-            }
-        })
+            };
+        });
 
         return (
             <li className="tl-header" key={this.props.thread.id}>
                 <Link className='threadId' to={'/thread/' + this.props.thread.id} key={this.props.thread.id}>
                     <h2 className="hw-name">{this.props.thread.title}</h2>
-                        <div className="tl-header-content">
-                            <img src={this.props.thread.user_pic} alt='prop' className="tl-pic"></img>
-                            <h3 className="tl-title">{this.props.thread.user_name}</h3>
-                        </div>
+                    <div className="tl-header-content">
+                        <img src={this.props.thread.user_pic} alt='prop' className="tl-pic"></img>
+                        <h3 className="tl-title">{this.props.thread.user_name}</h3>
+                    </div>
                 </Link>
                 <div className='tl-options'>
                     {/* {thread likes variable} */}
@@ -81,8 +78,6 @@ class FeedThreadItem extends React.Component {
                     {likeBool && <Button className="feed-btn" onClick={this.handleUnlikeThread}><i className="fas fa-heart"></i>{' '}{likes}</Button>}
                 </div>
             </li>
-        )
-    }
-}
-
-export default FeedThreadItem;
+        );
+    };
+};

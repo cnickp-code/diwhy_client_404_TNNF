@@ -1,4 +1,4 @@
-import config from '../config';
+import config from '../config'
 import TokenService from './token-service'
 
 const InterestsApiService = {
@@ -20,18 +20,18 @@ const InterestsApiService = {
             headers: {
                 'content-type': 'application/json',
                 'Authorization': `bearer ${TokenService.getAuthToken()}`
-           },
-           body: JSON.stringify(newItem)
+            },
+            body: JSON.stringify(newItem)
         })
-        .then(res =>
-            (!res.ok)
-                ? res.json().then(e => Promise.reject(e))
-                : res.json()
-        )
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
     },
-    deleteInterestById(id) {
+    // deleteInterestById(id) {
 
-    }
+    // }
 }
 
-export default InterestsApiService;
+export default InterestsApiService

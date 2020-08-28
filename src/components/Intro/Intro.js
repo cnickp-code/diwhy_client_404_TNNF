@@ -8,160 +8,133 @@ import AppContext from '../../contexts/AppContext';
 import { Redirect } from 'react-router-dom';
 import InterestsApiService from '../../Services/interests-api-service';
 
-class Intro extends React.Component {
+export default class Intro extends React.Component {
+
     static contextType = AppContext;
 
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             step: 1,
             profile_pic: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png',
             interests: {},
             forward: false,
-        }
-
+        };
         this.woodworking = React.createRef();
-    }
+    };
 
     componentDidMount() {
-        AuthApiService.getUserInfo(this.context.user.user_name) 
+        AuthApiService.getUserInfo(this.context.user.user_name)
             .then(user => {
                 let newUser = {
                     ...user,
                     userId: user.id
-                }
+                };
                 this.context.setUserInfo(newUser);
-            })
-    }
+            });
+    };
 
     handleNextStep = () => {
         let newStep = this.state.step + 1;
-        this.setState({
-            step: newStep
-        })
-    }
+        this.setState({ step: newStep });
+    };
 
     handleAddInterest = (e) => {
         e.preventDefault();
-
-        console.log('interests', this.state.interests);
-
-        let interests = []
+        let interests = [];
         for (const [key, value] of Object.entries(this.state.interests)) {
             if (value === true) {
                 interests.push(key);
-            }
-        }
-        console.log(interests);
-
+            };
+        };
         let newInterests = interests.map(interest => {
             let interestObj = this.context.categories.find(cat => cat.name === interest)
             let interestId = interestObj.id;
-
             let newObj = {
                 category_id: interestId,
                 user_id: this.context.user.userId
-            }
-
+            };
             return newObj;
-        })
-
-        console.log(newInterests);
-
-        
+        });
 
         newInterests.forEach(int => {
-            // Function to post interests
-            InterestsApiService.postInterest(int)
-        })
+            InterestsApiService.postInterest(int);
+        });
 
         let newStep = this.state.step + 1;
-        this.setState({
-            step: newStep
-        })
+        this.setState({ step: newStep });
 
         let updatedInfo = {
             profile_pic: this.context.user.profile_pic,
             intro: true,
             endorsements: this.context.user.endorsements,
             email: this.context.user.email
-        }
+        };
 
         setTimeout(() => {
             AuthApiService.updateUserInfo(this.context.user.id, updatedInfo)
                 .then(res => {
                     this.context.modifyUserIntro(true);
-                    this.setState({
-                        forward: true
-                    })
-                })
-        }, 1200)
-    }
+                    this.setState({ forward: true });
+                });
+        }, 1200);
+    };
 
     handleInterests = (e) => {
         const val = e.target.checked;
         const name = e.target.name;
 
         let updatedInterests = Object.assign({}, this.state.interests, { [name]: val })
-        this.setState({
-            interests: updatedInterests
-        })
-
-    }
+        this.setState({ interests: updatedInterests });
+    };
 
     render() {
         let step = this.state.step;
         let img;
 
-        let stepOneItems = []
+        let stepOneItems = [];
         let stepFourItems = [];
         let stepFiveItemsLeft = [];
         let stepFiveItemsRight = [];
 
-        if(this.state.forward) {
+        if (this.state.forward) {
             return <Redirect to="/" />
-        }
-
+        };
 
         if (step === 1) {
             stepOneItems.push(<h1 className="intro-header">Welcome</h1>)
             stepOneItems.push(<h1 className="intro-header">To</h1>)
             stepOneItems.push(<p className="text-center"> <img src={logo} className="intro-logo" alt='logo' /></p>)
-
-            // STEP ONE BACKGROUND IMAGE
             img = 'https://media.lifehack.org/wp-content/uploads/2013/02/diy-projects-740x416.jpeg';
         }
-
 
         if (step === 2 || step === 3) {
             while (stepOneItems.length > 0) {
                 stepOneItems.pop();
-            }
+            };
             img = 'https://media.lifehack.org/wp-content/uploads/2013/02/diy-projects-740x416.jpeg';
-        }
+        };
 
         if (step === 4) {
             img = 'https://media.lifehack.org/wp-content/uploads/2013/02/diy-projects-740x416.jpeg';
-        }
+        };
 
         if (step === 5) {
             img = 'https://media.lifehack.org/wp-content/uploads/2013/02/diy-projects-740x416.jpeg';
-        }
+        };
 
         if (step === 6) {
             img = 'https://media.lifehack.org/wp-content/uploads/2013/02/diy-projects-740x416.jpeg';
-        }
+        };
 
         let newItems = stepOneItems.map((item, i) => {
             return <IntroContainer key={i} component={item} />
-        })
-
+        });
 
         return (
             <div className="intro-main-container" style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover' }}>
                 <div className="white-overlay">
                     <div className="intro-inner-container">
-
                         <div className="intro-step-one">
                             <Transition
                                 items={newItems} keys={item => item.key}
@@ -279,20 +252,15 @@ class Intro extends React.Component {
                                     </form>
                                 </div>
                             }
-
                             {(step === 6) &&
                                 <div className="step6-container">
                                     <h1 className="step6-header">Happy Crafting!!</h1>
                                 </div>
                             }
-
                         </div>
-
-
                         {!(step === 5 || step === 1 || step === 6) && <div className="btn-container">
                             <button className="hw-btn" onClick={this.handleNextStep}>Next</button>
                         </div>}
-
                         {(step === 1) && <Spring
                             from={{ opacity: 0 }}
                             to={{ opacity: 1 }}
@@ -307,12 +275,9 @@ class Intro extends React.Component {
                                 </div>
                             )}
                         </Spring>}
-
                     </div>
                 </div>
             </div>
-        )
-    }
-}
-
-export default Intro;
+        );
+    };
+};

@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import TokenService from '../../Services/token-service'
-import AppContext from '../../contexts/AppContext'
-import subheader from '../../image-assets/sub-header-small.png'
-import header from '../../image-assets/header-full-small.png'
-import './Header.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import TokenService from '../../Services/token-service';
+import AppContext from '../../contexts/AppContext';
+import subheader from '../../image-assets/sub-header-small.png';
+import header from '../../image-assets/header-full-small.png';
+import './Header.css';
 
-class Header extends Component {
+export default class Header extends Component {
 
-  static contextType = AppContext
+  static contextType = AppContext;
 
   handleLogoutClick = () => {
-    this.context.processLogout()
-  }
+    this.context.processLogout();
+  };
 
   renderLoggedInNav() {
     const { user } = this.context;
@@ -26,15 +26,15 @@ class Header extends Component {
           <Link className='logout-head' onClick={this.handleLogoutClick} to='/login'>Logout</Link>
         </nav>
       </header>
-    )
-  }
+    );
+  };
 
   renderLoginLink() {
     return (
       <header className='header-out'>
       </header>
-    )
-  }
+    );
+  };
 
   render() {
     return (
@@ -44,7 +44,5 @@ class Header extends Component {
           : this.renderLoginLink()}
       </>
     );
-  }
-}
-
-export default Header
+  };
+};

@@ -1,160 +1,167 @@
 .profile-wrapper {
-    background-color: #846F51;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
+  background-color: #846f51;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-main-container {
-    width: 100vw;
+  width: 100vw;
 }
 
 .profile-cat-div {
-    padding: .5rem;
+  padding: 0.5rem;
 }
 
 .profile-user {
-    font-size: 10px;
+  font-size: 10px;
+}
+/* .profile-user {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
 }
 
+.User_Name.text-right,
+.User_Email.text-right {
+  margin: 0;
+} */
+
 .profile-top-splash {
-    background-image: url('https://i.pinimg.com/originals/f9/4f/37/f94f37eb1fbdfb5d49dc97e711a35289.jpg');
+  background-image: url("https://i.pinimg.com/originals/f9/4f/37/f94f37eb1fbdfb5d49dc97e711a35289.jpg");
+  width: 100%;
+  height: 30vh;
+  background-size: 100% 150%;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-bottom-splash {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 4px 0px 5px 2px rgba(0, 0, 0, 0.75);
+}
+
+.text-right {
+  text-align: right;
+}
+
+.profile-section {
+  padding: 1rem;
+  background-color: #fafafa;
+  border: 1px solid rgb(187, 187, 187);
+}
+
+.profile-header {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #231f20;
+  font-family: "Impact";
+  text-align: center;
+}
+
+.profile-info-container {
+  height: 50px;
+  background-color: #fafafa;
+  border: 1px solid rgb(187, 187, 187);
+  border-top: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.profile-info-left {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.profile-info-right {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.endorsement {
+  color: green;
+}
+
+@media only screen and (min-width: 450px) {
+  .profile-user {
+    font-size: 20px;
+  }
+
+  .profile-header {
+    margin-top: 0;
+    font-size: 2rem;
+    color: #231f20;
+    font-family: "Impact";
+    text-align: left;
+  }
+
+  .profile-main-container {
+    width: 80vw;
+  }
+
+  .profile-info-container {
+    height: 40px;
+    background-color: #fafafa;
+    border: 1px solid rgb(187, 187, 187);
+    border-top: none;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .profile-section {
+    padding: 1rem;
+    background-color: #fafafa;
+    border-radius: 5px;
+    margin: 1rem 0;
+    border: 1px solid rgb(187, 187, 187);
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 4px 0px 5px 2px rgba(0, 0, 0, 0.75);
+  }
+
+  .profile-top-splash {
+    background-image: url("https://i.pinimg.com/originals/f9/4f/37/f94f37eb1fbdfb5d49dc97e711a35289.jpg");
     width: 100%;
     height: 30vh;
     background-size: 100% 150%;
     background-position: center;
     display: flex;
     flex-direction: column;
-}
+    justify-content: flex-end;
+    border-radius: 5px;
+  }
 
-.profile-bottom-splash {
+  .profile-bottom-splash {
     width: 100%;
+    height: 50%;
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.profile-pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    box-shadow: 4px 0px 5px 2px rgba(0,0,0,0.75);
-}
-
-.text-right {
-    text-align: right;
-}
-
-.profile-section {
-    padding: 1rem;
-    background-color: #fafafa;
-    border: 1px solid rgb(187, 187, 187);
-}
-
-.profile-header {
-    margin-top: 0;
-    font-size: 2rem;
-    color: #231F20;
-    font-family: "Impact";
-    text-align: center;
-}
-
-.profile-info-container {
-    height: 50px;
-    background-color: #fafafa;
-    border: 1px solid rgb(187, 187, 187);
-    border-top: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-
-.profile-info-left {
-    width: 50%;
-    display: flex;
     align-items: center;
-}
-
-.profile-info-right {
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 20px;
-}
-
-.endorsement {
-    color: green;
-}
-
-
-@media only screen and (min-width: 450px) {
-
-    .profile-user {
-        font-size: 20px;
-    }
-
-    .profile-header {
-        margin-top: 0;
-        font-size: 2rem;
-        color: #231F20;
-        font-family: "Impact";
-        text-align: left;
-    }
-
-    .profile-main-container {
-        width: 80vw;
-    }
-    
-    .profile-info-container {
-        height: 40px;
-        background-color: #fafafa;
-        border: 1px solid rgb(187, 187, 187);
-        border-top: none;
-        border-radius: 5px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 10px;
-    }
-
-    .profile-section {
-        padding: 1rem;
-        background-color: #fafafa;
-        border-radius: 5px;
-        margin: 1rem 0;
-        border: 1px solid rgb(187, 187, 187);
-    }
-
-    .profile-pic {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        box-shadow: 4px 0px 5px 2px rgba(0,0,0,0.75);
-    }
-
-    .profile-top-splash {
-        background-image: url('https://i.pinimg.com/originals/f9/4f/37/f94f37eb1fbdfb5d49dc97e711a35289.jpg');
-        width: 100%;
-        height: 30vh;
-        background-size: 100% 150%;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        border-radius: 5px;
-    }
-
-    .profile-bottom-splash {
-        width: 100%;
-        height: 50%;
-        padding: 1rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        
-    }
+  }
 }

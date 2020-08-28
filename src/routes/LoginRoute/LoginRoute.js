@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Login from '../../components/Login/Login'
 import AppContext from '../../contexts/AppContext'
 
-class LoginRoute extends Component {
+export default class LoginRoute extends Component {
   static defaultProps = {
     location: {},
     history: {
@@ -25,8 +25,6 @@ class LoginRoute extends Component {
         <Login onLoginSuccess={this.handleLoginSuccess} />
         <p className='intro'>You'll find the hammer to your nail here!</p>
       </section>
-    );
+    )
   }
 }
-
-export default LoginRoute

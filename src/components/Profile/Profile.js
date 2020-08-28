@@ -10,16 +10,15 @@ import './Profile.css'
 
 export default class Profile extends Component {
      constructor(props) {
-          super(props);
+          super(props)
           this.state = {
                value: '',
                user: null,
                loading: true,
                interests: [],
           };
-
           this.handleChange = this.handleChange.bind(this);
-     }
+     };
 
      static contextType = AppContext;
 
@@ -30,26 +29,21 @@ export default class Profile extends Component {
                     this.setState({
                          loading: false,
                          user
-                    })
-               })
-          
+                    });
+               });
+
           InterestsApiService.getInterestsByUserName(this.props.user_name)
                .then(interests => {
-                    console.log(interests);
-                    this.setState({
-                         interests
-                    })
-               })
-     }
+                    this.setState({ interests });
+               });
+     };
 
      handleChange(e) {
-          this.setState({
-               value: e.target.value,
-          })
-     }
+          this.setState({ value: e.target.value });
+     };
 
      renderUser() {
-          const { user } = this.state
+          const { user } = this.state;
           return <div className='profile-user'>
                <h2 className='User_Name' id='header'>Username: {user.user_name}</h2>
                <h2 className='User_Email' id='header'>Email: {user.email}</h2>
@@ -61,16 +55,15 @@ export default class Profile extends Component {
           return <div className='edit-link'>
                <Link to='/edit'>Edit Profile</Link>
           </div>
-     }
+     };
 
      render() {
-          const { user } = this.state
+          const { user } = this.state;
 
           let specs = this.state.interests.map(int => {
                return int.category;
           }).join(', ');
 
-          console.log(specs);
           return (
                <>
                     {!this.state.loading &&
@@ -94,7 +87,6 @@ export default class Profile extends Component {
                                         <div><i class="fas fa-users"></i>{' '}Add Friend</div>
                                    </div>
                               </div>
-
                               <div className="profile-section">
                                    <h1 className="profile-header">Project Spotlight</h1>
                                    <ProjectSpotlightList />
@@ -103,10 +95,10 @@ export default class Profile extends Component {
                                    <h1 className="profile-header">Recent Activity</h1>
                               </div>
                          </div>
-                    }
+                    };
                </>
-          )
-     }
+          );
+     };
 
      // render() {
      //      const { error } = this.context;

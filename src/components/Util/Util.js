@@ -12,22 +12,22 @@ export function Textarea({ className, ...props }) {
      );
 };
 
-export function FormatD({ date, format='Do MMMM YYYY' }) {
-    return formatDate(date, format)
-}
+export function FormatD({ date, format = 'Do MMMM YYYY' }) {
+     return formatDate(date, format);
+};
 
 export function Label({ className, ...props }) {
-    return (
-      <label className={cx('Label', className)} {...props} />
-    )
-  }
-  
-export const Input =  React.forwardRef(({ className, ...props }, ref) => {
-    return (
-      <input className={cx('Input', className)} type='text' ref={ref} {...props} />
-    )
-})
-  
+     return (
+          <label className={cx('Label', className)} {...props} />
+     );
+};
+
+export const Input = React.forwardRef(({ className, ...props }, ref) => {
+     return (
+          <input className={cx('Input', className)} type='text' ref={ref} {...props} />
+     );
+});
+
 export function Required({ className, ...props }) {
      return (
           <span className={['Required', className].join(' ')} {...props}>
@@ -35,13 +35,13 @@ export function Required({ className, ...props }) {
           </span>
      );
 };
-  
+
 export function Section({ className, list, ...props }) {
      const classes = [
           'Section',
           list && 'Section--list',
           className,
-     ].filter(Boolean).join(' ');
+     ].filter(Boolean).join(' ')
      return (
           <section className={classes} {...props} />
      );
