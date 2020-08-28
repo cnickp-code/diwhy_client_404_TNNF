@@ -63,6 +63,10 @@ export default class App extends Component {
                 component={DashboardRoute}
               />
               <Route
+                path={'/welcome'}
+                component={SplashPage}
+              />
+              <Route
                 path={'/register'}
                 component={RegistrationRoute}
               />
