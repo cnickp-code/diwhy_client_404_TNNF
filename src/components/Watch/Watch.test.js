@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import Watch from './Watch';
-import { AppProvider } from '../../contexts/AppContext';
-import App from '../../App';
+import { AppContext, AppProvider } from '../../contexts/AppContext';
 
 it('renders the Watch component', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<BrowserRouter><AppProvider><App><Watch /></App></AppProvider></BrowserRouter>, div);
+  ReactDOM.render(<BrowserRouter><AppProvider>
+    <Watch /></AppProvider>
+  </BrowserRouter>, div);
   ReactDOM.unmountComponentAtNode(div);
 });

@@ -95,7 +95,7 @@ export default class Profile extends Component {
                                    <h1 className="profile-header">Recent Activity</h1>
                               </div>
                          </div>
-                    };
+                    }
                </>
           );
      };

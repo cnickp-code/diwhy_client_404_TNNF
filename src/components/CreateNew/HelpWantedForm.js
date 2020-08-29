@@ -40,7 +40,7 @@ export default class HelpWantedForm extends React.Component {
         return (
             <form id='post-form' onSubmit={this.handleSubmit}>
                 <div className="exit" onClick={this.closeOverlay}>
-                    <i class="far fa-times-circle"></i>
+                    <i className="far fa-times-circle"></i>
                 </div>
                 <h3 className='form-header'>Ask For Help</h3>
                 <Label htmlFor='cn-select'>Project Category</Label>

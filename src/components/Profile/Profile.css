@@ -14,23 +14,24 @@
 }
 
 .profile-user {
-  font-size: 10px;
-}
-/* .profile-user {
   display: flex;
   flex-direction: column;
-  font-size: 10px;
+}
+
+h2 {
+  font-size: 0;
 }
 
 .User_Name.text-right,
 .User_Email.text-right {
   margin: 0;
-} */
+  font-size: 0;
+}
 
 .profile-top-splash {
   background-image: url("https://i.pinimg.com/originals/f9/4f/37/f94f37eb1fbdfb5d49dc97e711a35289.jpg");
   width: 100%;
-  height: 30vh;
+  height: fit-content;
   background-size: 100% 150%;
   background-position: center;
   display: flex;
@@ -40,6 +41,7 @@
 .profile-bottom-splash {
   width: 100%;
   padding: 1rem;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,6 +85,7 @@
 
 .profile-info-left {
   width: 50%;
+  margin-left: 10px;
   display: flex;
   align-items: center;
 }
@@ -99,9 +102,9 @@
   color: green;
 }
 
-@media only screen and (min-width: 450px) {
+@media only screen and (min-width: 550px) {
   .profile-user {
-    font-size: 20px;
+    font-size: 10px;
   }
 
   .profile-header {
@@ -146,7 +149,7 @@
   .profile-top-splash {
     background-image: url("https://i.pinimg.com/originals/f9/4f/37/f94f37eb1fbdfb5d49dc97e711a35289.jpg");
     width: 100%;
-    height: 30vh;
+    height: fit-content;
     background-size: 100% 150%;
     background-position: center;
     display: flex;
@@ -157,7 +160,7 @@
 
   .profile-bottom-splash {
     width: 100%;
-    height: 50%;
+    height: fit-content;
     padding: 1rem;
     display: flex;
     flex-direction: row;

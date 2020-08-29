@@ -17,7 +17,7 @@
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
-  box-shadow: 1px 3px 5px 2px rgba(0,0,0,0.26);
+  box-shadow: 1px 3px 5px 2px rgba(0, 0, 0, 0.26);
   background-color: #e2be7e;
   border-radius: 5px;
   margin-top: 20px;
@@ -32,7 +32,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  
 }
 
 .hw-item-container {
@@ -128,7 +127,7 @@
   height: fit-content;
   background-color: #e2be7e;
   border-radius: 5px;
-  box-shadow: 1px 3px 5px 2px rgba(0,0,0,0.26);
+  box-shadow: 1px 3px 5px 2px rgba(0, 0, 0, 0.26);
 }
 
 .application-header {
@@ -161,6 +160,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 5px;
+  box-shadow: 1px 3px 5px 2px rgba(0, 0, 0, 0.26);
 }
 
 .applicant-inner {

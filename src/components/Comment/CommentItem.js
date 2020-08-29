@@ -84,8 +84,8 @@ export default class CommentItem extends React.Component {
                         {/* <button className="comment-btn">
                             <i className="fas fa-edit"></i>
                         </button> */}
-                        {!likeBool && <Button className="comment-btn" onClick={this.handleLikeComment}><i class="far fa-heart"></i>{' '}{likes}</Button>}
-                        {likeBool && <Button className="comment-btn" onClick={this.handleUnlikeComment}><i class="fas fa-heart"></i>{' '}{likes}</Button>}
+                        {!likeBool && <Button className="comment-btn" onClick={this.handleLikeComment}><i className="far fa-heart"></i>{' '}{likes}</Button>}
+                        {likeBool && <Button className="comment-btn" onClick={this.handleUnlikeComment}><i className="fas fa-heart"></i>{' '}{likes}</Button>}
                         {/* <div className='tl-likes'>{likes}</div> */}
                         {(this.props.comment.user_name === this.context.user.user_name) && <Button className="comment-btn" onClick={this.handleDelete}>
                             <i className="fas fa-eraser"></i> Delete
