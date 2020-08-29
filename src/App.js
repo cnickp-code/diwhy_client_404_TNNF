@@ -56,6 +56,7 @@ export default class App extends Component {
           <main>
             <Switch>
               <PrivateRoute exact path={'/'} component={DashboardRoute} />
+              <Route path={'/welcome'} component={SplashPage} />
               <Route path={'/register'} component={RegistrationRoute} />
               <Route path={'/login'} component={LoginRoute} />
               <Route component={NotFoundRoute} />
