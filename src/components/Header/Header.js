@@ -23,7 +23,7 @@ export default class Header extends Component {
           <Link className='app-head-logo' to='/'><img src={header} className='app-head-logo' alt='logo' /></Link>
           <Link className='hw-head-link' to='/wanted'>Help Wanted</Link>
           <a className='hw-head-link' href={`/profile/${user.user_name}`}>Profile</a>
-          <Link className='logout-head' onClick={this.handleLogoutClick} to='/login'>Logout</Link>
+          <Link className='logout-head' onClick={this.handleLogoutClick} to='/welcome'>Logout</Link>
         </nav>
       </header>
     );
