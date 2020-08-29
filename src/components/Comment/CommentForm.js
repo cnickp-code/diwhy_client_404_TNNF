@@ -3,7 +3,8 @@ import CommentsServices from '../../Services/comments-api-service';
 import './Comment.css';
 import AppContext from '../../contexts/AppContext';
 
-class CommentForm extends React.Component {
+export default class CommentForm extends React.Component {
+
     static contextType = AppContext;
 
     handleSubmit = (e) => {
@@ -20,14 +21,13 @@ class CommentForm extends React.Component {
         CommentsServices.postComment(commentObj)
             .then(res => {
                 CommentsServices.getCommentsByThreadId(this.props.threadId)
-                .then(comments => {
-                    this.context.setComments(comments);
-                    this.context.setLoading(false);
-                })
-
-                comment.value = '';
-            })
-    }
+                    .then(comments => {
+                        this.context.setComments(comments)
+                        this.context.setLoading(false)
+                    })
+                comment.value = ''
+            });
+    };
 
     render() {
         return (
@@ -37,8 +37,6 @@ class CommentForm extends React.Component {
                     <button type="submit" className="hw-btn">Post</button>
                 </div>
             </form>
-        )
-    }
-}
-
-export default CommentForm;
+        );
+    };
+};

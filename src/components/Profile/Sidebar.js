@@ -3,14 +3,15 @@ import { Section } from '../Util/Util';
 import AppContext from '../../contexts/AppContext';
 
 export default class ProfileSidebar extends Component {
+
      static defaultProps = {
           match: { params: {} },
      };
-     
+     //don't think this is being used?
      static contextType = AppContext;
 
      renderUser() {
-          const { user } = this.context
+          const { user } = this.context;
           return <div className='User_Profile_Sidebar_Container'>
                <h2 className='User_Name' id='header'>{user.user_name}</h2>
                <h2 className='User_Email' id='header'>{user.email}</h2>

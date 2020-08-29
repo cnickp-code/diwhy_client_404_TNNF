@@ -1,5 +1,5 @@
-import config from '../config';
-import TokenService from '../Services/token-service';
+import config from '../config'
+import TokenService from '../Services/token-service'
 
 const CommentsApiService = {
 
@@ -40,57 +40,58 @@ const CommentsApiService = {
                 'Authorization': `bearer ${TokenService.getAuthToken()}`
             },
         })
-        .then(res => {
-            if(!res.ok) {
-                throw new Error(res.status)
-            }
-            callback(id)
-        })
-
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error(res.status)
+                }
+                callback(id)
+            })
     },
+
     getLikesByCommentId(commentId) {
         return fetch(`${config.API_ENDPOINT}/comment_likes/comment/${commentId}`, {
-             headers: {
-                  'content-type': 'application/json',
-                  'Authorization': `bearer ${TokenService.getAuthToken()}`
-             },
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            },
         })
-             .then(res =>
-                  (!res.ok)
-                       ? res.json().then(e => Promise.reject(e))
-                       : res.json()
-             )
-   },
-   postLikeByCommentId(newLike) {
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
+
+    postLikeByCommentId(newLike) {
         return fetch(`${config.API_ENDPOINT}/comment_likes`, {
-             method: 'POST',
-             headers: {
-                  'content-type': 'application/json',
-                  'Authorization': `bearer ${TokenService.getAuthToken()}`
-             },
-             body: JSON.stringify(newLike)
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+            body: JSON.stringify(newLike)
         })
-             .then(res =>
-                  (!res.ok)
-                       ? res.json().then(e => Promise.reject(e))
-                       : res.json()
-             )
-   },
-   deleteLikeByCommentId(commentId) {
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
+
+    deleteLikeByCommentId(commentId) {
         return fetch(`${config.API_ENDPOINT}/comment_likes/comment/${commentId}`, {
-             method: 'DELETE',
-             headers: {
-                  'content-type': 'application/json',
-                  'Authorization': `bearer ${TokenService.getAuthToken()}`
-             },
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`
+            },
         })
-             .then(res =>{
-                  if (!res.ok) {
-                       throw new Error(res.status)
-                  }
-                  // callback(threadId)
-             })
-   },
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error(res.status)
+                }
+            })
+    },
 }
 
-export default CommentsApiService;
+export default CommentsApiService

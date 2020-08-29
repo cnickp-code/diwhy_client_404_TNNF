@@ -2,17 +2,17 @@ import config from '../config';
 // import TokenService from '../Services/token-service';
 
 const CategoryService = {
-     
+
      getCategories() {
           return fetch(`${config.API_ENDPOINT}/categories`, {
                headers: {
                },
           })
-               .then(res => 
+               .then(res =>
                     (!res.ok)
                          ? res.json().then(e => Promise.reject(e))
                          : res.json()
-               )
+               );
      },
 
      getCategory(id) {
@@ -24,8 +24,8 @@ const CategoryService = {
                     (!res.ok)
                          ? res.json().then(e => Promise.reject(e))
                          : res.json()
-               )
+               );
      }
-}
+};
 
 export default CategoryService;

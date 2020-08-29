@@ -52,7 +52,7 @@ const AuthApiService = {
         'authorization': `Bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify(user),
-    });
+    })
   },
   getUserInfo(user_name) {
     console.log('reached')
@@ -68,7 +68,7 @@ const AuthApiService = {
       )
   },
   updateUserInfo(id, newInfo) {
-    console.log(JSON.stringify(newInfo));
+    console.log(JSON.stringify(newInfo))
     return fetch(`${config.API_ENDPOINT}/user/${id}`, {
       method: 'PATCH',
       headers: {

@@ -1,20 +1,16 @@
 import React, { Component } from 'react'
-import { Button, Textarea, Label } from '../Util/Util';
+import { Button, Textarea, Label } from '../Util/Util'
 
 export default class QuestionForm extends Component {
      constructor(props) {
-          super(props);
-          this.state = { value: '' };
-
-          this.handleChange = this.handleChange.bind(this);
+          super(props)
+          this.state = { value: '' }
+          this.handleChange = this.handleChange.bind(this)
      }
-
+     //pretty sure we don't use this?
      handleSubmit() {
           console.log('Submitted')
      }
-
-     //Postingservice postPosting
-     //id, title, content
 
      handleChange(e) {
           this.setState({

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Registration from '../../components/Registration/Registration'
 
-class RegistrationRoute extends Component {
+export default class RegistrationRoute extends Component {
   static defaultProps = {
     history: {
       push: () => { },
@@ -22,8 +22,6 @@ class RegistrationRoute extends Component {
         />
         <p className='intro'>You'll find the hammer to your nail here!</p>
       </section>
-    );
+    )
   }
 }
-
-export default RegistrationRoute

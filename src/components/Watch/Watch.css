@@ -8,7 +8,8 @@
 
 .scrollarea-content {
   background-color: #fff7e0;
-  border-radius: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 3px 5px 2px rgba(0, 0, 0, 0.26);
   min-width: 110px;
 }
 

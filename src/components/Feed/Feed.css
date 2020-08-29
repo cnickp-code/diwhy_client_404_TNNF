@@ -1,10 +1,12 @@
 .tl-main-container {
-  width: 100%;
-  margin: 0;
-  padding: 20px;
-  background-color: #e2be7e;
-}
+  width: 80%;
+  margin: 20px 0px 0px;
+  padding: 20px 20px 0px 20px;
 
+  background-color: #e2be7e;
+  border-radius: 5px;
+  box-shadow: 1px 3px 5px 2px rgba(0, 0, 0, 0.26);
+}
 
 .tl-item-container {
   width: 100%;
@@ -91,7 +93,7 @@
     margin: 20px 0px 0px;
     padding: 20px 20px 0px 20px;
     height: 100%;
-    box-shadow: 1px 3px 5px 2px rgba(0,0,0,0.26);
+    box-shadow: 1px 3px 5px 2px rgba(0, 0, 0, 0.26);
   }
 
   .tl-header-content {

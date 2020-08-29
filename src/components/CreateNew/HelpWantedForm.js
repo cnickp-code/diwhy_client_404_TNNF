@@ -1,45 +1,46 @@
 import React from 'react';
 import AppContext from '../../contexts/AppContext';
-import { Input, Label, Textarea, Button } from '../Util/Util'
-// import { Link } from 'react-router-dom';
-import WantedApiService from '../../Services/want-api-service'
-import './NewPostForm.css'
+import { Input, Label, Textarea, Button } from '../Util/Util';
+import WantedApiService from '../../Services/want-api-service';
+import './NewPostForm.css';
 
+export default class HelpWantedForm extends React.Component {
 
-class HelpWantedForm extends React.Component {
     static contextType = AppContext;
 
     handleSubmit = (ev) => {
-        ev.preventDefault()
-        const { title, content, category } = ev.target
+        ev.preventDefault();
+        const { title, content, category } = ev.target;
         const newPosting = {
             title: title.value,
             content: content.value,
             category: category.value
-        }
+        };
+
         WantedApiService.postPosting(newPosting)
             .then(posting => {
                 WantedApiService.getAllPostings()
                     .then(postings => {
-                        title.value = '';
-                        content.value = '';
+                        title.value = ''
+                        content.value = ''
                         this.setState({
                             postValue: '1'
-                        })
+                        });
                         this.context.setPostings(postings)
-                        this.context.toggleOverlay();
-                    })
-            })
-    }
+                        this.context.toggleOverlay()
+                    });
+            });
+    };
+
     closeOverlay = () => {
         this.context.toggleOverlay();
-    }
+    };
 
     render() {
         return (
             <form id='post-form' onSubmit={this.handleSubmit}>
                 <div className="exit" onClick={this.closeOverlay}>
-                    <i class="far fa-times-circle"></i>
+                    <i className="far fa-times-circle"></i>
                 </div>
                 <h3 className='form-header'>Ask For Help</h3>
                 <Label htmlFor='cn-select'>Project Category</Label>
@@ -59,8 +60,6 @@ class HelpWantedForm extends React.Component {
                 <Textarea required placeholder='Project Description' name='hw-textarea' className='post-info' id='content' />
                 <Button type='submit' className='hw-btn'>Submit</Button>
             </form>
-        )
-    }
-}
-
-export default HelpWantedForm;
+        );
+    };
+};

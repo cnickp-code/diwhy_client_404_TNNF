@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import AppContext from '../../contexts/AppContext';
 import AuthApiService from '../../Services/auth-api-service';
 import { Button, Input, Label } from '../Util/Util';
-import './Login.css'
+import './Login.css';
 
 export default class Login extends React.Component {
 
@@ -11,11 +11,11 @@ export default class Login extends React.Component {
           onLoginSuccess: () => { }
      };
 
-     static contextType = AppContext
+     static contextType = AppContext;
 
      state = { error: null };
 
-     firstInput = React.createRef()
+     firstInput = React.createRef();
 
      handleSubmitJWTAuth = ev => {
           ev.preventDefault();
@@ -39,7 +39,7 @@ export default class Login extends React.Component {
 
      componentDidMount() {
           this.firstInput.current.focus()
-     }
+     };
 
      render() {
           const { error } = this.state;

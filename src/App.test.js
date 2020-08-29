@@ -1,9 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import AppContext, { AppProvider } from './contexts/AppContext';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+it('renders', () => {
+  const div = document.createElement('div')
+  ReactDOM.render(<BrowserRouter><AppProvider.Consumer><App /></AppProvider.Consumer></BrowserRouter>, div)
+  ReactDOM.unmountComponentAtNode(div)
 });

@@ -12,17 +12,17 @@ Corresponding Server-Side Repo Link: <https://github.com/thinkful-ei-orka/diwhy_
 
 ## Screenshots
 
-![Screenshot 1]()
-![Screenshot 2]()
-![Screenshot 3]()
-![Screenshot 4]()
-![Screenshot 5]()
+![Screenshot 1](diwhy_client_404_TNNF/src/image-assets/DIWHYDashSS.png)
+![Screenshot 2](diwhy_client_404_TNNF/src/image-assets/DIWHYProfileSS.png)
+![Screenshot 3](diwhy_client_404_TNNF/src/image-assets/DIWHYThreadSS.png)
+![Screenshot 4](diwhy_client_404_TNNF/src/image-assets/DIWHYWantedSS.png)
+![Screenshot 5](diwhy_client_404_TNNF/src/image-assets/DIWHYWantedThreadSS.png)
 
 ## Demo Info
 
 Credentials<br/>
 Email: demo@demo.com<br/>
-Username: DemoUser<br/>
+Username: DemoUser1<br/>
 Password: Password1!
 
 ---

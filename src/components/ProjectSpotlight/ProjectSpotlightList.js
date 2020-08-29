@@ -6,7 +6,7 @@ import './ProjectSpotlight.css';
 export default class ProjectSpotlightList extends React.Component {
     render() {
         return (
-            <div className="ps-list-container">
+            <div className='ps-list-container'>
                 <ProjectSpotlightItem />
                 <ProjectSpotlightItem />
                 <ProjectSpotlightItem />
@@ -14,6 +14,6 @@ export default class ProjectSpotlightList extends React.Component {
                 <ProjectSpotlightItem />
                 <ProjectSpotlightItem />
             </div>
-        )
-    }
-}
+        );
+    };
+};

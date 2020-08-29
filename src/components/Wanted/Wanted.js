@@ -1,15 +1,16 @@
-import React, { Component } from 'react'
-import './Wanted.css'
-import AppContext from '../../contexts/AppContext'
+import React, { Component } from 'react';
+import './Wanted.css';
+import AppContext from '../../contexts/AppContext';
 import WantedApiService from '../../Services/want-api-service';
-import { Link } from 'react-router-dom'
-import { Input, Label, Textarea, Button } from '../Util/Util'
+import { Link } from 'react-router-dom';
+import { Input, Label, Textarea, Button } from '../Util/Util';
 import FormOverlay from '../CreateNew/FormOverlay';
 import HelpWantedOverlay from '../CreateNew/HelpWantedOverlay';
 
 export default class Wanted extends Component {
+
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             value: '',
             postValue: '',
@@ -17,10 +18,9 @@ export default class Wanted extends Component {
             error: null,
             formValue: ''
         };
-
         this.categoryPostings = React.createRef();
         this.formCategory = React.createRef();
-    }
+    };
 
     static contextType = AppContext;
 
@@ -28,79 +28,71 @@ export default class Wanted extends Component {
         WantedApiService.getAllPostings()
             .then(postings => {
                 this.context.setPostings(postings)
-            })
-    }
+            });
+    };
 
     handlePostChange = (e) => {
         this.setState({
             postValue: this.formCategory.current.value
-        })
-    }
+        });
+    };
 
     handleChange = (e) => {
         this.setState({
             value: this.categoryPostings.current.value
-        })
+        });
 
         let value = this.categoryPostings.current.value;
-        let filteredPostings = this.context.fullPostings.filter(postings => postings.category === Number(value))
+        let filteredPostings = this.context.fullPostings.filter(postings => postings.category === Number(value));
 
         if (value === '0') {
             this.context.setPostings(this.context.fullPostings);
         } else {
             this.context.setSearchPostings(filteredPostings);
-        }
-    }
-
-    // handleChangeForm = (e) => {
-    //     this.setState({
-
-    //     })
-    // }
+        };
+    };
 
     handleSubmit = (ev) => {
-        ev.preventDefault()
-        const { title, content, category } = ev.target
+        ev.preventDefault();
+        const { title, content, category } = ev.target;
         const newPosting = {
             title: title.value,
             content: content.value,
             category: category.value
-        }
+        };
         WantedApiService.postPosting(newPosting)
             .then(posting => {
                 WantedApiService.getAllPostings()
                     .then(postings => {
                         title.value = '';
                         content.value = '';
-                        this.setState({
-                            postValue: '1'
-                        })
-                        this.context.setPostings(postings)
-                    })
-            })
-    }
+                        this.setState({ postValue: '1' });
+                        this.context.setPostings(postings);
+                    });
+            });
+    };
 
     getCategoryName(id) {
         const categoryById = this.context.categories.find(category => category.id === id)
         if (categoryById) {
             return categoryById.name
-        }
-    }
+        };
+    };
 
     showInputOverlay = () => {
         this.context.toggleOverlay();
-    }
+    };
 
 
     render() {
         const { postings } = this.context;
 
         const postingList = postings.map(posting => {
-            const categoryName = this.getCategoryName(posting.category)
+            const categoryName = this.getCategoryName(posting.category);
             let acceptBool = false;
             if (posting.accepted_app) {
                 acceptBool = true;
-            }
+            };
             return (
                 <li className='note sticky' key={posting.id}>
                     <Link className='postingId' to={'/wanted-item/' + posting.id} key={posting.id}>
@@ -111,8 +103,9 @@ export default class Wanted extends Component {
                         {acceptBool && <h4 className="posting-closed">Closed</h4>}
                     </Link>
                 </li>
-            )
-        })
+            );
+        });
+
         return (
             <div className='want-wrapper'>
                 {this.context.showPostOverlay && <HelpWantedOverlay />}
@@ -120,7 +113,7 @@ export default class Wanted extends Component {
                 <form className='help-wanted-form' onSubmit={this.handleSubmit}>
                     <h3 className='form-header'>Ask For Help</h3>
                     <Label htmlFor='hw-select'>Project Category</Label>
-                    <select  name='hw-select'  className='hw-select' id='category'>
+                    <select name='hw-select' className='hw-select' id='category'>
                         <option value='1'>Woodworking</option>
                         <option value='2'>Metalworking</option>
                         <option value='3'>Needlecraft</option>
@@ -138,9 +131,9 @@ export default class Wanted extends Component {
                 </form>
                 <div className="np-main-container">
                     <div className="np-container">
-                        <h2 className="np-header">Have a project?</h2>
+                        <h2 className="np-header">Have A Project?</h2>
                         <div className="np-input" onClick={this.showInputOverlay}>
-                            <i>Ask for help!!</i>
+                            <i>Ask For Help!</i>
                         </div>
                     </div>
                 </div>
@@ -164,10 +157,8 @@ export default class Wanted extends Component {
                             {postingList}
                         </ul>
                     </div>
-
                 </div>
             </div>
-        )
-    }
-}
-
+        );
+    };
+};

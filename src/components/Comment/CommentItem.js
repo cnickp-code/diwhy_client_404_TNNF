@@ -1,43 +1,43 @@
 import React from 'react';
 import AppContext from '../../contexts/AppContext';
 import CommentsApiService from '../../Services/comments-api-service';
-import { Button } from '../Util/Util'
+import { Button } from '../Util/Util';
 
-class CommentItem extends React.Component {
+export default class CommentItem extends React.Component {
+
     static contextType = AppContext;
 
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             likes: []
-        }
-    }
+        };
+    };
 
     componentDidMount() {
         CommentsApiService.getLikesByCommentId(this.props.comment.id)
             .then(likes => {
                 this.setState({
                     likes
-                })
-            })
-
-    }
+                });
+            });
+    };
 
     handleLikeComment = () => {
         let newLike = {
             user_id: this.context.user.userId,
             comment_id: this.props.comment.id
-        }
+        };
         CommentsApiService.postLikeByCommentId(newLike)
             .then(like => {
                 CommentsApiService.getLikesByCommentId(this.props.comment.id)
                     .then(likes => {
                         this.setState({
                             likes
-                        })
-                    })
-            })
-    }
+                        });
+                    });
+            });
+    };
 
     handleUnlikeComment = () => {
         CommentsApiService.deleteLikeByCommentId(this.props.comment.id)
@@ -46,22 +46,17 @@ class CommentItem extends React.Component {
                     .then(likes => {
                         this.setState({
                             likes
-                        })
-                    })
-            })
-    }
+                        });
+                    });
+            });
+    };
 
     handleDelete = () => {
-        CommentsApiService.deleteComment(this.props.comment.id, this.context.deleteComment);
-    }
+        CommentsApiService.deleteComment(this.props.comment.id, this.context.deleteComment)
+    };
 
 
     render() {
-        // let currentDate = this.props.comment.date_created.split('T')[0].split('-');
-        // let year = currentDate.shift();
-        // currentDate.push(year);
-        // currentDate = currentDate.join('/');
-
         let currentDate = new Date(this.props.comment.date_created).toLocaleString();
 
         let likes = this.state.likes.length;
@@ -69,9 +64,9 @@ class CommentItem extends React.Component {
 
         this.state.likes.forEach(like => {
             if (this.context.user.userId === like.user_id) {
-                likeBool = true;
-            }
-        })
+                likeBool = true
+            };
+        });
 
         return (
             <li className="comment-container">
@@ -79,7 +74,7 @@ class CommentItem extends React.Component {
                     <img src={this.props.comment.user_pic} alt='prop' className="ti-pic"></img>
                     <a href={`/profile/${this.props.comment.user_name}`}><h5 className="comment-header">{this.props.comment.user_name}</h5></a>
                 </div>
-                
+
                 <p className="comment-body">
                     {this.props.comment.content}
                 </p>
@@ -89,18 +84,15 @@ class CommentItem extends React.Component {
                         {/* <button className="comment-btn">
                             <i className="fas fa-edit"></i>
                         </button> */}
-                        {!likeBool && <Button className="comment-btn" onClick={this.handleLikeComment}><i class="far fa-heart"></i>{' '}{likes}</Button>}
-                        {likeBool && <Button className="comment-btn" onClick={this.handleUnlikeComment}><i class="fas fa-heart"></i>{' '}{likes}</Button>}
+                        {!likeBool && <Button className="comment-btn" onClick={this.handleLikeComment}><i className="far fa-heart"></i>{' '}{likes}</Button>}
+                        {likeBool && <Button className="comment-btn" onClick={this.handleUnlikeComment}><i className="fas fa-heart"></i>{' '}{likes}</Button>}
                         {/* <div className='tl-likes'>{likes}</div> */}
-                        {(this.props.comment.user_name === this.context.user.user_name) && <button className="feed-btn" onClick={this.handleDelete}>
+                        {(this.props.comment.user_name === this.context.user.user_name) && <Button className="comment-btn" onClick={this.handleDelete}>
                             <i className="fas fa-eraser"></i> Delete
-                        </button>}
+                        </Button>}
                     </div>
                 </div>
-
             </li>
-        )
-    }
-}
-
-export default CommentItem;
+        );
+    };
+};
