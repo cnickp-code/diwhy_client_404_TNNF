@@ -13,10 +13,13 @@ class SplashPage extends React.Component {
                     <Link className='out-link' to='/register'>Sign up</Link>
                 </nav>
                 <div id='splash' className='splash-head'>
-                    <div className='block'></div>
                     <div className='logo-wrapper'>
                         <img className='main-logo' src={headerfullmedium} alt='logo'/>
                         <img className='sub-logo' src={subheader} alt='sub-logo'/>
+                    </div>
+                    <div className='get-started'>
+                        <Link className='splash-reg' to='/register'>Sign up</Link>
+                        <Link className='splash-log' to='/login'>Or Login here</Link>
                     </div>
                     <div className='started-info'>
                         <h1 className='splash-header'>A Community of Creators, Built for Creating</h1>
@@ -31,7 +34,7 @@ class SplashPage extends React.Component {
                         </p>
                     </div>
                 </div>
-                <div id='splash' className='blueprint'>
+               
                     <div id='dark' className='splash-content'>
                         <h3>Learn by example from hobbyists and professionals alike.</h3>
                         <p>We hope that our service will give aspiring craftsmen a venue to learn, grow inspired by other projects,
@@ -39,12 +42,7 @@ class SplashPage extends React.Component {
                             one step further, letting you do it yourself, with genuine help!
                         </p>
                     </div>
-                    <div className='get-started'>
-                        <Link className='splash-reg' to='/register'>Sign up</Link>
-                        <Link className='splash-log' to='/login'>Or Login here</Link>
-                    </div>
-                </div>
-                <div id='splash' className='how-to-use'>
+              
                     <div id='dark' className='splash-content'>
                         <h3>Our Service</h3>
                         <p>Is simple and easy to navigate. We offer our users a way to create threads,
@@ -53,7 +51,7 @@ class SplashPage extends React.Component {
                             posts, which are meant to facilitate skilled assistance on a project.
                         </p>
                     </div>
-                </div>
+               
             </div>
         )
     }

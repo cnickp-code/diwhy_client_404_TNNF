@@ -10,13 +10,12 @@ html, body {
 }
 
 body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #FFF7E0;
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
   color: #231f20;
   font-family: "garage-gothic", sans-serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 :root {

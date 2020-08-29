@@ -23,6 +23,10 @@ class LoginRoute extends Component {
       <section className='log-route-section'>
         <h2 className='reg-log-header' id='header'>Login</h2>
         <Login onLoginSuccess={this.handleLoginSuccess} />
+        <p>Be our guest! Credentials:<br />
+          Email: demo@demo.com<br />
+          Username: DemoUser<br />
+          Password: Password1!</p>
         <p className='intro'>You'll find the hammer to your nail here!</p>
       </section>
     );
