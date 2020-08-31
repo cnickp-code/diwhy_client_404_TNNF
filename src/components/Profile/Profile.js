@@ -25,7 +25,6 @@ export default class Profile extends Component {
      componentDidMount() {
           AuthApiService.getUserInfo(this.props.user_name)
                .then(user => {
-                    console.log(user)
                     this.setState({
                          loading: false,
                          user
@@ -112,7 +111,6 @@ export default class Profile extends Component {
      //           content = this.renderUser()
      //      }
 
-     //      console.log(this.props.user_name);
      //      //Add way to select expertise, and degree of expertise
      //      return (
      //           <Section className='profile-wrapper'>

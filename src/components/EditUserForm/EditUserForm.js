@@ -32,7 +32,6 @@ export default class EditUserForm extends React.Component {
      //                return res.json()
      //           })
      //           .then(responseData => {
-     //                console.log(responseData)
      //                this.setState({
      //                     id: responseData.id,
      //                     user_name: responseData.user_name,

@@ -9,7 +9,6 @@ export default class CommentList extends React.Component {
     static contextType = AppContext;
 
     componentDidMount() {
-        console.log(this.context)
         this.context.setLoading(true);
         CommentsApiService.getCommentsByThreadId(this.props.threadId)
             .then(comments => {

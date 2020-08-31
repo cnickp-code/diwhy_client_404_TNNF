@@ -12,11 +12,11 @@ Corresponding Server-Side Repo Link: <https://github.com/thinkful-ei-orka/diwhy_
 
 ## Screenshots
 
-![Screenshot 1](diwhy_client_404_TNNF/src/image-assets/DIWHYDashSS.png)
-![Screenshot 2](diwhy_client_404_TNNF/src/image-assets/DIWHYProfileSS.png)
-![Screenshot 3](diwhy_client_404_TNNF/src/image-assets/DIWHYThreadSS.png)
-![Screenshot 4](diwhy_client_404_TNNF/src/image-assets/DIWHYWantedSS.png)
-![Screenshot 5](diwhy_client_404_TNNF/src/image-assets/DIWHYWantedThreadSS.png)
+![Screenshot 1](./src/image-assets/DIWHYDashSS.png)
+![Screenshot 2](./src/image-assets/DIWHYProfileSS.png)
+![Screenshot 3](./src/image-assets/DIWHYThreadSS.png)
+![Screenshot 4](./src/image-assets/DIWHYWantedSS.png)
+![Screenshot 5](./src/image-assets/DIWHYWantedThreadSS.png)
 
 ## Demo Info
 
@@ -27,4 +27,6 @@ Password: Password1!
 
 ---
 
-DIWHY is a social media platform designed for DIY enthusiasts, hobbyists, and professionals alike to ask for and give advice on projects and other DIY needs.
+## App Info
+
+DIWHY is a social media-esque platform designed for DIY enthusiasts, hobbyists, and professionals alike to ask for and give advice on projects and other DIY needs. Users can sign up for an account, indicate their interests, ask questions, and make help wanted posts for other users to apply for. Question threads can be commented on by users.

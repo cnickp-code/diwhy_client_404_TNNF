@@ -7,9 +7,8 @@ export default class QuestionForm extends Component {
           this.state = { value: '' }
           this.handleChange = this.handleChange.bind(this)
      }
-     //pretty sure we don't use this?
+     //pretty sure we don't use this anymore
      handleSubmit() {
-          console.log('Submitted')
      }
 
      handleChange(e) {

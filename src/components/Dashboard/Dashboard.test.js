@@ -5,11 +5,11 @@ import Dashboard from '../Dashboard/Dashboard';
 import { AppProvider } from '../../contexts/AppContext';
 
 it('renders the Dashboard', () => {
-  const div = document.createElement('div');
+  const div = document.createElement('div')
   ReactDOM.render(
     <BrowserRouter>
       <AppProvider>
-        <Dashboard />
+        <Dashboard width={1} />
       </AppProvider>
     </BrowserRouter>, div);
   ReactDOM.unmountComponentAtNode(div);

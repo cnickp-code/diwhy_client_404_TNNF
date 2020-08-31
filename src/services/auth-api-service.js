@@ -55,7 +55,6 @@ const AuthApiService = {
     })
   },
   getUserInfo(user_name) {
-    console.log('reached')
     return fetch(`${config.API_ENDPOINT}/user/${user_name}`, {
       // header: {
       //   'Authorization': `bearer ${TokenService.getAuthToken()}`
@@ -68,7 +67,6 @@ const AuthApiService = {
       )
   },
   updateUserInfo(id, newInfo) {
-    console.log(JSON.stringify(newInfo))
     return fetch(`${config.API_ENDPOINT}/user/${id}`, {
       method: 'PATCH',
       headers: {
