@@ -93,8 +93,12 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  padding-bottom: 10px;
+  align-items: center;
   padding-right: 25px;
   margin: 0;
+  font-size: x-small;
+  text-align: right;
 }
 
 .ti-body-topic {
@@ -134,5 +138,13 @@
   
   .ti-item-inner {
     background-color: #fff7e0;
+  }
+
+  .ti-body-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-right: 25px;
+    margin: 0;
   }
 }
