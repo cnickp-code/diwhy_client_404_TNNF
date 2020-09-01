@@ -262,6 +262,7 @@ export class AppProvider extends Component {
       toggleOverlay: this.toggleOverlay,
       modifyUserIntro: this.modifyUserIntro,
       setUserInfo: this.setUserInfo,
+      fetchRefreshToken: this.fetchRefreshToken,
     }
     return (
       <AppContext.Provider value={value}>

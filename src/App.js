@@ -34,7 +34,7 @@ export default class App extends Component {
     if (TokenService.hasAuthToken()) {
       IdleService.regiserIdleTimerResets()
       TokenService.queueCallbackBeforeExpiry(() => {
-        this.fetchRefreshToken();
+        this.context.fetchRefreshToken();
       });
     };
   };

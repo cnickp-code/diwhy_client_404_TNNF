@@ -22,4 +22,5 @@
     border-radius: 10px;
     background-color: var(--color-6);
     color: #fff7e0;
+    cursor: pointer;                            
 }
